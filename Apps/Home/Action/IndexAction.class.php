@@ -70,4 +70,11 @@ class IndexAction extends BaseAction {
     	$this->getDefaultCity();
     }
 
+	/**
+	 *
+	 */
+	public function hack(){
+		$this->show('hack');
+	}
+
 }

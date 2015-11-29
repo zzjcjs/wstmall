@@ -18,7 +18,7 @@
 <script type="text/javascript">
 var ThinkPHP = window.Think = {
         "ROOT"   : "",
-        "APP"    : "/index.php",
+        "APP"    : "/index.php?s=",
         "PUBLIC" : "/Public",
         "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>",
         "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],

@@ -15,13 +15,6 @@
 	    'SESSION_PREFIX' => 'WSTMALL',
         'COOKIE_PREFIX'  => 'WSTMALL',
 		'LOAD_EXT_CONFIG' => 'wst_config',
-	 	'URL_ROUTE_RULES' => array(
-			'login' => 'Users/login',
-			'regist' => 'Home/Users/regist'
-		),
-	 	'URL_ROUTE_MAP' => array(
-			'mia' => 'Mia/mia',
-		),
 		 /* 模板相关配置 */
 		 'TMPL_PARSE_STRING' => array(
 			 '__STATIC__' => __ROOT__ . '/Public/static',
@@ -37,4 +30,3 @@
 			 '__NEW_IMG__'     => __ROOT__ . '/Public/' .  '/New/images',
 		 ),
 	);
-?>
