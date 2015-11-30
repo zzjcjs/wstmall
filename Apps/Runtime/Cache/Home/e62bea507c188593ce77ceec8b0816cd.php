@@ -18,7 +18,7 @@
 <script type="text/javascript">
 var ThinkPHP = window.Think = {
         "ROOT"   : "",
-        "APP"    : "/index.php?s=",
+        "APP"    : "/index.php",
         "PUBLIC" : "/Public",
         "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>",
         "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
@@ -34,32 +34,58 @@ var ThinkPHP = window.Think = {
     	$('.lazyImg').lazyload({ effect: "fadeIn",failurelimit : 10,threshold: 200,placeholder:currDefaultImg});
     });
 </script>
+<!--&lt;!&ndash;var ThinkPHP = window.Think = { "ROOT" : "", -->
+<!--"APP" : "/index.php", -->
+<!--"PUBLIC" : "/Public", -->
+<!--"DEEP" : "/", -->
+<!--"MODEL" : ["1", "", "html"], -->
+<!--"VAR" : ["m", "c", "a"] } -->
+<!--var domainURL = "http://www.wstmall.local"; -->
+<!--var publicurl = "/Public"; -->
+<!--var currCityId = "440100"; -->
+<!--var currCityName = "广州市"; -->
+<!--var currDefaultImg = "http://www.wstmall.local/Apps/Home/View/default/images/item-pic.jpg"; -->
+<!--var wstMallName = "WSTMall开源商城"; -->
 <script src="/Public/js/think.js"></script>
 <div id="wst-shortcut">
 	<div class="w">
 		<ul class="fl lh">
-			<li class="fore1 ld"><b></b><a href="javascript:addToFavorite()"
-				rel="nofollow">收藏<?php echo ($CONF['mallName']); ?></a></li><s></s>
+			<li class="fore1 ld"><b></b>
+				<a href="javascript:addToFavorite()" rel="nofollow">收藏<?php echo ($CONF['mallName']); ?></a>
+			</li>
+			<s></s>
 			<li class="fore3 ld menu" id="app-jd" data-widget="dropdown">
 				<span class="outline"></span> <span class="blank"></span> 
-				<a href="#" target="_blank"><img src="/Apps/Home/View/default/images/icon_top_02.png"/>&nbsp;<?php echo ($CONF['mallName']); ?> 手机版</a>
+				<a href="#" target="_blank">
+					<img src="/Apps/Home/View/default/images/icon_top_02.png"/>
+					&nbsp;<?php echo ($CONF['mallName']); ?> 手机版
+				</a>
 			</li>
 			<li class="fore4" id="biz-service" data-widget="dropdown" style='padding:0;'>&nbsp;<s></s>&nbsp;&nbsp;&nbsp;
 				所在城市
 				【<span class='wst-city'>&nbsp;<?php echo ($currArea["areaName"]); ?>&nbsp;</span>】
 				<img src="/Apps/Home/View/default/images/icon_top_03.png"/>	
-				&nbsp;&nbsp;<a href="javascript:;" onclick="toChangeCity();">切换城市</a><i class="triangle"></i>
+				&nbsp;&nbsp;<a href="javascript:;" onclick="toChangeCity();">切换城市</a>
+				<i class="triangle"></i>
 			</li>
 		</ul>
 	
 		<ul class="fr lh" style='float:right;'>
-			<li class="fore1" id="loginbar"><a href="<?php echo U('Home/Orders/queryByPage');?>"><span style='color:blue'><?php echo ($WST_USER['loginName']); ?></span></a> 欢迎您来到 <a href='<?php echo WSTDomain();?>'><?php echo ($CONF['mallName']); ?></a>！<s></s>&nbsp;
+			<li class="fore1" id="loginbar">
+				<a href="<?php echo U('Home/Orders/queryByPage');?>">
+					<span style='color:blue'><?php echo ($WST_USER['loginName']); ?></span>
+				</a> 欢迎您来到
+				<a href='<?php echo WSTDomain();?>'><?php echo ($CONF['mallName']); ?>
+				</a>！
+				<s></s>&nbsp;
 			<span>
 				<?php if(!$WST_USER['userId']): ?><a href="<?php echo U('Home/Users/login');?>">[登录]</a>
 				<a href="<?php echo U('Home/Users/regist');?>"	class="link-regist">[免费注册]</a><?php endif; ?>
 				<?php if($WST_USER['userId'] > 0): ?><a href="javascript:logout();">[退出]</a><?php endif; ?>
 			</span>
+
 			</li>
+
 			<li class="fore2 ld"><s></s>
 			<?php if(session('WST_USER.userId')>0){ ?>
 				<?php if(session('WST_USER.userType')==0){ ?>

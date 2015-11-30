@@ -15,27 +15,49 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="hujun2wwn">
-<link href="/Public//css/bootstrap.min.css" rel="stylesheet">
-<link href="/Public//images/favicon.ico" rel="icon" type="image/x-icon" />
+<link href="/Public/css/bootstrap.min.css" rel="stylesheet">
+<link href="/Public/images/favicon.ico" rel="icon" type="image/x-icon" />
 
-<link href="/Public//css/newHeaderFooter.css" rel="stylesheet">
-<link href="/Public//css/newPub.css" rel="stylesheet">
-<link href="/Public//css/bannerState.css" rel="stylesheet">
-<link href="/Public//css/mia_skin.css" rel="stylesheet">
-<link href="/Public//css/miabaobei.css" rel="stylesheet">
-<link href="/Public//css/newIndexMain.css" rel="stylesheet">
+<link href="/Public/css/newHeaderFooter.css" rel="stylesheet">
+<link href="/Public/css/newPub.css" rel="stylesheet">
+<link href="/Public/css/bannerState.css" rel="stylesheet">
+<link href="/Public/css/mia_skin.css" rel="stylesheet">
+<link href="/Public/css/miabaobei.css" rel="stylesheet">
+<link href="/Public/css/newIndexMain.css" rel="stylesheet">
+<link href="/Public/css/mymiacss.css" rel="stylesheet">
 
 
-<script type="text/javascript" src="/Public//js/jquery-1.8.2.min.js"></script>
-<script type="text/javascript" src="/Public//js/newMiYaPub.js"></script>
-<script type="text/javascript" src="/Public//js/newIndex.js"></script>
-<script type="text/javascript" src="/Public//js/lwt.js"></script>
-<script type="text/javascript" src="/Public//js/init.js"></script>
-<script type="text/javascript" src="/Public//js/miyabaobei.js"></script>
-<script type="text/javascript" src="/Public//js/topslide.js"></script>
-<script type="text/javascript" src="/Public//js/adv.js"></script>
-<script type="text/javascript" src="/Public//js/miytj.js"></script>
-
+<script type="text/javascript" src="/Public/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="/Public/js/jquery.1.11.3.min.js"></script>
+<script type="text/javascript" src="/Public/js/cui.min.js"></script>
+<script type="text/javascript" src="/Public/js/newMiYaPub.js"></script>
+<script type="text/javascript" src="/Public/js/newIndex.js"></script>
+<script type="text/javascript" src="/Public/js/lwt.js"></script>
+<script type="text/javascript" src="/Public/js/init.js"></script>
+<script type="text/javascript" src="/Public/js/miyabaobei.js"></script>
+<script type="text/javascript" src="/Public/js/topslide.js"></script>
+<script type="text/javascript" src="/Public/js/adv.js"></script>
+<script type="text/javascript" src="/Public/js/miytj.js"></script>
+<script type="text/javascript">
+    var ThinkPHP = window.Think = {
+        "ROOT"   : "",
+        "APP"    : "/index.php",
+        "PUBLIC" : "/Public",
+        "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>",
+        "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
+        "VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
+    }
+    var domainURL = "<?php echo WSTDomain();?>";
+    var publicurl = "/Public";
+    var currCityId = "<?php echo ($currArea['areaId']); ?>";
+    var currCityName = "<?php echo ($currArea['areaName']); ?>";
+    var currDefaultImg = "<?php echo WSTDomain();?>/<?php echo ($CONF['goodsImg']); ?>";
+    var bbdMallName = "<?php echo ($CONF['mallName']); ?>";
+    $(function() {
+        $('.lazyImg').lazyload({ effect: "fadeIn",failurelimit : 10,threshold: 200,placeholder:currDefaultImg});
+    });
+</script>
+<script type="text/javascript" src="/Public/js/mymiajs.js"></script>
 
 
     </head>
@@ -58,22 +80,27 @@
                 <li><a href="/help.html">帮助中心</a></li>
                 <li class="line">|</li>
 
-                <li><a href="<?php echo U('User/login');?>" title="点击注册" rel="nofollow">免费注册</a></li>
+                <li><a href="<?php echo U('Users/regist');?>" title="点击注册" rel="nofollow">免费注册</a></li>
                 <li class="line">|</li>
 
-                <li><a href="<?php echo U('User/register');?>" title="点击登录" rel="nofollow">登录</a></li>
+                <li><a href="<?php echo U('Users/login');?>" title="点击登录" rel="nofollow">登录</a></li>
                 <li class="line">|</li>
-                <li>您好，欢迎来到蜜芽 </li>
+                <li>您好，欢迎来到宝宝帝母婴商城 </li>
             </ul>
         </div>
 
         <div class="l">
             <ul>
-                <li class="cur"><a href="/">蜜芽首页</a></li>
-                <li ><a href="#">蜜芽口碑</a></li>
-                <!-- <li class="w88"><a href="/brand">种草机</a></li> -->
-                <li class="phone"><a href="#"  class="indexPubTop">手机蜜芽</a></li>
-                <li class="top400">400-789-2000</li>
+                <li class="cur"><a href="/">宝宝帝首页</a></li>
+                <li ><a href="javascript:addToFavorite()">收藏宝宝帝</a></li>
+                <li class="phone">
+                    <a href="#" data-html="true" tabindex="0" role="button" data-toggle="popover" data-trigger="hover" data-placement="bottom"
+                       data-template='<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="padding:0px;width:200px;"></div></div>'
+                       title="微信扫一扫" data-html="true" data-content="<img class='img-responsive' src='/Public/images/weixin.jpg'>">
+                        宝宝帝微商城
+                    </a>
+                </li>
+                <li style="background:url('/Public/images/phone.gif') no-repeat center center;width:120px;border-right:1px solid #e5e5e5;overflow:hidden;text-indent:-999px;">400-789-2000</li>
             </ul>
         </div>
 
@@ -106,7 +133,7 @@
                 <a href="#"><img src="http://file01.miyabaobei.com/resources/images/index_icon07.gif?v=1" alt=""/></a>
                 <a href="#"><img src="http://file01.miyabaobei.com/resources/images/index_icon08.gif?v=20151014" alt=""/></a></div>
             </div>
-        <a href="/mia"><img src="/Public//images/mia_3.jpg" alt="" class="nlogo"/></a> </div>
+        <a href="/mia"><img src="/Public/images/logo.gif" alt="" class="nlogo"/></a> </div>
 </div>
 
 <div class="Nnav">
@@ -702,7 +729,7 @@
         <div class="parent HBSBlock clearfix" style="display:block;" >
             <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1105208.html">
                 <div class="l">
-                    <img src="/Public//images/mia_6.jpg" class="lazyload" alt="sk2神仙水精华露" width="166" height="194"/></div>
+                    <img src="/Public/images/mia_6.jpg" class="lazyload" alt="sk2神仙水精华露" width="166" height="194"/></div>
                 <div class="l">
                     <div class="top t1">top1</div>
                     <div class="title">sk2神仙水精华露</div>
@@ -714,7 +741,7 @@
                 </div>
             </a> </div>
             <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1000978.html">
-                <div class="l"><img src="/Public//images/mia_7.jpg" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/7f/dd/7fddbef412e0f6ac79d8a201a578ebe6.jpg" class="lazyload" alt="妙思乐洗发沐浴露" width="166" height="194"/></div>
+                <div class="l"><img src="/Public/images/mia_7.jpg" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/7f/dd/7fddbef412e0f6ac79d8a201a578ebe6.jpg" class="lazyload" alt="妙思乐洗发沐浴露" width="166" height="194"/></div>
                 <div class="l">
                     <div class="top t2">top2</div>
                     <div class="title">妙思乐洗发沐浴露</div>
@@ -726,7 +753,7 @@
                 </div>
             </a> </div>
             <div class="HBShadow rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1109462.html">
-                <div class="l"><img src="/Public//images/mia_6.jpg" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/20/62/d5/62d56e95e6bcf3c8a76534e16af37160.jpg" class="lazyload" alt="果蔬乐康膏250g*2盒" width="166" height="194"/></div>
+                <div class="l"><img src="/Public/images/mia_6.jpg" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/20/62/d5/62d56e95e6bcf3c8a76534e16af37160.jpg" class="lazyload" alt="果蔬乐康膏250g*2盒" width="166" height="194"/></div>
                 <div class="l">
                     <div class="top t3">top3</div>
                     <div class="title">果蔬乐康膏250g*2盒</div>
@@ -738,7 +765,7 @@
                 </div>
             </a> </div>
             <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1027801.html">
-                <div class="l"><img src="/Public//images/mia_7.jpg" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/20/db/76/db76281456d90c25bd1e0587a4dacc1c.jpg" class="lazyload" alt="JELLYCAT邦尼兔" width="166" height="194"/></div>
+                <div class="l"><img src="/Public/images/mia_7.jpg" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/20/db/76/db76281456d90c25bd1e0587a4dacc1c.jpg" class="lazyload" alt="JELLYCAT邦尼兔" width="166" height="194"/></div>
                 <div class="l">
                     <div class="top t4">top4</div>
                     <div class="title">JELLYCAT邦尼兔</div>
@@ -750,7 +777,7 @@
                 </div>
             </a> </div>
             <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1019621.html">
-                <div class="l"><img src="/Public//images/mia_6.jpg" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/20/7b/48/7b485014429b12279bb18724ccd0d4ff.jpg" class="lazyload" alt="多利科计量勺" width="166" height="194"/></div>
+                <div class="l"><img src="/Public/images/mia_6.jpg" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/20/7b/48/7b485014429b12279bb18724ccd0d4ff.jpg" class="lazyload" alt="多利科计量勺" width="166" height="194"/></div>
                 <div class="l">
                     <div class="top t5">top5</div>
                     <div class="title">多利科计量勺</div>
@@ -762,7 +789,7 @@
                 </div>
             </a> </div>
             <div class="HBShadow bottomnone rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1070589.html">
-                <div class="l"><img src="/Public//images/mia_7.jpg" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/29/87/29870a5ec8c9d42f52d9c41d58a18577.jpg" class="lazyload" alt="Schick乳木果刮毛刀" width="166" height="194"/></div>
+                <div class="l"><img src="/Public/images/mia_7.jpg" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/29/87/29870a5ec8c9d42f52d9c41d58a18577.jpg" class="lazyload" alt="Schick乳木果刮毛刀" width="166" height="194"/></div>
                 <div class="l">
                     <div class="top t6">top6</div>
                     <div class="title">Schick乳木果刮毛刀</div>

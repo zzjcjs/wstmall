@@ -216,7 +216,7 @@ function topay(){
 }
 
 function toChangeCity(){
-	location.href = Think.U('Home/Index/changeCity');
+	location.href = Think.U('Index/changeCity');
 }
 
 function changeCity(areaId2){
@@ -278,9 +278,9 @@ function getSearchInfo(obj,event){
 			return;
 		}
 		var searchType = $("#wst-search-type").val();
-		var surl = Think.U('Home/Goods/getKeyList');
+		var surl = Think.U('Goods/getKeyList');
     	if(searchType==2){
-    		surl = Think.U('Home/Shops/getKeyList');
+    		surl = Think.U('Shops/getKeyList');
     	}
 		$.post(surl,params,function(rsp){
 			var json = WST.toJson(rsp);
@@ -343,10 +343,10 @@ function createCookie(a,b,c,d){
 
 //刷新验证码
 function getVerify() {
-    $('.verifyImg').attr('src',Think.U('Home/Users/getVerify','rnd='+Math.random()));
+    $('.verifyImg').attr('src',Think.U('Users/getVerify','rnd='+Math.random()));
 }
 function checkLogin(){
-	jQuery.post( Think.U('Home/Shops/checkLoginStatus') ,{},function(rsp) {
+	jQuery.post( Think.U('Shops/checkLoginStatus') ,{},function(rsp) {
 		var json = WST.toJson(rsp);
 		if(json.status && json.status==-999)location.reload();
 	});
@@ -365,7 +365,7 @@ function createCookie(a,b,c,d){
 
 //添加广告访问量
 function addAccess(aid){
-	$.post(Think.U('Home/Index/access'),{id:aid},function(data,textStatus){
+	$.post(Think.U('Index/access'),{id:aid},function(data,textStatus){
 		
 	});
 }

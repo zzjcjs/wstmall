@@ -1,21 +1,15 @@
-<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
-<html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE>
+<html lang="zh-cn">
 	<head>
   		<meta charset="utf-8">
       	<meta http-equiv="X-UA-Compatible" content="IE=edge">
       	<meta name="viewport" content="width=device-width, initial-scale=1">
-      	<title><?php echo ($goodsDetails["goodsName"]); ?> - <?php echo ($CONF['mallTitle']); ?></title>
-      	<meta name="keywords" content="<?php echo ($goodsDetails['goodsKeywords']); ?>" />
-      	<meta name="description" content="<?php echo ($goodsDetails['goodsName']); ?>,<?php echo ($CONF['mallDesc']); ?>" />
+      	<title>店铺街 - <?php echo ($CONF['mallTitle']); ?></title>
+      	<meta name="keywords" content="<?php echo ($CONF['mallKeywords']); ?>" />
+      	<meta name="description" content="<?php echo ($CONF['mallDesc']); ?>,切换城市" />
       	<link rel="stylesheet" href="/Apps/Home/View/default/css/common.css" />
-     	<link rel="stylesheet" href="/Apps/Home/View/default/css/goodsdetails.css" />
      	<link rel="stylesheet" href="/Apps/Home/View/default/css/base.css" />
 		<link rel="stylesheet" href="/Apps/Home/View/default/css/head.css" />
-		<link rel="stylesheet" href="/Apps/Home/View/default/css/pslocation.css" />
-		<link rel="stylesheet" href="/Apps/Home/View/default/css/magnifier.css" />
-     	<script src="/Public/js/jquery.min.js"></script>
-     	<script src="/Public/js/common.js"></script>
-     	<script src="/Public/plugins/layer/layer.min.js"></script>
    	</head>
    	<body>
 		<script src="/Public/js/jquery.min.js"></script>
@@ -76,21 +70,13 @@ var ThinkPHP = window.Think = {
 		</ul>
 	
 		<ul class="fr lh" style='float:right;'>
-			<li class="fore1" id="loginbar">
-				<a href="<?php echo U('Home/Orders/queryByPage');?>">
-					<span style='color:blue'><?php echo ($WST_USER['loginName']); ?></span>
-				</a> 欢迎您来到
-				<a href='<?php echo WSTDomain();?>'><?php echo ($CONF['mallName']); ?>
-				</a>！
-				<s></s>&nbsp;
+			<li class="fore1" id="loginbar"><a href="<?php echo U('Home/Orders/queryByPage');?>"><span style='color:blue'><?php echo ($WST_USER['loginName']); ?></span></a> 欢迎您来到 <a href='<?php echo WSTDomain();?>'><?php echo ($CONF['mallName']); ?></a>！<s></s>&nbsp;
 			<span>
 				<?php if(!$WST_USER['userId']): ?><a href="<?php echo U('Home/Users/login');?>">[登录]</a>
 				<a href="<?php echo U('Home/Users/regist');?>"	class="link-regist">[免费注册]</a><?php endif; ?>
 				<?php if($WST_USER['userId'] > 0): ?><a href="javascript:logout();">[退出]</a><?php endif; ?>
 			</span>
-
 			</li>
-
 			<li class="fore2 ld"><s></s>
 			<?php if(session('WST_USER.userId')>0){ ?>
 				<?php if(session('WST_USER.userType')==0){ ?>
@@ -218,286 +204,46 @@ var ThinkPHP = window.Think = {
 			checkCart();
 		});
 		</script>
-		<input id="shopId" type="hidden" value="<?php echo ($goodsDetails['shopId']); ?>"/>
-		<input id="goodsId" type="hidden" value="<?php echo ($goodsDetails['goodsId']); ?>"/>
+
 		<!----加载商品楼层start----->
 		<div class="wst-container">
-			<div class="wst-nvg-title">
-				<a href="<?php echo U('Home/Goods/getGoodsList/',array('c1Id'=>$goodsNav[0]['catId']));?>"><?php echo ($goodsNav[0]["catName"]); ?></a>&nbsp;>&nbsp;
-				<a href="<?php echo U('Home/Goods/getGoodsList/',array('c1Id'=>$goodsNav[0]['catId'],'c2Id'=>$goodsNav[1]['catId']));?>"><?php echo ($goodsNav[1]["catName"]); ?></a>&nbsp;>&nbsp;
-				<a href="<?php echo U('Home/Goods/getGoodsList/',array('c1Id'=>$goodsNav[0]['catId'],'c2Id'=>$goodsNav[1]['catId'],'c3Id'=>$goodsNav[2]['catId']));?>"><?php echo ($goodsNav[2]["catName"]); ?></a>
+			<div class="wst-shadow">
+				<div class="other-main">
+            <div class="hot-cities">
+                <h2>进入<a href="javascript:;" onclick="changeCity(<?php echo ($area['areaId']); ?>);"><?php echo ($area["areaName"]); ?></a></h2>
+                <div class="shortcut">
+                
+                    <span>按省份选择：</span>
+                    <div class="shortcut-select shortcut-select-p">
+                        <!--  div class="ss-value"><em pid="17">湖南</em><i class="triangle"></i></div> -->
+                        <select id="provinceId" onchange="getCitys(this);">
+                        	<?php if(is_array($provinceList)): $k = 0; $__LIST__ = $provinceList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$province): $mod = ($k % 2 );++$k;?><option <?php if($province['areaId'] == $area['parentId']): ?>selected<?php endif; ?> value="<?php echo ($province['areaId']); ?>"><?php echo ($province["areaName"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                        </select>
+                    </div>
+                    <div class="shortcut-select shortcut-select-city">
+                        <select id="cityId">
+                        	<option>选择城市</option>
+                        </select>
+                    </div>    
+                    <input type="button" class="button" value="确 定" onclick="changeCity();">
+                </div>
+                
+            </div>
+            <div class="citys-listbox">
+                <div class="select-py">
+                    <span>按拼音首字母选择：</span>
+                    <a href="javascript:void(0);" onclick="letter_scroll('A')">A</a><a href="javascript:void(0);" onclick="letter_scroll('B')">B</a><a href="javascript:void(0);" onclick="letter_scroll('C')">C</a><a href="javascript:void(0);" onclick="letter_scroll('D')">D</a><a href="javascript:void(0);" onclick="letter_scroll('E')">E</a><a href="javascript:void(0);" onclick="letter_scroll('F')">F</a><a href="javascript:void(0);" onclick="letter_scroll('G')">G</a><a href="javascript:void(0);" onclick="letter_scroll('H')">H</a><a href="javascript:void(0);" onclick="letter_scroll('I')">I</a><a href="javascript:void(0);" onclick="letter_scroll('J')">J</a><a href="javascript:void(0);" onclick="letter_scroll('K')">K</a><a href="javascript:void(0);" onclick="letter_scroll('L')">L</a><a href="javascript:void(0);" onclick="letter_scroll('M')">M</a><a href="javascript:void(0);" onclick="letter_scroll('N')">N</a><a href="javascript:void(0);" onclick="letter_scroll('O')">O</a><a href="javascript:void(0);" onclick="letter_scroll('P')">P</a><a href="javascript:void(0);" onclick="letter_scroll('Q')">Q</a><a href="javascript:void(0);" onclick="letter_scroll('R')">R</a><a href="javascript:void(0);" onclick="letter_scroll('S')">S</a><a href="javascript:void(0);" onclick="letter_scroll('T')">T</a><a href="javascript:void(0);" onclick="letter_scroll('U')">U</a><a href="javascript:void(0);" onclick="letter_scroll('V')">V</a><a href="javascript:void(0);" onclick="letter_scroll('W')">W</a><a href="javascript:void(0);" onclick="letter_scroll('X')">X</a><a href="javascript:void(0);" onclick="letter_scroll('Y')">Y</a><a href="javascript:void(0);" onclick="letter_scroll('Z')">Z</a>                </div>
+            <div class="citys-list">
+           		<?php if(is_array($cityList)): foreach($cityList as $k=>$citys): ?><dl id="c_<?php echo ($k); ?>" onmouseover="$(this).addClass('hover')" onmouseout="$(this).removeClass('hover')" class="">
+                    <dt><?php echo ($k); ?></dt>
+                    <dd>
+                    	<?php if(is_array($citys)): $k2 = 0; $__LIST__ = $citys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$city): $mod = ($k2 % 2 );++$k2;?><a href="javascript:;" onclick="changeCity(<?php echo ($city['areaId']); ?>);"><?php echo ($city["areaName"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>          
+                  	</dd>
+                </dl><?php endforeach; endif; ?> 
+            </div>
+        </div>
+        </div>
 			</div>
-			<div class="wst-goods-details">
-				<div class="details-left">
-					<div class="goods-img-box">
-						 <!--产品参数开始-->
-						  <div>
-						    <div id="preview" class="spec-preview"> 
-							    <span class="jqzoom">
-							    	<img jqimg="/<?php echo ($goodsDetails['goodsImg']); ?>" src="/<?php echo ($goodsDetails['goodsImg']); ?>" height="350" width="350"/>
-							    </span> 
-						    </div>
-						    <!--缩图开始-->
-						    <div class="spec-scroll"> <a class="prev">&lt;</a> <a class="next">&gt;</a>
-						      <div class="items">
-						        <ul>
-						        	<li><img alt="" bimg="/<?php echo ($goodsDetails['goodsImg']); ?>" src="/<?php echo ($goodsDetails['goodsImg']); ?>" onmousemove="preview(this);"></li>
-						        	<?php if(is_array($goodsImgs)): $k = 0; $__LIST__ = $goodsImgs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><li><img alt="" bimg="/<?php echo ($vo['goodsImg']); ?>" src="/<?php echo ($vo['goodsImg']); ?>" onmousemove="preview(this);"></li><?php endforeach; endif; else: echo "" ;endif; ?>
-						        </ul>
-						      </div>
-						    </div>
-						    <!--缩图结束-->
-						  </div>
-						  <!--产品参数结束-->
-						  <div class='wst-short-tool'>
-						       <div style='float:left;'>商品编号：<?php echo ($goodsDetails["goodsSn"]); ?></div>
-						       <div style='float:right;'>
-						         <a href='javascript:favoriteGoods(<?php echo ($goodsDetails['goodsId']); ?>)'>
-						         <b></b>
-						         <span id='f0_txt' f='<?php echo ($favoriteGoodsId); ?>'>
-						         <?php if($favoriteGoodsId > 0): ?>已关注<?php else: ?>关注商品<?php endif; ?>
-						         </span>
-						         </a>
-						       </div>
-						  </div>
-					</div>
-					<div class="goods-des-box">
-						<table class="goods-des-tab">
-							<tbody>
-								<tr>
-									<td colspan="2">
-										<div class="des-title" style="word-break:break-all;">
-											<?php echo ($goodsDetails["goodsName"]); ?>
-										</div>
-										<div class='wst-goods-spec'><?php echo (htmlspecialchars_decode($goodsDetails["goodsSpec"])); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<td colspan="2">
-										<div class="des-chux">
-											价格：<span id='shopGoodsPrice_<?php echo ($goodsDetails["goodsId"]); ?>' dataId='<?php echo ($goodsDetails["goodsAttrId"]); ?>'>￥<?php echo ($goodsDetails["shopPrice"]); ?></span>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td width="70"><span class="des-title-span">配送至：</span></td>
-									<td>
-										<li id="summary-stock">
-											<div class="dd">
-												<div id="store-selector">
-													<div class="text">
-														<div></div>
-														<b></b>
-													</div>
-												</div><!--store-selector end-->
-												<div id="store-prompt">
-													<strong></strong>
-												</div><!--store-prompt end--->
-											</div>
-										</li>
-										<div class="wst-clear"></div>
-									</td>
-								</tr>
-								<tr>
-									<td width="70"><span class="des-title-span">运费：</span></td>
-									<td><?php echo ($goodsDetails["deliveryStartMoney"]); ?>元起，配送费<?php echo ($goodsDetails["deliveryMoney"]); ?>元，<?php echo ($goodsDetails["deliveryFreeMoney"]); ?>元起免配送费</td>
-								</tr>
-								<tr>
-									<td width="70"><span class="des-title-span">服务：</span></td>
-									<td>由
-									<?php if($goodsDetails['deliveryType'] == 1): echo ($CONF['mallName']); ?>
-									<?php else: ?>
-										<a href="<?php echo U('Home/Shops/toShopHome/',array('shopId'=>$goodsDetails['shopId']));?>"><?php echo ($goodsDetails['shopName']); ?></a><?php endif; ?>
-									配送，并提供售后服务</td>
-								</tr>
-								<?php if( count($goodsAttrs['priceAttrs']) > 0): ?><tr style='height:15px;border-top:1px dashed #ddd;'>
-								   <td colspan='2'></td>
-								</tr>
-								<tr>
-									<td width="70"><span class="des-title-span"><?php echo ($goodsAttrs["priceAttrName"]); ?>：</span></td>
-									<td>
-									 <?php if(is_array($goodsAttrs['priceAttrs'])): $i = 0; $__LIST__ = $goodsAttrs['priceAttrs'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$avo): $mod = ($i % 2 );++$i;?><span class='wst-goods-attrs <?php if( $goodsDetails['goodsAttrId'] == $avo['id']): ?>wst-goods-attrs-on<?php endif; ?>' dataId='<?php echo ($avo["id"]); ?>' onclick='javascript:checkStock(this)'><?php echo ($avo['attrVal']); ?></span><?php endforeach; endif; else: echo "" ;endif; ?>
-									</td>
-								</tr><?php endif; ?>
-								<tr>
-								    <td></td>
-								    <td></td>
-								</tr>
-								<?php if($goodsDetails['shopServiceStatus'] == 1): ?><tr>
-									<td width="70"><span style="display:inline-block;width:70px;">购买数量：</span></td>
-									<td>
-										<div id="haveGoodsToBuy" <?php if($goodsDetails['goodsStock'] <= 0): ?>style="display:none;"<?php endif; ?>>
-											<div class="goods-buy-cnt">
-												<div class="buy-cnt-plus" onclick="changebuynum(1)"></div>
-												<input id="buy-num" type="text" class="buy-cnt-txt" value="1" maxVal="<?php echo ($goodsDetails['goodsStock']); ?>" maxlength="3" onkeypress="return WST.isNumberKey(event);" onkeyup="changebuynum(0);" autocomplete="off"/>
-												<div class="buy-cnt-add" onclick="changebuynum(2)"></div>
-											</div>
-											<div class='wst-goods-stock'>库存：<span id='goodsStock'><?php echo ($goodsDetails['goodsStock']); ?></span><?php echo ($goodsDetails['goodsUnit']); ?></div>
-										</div>
-										<div id="noGoodsToBuy" <?php if($goodsDetails['goodsStock'] > 0): ?>style="display:none;"<?php endif; ?>>
-											<div style="font-weight: bold;">所选地区该商品暂时无货，非常抱歉！</div>
-											<div style="clear: both;"></div>
-											<br />
-											<div>
-												<a id="InitCartUrl" class="btn-append " href="javascript:void(0);" title="">
-													<span>
-														<img src="/Apps/Home/View/default/images/hcat.jpg" />
-													</span>
-												</a>
-											</div>
-										</div>
-									</td>
-								</tr>
-								<?php else: ?>
-								<tr>
-									<td colspan="2">
-										<div class="wst-gdetail-wait">休息中,暂停营业</div>
-									</td>
-								</tr><?php endif; ?>
-								<tr>
-									<td style="position: relative;">
-									<div id='qrBox' style='position:absolute ;top:-50px;left:450px;padding:2px;'>
-										<div id='qrcode' style='width:132px;height:132px;border:1px solid #ddd;margin-bottom:2px;'></div>
-										<div>下载移动客户端扫一扫</div>
-									</div>
-									</td>
-									<td></td>
-								</tr>
-								<?php if($goodsDetails['goodsStock'] > 0): ?><tr>
-									<td width="70"></td>
-									<td>
-										<?php if($comefrom == 1): ?><img src="/Apps/Home/View/default/images/hcat.jpg" />
-										<?php else: ?>
-											<?php if($goodsDetails['shopServiceStatus'] ==1){ ?>
-												<a href="javascript:addCart(<?php echo ($goodsDetails['goodsId']); ?>,0,'<?php echo ($goodsDetails['goodsThums']); ?>')" class="btnCart"><img src="/Apps/Home/View/default/images/btn_buy_01_hover.png" width="112" height="38"/></a>
-												&nbsp;&nbsp;
-												<a href="javascript:addCart(<?php echo ($goodsDetails['goodsId']); ?>,1)" class="btn2Cart">
-													<img src="/Apps/Home/View/default/images/btn_buy_02.png" width="112" height="38"/>
-												</a>
-											<?php }else if($goodsDetails['shopServiceStatus'] ==0){ ?>
-											
-												<img src="/Apps/Home/View/default/images/hcat.jpg" />
-											<?php } endif; ?>
-									</td>
-								</tr><?php endif; ?>
-							</tbody>
-						</table>
-						
-					</div>
-				</div>
-				<div class="details-right">
-					<table class="details-tab">
-						<tbody>
-							<tr>
-								<td class="title">店铺名称：</td>
-								<td><?php echo ($goodsDetails["shopName"]); ?></td>
-							</tr>
-							<tr>
-								<td class="title">营业时间：</td>
-								<td><?php echo ($goodsDetails['serviceStartTime']); ?>-<?php echo ($goodsDetails['serviceEndTime']); ?></td>
-							</tr>
-							<tr>
-								<td class="title">配送说明：</td>
-								<td><?php echo ($goodsDetails["deliveryStartMoney"]); ?>元起，配送费<?php echo ($goodsDetails["deliveryMoney"]); ?>元<br/><?php echo ($goodsDetails["deliveryFreeMoney"]); ?>元起免配送费<br/><br/></td>
-							</tr>
-							<tr>
-								<td class="title">店铺地址：</td>
-								<td><?php echo ($goodsDetails['shopAddress']); ?></td>
-							</tr>
-							<tr>
-								<td class="title">店铺电话：</td>
-								<td><?php echo ($goodsDetails['shopTel']); ?></td>
-							</tr>
-							<?php if($goodsDetails['qqNo'] != ''): ?><tr>
-								<td class="title">&nbsp;QQ咨询：</td>
-								<td>
-									<a href="tencent://message/?uin=<?php echo ($goodsDetails['qqNo']); ?>&Site=QQ交谈&Menu=yes">
-									<img border="0" src="http://wpa.qq.com/pa?p=1:<?php echo ($goodsDetails['qqNo']); ?>:7" alt="QQ交谈" width="71" height="24" />
-									</a><br/>
-								</td>
-							</tr><?php endif; ?>
-							<tr>
-								<td ></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td colspan="2" class="wst-shop-eval">
-									<div class="shop-eval-box" style="width:220px;margin:0 auto;">
-										    <li>商品<br/><?php echo ($shopScores["goodsScore"]); ?></li>
-											<li class="li-center">时效<br/><?php echo ($shopScores["timeScore"]); ?></li>
-											<li>服务<br/><?php echo ($shopScores["serviceScore"]); ?></li>
-										<div class="wst-clear"></div>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td ></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td colspan="2" class="wst-shop-eval">
-									<div class="shop-eval-box" style="width:214px;margin:0 auto;">
-										<a class='wst-shop-btn' href="<?php echo U('Home/Shops/toShopHome/',array('shopId'=>$goodsDetails['shopId']));?>">
-										进入店铺
-										</a>
-										<a class='wst-shop-btn' href="javascript:favoriteShops(<?php echo ($goodsDetails['shopId']); ?>)">
-										<span id='f1_txt' f='<?php echo ($favoriteShopId); ?>'><?php if($favoriteShopId > 0): ?>已关注<?php else: ?>关注店铺<?php endif; ?></span>
-										</a>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="wst-clear"></div>
-			</div>
-			
-			<div class="wst-goods-pdetails">
-				<div class="wst-goods-pdetails-left">
-					<?php echo W('Goods/getHotGoods',array('shopId'=>$goodsDetails['shopId']));?>
-					<?php echo W('Goods/getViewGoods');?>
-				</div>
-				<div id="wst-goods-pdetails-right" class="wst-goods-pdetails-right">
-					<div class="goods-nvg">
-						<ul class="tab">
-							<li onclick="tabs('#wst-goods-pdetails-right',0)" class="curr">商品介绍</li>
-							<?php if( count($goodsAttrs['attrs']) > 0): ?><li onclick="tabs('#wst-goods-pdetails-right',1)">商品属性</li>
-							<li onclick="tabs('#wst-goods-pdetails-right',2)">商品评价</li>
-							<?php else: ?>
-							<li onclick="tabs('#wst-goods-pdetails-right',1)">商品评价</li><?php endif; ?>
-						</ul>
-						<div class="wst-clear"></div>
-					</div>
-					<div class="tabcon">
-						<div id="wst_goods_desc" style="font-weight:bolder;height:auto;line-height:30px;padding-left:8px;">
-						<?php echo ($goodsDetails["goodsDesc"]); ?>
-						</div>
-					</div>
-					<?php if( count($goodsAttrs['attrs']) > 0): ?><div class="tabcon" style="display:none;">
-						<table class='wst-attrs-list'>
-						  <?php if(is_array($goodsAttrs['attrs'])): $i = 0; $__LIST__ = $goodsAttrs['attrs'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['attrContent'] !='' ): ?><tr>
-						    <th nowrap><?php echo ($vo['attrName']); ?>：</th>
-						    <td><?php echo ($vo['attrContent']); ?></td>
-						  </tr><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-						</table>
-					</div><?php endif; ?>
-					<div class="tabcon"  style="display:none;">						
-						<table id="appraiseTab" width="100%">
-							<tr>
-								<td>
-		                      	 	<div style="margin-top: 10px;" id="allgoodsppraises">
-		                           		 请稍等...
-		                        	</div>
-		                        </td>
-		                	</tr>
-	                   	</table>  
-	                   	<div id="wst-page-items" style="text-align:center;margin-top:5px;"></div>                  
-					</div>
-					<div class="wst-clear"></div>
-				</div>
-				<div class="wst-clear"></div>
-			</div>
-			<div class="wst-clear"></div>
 		</div>
 		<div class="wst-footer-fl-box">
 	<div class="wst-footer" >
@@ -744,33 +490,52 @@ var ThinkPHP = window.Think = {
 </script>
    	</body>
    	
-<script src="/Apps/Home/View/default/js/goods.js"></script>
-<script src="/Public/js/common.js"></script>
-<script src="/Apps/Home/View/default/js/head.js" type="text/javascript"></script>
-<script src="/Apps/Home/View/default/js/common.js" type="text/javascript"></script>
-<script src="/Apps/Home/View/default/js/pslocation.js" type="text/javascript"></script>
-<script src="/Apps/Home/View/default/js/jquery.jqzoom.js" type="text/javascript"></script>
-<script src="/Apps/Home/View/default/js/magnifier.js" type="text/javascript"></script>
-<script src="/Public/js/qrcode.js"></script>
-<script> 
-$("#store-selector").hover(function() {
-}, function(){
-	$("#store-selector").removeClass("hover");
-});
+   	<script src="/Apps/Home/View/default/js/shopstreet.js"></script>
+	<script src="/Public/js/common.js"></script>
+	<script src="/Apps/Home/View/default/js/head.js" type="text/javascript"></script>
+	<script src="/Apps/Home/View/default/js/common.js" type="text/javascript"></script>
 
-
-$(function(){
-	var qr = qrcode(10, 'M');
-	qr.addData("<?php echo ($qrcode); ?>");
-	qr.make();
-	$('#qrcode').html(qr.createImgTag());
-	getGoodsappraises(<?php echo ($goodsDetails["goodsId"]); ?>,0);
-	$("#wst_goods_desc img").each(function(){
-		if($(this).width()>940){
-			$(this).width(940);
-		}
-	});
-});
-</script>
-   	
+	<script type="text/javascript">
+	    var changecity_cityinfo;
+	    var cities = new Array();
+	    var city_pinyins = new Array();
+	    var city_first_chart=[["a","b","c","d"],["e","f","g","h","i","j"],["k","l","m","n"],["o","p","q","r","s","t"],["u","v","w","x","y","z"]];
+	    $(document).ready(function () {
+	    	getCitys();
+	    	$(window).unbind('scroll');
+	    });
+	    function getCitys(){
+	    	var provinceId = $("#provinceId").val();
+	    	jQuery.post("<?php echo U('Home/Areas/getCityListByProvince/');?>",{provinceId:provinceId},function(rsp) {
+	    		var json = WST.toJson(rsp);
+	    		var citys = new Array();
+	    		
+	    		for(var i=0;i<json.length;i++){
+	    			var city = json[i];
+	    			if(city.areaId=='<?php echo ($areaId2); ?>'){
+	    				citys.push("<option value='"+city.areaId+"' selected>"+city.areaName+"</option>");
+	    			}else{
+	    				citys.push("<option value='"+city.areaId+"'>"+city.areaName+"</option>");
+	    			}
+	    		}
+	    		if(!json.length){
+	    			citys.push("<option>选择城市</option>");
+	    		}
+	    		$("#cityId").html(citys.join(""));
+	    	});
+	    }
+	    
+	    
+	    /**
+	    * 字母页面内链
+	    */
+	    function letter_scroll(letter) {
+	        var obj = $("#c_" + letter);
+	        if(obj && obj.offset()){
+	       		$('html,body').animate({ scrollTop: obj.offset().top }, 500);
+	        }
+	    }
+	
+	</script>
+	   	
 </html>

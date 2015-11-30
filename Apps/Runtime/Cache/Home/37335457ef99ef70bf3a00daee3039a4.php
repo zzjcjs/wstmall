@@ -1,20 +1,24 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
-<html lang="zh-cn">
-	<head>
-  		<meta charset="utf-8">
-      	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-      	<meta name="viewport" content="width=device-width, initial-scale=1">
-      	<title>用户登录 - <?php echo ($CONF['mallTitle']); ?></title>
-      	<meta name="keywords" content="<?php echo ($CONF['mallKeywords']); ?>" />
-      	<meta name="description" content="<?php echo ($CONF['mallDesc']); ?>,用户登录" />
-     	<link rel="stylesheet" href="/Apps/Home/View/default/css/common.css">
-     	<link rel="stylesheet" href="/Apps/Home/View/default/css/base.css" />
-		<link rel="stylesheet" href="/Apps/Home/View/default/css/head.css" />
-     	<link rel="stylesheet" href="/Apps/Home/View/default/css/login.css">
-     	
-   	</head>
-   	<body>
-   		<script src="/Public/js/jquery.min.js"></script>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><?php echo ($CONFIG['mallTitle']); ?>-系统提示</title>
+	<meta name="description" content="<?php echo ($CONFIG['mallDesc']); ?>" />
+	<meta name="Keywords" content="<?php echo ($CONFIG['mallKeywords']); ?>" />
+
+	<link rel="stylesheet" href="/Apps/Home/View/default/css/common.css" />
+    <link rel="stylesheet" href="/Apps/Home/View/default/css/ordersuccess.css" />
+    <link rel="stylesheet" href="/Apps/Home/View/default/css/base.css" />
+	<link rel="stylesheet" href="/Apps/Home/View/default/css/head.css" />
+    <script src="/Public/js/jquery.min.js"></script>
+    <script src="/Public/js/common.js"></script>
+    <script src="/Apps/Home/View/default/js/index.js"></script>      	
+    <script src="/Apps/Home/View/default/js/common.js"></script>
+</head>
+
+<body class="root61">
+	<script src="/Public/js/jquery.min.js"></script>
 <script src="/Public/plugins/lazyload/jquery.lazyload.min.js?v=1.9.1"></script>
 <script type="text/javascript">
 var ThinkPHP = window.Think = {
@@ -214,52 +218,36 @@ var ThinkPHP = window.Think = {
 			checkCart();
 		});
 		</script>
-   			<div class='wst-login'>
-		    	<div class="w1" id="entry">
-		        	<div class="mc " id="bgDiv" style="position:relative">
-		        	<div><a style="text-decoration: none;font-size:65px;color:red;position:absolute;top:160px;left:60px;" href="<?php echo U('Index/index');?>">用户登录</a></div>
-		            <div class="form">
-		                <div class="item fore1" style="position:relative;">
-		                    <span>用户名/手机号/邮箱</span><span id="errmsg" style="color:red;position:absolute;top:0px;left:100px;"></span>
-		                    <div class="item-ifo">
-		                        <input id="loginName" name="loginName" class="text"  tabindex="1" value="<?php echo ($loginName); ?>" autocomplete="off" type="text"/>
-		                        <div class="i-name ico"></div>                       
-		                    </div>
-		                </div>               
-		                <div class="item fore2">
-		                    <span>密码</span>
-		                    <div class="item-ifo">                       
-		                        <input id="loginPwd" name="loginPwd" value="<?php echo ($loginPwd); ?>" class="text" tabindex="2" autocomplete="off" type="password"/>                      
-		                        <div class="i-pass ico"></div>            
-		                    </div>
-		                </div>
-		                <div class="item fore3 " id="o-authcode">
-		                    <span>验证码</span>
-		                    <div class="item-ifo">
-		                        <input id="verify" style="ime-mode:disabled" name="verify" class="text text-1" tabindex="6" autocomplete="off" maxlength="6" type="text"/>
-			                    <label class="img">
-			                		<img style='vertical-align:middle;cursor:pointer;height:39px;' class='verifyImg' src='/Apps/Home/View/default/images/clickForVerify.png' title='刷新验证码' onclick='javascript:getVerify()'/> 
-								</label>      	
-			              		<label class="ftx23">&nbsp;看不清？<a href="javascript:getVerify()" class="flk13">换一张</a></label>
-		                    </div>
-		                </div>
-		                <div class="item fore4" id="autoentry">
-		                    <div class="item-ifo">
-		                        <input class="checkbox" id="rememberPwd" name="rememberPwd" checked="checked" type="checkbox"/>
-		                        <label class="mar">记住密码</label>                                      
-		                        <label class="mar"><a href="<?php echo U('Users/forgetPass');?>">忘记密码?</a></label>
-		                        <label><a href="javascript:regist();" >免费注册</a></label>
-		                        <div class="clr"></div>
-		                    </div>
-		            	</div>
-		                <div class="item login-btn2013">
-		                    <input class="btn-img btn-entry" id="loginsubmit" value="登录" tabindex="8" onclick="checkLoginInfo();"/>
-		                </div>
-		            </div> 
-		        </div>
-		    </div>
+	<div class="w">
+		<div>
+			<div class="wst-sys-msg-pb">
+					<div class="wst-sys-msg-cb">
+						<div class="wst-sys-msg-vb">
+							<?php if(count($orderInfos) > 0): ?><img src="/Apps/Home/View/default/images/icon-succ.png" alt="" /><?php endif; ?>
+						</div>
+						<div class="wst-sys-msg-cb">
+							<div class="wst-sys-msg-l25">				
+	   							<div class="wst-sys-msg-ub"><?php echo ($msg); ?></div>
+	   						</div>							
+						</div>
+						<div style="clear: both;"></div>
+					</div>					
+					
+					<div style="clear: both;"></div>
+					<div style="margin-top:15px; ">			
+						<div id="checkout" class="wst-checkout" >							
+							<a class="btn-submit" href="/index.php">
+								<span id="saveConsigneeTitleDiv" class="wst_btn-continue"></span>
+							</a>
+							<div style="clear: both;"></div>
+						</div>
+					</div>				
+				</div>							
+			</div>			
 		</div>
-		<div class="wst-footer-fl-box">
+	<div style="clear: both;"></div>
+    <div style="height: 20px;"></div>
+	<div class="wst-footer-fl-box">
 	<div class="wst-footer" >
 		<div class="wst-footer-cld-box">
 			<div class="wst-footer-fl">友情链接：</div>
@@ -330,10 +318,5 @@ var ThinkPHP = window.Think = {
 	</div>
 </div>
 
-		<script src="/Public/plugins/formValidator/formValidator-4.1.3.js"></script>
-      	<script src="/Public/js/common.js"></script>
-      	<script src="/Apps/Home/View/default/js/common.js"></script>
-      	<script src="/Apps/Home/View/default/js/login.js"></script>
-		
-   	</body>
+</body>
 </html>

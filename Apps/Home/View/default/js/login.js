@@ -24,7 +24,7 @@ function checkLoginInfo(){
 		return false;
 	}
 	
-	$.post(Think.U('Home/Users/checkLogin'),{loginName:loginName,loginPwd:loginPwd,verify:verify,rememberPwd:rememberPwd},function(data,textStatus){
+	$.post(Think.U('Users/checkLogin'),{loginName:loginName,loginPwd:loginPwd,verify:verify,rememberPwd:rememberPwd},function(data,textStatus){
 		var json = WST.toJson(data);
 		if(json.status=='1'){
 			location.href=json.refer;
