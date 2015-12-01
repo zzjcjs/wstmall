@@ -920,6 +920,7 @@ $('#cart_num_box').live({
         $(this).removeClass('cur');
     }
 });
+
 $('.nblock').live({
     mouseenter:function() {
         $(this).addClass('current');
@@ -928,6 +929,7 @@ $('.nblock').live({
         $(this).removeClass('current');
     }
 });
+
 $('.dele').live('click',function() {
     var _this = $(this);
     $.ajax({

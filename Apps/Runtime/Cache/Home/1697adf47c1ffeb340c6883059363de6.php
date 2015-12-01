@@ -29,6 +29,8 @@
 
 <script type="text/javascript" src="/Public/js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="/Public/js/jquery.1.11.3.min.js"></script>
+<script type="text/javascript" src="/Public/js/adv.js"></script>
+<script type="text/javascript" src="/Public/js/miytj.js"></script>
 <script type="text/javascript" src="/Public/js/cui.min.js"></script>
 <script type="text/javascript" src="/Public/js/newMiYaPub.js"></script>
 <script type="text/javascript" src="/Public/js/newIndex.js"></script>
@@ -36,8 +38,7 @@
 <script type="text/javascript" src="/Public/js/init.js"></script>
 <script type="text/javascript" src="/Public/js/miyabaobei.js"></script>
 <script type="text/javascript" src="/Public/js/topslide.js"></script>
-<script type="text/javascript" src="/Public/js/adv.js"></script>
-<script type="text/javascript" src="/Public/js/miytj.js"></script>
+<script type="text/javascript" src="/Public/js/regist_act_pop188.js"></script>
 <script type="text/javascript">
     var ThinkPHP = window.Think = {
         "ROOT"   : "",
@@ -597,19 +598,20 @@
         </div>
         <!--END 搜索框 -->
         <ul>
-            <li class="current"><a href="/">今日特卖</a></li>
+            <li class="current"><a href="/mia">今日特卖</a></li>
             <li ><a href="/diapers.html">纸尿裤</a></li>
-            <li class=""> <a href="/formulas.html">奶粉</a>
-                <!--
+            <li class=""><a href="/formulas.html">奶粉</a></li>
+            <li ><a href="/dutyfree.html">免税店</a></li>
+            <li class="tag PubBtnHover"><a href="/zhuanqu">更多专区</a>
                 <div class="showNavCon PubConHover dn">
-                    <a href="/gz_formulas.html">广州保税区</a>
-                    <a href="/formulas.html">宁波保税区</a>
-                    <a href="/licensed.html" class="bdbn">授权行货</a>
+                    <a href="#">用品专区</a>
+                    <a href="#">海淘专区</a>
+                    <a href="#">车床专区</a>
+                    <a href="#">玩具专区</a>
+                    <a href="#">食品专区</a>
+                    <a href="#" class="bdbn">奶具专区</a>
                 </div>
-
-                -->
             </li>
-            <li ><a href="/dutyfree.html">蜜芽免税店</a></li>
             <li class="tag PubBtnHover "> <a href="/guarantee" class="indexPubTop">正品保证</a>
                 <div class="showNavCon PubConHover dn">
                     <a href="/guarantee">正品保证</a>
@@ -625,30 +627,55 @@
         
     <div class="mainSlide" id="mainSlide">
     <div id="topslide">
-
-        <?php if(is_array($banner)): $i = 0; $__LIST__ = $banner;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><div class="cell <?php if($i == 1): ?>cur<?php endif; ?>">
-                <div class="prom" style="background-image:url(<?php echo get_image_url($data['pic_url']);?>);"></div>
-                <div class="w1004">
-                    <a target="_blank" href="<?php echo ($data['link']); ?>" id="" title="/" class="promLink" data-ride="726"></a>
-                </div>
-            </div><?php endforeach; endif; else: echo "" ;endif; ?>
-        </notempty>
-
-
+        <div class="cell">
+            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/1.jpg);"></div>
+            <div class="w1004">
+                <a target="_blank" href="http://www.mia.com/sale/thanDay/main/" id="__AD_focus729" title="" class="promLink" data-ref="729"></a>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/2.jpg);"></div>
+            <div class="w1004">
+                <a target="_blank" href="http://www.mia.com/special/module/index/197/pc/" id="__AD_focus726" title="" class="promLink" data-ref="726"></a>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/3.jpg);"></div>
+            <div class="w1004">
+                <a target="_blank" href="http://www.mia.com/special/module/index/275/pc/" id="__AD_focus727" title="" class="promLink" data-ref="727"></a>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/4.jpg);"></div>
+            <div class="w1004">
+                <a target="_blank" href="http://www.mia.com/special/module/index/272/pc/" id="__AD_focus728" title="" class="promLink" data-ref="728"></a>
+            </div>
+        </div>
+        <div class="cell cur">
+            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/5.jpg);"></div>
+            <div class="w1004">
+                <a target="_blank" href="http://www.mia.com/list-21960.html" id="__AD_focus734" title="" class="promLink" data-ref="734"></a>
+            </div>
+        </div>
     </div>
-
     <div class="pgWidth">
         <div class="w1004">
             <span class="slideNum" id="slideNum">
+                            <i class=""></i>
+                            <i class=""></i>
+                            <i class=""></i>
+                            <i class=""></i>
                             <i class="cur"></i>
-                            <i ></i>
-                            <i ></i>
-                            <i ></i>
-                            <i ></i>
-                        </span>
+            </span>
         </div>
     </div>
-</div>
+    <div class="arNav">
+        <div class="w1004">
+            <a style="display: none;" href="#" class="leftAr"></a>
+            <a style="display: none;" href="#" class="rightAr"></a>
+        </div>
+    </div>
+</div>>
     <div class="today_title w1000"> 今日精选 </div>
 
     <div class="TodaySelected">

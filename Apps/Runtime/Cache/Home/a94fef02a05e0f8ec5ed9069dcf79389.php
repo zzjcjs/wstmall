@@ -1,19 +1,19 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE >
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE>
 <html lang="zh-cn">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>首页 - <?php echo ($CONF['mallTitle']); ?></title>
-<meta name="keywords" content="<?php echo ($CONF['mallKeywords']); ?>" />
-<meta name="description" content="<?php echo ($CONF['mallDesc']); ?>" />
-<link rel="stylesheet" href="/Apps/Home/View/default/css/common.css" />
-<link rel="stylesheet" href="/Apps/Home/View/default/css/index.css" />
-<link rel="stylesheet" href="/Apps/Home/View/default/css/base.css" />
-<link rel="stylesheet" href="/Apps/Home/View/default/css/head.css" />
-</head>
-<body>
-	<script src="/Public/js/jquery.min.js"></script>
+	<head>
+  		<meta charset="utf-8">
+      	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+      	<meta name="viewport" content="width=device-width, initial-scale=1">
+      	<title>商品列表 - <?php echo ($CONF['mallTitle']); ?></title>
+      	<meta name="keywords" content="<?php echo ($CONF['mallKeywords']); ?>" />
+      	<meta name="description" content="<?php echo ($CONF['mallDesc']); ?>,商品分类展示,搜索" />
+      	<link rel="stylesheet" href="/Apps/Home/View/default/css/common.css" />
+     	<link rel="stylesheet" href="/Apps/Home/View/default/css/goodslist.css" />
+     	<link rel="stylesheet" href="/Apps/Home/View/default/css/base.css" />
+		<link rel="stylesheet" href="/Apps/Home/View/default/css/head.css" />	
+   	</head>
+   	<body>
+		<script src="/Public/js/jquery.min.js"></script>
 <script src="/Public/plugins/lazyload/jquery.lazyload.min.js?v=1.9.1"></script>
 <script type="text/javascript">
 var ThinkPHP = window.Think = {
@@ -213,194 +213,166 @@ var ThinkPHP = window.Think = {
 			checkCart();
 		});
 		</script>
-	<!----加载广告start----->
-	<div class="wst-ad">
-		<div class="wst-slide" id="wst-slide">
-			<ul class="wst-slide-items">
-				<?php if(is_array($indexAds)): $k = 0; $__LIST__ = $indexAds;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><li style="z-index: 1;"><a target="_blank" onclick="addAccess(<?php echo ($vo['adId']); ?>)" href="<?php echo ($vo['adURL']); ?>">
-						<img src="/<?php echo ($vo['adFile']); ?>" height="360" width="100%" title="<?php echo ($vo['adName']); ?>" />
-				</a></li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
-		</div>
-	</div>
-	<div class='wst-clear'></div>
+		<input id="c1Id" type="hidden" value="<?php echo ($c1Id); ?>"/>
+		<input id="c2Id" type="hidden" value="<?php echo ($c2Id); ?>"/>
+		<input id="c3Id" type="hidden" value="<?php echo ($c3Id); ?>"/>
 
-	<!----加载商品楼层start----->
-	<div class="wst-container">
-		<!-------------F1层---------------->
-		<?php if(is_array($catList)): $k1 = 0; $__LIST__ = $catList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo1): $mod = ($k1 % 2 );++$k1;?><div class="wst-floor">
-			<div class="wst-fl-left wst-fl<?php echo ($k1); ?>" style="position: relative;">
-				<div
-					style="position: absolute; top: 40px; width: 210px; height: 275px;">
-					<?php if(is_array($catAds[$vo1['catId']])): $kv = 0; $__LIST__ = $catAds[$vo1['catId']];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($kv % 2 );++$kv;?><a onclick="addAccess(<?php echo ($vo['adId']); ?>)" href="<?php echo ($vo['adURL']); ?>" target="_blank"> 
-						<img class='lazyImg' data-original="/<?php echo ($vo['adFile']); ?>" height="275" width="210" title="<?php echo ($vo['adName']); ?>" />
-					</a><?php endforeach; endif; else: echo "" ;endif; ?>
-				</div>
-				<div
-					style="position: absolute; top: 0px; left: 0px; width: 99%; height: 40px; padding-left: 10px; color: #ffffff; line-height: 38px; font-weight: bolder; background: url(/Apps/Home/View/default/images/<?php echo ($k1); ?>fhd.png) no-repeat 100% 100%;">
-					<a
-						href="<?php echo U('Home/Goods/getGoodsList/',array('c1Id'=>$vo1['catId']));?>">
-						<span style="font-size: 18px;">F<?php echo ($k1); ?></span><?php echo ($vo1["catName"]); ?>
-					</a>
-				</div>
-				<div class='wst-cat' style="height: 220px; overflow: hidden;">
-					<?php if(is_array($vo1['catChildren'])): $k2 = 0; $__LIST__ = $vo1['catChildren'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($k2 % 2 );++$k2; if(is_array($vo2['catChildren'])): $k3 = 0; $__LIST__ = $vo2['catChildren'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo3): $mod = ($k3 % 2 );++$k3;?><a href="<?php echo U('Home/Goods/getGoodsList/',array('c1Id'=>$vo1['catId'],'c2Id'=>$vo2['catId'],'c3Id'=>$vo3['catId']));?>">
-							<li class="wst-cat-left"><?php echo ($vo3["catName"]); ?></li>
-							</a><?php endforeach; endif; else: echo "" ;endif; endforeach; endif; else: echo "" ;endif; ?>
+		<input type="hidden" id="msort" value="<?php echo ($msort); ?>"/>   		
+   		<input type="hidden" id="sj" value="<?php echo ($sj); ?>"/>
+		
 
+		<!----加载商品楼层start----->
+		<div class="wst-container">
+			<div class="wst-nvg-title">
+				<a href="<?php echo U('Home/Goods/getGoodsList/',array('c1Id'=>$goodsNav[0]['catId']));?>"><?php echo ($goodsNav[0]["catName"]); ?></a>
+				<?php if($goodsNav[1]['catId'] > 0): ?>&nbsp;>&nbsp;<a href="<?php echo U('Home/Goods/getGoodsList/',array('c1Id'=>$goodsNav[0]['catId'],'c2Id'=>$goodsNav[1]['catId']));?>"><?php echo ($goodsNav[1]["catName"]); ?></a><?php endif; ?>
+				<?php if($goodsNav[2]['catId'] > 0): ?>&nbsp;>&nbsp;<a href="<?php echo U('Home/Goods/getGoodsList/',array('c1Id'=>$goodsNav[0]['catId'],'c2Id'=>$goodsNav[1]['catId'],'c3Id'=>$goodsNav[2]['catId']));?>"><?php echo ($goodsNav[2]["catName"]); ?></a><?php endif; ?>
+			</div>
+			<!-------------商品筛选栏---------------->
+			<div class="wst-goods-search" style="">
+				<div class="search-title" style="">商品筛选</div>
+				<div class="search-panel">
+					<div class="search-box">
+						<div class="search-items">
+							<div class="items-title">配送区域：</div>
+							<div id="wst-areas" class="items">
+								<li id="city_0" <?php if($areaId3 == 0): ?>class="searched"<?php endif; ?> data="0" onClick="queryGoods(this,1);">全部</li>
+								<?php if(is_array($districts)): $k = 0; $__LIST__ = $districts;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><li id="city_<?php echo ($vo['areaId']); ?>" <?php if($vo['areaId'] == $areaId3): ?>class="searched"<?php endif; ?> data="<?php echo ($vo['areaId']); ?>" onClick="queryGoods(this,1);"><?php echo ($vo["areaName"]); ?></li><?php endforeach; endif; else: echo "" ;endif; ?>
+								<div class="wst-clear"></div>
+							</div>
+							<div class="wst-clear"></div>
+						</div>
+						<?php if($areaId3 > 0): ?><div class="wst-area-country">
+							<div id="wst-communitys" class="items">
+								<li <?php if($communityId == 0): ?>class="searched"<?php endif; ?> data="0" onClick="queryGoods(this,2);">全部</li>
+								<?php if(is_array($communitys)): $k = 0; $__LIST__ = $communitys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><li id="community_<?php echo ($vo['communityId']); ?>" <?php if($vo['communityId'] == $communityId): ?>class="searched"<?php endif; ?> data="<?php echo ($vo['communityId']); ?>" onClick="queryGoods(this,2);"><?php echo ($vo["communityName"]); ?></li><?php endforeach; endif; else: echo "" ;endif; ?>
+								<div class="wst-clear"></div>
+							</div>
+							<div class="wst-clear"></div>
+						</div><?php endif; ?>
+					</div>
+				</div>
+				<div class="search-panel">
+					<div class="search-box">
+						<div class="search-items">
+							<div class="items-title">商品品牌：</div>
+							<div id="wst-brand" class="items" >
+								<input type="hidden" id="bs" value="<?php echo ($bs); ?>">
+								<div id="wst-brand-tp" onclick="tohide(this,'wst-brand');">&nbsp;显示&nbsp;</div>
+								<li <?php if($brandId == 0): ?>class="searched"<?php endif; ?> data="0" onClick="queryGoods(this,3);">全部</li>
+								<?php if(is_array($brands)): $i = 0; $__LIST__ = $brands;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li id="brand_<?php echo ($vo['brandId']); ?>" <?php if($vo['brandId'] == $brandId): ?>class="searched"<?php endif; ?> data="<?php echo ($vo['brandId']); ?>" onClick="queryGoods(this,3);"><?php echo ($vo['brandName']); ?></li><?php endforeach; endif; else: echo "" ;endif; ?>
+								<div class="wst-clear"></div>
+							</div>
+							<div class="wst-clear"></div>
+						</div>
+					</div>
+				</div>
+				<div class="search-panel">
+					<div class="search-box">
+						<div class="search-items">
+							<div class="items-title">价格区间：</div>
+							<div id="wst-price" class="items">
+								<li <?php if($priceId == ''): ?>class="searched"<?php endif; ?> data="" onClick="queryGoods(this,4);">全部</li>
+								<?php if(is_array($prices)): foreach($prices as $key2=>$price): ?><li id="price_<?php echo ($key2); ?>" <?php if(($key2) == $priceId): ?>class="searched"<?php endif; ?> data="<?php echo ($key2); ?>" onClick="queryGoods(this,4);"><?php echo ($price); ?>元</li><?php endforeach; endif; ?>
+								
+								<div class="wst-clear"></div>
+							</div>
+							<div class="wst-clear"></div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<!-----------------------商品列表---------------------------->
+			<div class="wst-goods-list">
+				<div class="wst-goods-header">
+					<!--li>综合排序<?php echo ($rq); ?></li-->
+					
+					<!-- li <?php if($msort == 1): ?>class="licurr"<?php endif; ?> onclick="queryGoods(this,1);">综合排序<s <?php if($msort == 1): ?>class="bscurr"<?php endif; ?>></s></li> -->
+					<li <?php if($msort == 6): ?>class="licurr"<?php endif; ?> onclick="queryGoods(this,6);">人气<s <?php if($msort == 6): ?>class="bscurr"<?php endif; ?>></s></li>
+					<li <?php if($msort == 7): ?>class="licurr"<?php endif; ?> onclick="queryGoods(this,7);">销量<s <?php if($msort == 7): ?>class="bscurr"<?php endif; ?>></s></li>
+					<li <?php if($msort == 8 or $msort == 9): ?>class="licurr"<?php endif; ?> onclick="queryGoods(this,8);">价格<b <?php if($msort == 8): ?>class="bscurr"<?php endif; if($msort == 9): ?>class="bscurr_up"<?php endif; ?>></b></li>
+					<li <?php if($msort == 10): ?>class="licurr"<?php endif; ?> onclick="queryGoods(this,10);">好评度<s <?php if($msort == 10): ?>class="bscurr"<?php endif; ?>></s></li>
+					<li <?php if($msort == 11): ?>class="licurr"<?php endif; ?> onclick="queryGoods(this,11);">上架时间<s <?php if($msort == 11): ?>class="bscurr"<?php endif; ?>></s></li>
+					<div style="float:left;position: relative;">
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<s class="rmb1"></s>
+						<s class="rmb2"></s>
+						<input type="text" class="wst-glist-price" id="sprice" value="<?php echo ($sprice); ?>"/>-
+						<input type="text" class="wst-glist-price" id="eprice" value="<?php echo ($eprice); ?>"/>
+						<button class="wst-glist-cofm" onclick="queryGoods(this,12);">确定</button>
+					</div>
+					<div class="wst-clear"></div>
+				</div>
+				<div class="wst-goods-page">
+					<?php if(is_array($pages['root'])): $key = 0; $__LIST__ = $pages['root'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$goods): $mod = ($key % 2 );++$key;?><li class="wst-goods-item">
+						<div class="goods-img">
+							<a href="<?php echo U('Home/Goods/getGoodsDetails/',array('goodsId'=>$goods['goodsId']));?>">
+							<img class='lazyImg' data-original="/<?php echo ($goods['goodsThums']); ?>" width="180" />
+							</a>
+						</div>
+						<div class="goods-des">
+							<div class="goods-title">
+								<a href="<?php echo U('Home/Goods/getGoodsDetails/',array('goodsId'=>$goods['goodsId']));?>"><?php echo ($goods['goodsName']); ?></a>
+							</div>
+							<div class="goods-price"><span class="span1" id="shopGoodsPrice_<?php echo ($goods['goodsId']); ?>" dataId="<?php echo ($goods['goodsAttrId']); ?>">￥<?php echo ($goods['shopPrice']); ?></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="span2">￥<?php echo ($goods['marketPrice']); ?></span></div>
+							<div class="goods-buy">
+								<div class="goods-left">
+									<span style="color:green;font-weight:bolder;margin-left:2px;"><?php echo ($goods["saleCount"]); ?></span>人已购买
+								</div>
+								<div class="goods-right">
+								    <?php if($goods['goodsStock'] > 0): ?><a href="javascript:addCart(<?php echo ($goods['goodsId']); ?>,0,'<?php echo ($goods['goodsThums']); ?>')" class="btnCart">
+										<img src="/Apps/Home/View/default/images/btn_addcart.png" width="85"/>
+										</a>
+									<?php else: ?>
+									    &nbsp;&nbsp;&nbsp;&nbsp;<font color='red'>(暂无商品)</font><?php endif; ?>
+								</div>
+								<div class="wst-clear"></div>
+							</div>
+						</div>
+					</li><?php endforeach; endif; else: echo "" ;endif; ?>
+					<div class="wst-clear"></div>
 				</div>
 			</div>
-			<div class="wst-fl-right">
-				<div class="wst-fl-nvg<?php echo ($k1); ?>">
-					<ul>
-						<li id="fl_<?php echo ($k1); ?>_0" style="line-height: 32px; width: 100px;"
-							onmouseover="gpanelOver(this);">精品推荐</li>
-						<?php if(is_array($vo1['catChildren'])): $k2 = 0; $__LIST__ = $vo1['catChildren'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($k2 % 2 );++$k2;?><li id="fl_<?php echo ($k1); ?>_<?php echo ($k2); ?>" style="line-height: 32px; width: 100px;"
-							onmouseover="gpanelOver(this);"><?php echo ($vo2["catName"]); ?></li><?php endforeach; endif; else: echo "" ;endif; ?>
-					</ul>
-				</div>
-				<div>
-
-					<div id="fl_<?php echo ($k1); ?>_0_pl" class="wst-goods-container">
-						<?php if(is_array($vo1['jpgoods'])): $k2 = 0; $__LIST__ = $vo1['jpgoods'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($k2 % 2 );++$k2;?><li class="wst-goodsbox">
-							<div class="wst-goods-thumb">
-								<a
-									href="<?php echo U('Home/Goods/getGoodsDetails/',array('goodsId'=>$vo2['goodsId']));?>">
-									<img class='lazyImg' data-original="/<?php echo ($vo2['goodsThums']); ?>" width="180" />
-								</a>
-							</div>
-							<div class="wst-goods-thumb-des">
-								<div class="goodsname">
-								<a class="wst-goods-name"
-									href="<?php echo U('Home/Goods/getGoodsDetails/',array('goodsId'=>$vo2['goodsId']));?>"><?php echo ($vo2['goodsName']); ?></a>
-								</div>
-								<div>
-									<em class="wst-left wst-goods-price" id='shopGoodsPrice_<?php echo ($vo2["goodsId"]); ?>' dataId='<?php echo ($vo2["goodsAttrId"]); ?>'>￥<?php echo (number_format($vo2['shopPrice'],2)); ?></em>
-									<a href="javascript:addCart(<?php echo ($vo2['goodsId']); ?>,0,'<?php echo ($vo2['goodsThums']); ?>')" class="wst-right btnCart"> 
-									<img src="/Apps/Home/View/default/images/btn_addcart.png" width="85" />
-									</a>
-									<div class='wst-clear'></div>
-								</div>
-							</div>
-						</li><?php endforeach; endif; else: echo "" ;endif; ?>
-						<div class='wst-clear'></div>
-					</div>
-
-
-					<?php if(is_array($vo1['catChildren'])): $k2 = 0; $__LIST__ = $vo1['catChildren'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($k2 % 2 );++$k2;?><div id="fl_<?php echo ($k1); ?>_<?php echo ($k2); ?>_pl" class="wst-goods-container"
-						style="display: none;">
-						<?php if(is_array($vo2['goods'])): $k3 = 0; $__LIST__ = $vo2['goods'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo3): $mod = ($k3 % 2 );++$k3;?><li class="wst-goodsbox">
-							<div class="wst-goods-thumb">
-								<a
-									href="<?php echo U('Home/Goods/getGoodsDetails/',array('goodsId'=>$vo3[goodsId]));?>">
-									<img class='lazyImg' data-original="/<?php echo ($vo3['goodsThums']); ?>" width="180" />
-								</a>
-							</div>
-							<div class="wst-goods-thumb-des">
-								<div class="goodsname">
-									<a class="wst-goods-name"
-										href="<?php echo U('Home/Goods/getGoodsDetails/',array('goodsId'=>$vo3[goodsId]));?>"><?php echo ($vo3['goodsName']); ?></a>
-								</div>
-								<div>
-									<em class="wst-left wst-goods-price" id='shopGoodsPrice_<?php echo ($vo3["goodsId"]); ?>' dataId='<?php echo ($vo3["goodsAttrId"]); ?>'>￥<?php echo (number_format($vo3['shopPrice'],2)); ?></em>
-									<a href="javascript:addCart(<?php echo ($vo3['goodsId']); ?>,0,'<?php echo ($vo3['goodsThums']); ?>')" class="wst-right btnCart" > <img
-										src="/Apps/Home/View/default/images/btn_addcart.png"
-										width="85" />
-									</a>
-									<div class='wst-clear'></div>
-								</div>
-							</div>
-							
-						</li><?php endforeach; endif; else: echo "" ;endif; ?>
-						<div class='wst-clear'></div>
-					</div><?php endforeach; endif; else: echo "" ;endif; ?>
-					<div style="float: right; width: 180px; height: 180px;">
-						<?php if(is_array($vo1['recommendShops'])): $k2 = 0; $__LIST__ = $vo1['recommendShops'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($k2 % 2 );++$k2;?><div style="width: 180px; margin-top: 10px;">
-							<div style="width: 180px;">
-								<a
-									href="<?php echo U('Home/Shops/toShopHome/',array('shopId'=>$vo2['shopId']));?>">
-									<img class='lazyImg' data-original="/<?php echo ($vo2['shopImg']); ?>" height="120" width="180" />
-								</a>
-							</div>
-						</div><?php endforeach; endif; else: echo "" ;endif; ?>
-					</div>
-				</div>
-			</div>
-			<div style="clear: both; font-size: 0px;"></div>
-		</div><?php endforeach; endif; else: echo "" ;endif; ?>
-	</div>
-	<div class="wst-footer-fl-box">
-	<div class="wst-footer" >
-		<div class="wst-footer-cld-box">
-			<div class="wst-footer-fl">友情链接：</div>
-			<div style="padding-left:30px;">
-				<?php if(is_array($friendLikds)): $k = 0; $__LIST__ = $friendLikds;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><div style="float:left;"><a href="<?php echo ($vo["friendlinkUrl"]); ?>" target="_blank"><?php echo ($vo["friendlinkName"]); ?></a>&nbsp;&nbsp;</div><?php endforeach; endif; else: echo "" ;endif; ?>
-				<div class="wst-clear"></div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="wst-footer-hp-box">
-	<div class="wst-footer">
-		<div class="wst-footer-hp-ck1">
-			<?php if(is_array($helps)): $k1 = 0; $__LIST__ = $helps;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo1): $mod = ($k1 % 2 );++$k1;?><div class="wst-footer-wz-ca">
-				<div class="wst-footer-wz-pt">
-				    <img src="/Apps/Home/View/default/images/a<?php echo ($k1); ?>.jpg" height="18" width="18"/>
-					<span class="wst-footer-wz-pn"><?php echo ($vo1["catName"]); ?></span>
-					<div style='margin-left:30px;'>
-						<?php if(is_array($vo1['articlecats'])): $k2 = 0; $__LIST__ = $vo1['articlecats'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($k2 % 2 );++$k2;?><a href="<?php echo U('Home/Articles/index/',array('articleId'=>$vo2['articleId']));?>"><?php echo ($vo2['articleTitle']); ?></a><br/><?php endforeach; endif; else: echo "" ;endif; ?>
-					</div>
-				</div>
-			</div><?php endforeach; endif; else: echo "" ;endif; ?>
-			
-			<div class="wst-footer-wz-clt">
-				<div style="padding-top:5px;line-height:25px;">
-				    <img src="/Apps/Home/View/default/images/a6.jpg" height="18" width="18"/>
-					<span class="wst-footer-wz-kf">联系客服</span>
-					<div style='margin-left:30px;'>
-						<a href="#">联系电话</a><br/>
-						<?php if($CONF['phoneNo'] != ''): ?><span class="wst-footer-pno"><?php echo ($CONF['phoneNo']); ?></span><br/><?php endif; ?>
-						<?php if($CONF['qqNo'] != ''): ?><a href="tencent://message/?uin=<?php echo ($CONF['qqNo']); ?>&Site=QQ交谈&Menu=yes">
-						<img border="0" src="http://wpa.qq.com/pa?p=1:<?php echo ($CONF['qqNo']); ?>:7" alt="QQ交谈" width="71" height="24" />
-						</a><br/><?php endif; ?>
-						
-					</div>
-				</div>
+			<div class="wst-page" style="text-align:center;">
+				<div id="wst-page-items"></div>
 			</div>
 			<div class="wst-clear"></div>
 		</div>
-	    
-		<div class="wst-footer-hp-ck2">
-			<img src="/Apps/Home/View/default/images/alipay.jpg" height="40" width="120"/>支付宝签约商家&nbsp;|&nbsp;
-			<span class="wst-footer-frd">正品保障</span><span >100%原产地</span>&nbsp;|&nbsp;
-			<span class="wst-footer-frd">7天退货保障</span>购物无忧&nbsp;|&nbsp;
-			<span class="wst-footer-frd">免费配送</span>满98包邮&nbsp;|&nbsp;
-			<span class="wst-footer-frd">货到付款</span>400城市送货上门
-		</div>
-	    <div class="wst-footer-hp-ck3">
-	        <div class="links"> 
-	            <?php $_result=WSTNavigation(1);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a rel="nofollow" <?php if($vo['isOpen'] == 1): ?>target="_blank"<?php endif; ?> href="<?php echo ($vo['navUrl']); ?>"><?php echo ($vo['navTitle']); ?></a>&nbsp;<?php if($vo['end'] == 0): ?>|&nbsp;<?php endif; endforeach; endif; else: echo "" ;endif; ?>
-	        </div>
-	        
-	        <div class="copyright">
-	         
-	         <?php if($CONF['mallFooter']!=''){ echo htmlspecialchars_decode($CONF['mallFooter']); } ?>
-	      	<?php if($CONF['visitStatistics']!=''){ echo htmlspecialchars_decode($CONF['visitStatistics'])."<br/>"; } ?>
-	        <?php if($CONF['mallLicense'] ==''): ?><div>
-				Copyright©2015 Powered By <a target="_blank" href="http://www.wstmall.com">WSTMall</a>
-			</div>
-			<?php else: ?>
-				<div id="wst-mallLicense" data='1' style="display:none;">Copyright©2015 Powered By <a target="_blank" href="http://www.wstmall.com">WSTMall</a></div><?php endif; ?>
-	        </div>
-	    	
-	        	 
-	     
-	    </div>
-	</div>
-</div>
-
-	<link rel="stylesheet" type="text/css" href="/Apps/Home/View/default/css/cart.css" />
+	<script src="/Public/js/common.js"></script>
+	<script src="/Public/plugins/layer/layer.min.js"></script>
+	<script src="/Apps/Home/View/default/js/head.js" type="text/javascript"></script>
+	<script src="/Apps/Home/View/default/js/common.js" type="text/javascript"></script>
+	<script src="/Apps/Home/View/default/js/goods.js"></script>
+	<script>
+	<?php if($bs == 1): ?>$("#wst-brand-tp").click();<?php endif; ?>
+	<?php if($pages['totalPage'] > 1): ?>laypage({
+	    cont: 'wst-page-items',
+	    pages: <?php echo ($pages["totalPage"]); ?>, //总页数
+	    skip: true, //是否开启跳页
+	    skin: '#e23e3d',
+	    groups: 3, //连续显示分页数
+	    curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+	        var page = location.search.match(/pcurr=(\d+)/);
+	        return page ? page[1] : 1;
+	    }(), 
+	    jump: function(e, first){ //触发分页后的回调
+	        if(!first){ //一定要加此判断，否则初始时会无限刷新
+	        	var nuewurl = WST.splitURL("pcurr");
+	        	var ulist = nuewurl.split("?");
+	        	if(ulist.length>1){
+	        		location.href = nuewurl+'&pcurr='+e.curr;
+	        	}else{
+	        		location.href = '?pcurr='+e.curr;
+	        	}
+	            
+	        }
+	    }
+	});<?php endif; ?>
+	
+	</script>
+		
+		<link rel="stylesheet" type="text/css" href="/Apps/Home/View/default/css/cart.css" />
 <script src="/Apps/Home/View/default/js/login.js"></script>
 <script type="text/javascript" src="/Apps/Home/View/default/js/cart/common.js?v=725"></script>
 <script type="text/javascript" src="/Apps/Home/View/default/js/cart/quick_links.js"></script>
@@ -572,12 +544,76 @@ var ThinkPHP = window.Think = {
 		document.location.href = "<?php echo U('Home/Orders/queryByPage/');?>";
 	}
 </script>
-	<script src="/Public/js/common.js"></script>
-    <script src="/Apps/Home/View/default/js/index.js"></script>
-    <script src="/Apps/Home/View/default/js/common.js"></script>
-    <script src="/Apps/Home/View/default/js/global.js" type="text/javascript"></script>
-    <script src="/Apps/Home/View/default/js/head.js" type="text/javascript"></script>
-    <script src="/Apps/Home/View/default/js/goods.js" type="text/javascript"></script>
-</body>
+		<div class="wst-footer-fl-box">
+	<div class="wst-footer" >
+		<div class="wst-footer-cld-box">
+			<div class="wst-footer-fl">友情链接：</div>
+			<div style="padding-left:30px;">
+				<?php if(is_array($friendLikds)): $k = 0; $__LIST__ = $friendLikds;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><div style="float:left;"><a href="<?php echo ($vo["friendlinkUrl"]); ?>" target="_blank"><?php echo ($vo["friendlinkName"]); ?></a>&nbsp;&nbsp;</div><?php endforeach; endif; else: echo "" ;endif; ?>
+				<div class="wst-clear"></div>
+			</div>
+		</div>
+	</div>
+</div>
 
+<div class="wst-footer-hp-box">
+	<div class="wst-footer">
+		<div class="wst-footer-hp-ck1">
+			<?php if(is_array($helps)): $k1 = 0; $__LIST__ = $helps;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo1): $mod = ($k1 % 2 );++$k1;?><div class="wst-footer-wz-ca">
+				<div class="wst-footer-wz-pt">
+				    <img src="/Apps/Home/View/default/images/a<?php echo ($k1); ?>.jpg" height="18" width="18"/>
+					<span class="wst-footer-wz-pn"><?php echo ($vo1["catName"]); ?></span>
+					<div style='margin-left:30px;'>
+						<?php if(is_array($vo1['articlecats'])): $k2 = 0; $__LIST__ = $vo1['articlecats'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($k2 % 2 );++$k2;?><a href="<?php echo U('Home/Articles/index/',array('articleId'=>$vo2['articleId']));?>"><?php echo ($vo2['articleTitle']); ?></a><br/><?php endforeach; endif; else: echo "" ;endif; ?>
+					</div>
+				</div>
+			</div><?php endforeach; endif; else: echo "" ;endif; ?>
+			
+			<div class="wst-footer-wz-clt">
+				<div style="padding-top:5px;line-height:25px;">
+				    <img src="/Apps/Home/View/default/images/a6.jpg" height="18" width="18"/>
+					<span class="wst-footer-wz-kf">联系客服</span>
+					<div style='margin-left:30px;'>
+						<a href="#">联系电话</a><br/>
+						<?php if($CONF['phoneNo'] != ''): ?><span class="wst-footer-pno"><?php echo ($CONF['phoneNo']); ?></span><br/><?php endif; ?>
+						<?php if($CONF['qqNo'] != ''): ?><a href="tencent://message/?uin=<?php echo ($CONF['qqNo']); ?>&Site=QQ交谈&Menu=yes">
+						<img border="0" src="http://wpa.qq.com/pa?p=1:<?php echo ($CONF['qqNo']); ?>:7" alt="QQ交谈" width="71" height="24" />
+						</a><br/><?php endif; ?>
+						
+					</div>
+				</div>
+			</div>
+			<div class="wst-clear"></div>
+		</div>
+	    
+		<div class="wst-footer-hp-ck2">
+			<img src="/Apps/Home/View/default/images/alipay.jpg" height="40" width="120"/>支付宝签约商家&nbsp;|&nbsp;
+			<span class="wst-footer-frd">正品保障</span><span >100%原产地</span>&nbsp;|&nbsp;
+			<span class="wst-footer-frd">7天退货保障</span>购物无忧&nbsp;|&nbsp;
+			<span class="wst-footer-frd">免费配送</span>满98包邮&nbsp;|&nbsp;
+			<span class="wst-footer-frd">货到付款</span>400城市送货上门
+		</div>
+	    <div class="wst-footer-hp-ck3">
+	        <div class="links"> 
+	            <?php $_result=WSTNavigation(1);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a rel="nofollow" <?php if($vo['isOpen'] == 1): ?>target="_blank"<?php endif; ?> href="<?php echo ($vo['navUrl']); ?>"><?php echo ($vo['navTitle']); ?></a>&nbsp;<?php if($vo['end'] == 0): ?>|&nbsp;<?php endif; endforeach; endif; else: echo "" ;endif; ?>
+	        </div>
+	        
+	        <div class="copyright">
+	         
+	         <?php if($CONF['mallFooter']!=''){ echo htmlspecialchars_decode($CONF['mallFooter']); } ?>
+	      	<?php if($CONF['visitStatistics']!=''){ echo htmlspecialchars_decode($CONF['visitStatistics'])."<br/>"; } ?>
+	        <?php if($CONF['mallLicense'] ==''): ?><div>
+				Copyright©2015 Powered By <a target="_blank" href="http://www.wstmall.com">WSTMall</a>
+			</div>
+			<?php else: ?>
+				<div id="wst-mallLicense" data='1' style="display:none;">Copyright©2015 Powered By <a target="_blank" href="http://www.wstmall.com">WSTMall</a></div><?php endif; ?>
+	        </div>
+	    	
+	        	 
+	     
+	    </div>
+	</div>
+</div>
+
+   	</body>
 </html>
