@@ -159,83 +159,111 @@ var ThinkPHP = window.Think = {
             </div>
             <div class='wst-content'>
             
-   <script>
-   $(function () {
-	   $.formValidator.initConfig({
-		   theme:'Default',mode:'AutoTip',formID:"myform",debug:true,submitOnce:true,onSuccess:function(){
-			   editAddress();
-			   return false;
-			},onError:function(msg){
-		}});
-	   <?php if($object['addressId'] != 0): ?>getAreaList('areaId2','<?php echo ($object['areaId1']); ?>',0,'<?php echo ($object['areaId2']); ?>');
-	   getAreaList("areaId3",'<?php echo ($object["areaId2"]); ?>',1,'<?php echo ($object["areaId3"]); ?>');
-	   getCommunitys('<?php echo ($object["areaId3"]); ?>','<?php echo ($object["communityId"]); ?>');<?php endif; ?>
-   });
-  
-   </script>
-   <div class="wst-body"> 
-       <div class='wst-page-header'>买家中心 > <?php if($object['addressId'] == 0): ?>新增<?php else: ?>修改<?php endif; ?>地址</div>
-       <div class='wst-page-content'>
-       <input type='hidden' id='id' value='<?php echo ($object['addressId']); ?>'/>
-       <form name="myform" method="post" id="myform" autocomplete="off">
-        <table class="table table-hover table-striped table-bordered wst-form">
-           <tr>
-             <th align='right'>区县<font color='red'>*</font>：</th>
-             <td>
-             <select id='areaId1' onchange='javascript:getAreaList("areaId2",this.value,0)'>
-               <option value=''>请选择</option>
-               <?php if(is_array($areaList)): $i = 0; $__LIST__ = $areaList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value='<?php echo ($vo['areaId']); ?>' <?php if($object['areaId1'] == $vo['areaId'] ): ?>selected<?php endif; ?>><?php echo ($vo['areaName']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-             </select>
-             <select id='areaId2' onchange='javascript:getAreaList("areaId3",this.value,1);'>
-               <option value=''>请选择</option>
-             </select>
-             <select id='areaId3' onchange="javascript:getCommunitys(this.value,'<?php echo ($vo['communityId']); ?>')">
-               <option value=''>请选择</option>
-             </select>
 
-             </td>
-           </tr>
-           <tr>
-             <th align='right'>详细地址 <font color='red'>*</font>：</th>
-             <td>
-             <input type='address' id='address' name='address'  value='<?php echo ($object['address']); ?>' style='width:350px;'/>
-             </td>
-           </tr>
-           <tr>
-             <th align='right'>联系人名称 <font color='red'>*</font>：</th>
-             <td>
-             <input type='text' id='userName' name='userName'  value='<?php echo ($object['userName']); ?>'/>
-             </td>
-           </tr>
-           <tr>
-             <th align='right'>联系人电话 <font color='red'>*</font>：</th>
-             <td>
-             	手机:<input type='text' maxlength="11" id='userPhone' name='userPhone' value='<?php echo ($object['userPhone']); ?>' onkeyup="javascript:WST.isChinese(this,1)" onkeypress="return WST.isNumberdoteKey(event)"/>
-             		或&nbsp;&nbsp;&nbsp;&nbsp;固定电话<input type='text' id='userTel' name='userTel' value='<?php echo ($object['userTel']); ?>' onkeyup="javascript:WST.isChinese(this,1)" />
-             	(例：020-88888888)
-             </td>
-           </tr>
-           <tr>
-             <th align='right'>是否默认地址 <font color='red'>*</font>：</th>
-             <td>
-             <label>
-               <input type='radio' id='isDefault1' name='isDefault' value='1' <?php if($object['isDefault'] == 1): ?>checked<?php endif; ?>/>是
-             </label>
-             <label>
-               <input type='radio' id='isDefault0' name='isDefault' value='0' <?php if($object['isDefault'] == 0): ?>checked<?php endif; ?>/>否
-             </label>
-             </td>
-           </tr>
-           <tr>
-             <td colspan='2' style='padding-left:250px;'>
-                 <button class='wst-btn-query' type="submit">保&nbsp;存</button>
-                 <button class='wst-btn-query' type="reset">重&nbsp;置</button>
-             </td>
-           </tr>
+    <div class="wst-body"> 
+       <div class='wst-page-header'>买家中心 > 拒收/退款</div>
+       <div class='wst-page-content'>
+        <div style="padding-bottom:4px;">
+       		订单编号:<input id="orderNo" value="<?php echo ($params['orderNo']); ?>" style="width:80px;" autocomplete="off"/>
+       		店铺名称:<input id="shopName" value="<?php echo ($params['shopName']); ?>" style="width:80px;" autocomplete="off"/>
+       		收货人:<input id="userName" value="<?php echo ($params['userName']); ?>" style="width:80px;" autocomplete="off"/>
+       		<button class="wst-btn-query" onclick="javascript:getOrdersList(6)">查询</button>
+       	</div>
+        <table class='wst-list' style="font-size:13px;">
+           <thead>
+             <tr>
+               <th width='80'>订单编号</th>
+               <th width='*'>商品信息</th>
+               <th width='100'>店铺名称</th>
+               <th width='100'>收货人</th>
+               <th width='100'>订单金额</th>
+               <th width='100'>下单时间</th>
+               <th width='140'>状态</th>
+               <th width='60'>操作</th>
+             </tr>
+           </thead>
+           <tbody>
+            <?php if(is_array($receiveOrders['root'])): $key1 = 0; $__LIST__ = $receiveOrders['root'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$order): $mod = ($key1 % 2 );++$key1;?><tr>
+             	<td width='80' style="padding-top:10px;vertical-align:top;"><?php echo ($order["orderNo"]); ?></td>
+                <td width='*'>
+					<?php if(is_array($order['goodslist'])): $key2 = 0; $__LIST__ = $order['goodslist'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$goods): $mod = ($key2 % 2 );++$key2;?><a href="<?php echo U('Home/Goods/getGoodsDetails/',array('goodsId'=>$goods['goodsId']));?>">
+							<img src="/<?php echo ($goods['goodsThums']); ?>" height="50" width="50" class='wst-goods-tb'/>
+						</a><?php endforeach; endif; else: echo "" ;endif; ?>
+				</td>
+				<td width='100' style="padding-top:10px;vertical-align:top;"><a href="<?php echo U('Home/Shops/toShopHome/',array('shopId'=>$goodsDetails['shopId']));?>" target="_blank"><?php echo ($order["shopName"]); ?></a></td>
+               	<td width='100'><?php echo ($order["userName"]); ?></td>
+               	<td width='100'><?php echo ($order["totalMoney"]); ?></td>
+               	<td width='140'><div style="line-height:20px;"><?php echo ($order["createTime"]); ?></div></td>
+               	<td width='60'>
+               	    <?php if($order["orderStatus"]==-3){ ?>
+               	    用户拒收
+               	    <?php }else if($order["orderStatus"]==-4){ ?>
+               	    商家确认拒收
+	               	    <?php if($order["payType"]==1){ ?>
+	               	       <?php if($order["isRefund"]==1){ ?>
+	               	       (已退款)
+	               	       <?php }else{ ?>
+	               	       (未退款)
+	               	       <?php } ?>
+	               	    <?php } ?>
+               	    <?php }else if($order["orderStatus"]==-5){ ?>
+               	    商家不同意拒收
+               	    <?php }else if($order["orderStatus"]==-6 || $order["orderStatus"]==-1 || $order["orderStatus"]==-7){ ?>
+               	    用户取消
+	               	    <?php if($order["payType"]==1){ ?>
+	               	       <?php if($order["isRefund"]==1){ ?>
+	               	       (已退款)
+	               	       <?php }else{ ?>
+	               	       (未退款)
+	               	       <?php } ?>
+	               	    <?php } ?>
+               	    <?php } ?>
+               	</td>
+               	<td width='100'>
+					<a href="javascript:;" onclick="showOrder('<?php echo ($order["orderId"]); ?>')">查看</a>
+				</td>
+             </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+             <?php if($receiveOrders['totalPage'] > 1): ?><tfoot>
+             <tr>
+                <td colspan='8' align='center' style="height:30px;border-bottom: 0px;">
+					<div class="wst-page" style="float:right;padding-bottom:10px;">
+						<div id="wst-page-items">
+						</div>
+					</div>
+				</td>
+             </tr>
+             </tfoot><?php endif; ?>
+           </tbody>
         </table>
-       </form>
-       </div>
-   </div>
+        </div>
+    </div>
+    <script>
+    <?php if($receiveOrders['totalPage'] > 1): ?>$(document).ready(function(){
+		laypage({
+		    cont: 'wst-page-items',
+		    pages: <?php echo ($receiveOrders['totalPage']); ?>, //总页数
+		    skip: true, //是否开启跳页
+		    skin: '#e23e3d',
+		    groups: 3, //连续显示分页数
+		    curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+		        var page = location.search.match(/pcurr=(\d+)/);
+		        return page ? page[1] : 1;
+		    }(), 
+		    jump: function(e, first){ //触发分页后的回调
+		        if(!first){ //一定要加此判断，否则初始时会无限刷新
+		        	var nuewurl = WST.splitURL("pcurr");
+		        	var ulist = nuewurl.split("?");
+		        	if(ulist.length>1){
+		        		location.href = nuewurl+'&pcurr='+e.curr;
+		        	}else{
+		        		location.href = '?pcurr='+e.curr;
+		        	}
+		            
+		        }
+		    }
+		});
+    });<?php endif; ?>
+	</script>
 
             </div>
           </div>

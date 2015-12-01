@@ -181,6 +181,9 @@
                                 <?php if(in_array('sppl_00',$WST_STAFF['grant'])){ ?>
 					            <li><a href="<?php echo U('Admin/GoodsAppraises/index');?>" target='pageContent'>商品评价</a></li>
 					            <?php } ?>
+                                <?php if(in_array('sppl_00',$WST_STAFF['grant'])){ ?>
+                                <li><a href="<?php echo U('Admin/GoodsAppraises/index');?>" target='pageContent'>今日精选</a></li>
+                                <?php } ?>
                             </ul>
                         </li>
                         <?php } ?>

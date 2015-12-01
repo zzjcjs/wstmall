@@ -739,7 +739,19 @@
 </div>
 <!--今日精选-结束-->
 
-    
+        <div class="Extension w1000 clearfix HBSBlock">
+        <div  >
+            <a target="_blank" href="http://www.miyabaobei.com/formulas.html">
+                <img src="/Public/images/buy_everyday_1.jpg" data-src="http://img02.miyabaobei.com/d1/p2/2015/10/20/40/78/407868cd7990cbc293c79e6334d778f5.jpg" alt="" width="492" height="160" class="lazyload"/>
+            </a>
+        </div>
+        <div  class="mr0" >
+            <a target="_blank" href="http://www.miyabaobei.com/diapers.html">
+                <img src="/Public/images/buy_everyday_2.jpg" data-src="http://img03.miyabaobei.com/d1/p2/2015/10/20/c4/50/c4509f325a8b9cb2878126ba60eab2c6.jpg" alt="" width="492" height="160" class="lazyload"/>
+            </a>
+        </div>
+    </div>
+    <!--天天特卖-结束-->
 
     <div class="topRanking w1000">
     <ul class="tabMenu">
@@ -756,7 +768,7 @@
         <div class="parent HBSBlock clearfix" style="display:block;" >
             <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1105208.html">
                 <div class="l">
-                    <img src="/Public/images/mia_6.jpg" class="lazyload" alt="sk2神仙水精华露" width="166" height="194"/></div>
+                    <img src="http://img01.miyabaobei.com/d1/p2/2015/11/20/7f/dd/7fddbef412e0f6ac79d8a201a578ebe6.jpg" class="lazyload" alt="sk2神仙水精华露" width="166" height="194"/></div>
                 <div class="l">
                     <div class="top t1">top1</div>
                     <div class="title">sk2神仙水精华露</div>
@@ -768,7 +780,7 @@
                 </div>
             </a> </div>
             <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1000978.html">
-                <div class="l"><img src="/Public/images/mia_7.jpg" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/7f/dd/7fddbef412e0f6ac79d8a201a578ebe6.jpg" class="lazyload" alt="妙思乐洗发沐浴露" width="166" height="194"/></div>
+                <div class="l"><img src="http://img01.miyabaobei.com/d1/p2/2015/11/20/7f/dd/7fddbef412e0f6ac79d8a201a578ebe6.jpg" class="lazyload" alt="妙思乐洗发沐浴露" width="166" height="194"/></div>
                 <div class="l">
                     <div class="top t2">top2</div>
                     <div class="title">妙思乐洗发沐浴露</div>
@@ -780,7 +792,7 @@
                 </div>
             </a> </div>
             <div class="HBShadow rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1109462.html">
-                <div class="l"><img src="/Public/images/mia_6.jpg" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/20/62/d5/62d56e95e6bcf3c8a76534e16af37160.jpg" class="lazyload" alt="果蔬乐康膏250g*2盒" width="166" height="194"/></div>
+                <div class="l"><img src="http://img02.miyabaobei.com/d1/p2/2015/11/20/62/d5/62d56e95e6bcf3c8a76534e16af37160.jpg" class="lazyload" alt="果蔬乐康膏250g*2盒" width="166" height="194"/></div>
                 <div class="l">
                     <div class="top t3">top3</div>
                     <div class="title">果蔬乐康膏250g*2盒</div>
@@ -792,7 +804,7 @@
                 </div>
             </a> </div>
             <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1027801.html">
-                <div class="l"><img src="/Public/images/mia_7.jpg" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/20/db/76/db76281456d90c25bd1e0587a4dacc1c.jpg" class="lazyload" alt="JELLYCAT邦尼兔" width="166" height="194"/></div>
+                <div class="l"><img src="http://img03.miyabaobei.com/d1/p2/2015/11/20/db/76/db76281456d90c25bd1e0587a4dacc1c.jpg" class="lazyload" alt="JELLYCAT邦尼兔" width="166" height="194"/></div>
                 <div class="l">
                     <div class="top t4">top4</div>
                     <div class="title">JELLYCAT邦尼兔</div>
@@ -804,7 +816,7 @@
                 </div>
             </a> </div>
             <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1019621.html">
-                <div class="l"><img src="/Public/images/mia_6.jpg" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/20/7b/48/7b485014429b12279bb18724ccd0d4ff.jpg" class="lazyload" alt="多利科计量勺" width="166" height="194"/></div>
+                <div class="l"><img src="http://img04.miyabaobei.com/d1/p2/2015/11/20/7b/48/7b485014429b12279bb18724ccd0d4ff.jpg" class="lazyload" alt="多利科计量勺" width="166" height="194"/></div>
                 <div class="l">
                     <div class="top t5">top5</div>
                     <div class="title">多利科计量勺</div>
@@ -816,7 +828,7 @@
                 </div>
             </a> </div>
             <div class="HBShadow bottomnone rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1070589.html">
-                <div class="l"><img src="/Public/images/mia_7.jpg" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/29/87/29870a5ec8c9d42f52d9c41d58a18577.jpg" class="lazyload" alt="Schick乳木果刮毛刀" width="166" height="194"/></div>
+                <div class="l"><img src="http://img01.miyabaobei.com/d1/p2/2015/11/20/29/87/29870a5ec8c9d42f52d9c41d58a18577.jpg" class="lazyload" alt="Schick乳木果刮毛刀" width="166" height="194"/></div>
                 <div class="l">
                     <div class="top t6">top6</div>
                     <div class="title">Schick乳木果刮毛刀</div>
@@ -1067,7 +1079,7 @@
         <div class="HBSBlock">
             <div class="ntblock" id="outlets_box_22039">
                 <div class="img"><a target="_blank" href="/list-22039.html">
-                    <img src="http://file04.miyabaobei.com/resources/images/loading.gif?v=1" data-src="http://img04.miyabaobei.com/d1/p1/2015/10/08/d4/12/d412ef78fc3d72697c2fc9abb05bb1d4.jpg" alt="百亿欧涂鸦粉笔特卖" width="670" height="292" class="lazyload"/></a>
+                    <img src="http://img04.miyabaobei.com/d1/p1/2015/10/08/d4/12/d412ef78fc3d72697c2fc9abb05bb1d4.jpg" data-src="" alt="百亿欧涂鸦粉笔特卖" width="670" height="292" class="lazyload"/></a>
                     <div class="SoldOut dn">抢光了</div></div>
                 <div class="text">
                     <div class="djs"><span id="counter_22039" style="display:none;"> </span></div>
@@ -1110,11 +1122,11 @@
                     </div>
                     <div class="SelectedTopics">
                         <p class="spline"><b>精选专题</b></p>
-                        <a href="/list-22124.html" target="_blank" title="感恩节特辑"><img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/23/d7/82/d7827a59a51e9e43c81d733d5b0a9e71.jpg" alt="感恩节特辑" width="288" class="lazyload"/></a>
-                        <a href="/list-21959.html" target="_blank" title="柔顺剂专场"><img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/19/8f/55/8f55b09bd6f4b2664ed3e05d3473c95c.jpg" alt="柔顺剂专场" width="288" class="lazyload"/></a>
-                        <a href="/list-21930.html" target="_blank" title="鱼肠海苔专场"><img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/19/11/30/1130681e95591eeb2d4fc52b145889e8.jpg" alt="鱼肠海苔专场" width="288" class="lazyload"/></a>
-                        <a href="/list-21892.html" target="_blank" title="韩国妈妈育儿经"><img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p1/2015/05/29/1c/aa/1caa439cf05f989daaae459cd1e8916b.jpg" alt="韩国妈妈育儿经" width="288" class="lazyload"/></a>
-                        <a href="/list-20588.html" target="_blank" title="外出美包专场"><img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/18/80/e1/80e19aa54bbac988267ea2d84a292d15.jpg" alt="外出美包专场" width="288" class="lazyload"/></a>
+                        <a href="/list-22124.html" target="_blank" title="感恩节特辑"><img src="http://img04.miyabaobei.com/d1/p2/2015/11/23/d7/82/d7827a59a51e9e43c81d733d5b0a9e71.jpg" alt="感恩节特辑" width="288" class="lazyload"/></a>
+                        <a href="/list-21959.html" target="_blank" title="柔顺剂专场"><img src="http://img01.miyabaobei.com/d1/p2/2015/11/19/8f/55/8f55b09bd6f4b2664ed3e05d3473c95c.jpg" alt="柔顺剂专场" width="288" class="lazyload"/></a>
+                        <a href="/list-21930.html" target="_blank" title="鱼肠海苔专场"><img src="http://img02.miyabaobei.com/d1/p2/2015/11/19/11/30/1130681e95591eeb2d4fc52b145889e8.jpg" alt="鱼肠海苔专场" width="288" class="lazyload"/></a>
+                        <a href="/list-21892.html" target="_blank" title="韩国妈妈育儿经"><img src="http://img03.miyabaobei.com/d1/p1/2015/05/29/1c/aa/1caa439cf05f989daaae459cd1e8916b.jpg" alt="韩国妈妈育儿经" width="288" class="lazyload"/></a>
+                        <a href="/list-20588.html" target="_blank" title="外出美包专场"><img src="http://img04.miyabaobei.com/d1/p2/2015/11/18/80/e1/80e19aa54bbac988267ea2d84a292d15.jpg" alt="外出美包专场" width="288" class="lazyload"/></a>
                     </div>
 
                 </div>
@@ -1127,11 +1139,11 @@
         <div class="NHotA block NRecommend clearfix">
             <div class="title yahei">大家都在买</div>
             <div class="content noneline">
-                <a target="_blank" href="/koubei-138788.html" title="首先得承认B家的这款围兜是妈妈们海淘的一款热门单品，我在孩子三个月左右就一直关注这款围兜，之所以迟迟没有入手…" class="NRblock"> <img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img04.miyabaobei.com/item/10/1093/1093254_normal_2.jpg" class="lazyload" alt="首先得承认B家的这款围兜是妈妈们海淘的一款热门单品，我在孩子三个月左右就一直关注这款围兜，之所以迟迟没有入手…" width="72" height="72"/> <span class="pink ver">ddilx：</span>首先得承认B家的这款围兜是妈妈们海淘的一款热门单品，我在孩子三个月左右就一直关注这款围兜，之所以迟迟没有入手… </a>
-                <a target="_blank" href="/koubei-138542.html" title="第一次没有买到，第二次一气抢了四个颜色，因为觉得每个颜色都好看，除了粉色不太适合男孩戴，这个围嘴真是太好用…" class="NRblock"> <img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img01.miyabaobei.com/item/10/1093/1093255_normal_2.jpg" class="lazyload" alt="第一次没有买到，第二次一气抢了四个颜色，因为觉得每个颜色都好看，除了粉色不太适合男孩戴，这个围嘴真是太好用…" width="72" height="72"/> <span class="pink ver">Bonnie：</span>第一次没有买到，第二次一气抢了四个颜色，因为觉得每个颜色都好看，除了粉色不太适合男孩戴，这个围嘴真是太好用… </a>
-                <a target="_blank" href="/koubei-138453.html" title="大爱啊~之前买了粉色的~特别喜欢自己留下了~这次给儿子备一套~太好看了这颜色~质量也和您…" class="NRblock"> <img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img02.miyabaobei.com/item/10/1099/1099402_normal_2.jpg" class="lazyload" alt="大爱啊~之前买了粉色的~特别喜欢自己留下了~这次给儿子备一套~太好看了这颜色~质量也和您…" width="72" height="72"/> <span class="pink ver">miya135****1908：</span>大爱啊~之前买了粉色的~特别喜欢自己留下了~这次给儿子备一套~太好看了这颜色~质量也和您… </a>
-                <a target="_blank" href="/koubei-138322.html" title="不锈钢的材质，不会因为温度高而产生什么有害的物质，宝宝的东西，最重要的就是放心，一套四样东西，都有自己…" class="NRblock"> <img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img03.miyabaobei.com/item/10/1099/1099401_normal_2.jpg" class="lazyload" alt="不锈钢的材质，不会因为温度高而产生什么有害的物质，宝宝的东西，最重要的就是放心，一套四样东西，都有自己…" width="72" height="72"/> <span class="pink ver">小妖晶Jutta：</span>不锈钢的材质，不会因为温度高而产生什么有害的物质，宝宝的东西，最重要的就是放心，一套四样东西，都有自己… </a>
-                <a target="_blank" href="/koubei-138111.html" title="颜色很靓丽，橙色的超炫哦！质量很好！不锈钢的材质，不会因为温度高而产生有毒有害物质，不锈钢的部分可以拆下来，放到…" class="NRblock"> <img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img04.miyabaobei.com/item/10/1099/1099404_normal_2.jpg" class="lazyload" alt="颜色很靓丽，橙色的超炫哦！质量很好！不锈钢的材质，不会因为温度高而产生有毒有害物质，不锈钢的部分可以拆下来，放到…" width="72" height="72"/> <span class="pink ver">小粽子：</span>颜色很靓丽，橙色的超炫哦！质量很好！不锈钢的材质，不会因为温度高而产生有毒有害物质，不锈钢的部分可以拆下来，放到… </a>
+                <a target="_blank" href="/koubei-138788.html" title="首先得承认B家的这款围兜是妈妈们海淘的一款热门单品，我在孩子三个月左右就一直关注这款围兜，之所以迟迟没有入手…" class="NRblock"> <img src="http://img04.miyabaobei.com/item/10/1093/1093254_normal_2.jpg" class="lazyload" alt="首先得承认B家的这款围兜是妈妈们海淘的一款热门单品，我在孩子三个月左右就一直关注这款围兜，之所以迟迟没有入手…" width="72" height="72"/> <span class="pink ver">ddilx：</span>首先得承认B家的这款围兜是妈妈们海淘的一款热门单品，我在孩子三个月左右就一直关注这款围兜，之所以迟迟没有入手… </a>
+                <a target="_blank" href="/koubei-138542.html" title="第一次没有买到，第二次一气抢了四个颜色，因为觉得每个颜色都好看，除了粉色不太适合男孩戴，这个围嘴真是太好用…" class="NRblock"> <img src="http://img01.miyabaobei.com/item/10/1093/1093255_normal_2.jpg" class="lazyload" alt="第一次没有买到，第二次一气抢了四个颜色，因为觉得每个颜色都好看，除了粉色不太适合男孩戴，这个围嘴真是太好用…" width="72" height="72"/> <span class="pink ver">Bonnie：</span>第一次没有买到，第二次一气抢了四个颜色，因为觉得每个颜色都好看，除了粉色不太适合男孩戴，这个围嘴真是太好用… </a>
+                <a target="_blank" href="/koubei-138453.html" title="大爱啊~之前买了粉色的~特别喜欢自己留下了~这次给儿子备一套~太好看了这颜色~质量也和您…" class="NRblock"> <img src="http://img02.miyabaobei.com/item/10/1099/1099402_normal_2.jpg" class="lazyload" alt="大爱啊~之前买了粉色的~特别喜欢自己留下了~这次给儿子备一套~太好看了这颜色~质量也和您…" width="72" height="72"/> <span class="pink ver">miya135****1908：</span>大爱啊~之前买了粉色的~特别喜欢自己留下了~这次给儿子备一套~太好看了这颜色~质量也和您… </a>
+                <a target="_blank" href="/koubei-138322.html" title="不锈钢的材质，不会因为温度高而产生什么有害的物质，宝宝的东西，最重要的就是放心，一套四样东西，都有自己…" class="NRblock"> <img src="http://img03.miyabaobei.com/item/10/1099/1099401_normal_2.jpg" class="lazyload" alt="不锈钢的材质，不会因为温度高而产生什么有害的物质，宝宝的东西，最重要的就是放心，一套四样东西，都有自己…" width="72" height="72"/> <span class="pink ver">小妖晶Jutta：</span>不锈钢的材质，不会因为温度高而产生什么有害的物质，宝宝的东西，最重要的就是放心，一套四样东西，都有自己… </a>
+                <a target="_blank" href="/koubei-138111.html" title="颜色很靓丽，橙色的超炫哦！质量很好！不锈钢的材质，不会因为温度高而产生有毒有害物质，不锈钢的部分可以拆下来，放到…" class="NRblock"> <img src="http://img04.miyabaobei.com/item/10/1099/1099404_normal_2.jpg" class="lazyload" alt="颜色很靓丽，橙色的超炫哦！质量很好！不锈钢的材质，不会因为温度高而产生有毒有害物质，不锈钢的部分可以拆下来，放到…" width="72" height="72"/> <span class="pink ver">小粽子：</span>颜色很靓丽，橙色的超炫哦！质量很好！不锈钢的材质，不会因为温度高而产生有毒有害物质，不锈钢的部分可以拆下来，放到… </a>
             </div>
         </div>
     </div>
@@ -1146,7 +1158,7 @@
     </div>
     <div class="clearfix LBCon HBSBlock">
         <div class="block" id="outlets_box_19906"> <a target="_blank" href="/list-19906.html">
-            <div class="indexPubTop"><img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img01.miyabaobei.com/d1/p2/2015/10/15/16/fe/16fe95545dc3130943b6c0573b1f67f9.jpg" alt="孕妇装专场" width="323" height="141" class="lazyload"/><div class="SoldOut dn">抢光了</div></div>
+            <div class="indexPubTop"><img src="http://img01.miyabaobei.com/d1/p2/2015/10/15/16/fe/16fe95545dc3130943b6c0573b1f67f9.jpg" alt="孕妇装专场" width="323" height="141" class="lazyload"/><div class="SoldOut dn">抢光了</div></div>
             <div class="text">
                 <div class="r"><span class="price"><span class="pink">39</span>元起</span></div>
                 <div class="l" style="background:none;"><span>孕妇装专场</span>
@@ -1155,7 +1167,7 @@
             </div>
         </a> </div>
         <div class="block" id="outlets_box_20512"> <a target="_blank" href="/list-20512.html">
-            <div class="indexPubTop"><img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/10/f6/f3/f6f3200baf061843d547395fe9050bfa.jpg" alt="美国潮牌宝宝用品专场" width="323" height="141" class="lazyload"/><div class="SoldOut dn">抢光了</div></div>
+            <div class="indexPubTop"><img src="http://img02.miyabaobei.com/d1/p2/2015/11/10/f6/f3/f6f3200baf061843d547395fe9050bfa.jpg" alt="美国潮牌宝宝用品专场" width="323" height="141" class="lazyload"/><div class="SoldOut dn">抢光了</div></div>
             <div class="text">
                 <div class="r"><span class="price"><span class="pink">44</span>元起</span></div>
                 <div class="l" style="background:none;"><span>美国潮牌宝宝用品专场</span>
@@ -1164,7 +1176,7 @@
             </div>
         </a> </div>
         <div class="block mr0" id="outlets_box_19639"> <a target="_blank" href="/list-19639.html">
-            <div class="indexPubTop"><img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/11/42/a7/42a7ff52e9148d54177763979249d6c8.jpg" alt="冬季补水专场" width="323" height="141" class="lazyload"/><div class="SoldOut dn">抢光了</div></div>
+            <div class="indexPubTop"><img src="http://img03.miyabaobei.com/d1/p2/2015/11/11/42/a7/42a7ff52e9148d54177763979249d6c8.jpg" alt="冬季补水专场" width="323" height="141" class="lazyload"/><div class="SoldOut dn">抢光了</div></div>
             <div class="text">
                 <div class="r"><span class="price"><span class="pink">34</span>元起</span></div>
                 <div class="l" style="background:none;"><span>冬季补水专场</span>
@@ -1174,7 +1186,7 @@
         </a> </div>
         <div class="block" id="outlets_box_19611"> <a target="_blank" href="/list-19611.html">
             <div class="indexPubTop">
-                <img src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/06/5c/77/5c77b5a6941512d7beb9e12059bba1f0.jpg" alt="美国辅食专场" width="323" height="141" class="lazyload"/>
+                <img src="http://img04.miyabaobei.com/d1/p2/2015/11/06/5c/77/5c77b5a6941512d7beb9e12059bba1f0.jpg" alt="美国辅食专场" width="323" height="141" class="lazyload"/>
                 <div class="SoldOut dn">抢光了</div>
             </div>
             <div class="text">
@@ -1194,7 +1206,20 @@
 
         <div class="Nfooter">
     <div class="Genuine">
-        <div class="w1000"> <a href="/guarantee" rel="nofollow"  target="_blank"><img src="http://file01.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://file01.miyabaobei.com/resources/images/index_footer_gen01.jpg?v=20151014" class="lazyload" alt=""/></a> <a href="/guarantee#area3" rel="nofollow"  target="_blank"><img src="http://file01.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://file01.miyabaobei.com/resources/images/index_footer_gen02.gif?v=20151014" class="lazyload" alt=""/></a> <a href="/guarantee#area7" rel="nofollow"  target="_blank"><img src="http://file01.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://file01.miyabaobei.com/resources/images/index_footer_gen03.gif" class="lazyload" alt=""/></a> <a href="/guarantee#area6" rel="nofollow"  target="_blank"><img src="http://file01.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://file01.miyabaobei.com/resources/images/index_footer_gen04.jpg?v=20151014" class="lazyload" alt=""/></a> <a href="/guarantee#area5" rel="nofollow" target="_blank"><img src="http://file01.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://file01.miyabaobei.com/resources/images/index_footer_gen05.jpg" class="lazyload" alt=""/></a> <a href="/guarantee#area8" rel="nofollow" target="_blank"><img src="http://file01.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://file01.miyabaobei.com/resources/images/index_footer_gen06.jpg?v=2" class="lazyload" alt=""/></a> </div>
+        <div class="w1000">
+            <a href="/guarantee" rel="nofollow"  target="_blank">
+                <img src=http://file01.miyabaobei.com/resources/images/index_footer_gen01.jpg?v=20151014" class="lazyload" alt=""/></a>
+            <a href="/guarantee#area3" rel="nofollow"  target="_blank">
+                <img src=http://file01.miyabaobei.com/resources/images/index_footer_gen02.gif?v=20151014" class="lazyload" alt=""/></a>
+            <a href="/guarantee#area7" rel="nofollow"  target="_blank">
+                <img src="http://file01.miyabaobei.com/resources/images/index_footer_gen03.gif" class="lazyload" alt=""/></a>
+            <a href="/guarantee#area6" rel="nofollow"  target="_blank">
+                <img src="http://file01.miyabaobei.com/resources/images/index_footer_gen04.jpg?v=20151014" class="lazyload" alt=""/></a>
+            <a href="/guarantee#area5" rel="nofollow" target="_blank">
+                <img src="http://file01.miyabaobei.com/resources/images/index_footer_gen05.jpg" class="lazyload" alt=""/></a>
+            <a href="/guarantee#area8" rel="nofollow" target="_blank">
+                <img src="http://file01.miyabaobei.com/resources/images/index_footer_gen06.jpg?v=2" class="lazyload" alt=""/></a>
+        </div>
     </div>
     <div class="Nhelp">
         <div class="w1000 clearfix">

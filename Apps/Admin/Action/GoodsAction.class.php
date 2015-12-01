@@ -1,5 +1,5 @@
 <?php
- namespace Admin\Action;;
+ namespace Admin\Action;
 /**
  * ============================================================================
  * WSTMall开源商城

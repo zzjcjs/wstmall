@@ -1,5 +1,5 @@
 function checkLogin(){
-	jQuery.post(Think.U('Home/Shops/checkLoginStatus'),{},function(rsp) {
+	jQuery.post(Think.U('Shops/checkLoginStatus'),{},function(rsp) {
 		var json = WST.toJson(rsp);
 		if(json.status && json.status==-999)location.reload();
 	});
@@ -67,11 +67,11 @@ function editAddress(){
 			return ;		
 		}	
 	   
-	   $.post(Think.U('Home/UserAddress/edit'),params,function(data,textStatus){
+	   $.post(Think.U('UserAddress/edit'),params,function(data,textStatus){
 			var json = WST.toJson(data);
 			if(json.status>0){
 				WST.msg('操作成功!', {icon: 1}, function(){
-					location.href = Think.U('Home/UserAddress/queryByPage');
+					location.href = Think.U('UserAddress/queryByPage');
 				});
 			}else{
 				WST.msg(' 操作失败!',{icon: 5});
@@ -88,7 +88,7 @@ function getAreaList(objId,parentId,t,id){
 		   $('#areaId3').html('<option value="">请选择</option>');
 	   }
 	   var html = [];
-	   $.post(Think.U('Home/Areas/queryByList'),params,function(data,textStatus){
+	   $.post(Think.U('Areas/queryByList'),params,function(data,textStatus){
 		    html.push('<option value="">请选择</option>');
 			var json = WST.toJson(data);
 			if(json.status=='1' && json.list.length>0){
@@ -106,7 +106,7 @@ function getCommunitys(v,id){
 	   params.areaId3 = v;
 	   $('#communityId').empty();
 	   var html = [];
-	   $.post(Think.U('Home/Communitys/getByDistrict'),params,function(data,textStatus){
+	   $.post(Think.U('Communitys/getByDistrict'),params,function(data,textStatus){
 		    html.push('<option value="">请选择</option>');
 			var json = WST.toJson(data);
 			if(json.status=='1' && json.list && json.list.length>0){
@@ -121,12 +121,12 @@ function getCommunitys(v,id){
 }
 
 function toEditAddress(id){
-	    location.href = Think.U('Home/UserAddress/toEdit','id='+id); 
+	    location.href = Think.U('UserAddress/toEdit','id='+id);
 	}
 	function delAddress(id){
 		layer.confirm("您确定要删除该地址吗？",{icon: 3, title:'系统提示'},function(tips){
 			var ll = layer.load('数据处理中，请稍候...');
-			$.post(Think.U('Home/UserAddress/del'),{id:id},function(data,textStatus){
+			$.post(Think.U('UserAddress/del'),{id:id},function(data,textStatus){
 				layer.close(ll);
 		    	layer.close(tips);
 				var json = WST.toJson(data);
@@ -146,7 +146,7 @@ function batchMessageDel(){
 	        layer.load('正在处理，请稍后...', 3);
 	        var params = {};
 	        params.ids = ids;
-	        $.post(Think.U('Home/Messages/batchDel'),params,function(data,textStatus){
+	        $.post(Think.U('Messages/batchDel'),params,function(data,textStatus){
 	          var json = WST.toJson(data);
 	          if(json.status=='1'){
 	        	  WST.msg('操作成功！', {icon: 1},function(){
@@ -164,7 +164,7 @@ function editPass(){
 	   params.newPass = $('#newPass').val();
 	   params.reNewPass = $('#reNewPass').val();
 	   var ll = layer.load('数据处理中，请稍候...');
-	   $.post(Think.U("Home/Users/editPass"),params,function(data,textStatus){
+	   $.post(Think.U("Users/editPass"),params,function(data,textStatus){
 		   layer.close(ll);
 			var json = WST.toJson(data);
 			if(json.status=='1'){
@@ -185,7 +185,7 @@ function editUser(){
 	   params.userSex = $('input:radio[name="userSex"]:checked').val();
 	   params.userPhoto =  $.trim($('#userPhoto').val());		
 	   var ll = layer.load('数据处理中，请稍候...');
-	   $.post(Think.U('Home/Users/editUser'),params,function(data,textStatus){
+	   $.post(Think.U('Users/editUser'),params,function(data,textStatus){
 		   layer.close(ll);
 			var json = WST.toJson(data);
 			if(json.status=='1'){
@@ -206,10 +206,10 @@ function toPay(id){
 	
 	var params = {};
 	params.orderIds = id;
-	jQuery.post(Think.U('Home/Orders/checkOrderPay') ,params,function(data) {
+	jQuery.post(Think.U('Orders/checkOrderPay') ,params,function(data) {
 		var json = WST.toJson(data);
 		if(json.status==1){
-			location.href=Think.U('Home/Payments/toPay','orderIds='+params.orderIds);
+			location.href=Think.U('Payments/toPay','orderIds='+params.orderIds);
 		}else if(json.status==-2){
 			var rlist = json.rlist;
 			var garr = new Array();
@@ -220,7 +220,7 @@ function toPay(id){
 		}else{
 			WST.msg('您的订单已支付!', {icon: 5});
 			setTimeout(function(){
-				window.location = Think.U('Home/orders/queryDeliveryByPage');
+				window.location = Think.U('orders/queryDeliveryByPage');
 			},1500);
 		}
 	});
@@ -233,7 +233,7 @@ function showOrder(id){
 	    shade: [0.6, '#000'],
 	    border: [0],
 	    offset: ['20px',''],
-	    content: [Think.U('Home/Orders/getOrderDetails','orderId='+id)],
+	    content: [Think.U('Orders/getOrderDetails','orderId='+id)],
 	    area: ['1020px', ($(window).height() - 50) +'px']
 	});
 }
@@ -254,7 +254,7 @@ function orderCancel(id,type){
 	        		return;
 	        	}
 	        	var ll = layer.load('数据处理中，请稍候...');
-			    $.post(Think.U('Home/Orders/orderCancel'),{orderId:id,type:1,rejectionRemarks:rejectionRemarks},function(data){
+			    $.post(Think.U('Orders/orderCancel'),{orderId:id,type:1,rejectionRemarks:rejectionRemarks},function(data){
 			    	layer.close(w);
 			    	layer.close(ll);
 			    	var json = WST.toJson(data);
@@ -271,7 +271,7 @@ function orderCancel(id,type){
 	}else{
 		layer.confirm('您确定要取消该订单吗？',{icon: 3, title:'系统提示'}, function(tips){
 		    var ll = layer.load('数据处理中，请稍候...');
-		    $.post(Think.U('Home/Orders/orderCancel'),{orderId:id},function(data){
+		    $.post(Think.U('Orders/orderCancel'),{orderId:id},function(data){
 		    	layer.close(ll);
 		    	layer.close(tips);
 		    	var json = WST.toJson(data);
@@ -293,7 +293,7 @@ function appraiseOrder(id){
 	    title:"订单详情",
 	    shade: [0.6, '#000'],
 	    border: [0],
-	    content: [Think.U('Home/GoodsAppraises/toAppraise','orderId='+id)],
+	    content: [Think.U('GoodsAppraises/toAppraise','orderId='+id)],
 	    area: ['1020px', ($(window).height() - 50) +'px'],
 	    end:function(){
 	    	window.location.reload();
@@ -328,7 +328,7 @@ function addGoodsAppraises(shopId,goodsId,orderId){
 	
 	//layer.confirm('您确定要提交该评价吗？',{icon: 3, title:'系统提示'}, function(tips){
 	    var ll = layer.load('数据处理中，请稍候...');
-		$.post(Think.U('Home/GoodsAppraises/addGoodsAppraises'),{shopId:shopId, goodsId:goodsId, orderId:orderId, goodsScore:goodsScore, timeScore:timeScore, serviceScore:serviceScore, content:content },function(data,textStatus){
+		$.post(Think.U('GoodsAppraises/addGoodsAppraises'),{shopId:shopId, goodsId:goodsId, orderId:orderId, goodsScore:goodsScore, timeScore:timeScore, serviceScore:serviceScore, content:content },function(data,textStatus){
 			//layer.close(tips);
 			layer.close(ll);
 			var json = WST.toJson(data);
@@ -347,7 +347,7 @@ function orderConfirm(id,type){
 	if(type==1){
 		layer.confirm('您确定已收货吗？',{icon: 3, title:'系统提示'}, function(tips){
 		    var ll = layer.load('数据处理中，请稍候...');
-		    $.post(Think.U('Home/Orders/orderConfirm'),{orderId:id,type:type},function(data){
+		    $.post(Think.U('Orders/orderConfirm'),{orderId:id,type:type},function(data){
 		    	layer.close(tips);
 		    	layer.close(ll);
 		    	var json = WST.toJson(data);
@@ -376,7 +376,7 @@ function orderConfirm(id,type){
 	        		return;
 	        	}
 	        	var ll = layer.load('数据处理中，请稍候...');
-			    $.post(Think.U('Home/Orders/orderConfirm'),{orderId:id,type:type,rejectionRemarks:rejectionRemarks},function(data){
+			    $.post(Think.U('Orders/orderConfirm'),{orderId:id,type:type,rejectionRemarks:rejectionRemarks},function(data){
 			    	layer.close(w);
 			    	layer.close(ll);
 			    	var json = WST.toJson(data);
@@ -406,7 +406,7 @@ function getAreaListForOpen(objId,parentId,t,id){
 		   }
 	   }
 	   var html = [];
-	   $.post(Think.U('Home/Areas/queryByList'),params,function(data,textStatus){
+	   $.post(Think.U('Areas/queryByList'),params,function(data,textStatus){
 		    html.push('<option value="">请选择</option>');
 			var json = WST.toJson(data);
 			if(json.status=='1' && json.list){
@@ -425,7 +425,7 @@ function getAreaListForOpen(objId,parentId,t,id){
 function getCommunitysForOpen(){
 	  $('#areaTree').empty();
 	  var areaId = $('#areaId2').val();
-	  $.post(Think.U('Home/Areas/getAreaAndCommunitysByList'),{areaId:areaId},function(data,textStatus){
+	  $.post(Think.U('Areas/getAreaAndCommunitysByList'),{areaId:areaId},function(data,textStatus){
 			var json = data;
 			if(json.list){
 					var html = [];
@@ -542,11 +542,11 @@ function openShop(){
 		   return;
 	   }
 	   var ll = layer.load('正在处理，请稍后...', 3);
-	   $.post(Think.U('Home/Shops/openShopByUser'),params,function(data,textStatus){
+	   $.post(Think.U('Shops/openShopByUser'),params,function(data,textStatus){
 			var json = WST.toJson(data);
 			if(json.status=='1'){
 				WST.msg('您的开店申请已提交，请等候商城管理员审核!', {icon: 1}, function(){
-					location.href=Think.U('Home/Orders/queryByPage');
+					location.href=Think.U('Orders/queryByPage');
 				});
 			}else if(json.status==-4){
 				WST.msg('验证码错误!', {icon: 5});
@@ -582,7 +582,7 @@ function showXiey(id){
 		    shadeClose: true,
 		    shade: 0.8,
 		    area: ['1000px', ($(window).height() - 50) +'px'],
-		    content: [Think.U('Home/Index/toUserProtocol')],
+		    content: [Think.U('Index/toUserProtocol')],
 		    btn: ['同意并注册'],
 		    yes: function(index, layero){
 		    	layer.close(index);
@@ -657,17 +657,17 @@ function getOrdersList(type){
 	
 	//type->1:待付款订单;2:待发货订单;3:待确认收货;4:待评价交易;5:已取消订单;6:拒收/退款
 	if(type==1){
-		location.href=Think.U('Home/Orders/queryPayByPage',params);
+		location.href=Think.U('Orders/queryPayByPage',params);
 	}else if(type==2){
-		location.href=Think.U('Home/Orders/queryDeliveryByPage',params);
+		location.href=Think.U('Orders/queryDeliveryByPage',params);
 	}else if(type==3){
-		location.href=Think.U('Home/Orders/queryReceiveByPage',params);
+		location.href=Think.U('Orders/queryReceiveByPage',params);
 	}else if(type==4){
-		location.href=Think.U('Home/Orders/queryAppraiseByPage',params);
+		location.href=Think.U('Orders/queryAppraiseByPage',params);
 	}else if(type==5){
-		location.href=Think.U('Home/Orders/queryCancelOrders',params);
+		location.href=Think.U('Orders/queryCancelOrders',params);
 	}else if(type==6){
-		location.href=Think.U('Home/Orders/queryRefundByPage',params);
+		location.href=Think.U('Orders/queryRefundByPage',params);
 	}
 	
 }
@@ -675,7 +675,7 @@ function getOrdersList(type){
 
 
 function getUserMsgTips(){
-	$.post(Think.U('Home/Orders/getUserMsgTips'),{},function(data,textStatus){
+	$.post(Think.U('Orders/getUserMsgTips'),{},function(data,textStatus){
 		var json = WST.toJson(data);
 		for(var i in json){
 			if(i==-2){//未支付
@@ -730,7 +730,7 @@ function queryFavoriteGoods(p){
 	 var param = {};
 	 param.key = $.trim($("#key_"+statusMark).val());
      params.p = p;
-     $.post(Think.U('Home/Favorites/queryGoodsByPage'),params,function(data,textStatus){
+     $.post(Think.U('Favorites/queryGoodsByPage'),params,function(data,textStatus){
        var json = WST.toJson(data);
        
      });
@@ -740,7 +740,7 @@ function queryFavoriteGoods(p){
 	var params = {};
 	params.key = $.trim($('#key_0').val());
 	params.p = p;
-	$.post(Think.U('Home/Favorites/queryGoodsByPage'),params,function(data,textStatus){
+	$.post(Think.U('Favorites/queryGoodsByPage'),params,function(data,textStatus){
 		layer.close(tips);
 	    var json = WST.toJson(data);
 	    if(json.status==1 && json.data){
@@ -778,9 +778,9 @@ function addCart(goodsId,type,goodsThums){
 	params.rnd = Math.random();
 	params.goodsAttrId = $('#shopGoodsPrice_'+goodsId).attr('dataId');
 	$("#flyItem img").attr("src",domainURL  +"/"+ goodsThums)
-	jQuery.post(Think.U('Home/Cart/addToCartAjax') ,params,function(data) {
+	jQuery.post(Think.U('Cart/addToCartAjax') ,params,function(data) {
 		if(type==1){
-			location.href= Think.U('Home/Cart/toCart');
+			location.href= Think.U('Cart/toCart');
 		}else{
 			layer.msg("添加成功!",1,1);
 		}
@@ -790,7 +790,7 @@ function cancelGoodsFavorites(obj,id){
 	layer.confirm('您确定取消关注该商品吗？',{icon: 3, title:'系统提示'}, function(tips){
 		layer.close(tips);
 	    var ll = layer.load('数据处理中，请稍候...');
-		jQuery.post(Think.U("Home/Favorites/cancelFavorite") ,{id:id,type:0},function(data) {
+		jQuery.post(Think.U("Favorites/cancelFavorite") ,{id:id,type:0},function(data) {
 			var json = WST.toJson(data,1);
 			if(json.status==1){
 				layer.close(ll);
@@ -807,7 +807,7 @@ function queryFavoriteShops(p){
 	var params = {};
 	params.key = $.trim($('#key_1').val());
 	params.p = p;
-	$.post(Think.U('Home/Favorites/queryShopsByPage'),params,function(data,textStatus){
+	$.post(Think.U('Favorites/queryShopsByPage'),params,function(data,textStatus){
 		layer.close(tips);
 	    var json = WST.toJson(data);
 	    if(json.status==1 && json.data){
@@ -839,7 +839,7 @@ function cancelShopFavorites(obj,id){
 	layer.confirm('您确定取消关注该店铺吗？',{icon: 3, title:'系统提示'}, function(tips){
 		layer.close(tips);
 	    var ll = layer.load('数据处理中，请稍候...');
-		jQuery.post(Think.U("Home/Favorites/cancelFavorite") ,{id:id,type:1},function(data) {
+		jQuery.post(Think.U("Favorites/cancelFavorite") ,{id:id,type:1},function(data) {
 			var json = WST.toJson(data,1);
 			if(json.status==1){
 				layer.close(ll);
