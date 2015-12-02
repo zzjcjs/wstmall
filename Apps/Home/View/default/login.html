@@ -20,20 +20,26 @@
 		        	<div class="mc " id="bgDiv" style="position:relative">
 		        	<div><a style="text-decoration: none;font-size:65px;color:red;position:absolute;top:160px;left:60px;" href="{:U('Index/index')}">用户登录</a></div>
 		            <div class="form">
+
+
 		                <div class="item fore1" style="position:relative;">
-		                    <span>用户名/手机号/邮箱</span><span id="errmsg" style="color:red;position:absolute;top:0px;left:100px;"></span>
+		                    <span>用户名/手机号/邮箱</span>
+							<span id="errmsg" style="color:red;position:absolute;top:0px;left:100px;"></span>
 		                    <div class="item-ifo">
 		                        <input id="loginName" name="loginName" class="text"  tabindex="1" value="{$loginName}" autocomplete="off" type="text"/>
 		                        <div class="i-name ico"></div>                       
 		                    </div>
-		                </div>               
+		                </div>
+
+
 		                <div class="item fore2">
 		                    <span>密码</span>
 		                    <div class="item-ifo">                       
-		                        <input id="loginPwd" name="loginPwd" value="{$loginPwd}" class="text" tabindex="2" autocomplete="off" type="password"/>                      
+		                        <input id="loginPwd" name="loginPwd" value="{$loginPwd}" class="text" tabindex="2" autocomplete="off" type="password"/>
 		                        <div class="i-pass ico"></div>            
 		                    </div>
 		                </div>
+
 		                <div class="item fore3 " id="o-authcode">
 		                    <span>验证码</span>
 		                    <div class="item-ifo">
@@ -44,6 +50,8 @@
 			              		<label class="ftx23">&nbsp;看不清？<a href="javascript:getVerify()" class="flk13">换一张</a></label>
 		                    </div>
 		                </div>
+
+
 		                <div class="item fore4" id="autoentry">
 		                    <div class="item-ifo">
 		                        <input class="checkbox" id="rememberPwd" name="rememberPwd" checked="checked" type="checkbox"/>
@@ -53,6 +61,8 @@
 		                        <div class="clr"></div>
 		                    </div>
 		            	</div>
+
+
 		                <div class="item login-btn2013">
 		                    <input class="btn-img btn-entry" id="loginsubmit" value="登录" tabindex="8" onclick="checkLoginInfo();"/>
 		                </div>
@@ -60,7 +70,7 @@
 		        </div>
 		    </div>
 		</div>
-		<include file="./Apps/Home/View/default/footer.html" />
+		<!--<include file="./Apps/Home/View/default/footer.html" />-->
 		<script src="__PUBLIC__/plugins/formValidator/formValidator-4.1.3.js"></script>
       	<script src="__PUBLIC__/js/common.js"></script>
       	<script src="__ROOT__/Apps/Home/View/default/js/common.js"></script>

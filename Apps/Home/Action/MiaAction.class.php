@@ -16,6 +16,7 @@ class MiaAction extends BaseAction{
      */
     public function mia(){
         $this->display();
+//        $this->show(var_dump($WST_USER));
     }
 
 }

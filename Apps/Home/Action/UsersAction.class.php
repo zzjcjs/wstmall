@@ -17,7 +17,7 @@ class UsersAction extends BaseAction {
 		//如果已经登录了则直接跳去后台
 		$USER = session('WST_USER');
 		if(!empty($USER)){
-			$this->redirect("Users/index");
+			$this->redirect("Mia/mia");
 		}
 		if(isset($_COOKIE["loginName"])){
 			$this->assign('loginName',$_COOKIE["loginName"]);
@@ -27,8 +27,9 @@ class UsersAction extends BaseAction {
 		if(!(strripos($ref,"regist")) && !(strripos($ref,"login")) && !(strripos($ref,"logout"))){
 			$_SESSION['refer'] = $ref;
 		}
-		
-		$this->display('default/login');
+
+		$this->display('mia/mia_login');
+//		$this->display('Default/login');
 	}
 	
 	
@@ -38,9 +39,8 @@ class UsersAction extends BaseAction {
 	public function logout(){
 		session('WST_USER',null);
 		session("WST_CART",null);
-		echo "1";
 	}
-	
+
 	/**
      * 注册界面
      * 
@@ -51,7 +51,7 @@ class UsersAction extends BaseAction {
 		}else{
 			$this->assign('loginName','');
 		}
-		$this->display('default/regist');
+		$this->display('mia/mia_register');
 	}
 
 	/**
@@ -61,27 +61,22 @@ class UsersAction extends BaseAction {
 	public function checkLogin(){
 	    $rs = array();
 	    $rs["status"]= 1;
-		if(!$this->checkVerify("4") && ($GLOBALS['CONFIG']["captcha_model"]["valueRange"]!="" && strpos($GLOBALS['CONFIG']["captcha_model"]["valueRange"],"3")>=0)){			
-			$rs["status"]= -1;//验证码错误
-		}else{
-			$m = D('Home/Users');			
-			$res = $m->checkLogin();
-			if (!empty($res)){
-				if($res['userFlag'] == 1){
-					session('WST_USER',$res);
-					unset($_SESSION['toref']);
-					if(strripos($_SESSION['refer'],"regist")>0 || strripos($_SESSION['refer'],"logout")>0 || strripos($_SESSION['refer'],"login")>0){
-						$rs["refer"]= __ROOT__;
-					}						
-				}else if($res['status'] == -1){
-					$rs["status"]= -2;//登陆失败，账号或密码错误
+		$m = D('Home/Users');
+		$res = $m->checkLogin();
+		if (!empty($res)){
+			if($res['userFlag'] == 1){
+				session('WST_USER',$res);
+				unset($_SESSION['toref']);
+				if(strripos($_SESSION['refer'],"regist")>0 || strripos($_SESSION['refer'],"logout")>0 || strripos($_SESSION['refer'],"login")>0){
+					$rs["refer"]= __ROOT__;
 				}
-			} else {
+			}else if($res['status'] == -1){
 				$rs["status"]= -2;//登陆失败，账号或密码错误
 			}
-			
-			$rs["refer"]= $rs['refer']?$rs['refer']:__ROOT__;
+		} else {
+			$rs["status"]= -2;//登陆失败，账号或密码错误
 		}
+		$rs["refer"]= $rs['refer']?$rs['refer']:__ROOT__;
 		echo json_encode($rs);
 	}
 

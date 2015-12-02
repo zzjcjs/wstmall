@@ -32,7 +32,6 @@ class IndexAction extends BaseAction {
    		}else{
    			$this->display("default/index");
    		}
-		
     }
     /**
      * 广告记数

@@ -460,19 +460,7 @@ $(document).ready(function(){
         }
     });
 
-//    logininfo();//大数据 不调用ajax 用下面的注释程序
-    var usernames = decodeURIComponent(getcookie('usernames'));//console.log(usernames);
-    if (usernames.length>8) {
-        usernames = usernames.substr(0,15)+"..";
-    }
-    if (usernames != '') {
-        $('#logined_username').text(usernames);
-        $("#loginedBox").show();
-        $('#unloginBox').hide();
-    } else {
-        $("#loginedBox").hide();
-        $('#unloginBox').show();
-    }
+
 
     function addCart() {
         ajaxReq();

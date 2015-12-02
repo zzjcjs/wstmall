@@ -166,7 +166,7 @@ function onloadright(){
 
 
 function checkCart(){
-	jQuery.post( Think.U('Home/Cart/getCartInfo') ,{"axm":1},function(data) {
+	jQuery.post( Think.U('Cart/getCartInfo') ,{"axm":1},function(data) {
 		var cart = WST.toJson(data);	
 		var html = new Array();
 		var flag = false;
@@ -180,7 +180,7 @@ function checkCart(){
 				//}else{
 					//html.push("<div>");
 				//}【{$goods['attrName']}:{$goods['attrVal']}】
-				var url = Think.U('Home/Goods/getGoodsDetails','goodsId='+goods.goodsId);
+				var url = Think.U('Goods/getGoodsDetails','goodsId='+goods.goodsId);
 				html.push(  "<div style='float:left;'>" +
 									"<a href='"+url+"'><img src='"+domainURL +"/"+goods.goodsThums+"' width='65' height='65'/></a>" +
 									"</div>" +
@@ -212,7 +212,7 @@ function checkCart(){
 	});
 }
 function topay(){
-	location.href = Think.U('Home/Cart/getCartInfo','rnd='+Math.round(Math.random()*10000000));
+	location.href = Think.U('Cart/getCartInfo','rnd='+Math.round(Math.random()*10000000));
 }
 
 function toChangeCity(){
@@ -222,7 +222,7 @@ function toChangeCity(){
 function changeCity(areaId2){
 	areaId2 = (areaId2>0)?areaId2:$("#cityId").val();
 	
-	jQuery.post( Think.U('Home/Index/reChangeCity') ,{"city":areaId2,"changeCity":true},function(data) {
+	jQuery.post( Think.U('Index/reChangeCity') ,{"city":areaId2,"changeCity":true},function(data) {
 		var currurl = location.href;
 			currurl = currurl.toLowerCase();
 		if(currurl.indexOf("changecity")!=-1){
@@ -319,15 +319,15 @@ function optSelect(obj){
 
 /*************************************用户操作*****************************************/
 function login(){
-	return location.href= Think.U('Home/Users/login');
+	return location.href= Think.U('Users/login');
 }
 function logout(){
-	jQuery.post(Think.U('Home/Users/logout'),{},function(rsp) {
+	jQuery.post(Think.U('Users/logout'),{},function(rsp) {
 		location.reload();
 	});
 }
 function regist(){
-	return location.href= Think.U('Home/Users/regist');
+	return location.href= Think.U('Users/regist');
 }
 function createCookie(a,b,c,d){
 	var d=d?d:"/";
