@@ -16,24 +16,16 @@
 <link href="/Public/css/newPub.css" rel="stylesheet">
 <link href="/Public/css/bannerState.css" rel="stylesheet">
 <link href="/Public/css/mia_skin.css" rel="stylesheet">
-<link href="/Public/css/miabaobei.css" rel="stylesheet">
 <link href="/Public/css/newIndexMain.css" rel="stylesheet">
 <link href="/Public/css/mymiacss.css" rel="stylesheet">
 
 
-<script type="text/javascript" src="/Public/js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="/Public/js/jquery.1.11.3.min.js"></script>
-<script type="text/javascript" src="/Public/js/jquery.min.js"></script>
-<script type="text/javascript" src="/Public/js/adv.js"></script>
-<script type="text/javascript" src="/Public/js/miytj.js"></script>
-<script type="text/javascript" src="/Public/js/cui.min.js"></script>
+<script type="text/javascript" src="/Public/js/cui.js"></script>
 <script type="text/javascript" src="/Public/js/newMiYaPub.js"></script>
 <script type="text/javascript" src="/Public/js/newIndex.js"></script>
-<script type="text/javascript" src="/Public/js/lwt.js"></script>
 <script type="text/javascript" src="/Public/js/init.js"></script>
-<script type="text/javascript" src="/Public/js/miyabaobei.js"></script>
 <script type="text/javascript" src="/Public/js/topslide.js"></script>
-<script type="text/javascript" src="/Public/js/regist_act_pop188.js"></script>
 <script type="text/javascript">
     var ThinkPHP = window.Think = {
         "ROOT"   : "",
