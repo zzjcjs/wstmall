@@ -145,7 +145,8 @@ class UsersAction extends BaseAction {
     */
 	public function index(){
 		$this->isUserLogin();
-		$this->redirect("Orders/queryByPage");
+		$this->redirect("Mia/userIndex");
+//		$this->redirect("Order/byPage");
 	}
 	
    /**

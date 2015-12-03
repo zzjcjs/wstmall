@@ -623,582 +623,482 @@
 
 
         
-    <div class="mainSlide" id="mainSlide">
-    <div id="topslide">
-        <div class="cell">
-            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/1.jpg);"></div>
-            <div class="w1004">
-                <a target="_blank" href="http://www.mia.com/sale/thanDay/main/" id="__AD_focus729" title="" class="promLink" data-ref="729"></a>
-            </div>
+    <link rel="stylesheet" href="http://file01.miyabaobei.com/resources/styles/jqwin.css">
+    <link rel="stylesheet" href="http://file01.miyabaobei.com/resources/styles/item/iteminfo.css?v=20150602">
+    <div class="warp">
+        <div class="breadCrumbs">
+            <div class="w1004 songti">
+                <a href="/">蜜芽首页</a> &gt;
+                <a href="/list-22326.html" title="瘦身代餐专场 ">
+                    瘦身代餐专场                         </a> &gt;
+                Nu-Lax 乐康膏 果蔬乐康膏250g*2盒        </div>
         </div>
-        <div class="cell">
-            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/2.jpg);"></div>
-            <div class="w1004">
-                <a target="_blank" href="http://www.mia.com/special/module/index/197/pc/" id="__AD_focus726" title="" class="promLink" data-ref="726"></a>
-            </div>
-        </div>
-        <div class="cell">
-            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/3.jpg);"></div>
-            <div class="w1004">
-                <a target="_blank" href="http://www.mia.com/special/module/index/275/pc/" id="__AD_focus727" title="" class="promLink" data-ref="727"></a>
-            </div>
-        </div>
-        <div class="cell">
-            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/4.jpg);"></div>
-            <div class="w1004">
-                <a target="_blank" href="http://www.mia.com/special/module/index/272/pc/" id="__AD_focus728" title="" class="promLink" data-ref="728"></a>
-            </div>
-        </div>
-        <div class="cell cur">
-            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/5.jpg);"></div>
-            <div class="w1004">
-                <a target="_blank" href="http://www.mia.com/list-21960.html" id="__AD_focus734" title="" class="promLink" data-ref="734"></a>
-            </div>
-        </div>
-    </div>
-    <div class="pgWidth">
-        <div class="w1004">
-            <span class="slideNum" id="slideNum">
-                            <i class=""></i>
-                            <i class=""></i>
-                            <i class=""></i>
-                            <i class=""></i>
-                            <i class="cur"></i>
-            </span>
-        </div>
-    </div>
-    <div class="arNav">
-        <div class="w1004">
-            <a style="display: none;" href="#" class="leftAr"></a>
-            <a style="display: none;" href="#" class="rightAr"></a>
-        </div>
-    </div>
-</div>>
-    <div class="today_title w1000"> 今日精选 </div>
 
-    <div class="TodaySelected">
-    <div id="TBBRim">
-        <div class="fmRim TodayBoutique">
-            <ul class="fmCon">
-                <li class="HBSBlock">
-                    <div class="TBB"> <a target="_blank" href="<?php echo U('Mia/goodsDetails');?>" title="大杯口大容量 超长保温保冷">
-                        <div class="Commodity rel"> <img src="http://img02.miyabaobei.com/d1/p2/2015/11/20/1e/37/1e379a49d11fc27536f95ac25084a9b4.jpg" width="228" height="228" alt="大杯口大容量 超长保温保冷"/>
-                            <div class="Nicon NI_hot">热</div>
-                        </div>
-                        <div class="price1">
-                            <div class="r">
-                                8070人喜欢
+        <div class="content detail">
+            <div class="w1004">
+                <div class="titlecon clearfix">
+                    <div class="left yahei l">
+                        <input type="hidden" name="item_id" id="item_id" value="1109462" readonly="readonly" />
+                        <!-- 20150423 -->
+
+                        <a href="/list-22326.html" class="pink">瘦身代餐专场 </a>
+
+                        <font style="color:#333;">Nu-Lax 乐康膏 果蔬乐康膏250g*2盒</font>
+
+                        （本品不能代替药物）由澳洲原产的多种水果和天然植物赛纳叶混合而成，不含人工添加剂。净肠美肌补能量，通便排毒，改善便秘、腹胀、口臭、青春痘等问题。睡前服用效果更好~！
+
+                        <!-- /20150423 -->
+                    </div>
+                    <div class="right l">
+                        <div id="detailOutletInfo" class="countdown" style="display:none">
+                            <h5 ></h5>
+                            <div id="counter">
+                                <img src="http://file04.miyabaobei.com/resources/images/dot.gif" alt="" width="20" height="20"/>
                             </div>
-                            <span class="p1">￥</span><span class="p2">488.00</span><span class="originalPrice">￥698.00</span> </div>
-                        <div class="intro"><p>象印原装进口儿童保温杯</p><p class="gray3">大杯口大容量 超长保温保冷</p></div>
-                    </a> </div>
-
-                    <div class="TBB"> <a target="_blank" href="<?php echo U('Mia/goodsDetails');?>" title="细密喷雾 改善干燥肌肤">
-                        <div class="Commodity rel"> <img src="http://img03.miyabaobei.com/d1/p2/2015/11/20/f3/f2/f3f270f9e205498cdda059270b305dcc.jpg" width="228" height="228" alt="细密喷雾 改善干燥肌肤"/>
-                            <div class="Nicon NI_hot">热</div>
+                            <input type="hidden" id="outletStart" value="" />
+                            <input type="hidden" id="outletEnd" value="" />
                         </div>
-                        <div class="price1">
-                            <div class="r">
-                                16029人喜欢
-                            </div>
-                            <span class="p1">￥</span><span class="p2">59.00</span><span class="originalPrice">￥125.00</span> </div>
-                        <div class="intro"><p>雅漾活泉水喷雾150ml</p><p class="gray3">细密喷雾 改善干燥肌肤</p></div>
-                    </a> </div>
+                    </div>
+                </div>
+                <!--/.title-->
+                <div class="show clearfix">
+                    <div class="left l rel">
+                        <!--3月纸尿裤节logo lastChang 20150303 by ke-->
+                        <!--3月纸尿裤节logo end -->
 
-                    <div class="TBB"> <a target="_blank" href="<?php echo U('Mia/goodsDetails');?>" title="适合饮食不规律人群">
-                        <div class="Commodity rel"> <img src="http://img04.miyabaobei.com/item/10/1070/1070633_normal_4.jpg" width="228" height="228" alt="适合饮食不规律人群"/>
-                            <div class="Nicon NI_hot">热</div>
+                        <div class="mark_wrap_x60">
+                            <span class="mark_item mark_dutyfree"></span>
                         </div>
-                        <div class="price1">
-                            <div class="r">
-                                11388人喜欢
-                            </div>
-                            <span class="p1">￥</span><span class="p2">238.00</span><span class="originalPrice">￥498.00</span> </div>
-                        <div class="intro"><p>日本新谷瘦身酵素</p><p class="gray3">适合饮食不规律人群</p></div>
-                    </a> </div>
-
-                    <div class="TBB"> <a target="_blank" href="<?php echo U('Mia/goodsDetails');?>" title="体积轻巧 节省空间方便携带">
-                        <div class="Commodity rel"> <img src="http://img01.miyabaobei.com/d1/p2/2015/11/20/78/ae/78aee8a5710f1b0a4d29a2fdca2f1942.jpg" width="228" height="228" alt="体积轻巧 节省空间方便携带"/>
-                            <div class="Nicon NI_hot">热</div>
+                        <div class="big rel">
+                            <img src="http://img01.miyabaobei.com/d1/p2/item/11/1109/1109462_topic_1.jpg" width="447" height="447" alt="果蔬乐康膏250g*2盒"/><!--<a href="#" class="magnifier pos"></a>-->
                         </div>
-                        <div class="price1">
-                            <div class="r">
-                                2440人喜欢
+                    </div>
+                    <div class="right l">
+                        <div class="M_productInfo">
+                            <div class="pi_price_box">
+                                <span class="pbox_price"><i class="pbox_yen">&yen;</i><em id="item_price">99.00</em></span>
+                                <span class="pbox_off">5.1折</span>
+
+                                <span class="pbox_market">&yen;<del>196.00</del></span>
+
                             </div>
-                            <span class="p1">￥</span><span class="p2">232.00</span><span class="originalPrice">￥368.00</span> </div>
-                        <div class="intro"><p>多利科迷你体重秤</p><p class="gray3">体积轻巧 节省空间方便携带</p></div>
-                    </a> </div>
 
-                </li>
-            </ul>
+                            <div class="pi_attr_box">
+                                <div class="clearfix discount_f">
 
+                                </div>
+                                <input type="hidden" value="add" name="act">
+                                <input type="hidden" value="" name="client_time">
+                                <!-- 20150915 -->
+                                <dl id="i_youhui" class="i_youhui clearfix" style="display: none">
+                                    <dt class="num_name">优惠：</dt>
+                                    <dt>
+                                        <!--                                    <div class="iyh_tuan"><i>团</i>下载蜜芽APP立享团购优惠，3人成团可低至 ¥69 元 </div>
+                                                                            <div class="iyh_quan"><i>券</i>满100减5元优惠券 立即领取</div>-->
+                                    </dt>
+                                </dl>
+                                <!-- 20150814 -->
+                                <!-- 20150427 -->
+                                <dl class="color new_gg">
+                                    <dt class="color_name">套装：</dt>
+                                    <dd class="color_list">
+                                        <ul>
+                                            <li class="color_list_item">
+                                                <a class="selected">
+                                                    <em>2</em>件套<br>￥50/件
+                                                    <span class="i_select"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <!-- /20150427 -->
+
+
+                                <dl class="color">
+                                    <dt class="color_name">可选：</dt>
+                                    <dd class="color_list">
+                                        <ul>
+                                            <li class="color_list_item">
+                                                <a class="selected" title="果蔬乐康膏250g*2盒" href="javascript:void(0)">
+                                                    <img width="42" height="43" alt="果蔬乐康膏250g*2盒" src="http://img01.miyabaobei.com/d1/p2/item/11/1109/1109462_normal_1.jpg" class="fl">
+                                                    <span class="i_select"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <dl id="detail_size" style="display:none;"></dl>
+                                <input type="hidden" value="" id="item_size" name="size" readonly="readonly" />
+                                <dl id="J_num_select" class="i_num clearfix">
+                                    <dt class="num_name">数量：</dt>
+                                    <dd class="i_notice_msg J_num_tips"></dd>
+                                    <dd class="num_box">
+                                        <span class="num_reduce num_reduce_disabled J_num_act_reduce"></span>
+                                        <em class="num_input" id="buyAmount">1</em>
+                                        <span class="num_add J_num_act_add"></span>
+                                    </dd>
+                                    <dd id="stockTips" class="num_msg f12">还剩<span id="stock"></span>件</dd>
+                                </dl>
+                                <dl class="other">
+                                    <dt class="other_name">编码：</dt>
+                                    <dd class="other_box">1109462</dd>
+                                </dl>
+
+
+
+                                <!-- 税率-->
+                                <dl class="other">
+                                    <dt class="other_name">关税：</dt>
+                                    <dd class="other_box" style="text-align:left;height:auto">本商品重庆综合保税仓税率10%，订单关税≤50免征</dd>
+                                </dl>
+
+                                <!--                            --><!--                                <dl class="other">-->
+                                <!--                                    <dt class="other_name" style="width: 61px;">购买须知：</dt>-->
+                                <!--                                    <dd class="other_box" style="text-align:left;height:auto">以商品实际销售价格作为完税价格(征税基数)参照行邮税税率征收税款。<br/>应征税额在50元(含50元)以下的,海关予以免征。<strong id="kjghelp-button">&nbsp;?&nbsp;</strong></dd>-->
+                                <!--                                </dl>-->
+                                <!--                                <i id="kjghelp">以商品实际销售价格作为完税价格（征税基数），参照行邮税税率征收税款。应征税额在50元（含50元）以下的，海关予以免征。消费者购买跨境贸易电子商务进口商品，以“个人自用、合理数量”为原则，参照《海关总署公告2010年第43号（关于调整进出境个人邮递物品管理措施有关事宜）》要求，每次限值为1000元人民币，超出规定限值的，应按照货物规定办理通关手续。但单次购买仅有一件商品且不可分割的，虽超出规定限值，经海关审核确属个人自用的，可以参照个人物品规定办理通关手续。对于违反规定，超出个人自用合理数量购买的，系统将予以退单，情节严重的，将追究个人法律责任。</i>-->
+                                <!--                            -->
+                                <!--//Mother's special blend,Primo 特卖商品提示-->
+                                <!--  -->
+
+                                <div class="clearfix">
+                                    <div class="service_mia" style="position: relative;">
+                                        <div class="hide_button" style="position:absolute;top:0; left:0; width: 60px; height: 36px; z-index: 9;"></div>
+                                        <!-- Live800在线客服图标:勿删[固定型] 开始-->
+                                        <div id='live7'>
+                                        </div>
+                                    </div>                                </div>
+
+
+                                <div class="clearfix">
+                                    <div class="button_f" id="itemProcess">
+                                        <a href="javascript:void(0)" class="btn_07" disabled id="J_cartAdd_submit">载入中</a>
+                                        <p id="sepcailNotice"></p>
+                                    </div>
+                                    <div class="button_f" id="itemAttention">
+                                        <a href="javascript:void(0)" class="btn_07_f" id="attend_submit">收藏</a>
+                                        <p id="sepcailNotice1"></p>
+                                    </div>
+                                </div>
+                                <div class="pbox_pms">
+                                    <dl>
+                                        <dt>包邮</dt>
+                                        <dd>不含纸尿裤、拉拉裤及直邮奶粉的单笔订单满88免运费</dd>
+                                    </dl>
+                                </div>
+                                <div id="J_detailShare_wrap" class="pi_share_box">
+                                    <span class="share_tit widget_share_txt">告诉小伙伴：</span>
+                                <span class="jiaaa jiathis_style_24x24" >
+                                    <a href="javascript:void(0)" class="jiathis_button_weixin"></a>
+                                    <a href="javascript:void(0)" mars_sead="m_account_invite_sina" class="share_button_tsina"></a>
+                                    <a href="javascript:void(0)" mars_sead="m_account_invite_tweibo" class="share_button_tqq"></a>
+                                    <a href="javascript:void(0)" mars_sead="m_account_invite_qzone" class="share_button_qzone"></a>
+                                    <a href="javascript:void(0)" mars_sead="m_account_invite_renren" class="share_button_renren"></a>
+                                    <a href="javascript:void(0)" mars_sead="m_account_invite_douban" class="share_button_douban"></a>
+                                    <a href="javascript:void(0)" class="jiathis_button_meilishuo"></a>
+                                </span>
+                                </div>
+                                <input type="hidden" id="share_pic" value="http://img01.miyabaobei.com/d1/p2/item/11/1109/1109462_topic_1.jpg">
+                                <input type="hidden" id="share_name" value="刚刚在蜜芽宝贝上发现了这个#Nu-Lax 乐康膏 果蔬乐康膏250g*2盒# 好喜欢，求特卖求好价!">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.show-->
+
+                <div class="poppro">
+                    <div class="cell"><a href="/item-1000458.html" target='_blank' title="退热贴 蓝色  适用年龄2岁+ 12+4枚"><img src="http://img01.miyabaobei.com/item/10/1000/1000458_normal_4.jpg" alt="退热贴 蓝色  适用年龄2岁+ 12+4枚" width="217" class="img"></a>
+                        <p class="p1"><a href="/item-1000458.html">小林 退热贴 蓝色  适用年龄2岁+ 12+4枚</a></p>
+                        <p class="p2">&yen;35.00                                                       		 （3.7折）                            </p>
+                        <span class="mk mkb"></span>
+                        <span class="mk">爆款!必抢!</span>
+                    </div>
+                    <div class="cell"><a href="/item-1000647.html" target='_blank' title="洗手液无香型50ml"><img src="http://img01.miyabaobei.com/item/10/1000/1000647_normal_4.jpg" alt="洗手液无香型50ml" width="217" class="img"></a>
+                        <p class="p1"><a href="/item-1000647.html">Baby Ganics 甘尼克 洗手液无香型50ml</a></p>
+                        <p class="p2">&yen;28.00                                                       		 （3.8折）                            </p>
+                        <span class="mk mkb"></span>
+                        <span class="mk">爆款!必抢!</span>
+                    </div>
+                    <div class="cell"><a href="/item-1001109.html" target='_blank' title="婴幼儿鳕鱼肝油 DHA+维生素AD 60ml"><img src="http://img01.miyabaobei.com/item/10/1001/1001109_normal_4.jpg" alt="婴幼儿鳕鱼肝油 DHA+维生素AD 60ml" width="217" class="img"></a>
+                        <p class="p1"><a href="/item-1001109.html">Nordic Naturals 挪帝克 婴幼儿鳕鱼肝油 DHA+维生素AD 60ml</a></p>
+                        <p class="p2">&yen;89.00                                                        		 （5.6折）                            </p>
+                        <span class="mk mkb"></span>
+                        <span class="mk">囤货必备</span>
+                    </div>
+                    <div class="cell"><a href="/item-1028026.html" target='_blank' title="牛乳钙90粒"><img src="http://img01.miyabaobei.com/d1/p2/item/10/1028/1028026_normal_4.jpg" alt="牛乳钙90粒" width="217" class="img"></a>
+                        <p class="p1"><a href="/item-1028026.html">Bio island 牛乳钙90粒</a></p>
+                        <p class="p2">&yen;156.00                                                        		 （8.3折）                            </p>
+                        <span class="mk mkb"></span>
+                        <span class="mk">囤货必备</span>
+                    </div>
+                    <div class="cell"><a href="/item-1125293.html" target='_blank' title="凝脂恒久粉饼 10g 010象牙白"><img src="http://img01.miyabaobei.com/d1/p2/item/11/1125/1125293_normal_4.jpg" alt="凝脂恒久粉饼 10g 010象牙白" width="217" class="img"></a>
+                        <p class="p1"><a href="/item-1125293.html">Dior 迪奥 凝脂恒久粉饼 10g 010象牙白</a></p>
+                        <p class="p2">&yen;499.00                                                        		 （8.8折）                            </p>
+                        <span class="mk mkb"></span>
+                        <span class="mk">新品上市，火热出炉</span>
+                    </div>
+                    <div class="cell"><a href="/item-1124452.html" target='_blank' title="企鹅少儿进阶读物Level2（上）10册 绿"><img src="http://img01.miyabaobei.com/d1/p2/item/11/1124/1124452_normal_4.jpg" alt="企鹅少儿进阶读物Level2（上）10册 绿" width="217" class="img"></a>
+                        <p class="p1"><a href="/item-1124452.html">孩宝小镇 企鹅少儿进阶读物Level2（上）10册 绿</a></p>
+                        <p class="p2">&yen;128.00                                                        		 （4.3折）                            </p>
+                        <span class="mk mkb"></span>
+                        <span class="mk">新品上市，火热出炉</span>
+                    </div>
+                </div>
+                <div class="introduction clearfix">
+                    <div class="left l">
+                        <div class="moduleFixed">
+                            <div class="moFixed">
+                                <ul class="title yahei">
+                                    <li class="current">商品参数</li>
+                                    <li>商品详情</li>
+                                    <li>蜜芽口碑</li>
+                                    <li>蜜芽优势</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="p10">
+                            <div class="datacon area0 clearfix cs rel">
+                                <!-- <div class="dtit"><img src="images/sp02.gif" alt="商品详情"/></div>-->
+                                <ul class="clearfix">
+                                    <li class="width"><b>商品名称:</b>Nu-Lax 乐康膏 果蔬乐康膏250g*2盒</li>
+                                    <li><b>品牌:</b>Nu-Lax 乐康膏</li>
+                                    <li><b>分类:</b>瘦身代餐</li>
+                                    <li><b>商品条码:</b></li>
+                                </ul>
+                                <div class="clearfix">
+                                    <!-- <img src="http://file01.miyabaobei.com/resources/images/pingan.jpg?v=111" /> -->
+                                </div>
+                                <div class="pointOfView clearfix">
+                                    <img src="http://img01.miyabaobei.com/d1/p2/item/11/1109/1109462_normal_5.jpg" width="113" height="130" />
+                                    <div class="l">
+                                        <h4>蜜芽观点：</h4>
+                                        <p>体内毒素堆积就会导致一系列肌肤问题，所以常排毒是必要的。这款产品由澳洲原产的多种水果和天然植物赛纳叶混合而成，不含人工添加剂，口感如同吃果脯零食。睡前服用，早起轻松如厕，解决便秘烦恼；排除体内毒素，净化体内环境。可缓解皱纹、色斑、腹胀、便秘、口臭、青春痘等问题，增强胃肠道活力，皮肤变得红润光泽。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="area1 clearfix datacon">
+                                <div class="dtit"><img src="/resources/images/sp02.gif" alt="商品详情"/></div>
+                                <img data-src="http://img01.miyabaobei.com/d1/p2/2015/10/26/e2/a3/e2a3aafd24346c00f94972e306fb2e51.jpg" src=""  class="lazyload" width="750px" alt="loading" />                                                                    <img data-src="http://img01.miyabaobei.com/d1/p2/2015/10/26/8b/d1/8bd18ff860b2f58025d94bc2416c4346.jpg" src=""  class="lazyload" width="750px" alt="loading" />                                                                    <img data-src="http://img01.miyabaobei.com/d1/p2/2015/10/26/f5/1d/f51d034d19422b88ef90787c1f77afb4.jpg" src=""  class="lazyload" width="750px" alt="loading" />                                                                    <img data-src="http://img01.miyabaobei.com/d1/p2/2015/10/26/20/e9/20e97863547568780c60f0955a1e4d34.jpg" src=""  class="lazyload" width="750px" alt="loading" />                                                                    <img data-src="http://img01.miyabaobei.com/d1/p2/2015/10/26/ba/59/ba59bc0c706c0157320f776aac9ce1d5.jpg" src=""  class="lazyload" width="750px" alt="loading" />                                                                    <img data-src="http://img01.miyabaobei.com/d1/p2/2015/10/26/50/a6/50a623d65f6a9f4564b58a9dd33d32d5.jpg" src=""  class="lazyload" width="750px" alt="loading" />                                                                    <img data-src="http://img01.miyabaobei.com/d1/p2/2015/10/26/37/00/3700ba02ec868b511227fa627b3043c4.jpg" src=""  class="lazyload" width="750px" alt="loading" />                                                                    <img data-src="http://img01.miyabaobei.com/d1/p2/2015/10/26/e9/ac/e9acdebfef9089ba17e7f5e7b647cbd7.jpg" src=""  class="lazyload" width="750px" alt="loading" />                                                                    <img data-src="http://img01.miyabaobei.com/d1/p2/2015/10/26/b0/77/b077bcc62b5dadb8edf3ed46b069250a.jpg" src=""  class="lazyload" width="750px" alt="loading" />                                                                    <img data-src="http://img01.miyabaobei.com/d1/p2/2015/10/26/38/98/3898fab7d9a12760601fb01207ebabb4.jpg" src=""  class="lazyload" width="750px" alt="loading" />                                                                                                    <img data-src="http://img.miyabaobei.com/d1/p2/2015/10/15/95/0a/950a4e005ca0c755e06100520440d451.jpg" src="http://img.miyabaobei.com/d1/p2/2015/10/15/95/0a/950a4e005ca0c755e06100520440d451.jpg" class="lazyload" width="750px" alt="loading">
+                                <img data-src="http://img.miyabaobei.com/d1/p2/2015/10/15/14/bf/14bfff0109df79a0bad676fb5bbbf361.jpg" src="http://img.miyabaobei.com/d1/p2/2015/10/15/14/bf/14bfff0109df79a0bad676fb5bbbf361.jpg" class="lazyload" width="750px" alt="loading">
+                                <div style="clear:both;"></div>
+                            </div>
+
+                            <div class="area2 clearfix wordOfMouth datacon" id ='test'>
+                                <div class="dtit"><img src="/resources/images/sp03.gif" alt="蜜芽口碑"/></div>
+                                <div class="nonekb">还没有人点评此商品！  <a href="mykoubei-1109462.html" class="pink_mid_btn">去写口碑</a></div>
+                            </div>
+                            <div class="area3 clearfix datacon">
+                                <div class="dtit"><img src="/resources/images/sp04.gif" alt="蜜芽优势"/></div>
+                                <ul class="mia_advantage" id="advantageTitle">
+                                    <!--<li class="mia_current"><span class="myys1"></span></li>-->
+                                    <li class="mia_current"><span class="myys2"></span></li>
+                                    <li class=" "><span class="myys3"></span></li>
+                                    <li class=" "><span class="myys4"></span></li>
+                                    <li class=" "><span class="myys5"></span></li>
+                                    <li class=" "><span class="myys6"></span></li>
+                                </ul>
+                                <div class="imgblock" id="imgBlock">
+                                    <!--<div class="mia_advant1">
+                                      <img src="" data-src="http://img.miyabaobei.com/other/14124023248129.jpg" alt="蜜芽优势" class="lazyload" width="750" height="266"/>
+                                      <img src="" data-src="http://img.miyabaobei.com/other/14122033020497.jpg" alt="蜜芽优势" class="lazyload" width="750" height="300"/>
+                                    </div>-->
+                                    <div class="mia_advant2">
+                                        <img src="" data-src="http://img.miyabaobei.com/other/15421105031323.jpg" alt="蜜芽优势" class="lazyload" width="750" height="280"/>
+                                        <img src="" data-src="http://img.miyabaobei.com/other/15421105055295.jpg" alt="蜜芽优势" class="lazyload" width="750" height="440"/>
+                                        <!--                                    <img src="" data-src="http://img.miyabaobei.com/other/141120060827244.jpg" alt="蜜芽优势" class="lazyload" width="750" height="232"/>-->
+                                    </div>
+                                    <div class="mia_advant3">
+                                        <img src="" data-src="http://img.miyabaobei.com/other/14124055750549.jpg" alt="蜜芽优势" class="lazyload" width="750" height="320"/>
+                                        <img src="" data-src="http://img.miyabaobei.com/other/141120061221246.jpg" alt="蜜芽优势" class="lazyload" width="750" height="320"/>
+                                        <img src="" data-src="http://img.miyabaobei.com/other/141120061245365.jpg" alt="蜜芽优势" class="lazyload" width="750" height="258"/>
+                                        <img src="" data-src="http://img.miyabaobei.com/other/141120061345425.jpg" alt="蜜芽优势" class="lazyload" width="750" height="240"/>
+                                    </div>
+                                    <div class="mia_advant4">
+                                        <img src="" data-src="http://img.miyabaobei.com/other/14124060052930.jpg" alt="蜜芽优势" class="lazyload" width="750" height="347"/>
+                                        <img src="" data-src="http://img.miyabaobei.com/other/141120061644197.jpg" alt="蜜芽优势" class="lazyload" width="750" height="288"/>
+                                        <img src="" data-src="http://img.miyabaobei.com/other/141120061716569.jpg" alt="蜜芽优势" class="lazyload" width="750" height="280"/>
+                                        <img src="" data-src="http://img.miyabaobei.com/other/141120062627883.jpg" alt="蜜芽优势" class="lazyload" width="750" height="300"/>
+                                        <img src="" data-src="http://img.miyabaobei.com/other/141120062653315.jpg" alt="蜜芽优势" class="lazyload" width="750" height="280"/>
+                                    </div>
+                                    <div class="mia_advant5">
+                                        <img src="" data-src="http://img.miyabaobei.com/other/14124060208177.jpg" alt="蜜芽优势" class="lazyload" width="750" height="308"/>
+                                        <img src="" data-src="http://img.miyabaobei.com/other/141120062813102.jpg" alt="蜜芽优势" class="lazyload" width="750" height="344"/>
+                                        <img src="" data-src="http://img.miyabaobei.com/other/14122033234281.jpg" alt="蜜芽优势" class="lazyload" width="750" height="314"/>
+                                    </div>
+                                    <div class="mia_advant6">
+                                        <img src="" data-src="http://img.miyabaobei.com/other/14124060242928.jpg" alt="蜜芽优势" class="lazyload" width="750" height="301"/>
+                                        <img src="" data-src="http://img.miyabaobei.com/other/14123023907162.jpg" alt="蜜芽优势" class="lazyload" width="750" height="258"/>
+                                        <img src="" data-src="http://img.miyabaobei.com/other/141120063034219.jpg" alt="蜜芽优势" class="lazyload" width="750" height="253"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right l">
+                        <div class="pubtitle yahei">热卖单品</div>
+                        <div class="pubcon cp">
+                            <div class="block clearfix">
+                                <a href="/item-1057502" target="_blank">
+                                    <img src="http://img01.miyabaobei.com/d1/p1/item/10/1057/1057502_normal_1.jpg" alt="爽快酵素60粒(30日)" width="80" height="80"/>
+                                </a>
+                                <p class="tit">
+                                    <a href="/item-1057502" target="_blank" title="爽快酵素60粒(30日)">
+                                        爽快酵素60粒(30日)                                        </a>
+                                </p>
+                                <span class="pink">&yen; 85.00</span><br/>
+                                <span class="gray">&nbsp;</span>
+                            </div>
+                            <div class="block clearfix">
+                                <a href="/item-1061208" target="_blank">
+                                    <img src="http://img01.miyabaobei.com/d1/p1/item/10/1061/1061208_normal_1.jpg" alt="代餐酵素 柠檬口味 200g" width="80" height="80"/>
+                                </a>
+                                <p class="tit">
+                                    <a href="/item-1061208" target="_blank" title="代餐酵素 柠檬口味 200g">
+                                        代餐酵素 柠檬口味 200g                                        </a>
+                                </p>
+                                <span class="pink">&yen; 199.00</span><br/>
+                                <span class="gray">&nbsp;</span>
+                            </div>
+                            <div class="block clearfix">
+                                <a href="/item-1084547" target="_blank">
+                                    <img src="http://img01.miyabaobei.com/d1/p1/item/10/1084/1084547_normal_1.jpg" alt="Burn60燃脂配方 60粒" width="80" height="80"/>
+                                </a>
+                                <p class="tit">
+                                    <a href="/item-1084547" target="_blank" title="Burn60燃脂配方 60粒">
+                                        Burn60燃脂配方 60粒                                        </a>
+                                </p>
+                                <span class="pink">&yen; 129.00</span><br/>
+                                <span class="gray">&nbsp;</span>
+                            </div>
+                            <div class="block clearfix">
+                                <a href="/item-1116676" target="_blank">
+                                    <img src="http://img01.miyabaobei.com/d1/p2/item/11/1116/1116676_normal_1.jpg" alt="仙人掌精华代餐片50片" width="80" height="80"/>
+                                </a>
+                                <p class="tit">
+                                    <a href="/item-1116676" target="_blank" title="仙人掌精华代餐片50片">
+                                        仙人掌精华代餐片50片                                        </a>
+                                </p>
+                                <span class="pink">&yen; 168.00</span><br/>
+                            </div>
+                            <div class="block clearfix">
+                                <a href="/item-1110118" target="_blank">
+                                    <img src="http://img01.miyabaobei.com/d1/p1/item/11/1110/1110118_normal_1.jpg" alt="健康瘦身茶 16*2盒" width="80" height="80"/>
+                                </a>
+                                <p class="tit">
+                                    <a href="/item-1110118" target="_blank" title="健康瘦身茶 16*2盒">
+                                        健康瘦身茶 16*2盒                                        </a>
+                                </p>
+                                <span class="pink">&yen; 69.00</span><br/>
+                                <span class="gray">&nbsp;</span>
+                            </div>
+                            <div class="block clearfix">
+                                <a href="/item-1061206" target="_blank">
+                                    <img src="http://img01.miyabaobei.com/d1/p1/item/10/1061/1061206_normal_1.jpg" alt="代餐酵素 巧克力口味 200g" width="80" height="80"/>
+                                </a>
+                                <p class="tit">
+                                    <a href="/item-1061206" target="_blank" title="代餐酵素 巧克力口味 200g">
+                                        代餐酵素 巧克力口味 200g                                        </a>
+                                </p>
+                                <span class="pink">&yen; 199.00</span><br/>
+                                <span class="gray">&nbsp;</span>
+                            </div>
+                            <div class="block clearfix">
+                                <a href="/item-1061204" target="_blank">
+                                    <img src="http://img01.miyabaobei.com/d1/p1/item/10/1061/1061204_normal_1.jpg" alt="代餐酵素 香蕉口味 200g" width="80" height="80"/>
+                                </a>
+                                <p class="tit">
+                                    <a href="/item-1061204" target="_blank" title="代餐酵素 香蕉口味 200g">
+                                        代餐酵素 香蕉口味 200g                                        </a>
+                                </p>
+                                <span class="pink">&yen; 199.00</span><br/>
+                                <span class="gray">&nbsp;</span>
+                            </div>
+                            <div class="block clearfix">
+                                <a href="/item-1105469" target="_blank">
+                                    <img src="http://img01.miyabaobei.com/d1/p1/item/11/1105/1105469_normal_1.jpg" alt="果蔬乐康膏250g" width="80" height="80"/>
+                                </a>
+                                <p class="tit">
+                                    <a href="/item-1105469" target="_blank" title="果蔬乐康膏250g">
+                                        果蔬乐康膏250g                                        </a>
+                                </p>
+                                <span class="pink">&yen; 58.00</span><br/>
+                                <span class="gray">&nbsp;</span>
+                            </div>
+                            <div class="block clearfix">
+                                <a href="/item-1100870" target="_blank">
+                                    <img src="http://img01.miyabaobei.com/d1/p1/item/11/1100/1100870_normal_1.jpg" alt="椰子水750ml" width="80" height="80"/>
+                                </a>
+                                <p class="tit">
+                                    <a href="/item-1100870" target="_blank" title="椰子水750ml">
+                                        椰子水750ml                                        </a>
+                                </p>
+                                <span class="pink">&yen; 129.00</span><br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--/.content-->
+    </div>
+
+    <div class="dialogAddTelW" style="display:none">
+        <div class="dialogAddTel">
+            <h3 class="tit2">免费订阅<span class="close" onclick="closeAddTelW()"></span></h3>
+            <div class="covDiv1">喜欢的宝贝卖光了，想买怎么办？快快订阅免费开售通知，商品参加特卖时会通知你哦~</div>
+            <div class="covDiv2">
+                <span class="spa1">手机短信：</span>
+                <input type="text" value="" class="inp1" onblur="yTel()" id="telInp" placeholder="请输入手机" />
+                <p class="erro pink">请输入正确的手机号码</p>
+            </div>
+            <div class="covDiv3"><input type="submit" value="确定" class="sub1" id="telSub" onclick="telSub()" /></div>
         </div>
     </div>
-</div>
-<!--今日精选-结束-->
+    <div class="dialogAddTelWoverlay" style="display:none"></div>
 
-        <div class="Extension w1000 clearfix HBSBlock">
-        <div  >
-            <a target="_blank" href="http://www.miyabaobei.com/formulas.html">
-                <img src="/Public/images/buy_everyday_1.jpg" data-src="http://img02.miyabaobei.com/d1/p2/2015/10/20/40/78/407868cd7990cbc293c79e6334d778f5.jpg" alt="" width="492" height="160" class="lazyload"/>
-            </a>
-        </div>
-        <div  class="mr0" >
-            <a target="_blank" href="http://www.miyabaobei.com/diapers.html">
-                <img src="/Public/images/buy_everyday_2.jpg" data-src="http://img03.miyabaobei.com/d1/p2/2015/10/20/c4/50/c4509f325a8b9cb2878126ba60eab2c6.jpg" alt="" width="492" height="160" class="lazyload"/>
-            </a>
-        </div>
-    </div>
-    <!--天天特卖-结束-->
+<script>
+        var NO_MARKET_PRICE = true; //不用ajax计算折扣
+        //蜜芽优势切换
+        $("#advantageTitle").tabs({
+            cntSelect: "#imgBlock",
+            tabEvent: "click",
+            tabStyle: "normal",
+            onStyle : "mia_current"
+        });
+        $("#kjghelp-button").mouseover(function(){
+            $("#kjghelp").show();
+        });
+        $("#kjghelp-button").mouseout(function(){
+            $("#kjghelp").hide();
+        });
+        //口碑跳转
+        $('#review_num_f').click(function(){
+            var scrollTop_f=$('#test').offset().top;
+            //alert(scrollTop_f);
+            $('html,body').animate({
+                scrollTop:scrollTop_f-50
+            },1000);
+        });
 
-    <div class="topRanking w1000">
-    <ul class="tabMenu">
-        <li class="selected"><span>全球必Buy</span><!--<span class="line1 left"></span><span class="line1 right"></span>--></li>
-        <!--<li class="line"></li>-->
-        <li ><span>当季爆款</span><!--<span class="line1 left"></span><span class="line1 right"></span>--></li>
-        <!--<li class="line"></li>-->
-        <li ><span>新品推荐</span><!--<span class="line1 left"></span><span class="line1 right"></span>--></li>
-        <!--<li class="line"></li>-->
-        <li ><span>超值好物</span><!--<span class="line1 left"></span><span class="line1 right"></span>--></li>
-        <!--<li class="line"></li>-->
-    </ul>
-    <div class="tabContent">
-        <div class="parent HBSBlock clearfix" style="display:block;" >
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1105208.html">
-                <div class="l">
-                    <img src="http://img01.miyabaobei.com/d1/p2/2015/11/20/7f/dd/7fddbef412e0f6ac79d8a201a578ebe6.jpg" class="lazyload" alt="sk2神仙水精华露" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t1">top1</div>
-                    <div class="title">sk2神仙水精华露</div>
-                    <div class="SellingPoint">调理肌肤水油平衡<br/>促进肌肤新陈代谢</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">738.00</span><span class="originalPrice">￥1270.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1000978.html">
-                <div class="l"><img src="http://img01.miyabaobei.com/d1/p2/2015/11/20/7f/dd/7fddbef412e0f6ac79d8a201a578ebe6.jpg" class="lazyload" alt="妙思乐洗发沐浴露" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t2">top2</div>
-                    <div class="title">妙思乐洗发沐浴露</div>
-                    <div class="SellingPoint">功效二合一<br/>无泪配方无刺激</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">99.00</span><span class="originalPrice">￥178.00</span></div>
-                    <div class="Sales">
-                        3353人已购买
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1109462.html">
-                <div class="l"><img src="http://img02.miyabaobei.com/d1/p2/2015/11/20/62/d5/62d56e95e6bcf3c8a76534e16af37160.jpg" class="lazyload" alt="果蔬乐康膏250g*2盒" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t3">top3</div>
-                    <div class="title">果蔬乐康膏250g*2盒</div>
-                    <div class="SellingPoint">通便排毒<br/>净肠美肌补充能量</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">99.00</span><span class="originalPrice">￥196.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1027801.html">
-                <div class="l"><img src="http://img03.miyabaobei.com/d1/p2/2015/11/20/db/76/db76281456d90c25bd1e0587a4dacc1c.jpg" class="lazyload" alt="JELLYCAT邦尼兔" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t4">top4</div>
-                    <div class="title">JELLYCAT邦尼兔</div>
-                    <div class="SellingPoint">可爱萌萌哒<br/>手感柔软</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">195.00</span><span class="originalPrice">￥269.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1019621.html">
-                <div class="l"><img src="http://img04.miyabaobei.com/d1/p2/2015/11/20/7b/48/7b485014429b12279bb18724ccd0d4ff.jpg" class="lazyload" alt="多利科计量勺" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t5">top5</div>
-                    <div class="title">多利科计量勺</div>
-                    <div class="SellingPoint">制作辅食<br/>烹饪佐料称量</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">158.00</span><span class="originalPrice">￥248.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1070589.html">
-                <div class="l"><img src="http://img01.miyabaobei.com/d1/p2/2015/11/20/29/87/29870a5ec8c9d42f52d9c41d58a18577.jpg" class="lazyload" alt="Schick乳木果刮毛刀" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t6">top6</div>
-                    <div class="title">Schick乳木果刮毛刀</div>
-                    <div class="SellingPoint">刀头自带润肤皂<br/>使用方便超级润滑</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">85.00</span><span class="originalPrice">￥150.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
+        var jiathis_config = {
+            url: document.location.href,
+            title: $("#share_name").val(),
+            shortUrl:false,
+            hideMore:false,
+            appkey:{
+                "tsina":"1042539293"
+            },
+            pic:$("#share_pic").val()
+        }
+    </script>
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1" charset="utf-8"></script>
+    <script type="text/javascript">
+        var _ozprm="pid99=1109462&cid99=266&brand99=Nu-Lax 乐康膏";
+    </script>
 
-        </div>
-        <div class="parent HBSBlock clearfix"  >
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1070102.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/20/ab/8d/ab8d3db8690c034c5830f3a5d23dad97.jpg" class="clicklazyload" alt="NENET新生儿5件套" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t1">top1</div>
-                    <div class="title">NENET新生儿5件套</div>
-                    <div class="SellingPoint">柔软低敏感安全材质<br/>自用送礼两相宜</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">228.00</span><span class="originalPrice">￥320.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1000341.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/20/c6/01/c60144e31dfeb359a44b6dea69b76858.jpg" class="clicklazyload" alt="智高彩虹夜灯" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t2">top2</div>
-                    <div class="title">智高彩虹夜灯</div>
-                    <div class="SellingPoint">发展宝宝视觉<br/>培养音乐乐感</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">220.00</span><span class="originalPrice">￥349.00</span></div>
-                    <div class="Sales">
-                        335人已购买
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1070106.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/20/b9/42/b9421c2900478f30e8a35b2df7206d22.jpg" class="clicklazyload" alt="薇婷沐浴用脱毛膏" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t3">top3</div>
-                    <div class="title">薇婷沐浴用脱毛膏</div>
-                    <div class="SellingPoint">坚果保湿精华<br/>光滑滋润效果持久</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">68.00</span><span class="originalPrice">￥158.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1070684.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/ce/20/ce20298307e2a215dde51831e528dd95.jpg" class="clicklazyload" alt="VEGE FRU酵素代餐粉" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t4">top4</div>
-                    <div class="title">VEGE FRU酵素代餐粉</div>
-                    <div class="SellingPoint">天然果蔬提取<br/>减少吸收多余糖分</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">228.00</span><span class="originalPrice">￥385.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1000459.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/20/7d/e7/7de71ac69a16d18f315d048bca7f979c.jpg" class="clicklazyload" alt="小林退热贴12+4枚" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t5">top5</div>
-                    <div class="title">小林退热贴12+4枚</div>
-                    <div class="SellingPoint">8小时清凉感<br/>2岁以上适用</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">36.00</span><span class="originalPrice">￥97.00</span></div>
-                    <div class="Sales">
-                        5962人已购买
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1116300.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/20/7b/5e/7b5eaa57c9ea6b460e676afd583399f6.jpg" class="clicklazyload" alt="洛斯小丁内衣套装" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t6">top6</div>
-                    <div class="title">洛斯小丁内衣套装</div>
-                    <div class="SellingPoint">罗纹收口防风钻入<br/>护肚设计防止受凉</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">119.00</span><span class="originalPrice">￥259.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-
-        </div>
-        <div class="parent HBSBlock clearfix"  >
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1070552.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/20/60/3c/603c092bd56df72af9b2536e2767f876.jpg" class="clicklazyload" alt="GOLDMASK活肤面膜" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t1">top1</div>
-                    <div class="title">GOLDMASK活肤面膜</div>
-                    <div class="SellingPoint">补水效果好<br/>无酒精无矿物油</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">75.00</span><span class="originalPrice">￥158.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1106020.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/b0/34/b03429ddeeb311aa002ccdabb39b189e.jpg" class="clicklazyload" alt="Boii创意马克杯" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t2">top2</div>
-                    <div class="title">Boii创意马克杯</div>
-                    <div class="SellingPoint">DIY跟着创意走<br/>拼出名字或图案</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">78.00</span><span class="originalPrice">￥98.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1121812.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/20/e3/ac/e3ace1cb91336b3cf9b5148cad17c44e.jpg" class="clicklazyload" alt="Dior魅惑润唇膏" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t3">top3</div>
-                    <div class="title">Dior魅惑润唇膏</div>
-                    <div class="SellingPoint">感应嘴唇含水量<br/>渐变效果改善唇色</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">198.00</span><span class="originalPrice">￥232.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1121780.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/20/5b/bc/5bbc35ce1d0046d7453b3c44d0a5a07f.jpg" class="clicklazyload" alt="IPSA流金岁月化妆水" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t4">top4</div>
-                    <div class="title">IPSA流金岁月化妆水</div>
-                    <div class="SellingPoint">强化角质保湿补水<br/>水油平衡控油抗痘</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">275.00</span><span class="originalPrice">￥350.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1099946.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/20/79/38/79380492e505cc3a5f74153abb7ed7d7.jpg" class="clicklazyload" alt="WubbaNub安抚奶嘴" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t5">top5</div>
-                    <div class="title">WubbaNub安抚奶嘴</div>
-                    <div class="SellingPoint">触感柔软有安全感<br/>防止奶嘴丢失</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">89.00</span><span class="originalPrice">￥159.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1108393.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/bc/bb/bcbbe7c5793453bdcc8322e4830d7ae3.jpg" class="clicklazyload" alt="健美生葡萄籽浓缩" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t6">top6</div>
-                    <div class="title">健美生葡萄籽浓缩</div>
-                    <div class="SellingPoint">抵抗自由基<br/>抗老化防辐射</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">95.00</span><span class="originalPrice">￥115.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-
-        </div>
-        <div class="parent HBSBlock clearfix"  >
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1047943.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/20/1b/60/1b60f297a92076aa7334930a70d64c69.jpg" class="clicklazyload" alt="贺寿利牛奶饼干" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t1">top1</div>
-                    <div class="title">贺寿利牛奶饼干</div>
-                    <div class="SellingPoint">淡淡奶香味道<br/>日常钙质补充</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">62.00</span><span class="originalPrice">￥98.00</span></div>
-                    <div class="Sales">
-                        3576人已购买
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1075779.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/20/ec/12/ec12230abf72228d89ddd748e3d9fc3e.jpg" class="clicklazyload" alt="Hellokitty零食盒" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t2">top2</div>
-                    <div class="title">Hellokitty零食盒</div>
-                    <div class="SellingPoint">原装进口外观时尚<br/>密封盖携带方便</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">58.00</span><span class="originalPrice">￥75.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1047946.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/20/b2/4c/b24c68d7e171bda8fcf83d016947db01.jpg" class="clicklazyload" alt="TOM成人无氟牙膏" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t3">top3</div>
-                    <div class="title">TOM成人无氟牙膏</div>
-                    <div class="SellingPoint">去除牙斑牙垢<br/>不伤害牙釉质</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">89.00</span><span class="originalPrice">￥100.00</span></div>
-                    <div class="Sales">
-                        481人已购买
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1064662.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/a1/58/a15828f7361dc22aca551c361e07166a.jpg" class="clicklazyload" alt="Nuby便携吸盘碗" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t4">top4</div>
-                    <div class="title">Nuby便携吸盘碗</div>
-                    <div class="SellingPoint">材质安全自带勺子<br/>底部吸盘稳稳吸住</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">35.00</span><span class="originalPrice">￥48.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1108177.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/20/e6/7b/e67b04994d97079bfdc1a911ca667bb1.jpg" class="clicklazyload" alt="菲拉思德椰子水" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t5">top5</div>
-                    <div class="title">菲拉思德椰子水</div>
-                    <div class="SellingPoint">排毒瘦身<br/>促进新陈代谢</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">229.00</span><span class="originalPrice">￥398.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1073589.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/20/d0/a9/d0a9342f27962b7c04d28924ce5a46f0.jpg" class="clicklazyload" alt="Nikken大折刀" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t6">top6</div>
-                    <div class="title">Nikken大折刀</div>
-                    <div class="SellingPoint">决不会刮伤眉毛<br/>刀片快不留黑茬</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">29.00</span><span class="originalPrice">￥45.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-
-        </div>
-    </div>
-</div>
-<!--全球必Buy-结束-->
-
-    <div class="NContent w1000 clearfix">
-    <div class="l left clearfix">
-        <div class="Aresale">
-            <div class="r">纸尿裤及拉拉裤满 <span class="pink">2包</span> 包邮，奶粉包邮，其他品类全场满<span class="pink">88</span>包邮哦~</div>
-            <div class="l yahei">正在特卖</div>
-        </div>
-        <div class="HBSBlock">
-            <div class="ntblock" id="outlets_box_22039">
-                <div class="img"><a target="_blank" href="/list-22039.html">
-                    <img src="http://img04.miyabaobei.com/d1/p1/2015/10/08/d4/12/d412ef78fc3d72697c2fc9abb05bb1d4.jpg" data-src="" alt="百亿欧涂鸦粉笔特卖" width="670" height="292" class="lazyload"/></a>
-                    <div class="SoldOut dn">抢光了</div></div>
-                <div class="text">
-                    <div class="djs"><span id="counter_22039" style="display:none;"> </span></div>
-                    <span class="price"><span class="pink">6.5</span>折起</span><a target="_blank" href="/list-22039.html">百亿欧涂鸦粉笔特卖</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="l right">
-
-        <div class="NHotA block">
-            <div class="title yahei">蜜芽免税店</div>
-            <div class="content"> <a target="_blank" href="http://www.miyabaobei.hk/dutyfree.html" title="蜜芽免税店"><img src="http://img01.miyabaobei.com/d1/p1/2015/10/12/b2/2f/b22f47f7e37786af84fcf8fb7c0310f8.jpg" alt="蜜芽免税店" width="290" height="220"/></a> </div>
-        </div>
-        <div class="moduleFixed idmod">
-            <div class="moFixed">
-                <ul>
-                    <li  class="current pink" >
-                        <div class="data">明天</div>
-                        <div class="time">11/24</div>
-                    </li>
-                    <li  >
-                        <div class="data">后天</div>
-                        <div class="time">11/25</div>
-                    </li>
-                    <li   class="brn">
-                        <div class="data">周四</div>
-                        <div class="time">11/26</div>
-                    </li>
-                </ul>
-                <div class="brandCon dn clearfix" style="display: block;">
-                    <p class="spline"><b>品牌特卖</b></p>
-                    <div class="bc rel">
-                        <div class="rcn"> <a style="cursor:pointer;" target="_blank" href="/list-21719.html"> <img width="80" height="29" alt="全棉时代婴幼儿用品特卖" src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/17/bb/fb/bbfb8614afa2745e136a97b811758b77.png" class="lazyload"> </a> </div>
-                        <div class="yd pos dn"> <a style="cursor:pointer;" target="_blank" href="/list-21719.html"> <img width="310" height="135" src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/17/07/f9/07f9e7919535b98f0e49d11b36a5ce8c.jpg" data-pinit="registered" class="mouselazyload">
-                            <p class="p1">全棉时代婴幼儿用品特卖</p>
-                            <div class="zk">58元起</div>
-                        </a> </div>
-                    </div>
-                    <div class="SelectedTopics">
-                        <p class="spline"><b>精选专题</b></p>
-                        <a href="/list-22124.html" target="_blank" title="感恩节特辑"><img src="http://img04.miyabaobei.com/d1/p2/2015/11/23/d7/82/d7827a59a51e9e43c81d733d5b0a9e71.jpg" alt="感恩节特辑" width="288" class="lazyload"/></a>
-                        <a href="/list-21959.html" target="_blank" title="柔顺剂专场"><img src="http://img01.miyabaobei.com/d1/p2/2015/11/19/8f/55/8f55b09bd6f4b2664ed3e05d3473c95c.jpg" alt="柔顺剂专场" width="288" class="lazyload"/></a>
-                        <a href="/list-21930.html" target="_blank" title="鱼肠海苔专场"><img src="http://img02.miyabaobei.com/d1/p2/2015/11/19/11/30/1130681e95591eeb2d4fc52b145889e8.jpg" alt="鱼肠海苔专场" width="288" class="lazyload"/></a>
-                        <a href="/list-21892.html" target="_blank" title="韩国妈妈育儿经"><img src="http://img03.miyabaobei.com/d1/p1/2015/05/29/1c/aa/1caa439cf05f989daaae459cd1e8916b.jpg" alt="韩国妈妈育儿经" width="288" class="lazyload"/></a>
-                        <a href="/list-20588.html" target="_blank" title="外出美包专场"><img src="http://img04.miyabaobei.com/d1/p2/2015/11/18/80/e1/80e19aa54bbac988267ea2d84a292d15.jpg" alt="外出美包专场" width="288" class="lazyload"/></a>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-
-
-        <div class="NHotA block NRecommend clearfix">
-            <div class="title yahei">大家都在买</div>
-            <div class="content noneline">
-                <a target="_blank" href="/koubei-138788.html" title="首先得承认B家的这款围兜是妈妈们海淘的一款热门单品，我在孩子三个月左右就一直关注这款围兜，之所以迟迟没有入手…" class="NRblock"> <img src="http://img04.miyabaobei.com/item/10/1093/1093254_normal_2.jpg" class="lazyload" alt="首先得承认B家的这款围兜是妈妈们海淘的一款热门单品，我在孩子三个月左右就一直关注这款围兜，之所以迟迟没有入手…" width="72" height="72"/> <span class="pink ver">ddilx：</span>首先得承认B家的这款围兜是妈妈们海淘的一款热门单品，我在孩子三个月左右就一直关注这款围兜，之所以迟迟没有入手… </a>
-                <a target="_blank" href="/koubei-138542.html" title="第一次没有买到，第二次一气抢了四个颜色，因为觉得每个颜色都好看，除了粉色不太适合男孩戴，这个围嘴真是太好用…" class="NRblock"> <img src="http://img01.miyabaobei.com/item/10/1093/1093255_normal_2.jpg" class="lazyload" alt="第一次没有买到，第二次一气抢了四个颜色，因为觉得每个颜色都好看，除了粉色不太适合男孩戴，这个围嘴真是太好用…" width="72" height="72"/> <span class="pink ver">Bonnie：</span>第一次没有买到，第二次一气抢了四个颜色，因为觉得每个颜色都好看，除了粉色不太适合男孩戴，这个围嘴真是太好用… </a>
-                <a target="_blank" href="/koubei-138453.html" title="大爱啊~之前买了粉色的~特别喜欢自己留下了~这次给儿子备一套~太好看了这颜色~质量也和您…" class="NRblock"> <img src="http://img02.miyabaobei.com/item/10/1099/1099402_normal_2.jpg" class="lazyload" alt="大爱啊~之前买了粉色的~特别喜欢自己留下了~这次给儿子备一套~太好看了这颜色~质量也和您…" width="72" height="72"/> <span class="pink ver">miya135****1908：</span>大爱啊~之前买了粉色的~特别喜欢自己留下了~这次给儿子备一套~太好看了这颜色~质量也和您… </a>
-                <a target="_blank" href="/koubei-138322.html" title="不锈钢的材质，不会因为温度高而产生什么有害的物质，宝宝的东西，最重要的就是放心，一套四样东西，都有自己…" class="NRblock"> <img src="http://img03.miyabaobei.com/item/10/1099/1099401_normal_2.jpg" class="lazyload" alt="不锈钢的材质，不会因为温度高而产生什么有害的物质，宝宝的东西，最重要的就是放心，一套四样东西，都有自己…" width="72" height="72"/> <span class="pink ver">小妖晶Jutta：</span>不锈钢的材质，不会因为温度高而产生什么有害的物质，宝宝的东西，最重要的就是放心，一套四样东西，都有自己… </a>
-                <a target="_blank" href="/koubei-138111.html" title="颜色很靓丽，橙色的超炫哦！质量很好！不锈钢的材质，不会因为温度高而产生有毒有害物质，不锈钢的部分可以拆下来，放到…" class="NRblock"> <img src="http://img04.miyabaobei.com/item/10/1099/1099404_normal_2.jpg" class="lazyload" alt="颜色很靓丽，橙色的超炫哦！质量很好！不锈钢的材质，不会因为温度高而产生有毒有害物质，不锈钢的部分可以拆下来，放到…" width="72" height="72"/> <span class="pink ver">小粽子：</span>颜色很靓丽，橙色的超炫哦！质量很好！不锈钢的材质，不会因为温度高而产生有毒有害物质，不锈钢的部分可以拆下来，放到… </a>
-            </div>
-        </div>
-    </div>
-</div>
-<!--正在特买-结束-->
-
-
-    <div class="LastBuy w1000 clearfix">
-    <div class="title yahei">
-        <div class="l left">最后机会</div>
-        <div class="l"></div>
-    </div>
-    <div class="clearfix LBCon HBSBlock">
-        <div class="block" id="outlets_box_19906"> <a target="_blank" href="/list-19906.html">
-            <div class="indexPubTop"><img src="http://img01.miyabaobei.com/d1/p2/2015/10/15/16/fe/16fe95545dc3130943b6c0573b1f67f9.jpg" alt="孕妇装专场" width="323" height="141" class="lazyload"/><div class="SoldOut dn">抢光了</div></div>
-            <div class="text">
-                <div class="r"><span class="price"><span class="pink">39</span>元起</span></div>
-                <div class="l" style="background:none;"><span>孕妇装专场</span>
-                    <br/>
-                    <span class="djs" style="background:none;padding:0;">剩余时间：<span id="counter_19906" style="display:none;"> </span></span></div>
-            </div>
-        </a> </div>
-        <div class="block" id="outlets_box_20512"> <a target="_blank" href="/list-20512.html">
-            <div class="indexPubTop"><img src="http://img02.miyabaobei.com/d1/p2/2015/11/10/f6/f3/f6f3200baf061843d547395fe9050bfa.jpg" alt="美国潮牌宝宝用品专场" width="323" height="141" class="lazyload"/><div class="SoldOut dn">抢光了</div></div>
-            <div class="text">
-                <div class="r"><span class="price"><span class="pink">44</span>元起</span></div>
-                <div class="l" style="background:none;"><span>美国潮牌宝宝用品专场</span>
-                    <br/>
-                    <span class="djs" style="background:none;padding:0;">剩余时间：<span id="counter_20512" style="display:none;"> </span></span></div>
-            </div>
-        </a> </div>
-        <div class="block mr0" id="outlets_box_19639"> <a target="_blank" href="/list-19639.html">
-            <div class="indexPubTop"><img src="http://img03.miyabaobei.com/d1/p2/2015/11/11/42/a7/42a7ff52e9148d54177763979249d6c8.jpg" alt="冬季补水专场" width="323" height="141" class="lazyload"/><div class="SoldOut dn">抢光了</div></div>
-            <div class="text">
-                <div class="r"><span class="price"><span class="pink">34</span>元起</span></div>
-                <div class="l" style="background:none;"><span>冬季补水专场</span>
-                    <br/>
-                    <span class="djs" style="background:none;padding:0;">剩余时间：<span id="counter_19639" style="display:none;"> </span></span></div>
-            </div>
-        </a> </div>
-        <div class="block" id="outlets_box_19611"> <a target="_blank" href="/list-19611.html">
-            <div class="indexPubTop">
-                <img src="http://img04.miyabaobei.com/d1/p2/2015/11/06/5c/77/5c77b5a6941512d7beb9e12059bba1f0.jpg" alt="美国辅食专场" width="323" height="141" class="lazyload"/>
-                <div class="SoldOut dn">抢光了</div>
-            </div>
-            <div class="text">
-                <div class="r"><span class="price"><span class="pink">23</span>元起</span>
-                </div>
-                <div class="l" style="background:none;"><span>美国辅食专场</span>
-                    <br/>
-                    <span class="djs" style="background:none;padding:0;">剩余时间：<span id="counter_19611" style="display:none;"> </span></span>
-                </div>
-            </div>
-        </a> </div>
-    </div>
-</div>
-<!--最后机会-结束-->
 
 
 

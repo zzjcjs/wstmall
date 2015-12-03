@@ -623,583 +623,817 @@
 
 
         
-    <div class="mainSlide" id="mainSlide">
-    <div id="topslide">
-        <div class="cell">
-            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/1.jpg);"></div>
-            <div class="w1004">
-                <a target="_blank" href="http://www.mia.com/sale/thanDay/main/" id="__AD_focus729" title="" class="promLink" data-ref="729"></a>
-            </div>
-        </div>
-        <div class="cell">
-            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/2.jpg);"></div>
-            <div class="w1004">
-                <a target="_blank" href="http://www.mia.com/special/module/index/197/pc/" id="__AD_focus726" title="" class="promLink" data-ref="726"></a>
-            </div>
-        </div>
-        <div class="cell">
-            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/3.jpg);"></div>
-            <div class="w1004">
-                <a target="_blank" href="http://www.mia.com/special/module/index/275/pc/" id="__AD_focus727" title="" class="promLink" data-ref="727"></a>
-            </div>
-        </div>
-        <div class="cell">
-            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/4.jpg);"></div>
-            <div class="w1004">
-                <a target="_blank" href="http://www.mia.com/special/module/index/272/pc/" id="__AD_focus728" title="" class="promLink" data-ref="728"></a>
-            </div>
-        </div>
-        <div class="cell cur">
-            <div class="prom" style="background-image:url(http://www.wstmall.local/public/images/5.jpg);"></div>
-            <div class="w1004">
-                <a target="_blank" href="http://www.mia.com/list-21960.html" id="__AD_focus734" title="" class="promLink" data-ref="734"></a>
-            </div>
-        </div>
-    </div>
-    <div class="pgWidth">
+<div class="warp">
+    <div class="content detail">
         <div class="w1004">
-            <span class="slideNum" id="slideNum">
-                            <i class=""></i>
-                            <i class=""></i>
-                            <i class=""></i>
-                            <i class=""></i>
-                            <i class="cur"></i>
+            <div class="h20" > </div>
+            <div class="ic clearfix">
+                <div class="left l">
+                    <div class="title">我的交易</div>
+                    <ul>
+                        <li >
+                            <a href="/order">我的订单</a>
+                        </li>
+                        <li >
+                            <a href="/return_lists">退货退款</a>
+                        </li>
+                    </ul>
+                    <div class="title">我的收藏</div>
+                    <ul>
+                        <li >
+                            <a href="/my_brand">我收藏的品牌</a>
+                        </li>
+                        <li ><a href="/my_collect">我收藏的商品</a></li>
+                    </ul>
+                    <div class="title">我的分享</div>
+                    <ul>
+                        <li >
+                            <a href="/my_invite">我邀请的朋友</a></li>
+                        <li >
+                            <a href="/my_koubei.html">商品口碑</a></li>
+                    </ul>
+                    <div class="title">我的优惠</div>
+                    <ul>
+                        <li >
+                            <a href="/my_jifen.html">积分管理</a>
+                        </li>
+                        <li >
+                            <a href="/my_coupon">代金券管理</a>
+                        </li>
+                        <li >
+                            <a href="/my_getredbag">红包管理</a>
+                        </li>
+                        <li  style="text-indent:12px;">
+                            <a href="/my_getredbag">我的红包</a>
+                        </li>
+                        <li  style="text-indent:12px;">
+                            <a href="/my_shareredbag">分享红包</a>
+                        </li>
+                    </ul>
+                    <div class="title">我的账户</div>
+                    <ul>
+                        <li >
+                            <a href="/my_profile.html">账户信息</a>
+                        </li>
+                        <li >
+                            <a href="/my_balance.html">账户余额</a>
+                        </li>
+                        <li >
+                            <a href="/my_idstatus.html">实名认证</a>
+                        </li>
+                        <li >
+                            <a href="/my_password.html">修改密码</a>
+                        </li>
+                        <li >
+                            <a href="/my_address.html">地址管理</a>
+                        </li>
+                        <li >
+                            <a href="/my_message.html">蜜芽消息</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right l">
+                    <div class="icmain clearfix">
+                        <div class="photo l">
+                            <img src="http://file01.miyabaobei.com/resources/images/icon_none.gif" alt="默认头像" width="120"/>
+                            <a href="/home/profile/icon/?refer=home">修改头像</a></div>
+                        <div class="intro l">
+                            <div class="tit01"><?php echo ($WST_USER["loginName"]); ?>, 欢迎您! </div>
+                            <p>会员等级：宝宝帝&emsp;&emsp;<a href="/help/9" target="_blank" class="gray">会员级别介绍</a><br/>
+                                当前积分：<span class="pink">0</span>&emsp;&emsp;<a href="/help/10" target="_blank" class="gray">积分获取规则</a> </p>
+                            <div class="iline"></div>
+                            <p> 累计消费金额：
+                                <span class="pink">&yen; 0.00</span><br/>
+                            <div class="iline"></div>
+            <span id="accountStatus">
+                <span class="verify">
+                                        手机已验证
+                                    </span>
+                <span class="verify">
+                                        邮箱未验证 <a href="/my_emailverify" class="gray">去验证&gt;&gt;</a>&nbsp;&nbsp;[送50蜜豆]
+                                    </span>
+                <span class="verify">
+                                        未实名认证 <a href="/my_identification.html" class="gray">去验证>></a>
+                                    </span>
             </span>
-        </div>
-    </div>
-    <div class="arNav">
-        <div class="w1004">
-            <a style="display: none;" href="#" class="leftAr"></a>
-            <a style="display: none;" href="#" class="rightAr"></a>
-        </div>
-    </div>
-</div>>
-    <div class="today_title w1000"> 今日精选 </div>
-
-    <div class="TodaySelected">
-    <div id="TBBRim">
-        <div class="fmRim TodayBoutique">
-            <ul class="fmCon">
-                <li class="HBSBlock">
-                    <div class="TBB"> <a target="_blank" href="<?php echo U('Mia/goodsDetails');?>" title="大杯口大容量 超长保温保冷">
-                        <div class="Commodity rel"> <img src="http://img02.miyabaobei.com/d1/p2/2015/11/20/1e/37/1e379a49d11fc27536f95ac25084a9b4.jpg" width="228" height="228" alt="大杯口大容量 超长保温保冷"/>
-                            <div class="Nicon NI_hot">热</div>
+                            </p>
                         </div>
-                        <div class="price1">
-                            <div class="r">
-                                8070人喜欢
-                            </div>
-                            <span class="p1">￥</span><span class="p2">488.00</span><span class="originalPrice">￥698.00</span> </div>
-                        <div class="intro"><p>象印原装进口儿童保温杯</p><p class="gray3">大杯口大容量 超长保温保冷</p></div>
-                    </a> </div>
+                    </div>                    <link rel="stylesheet" href="http://file01.miyabaobei.com/resources/styles/account/account.css?v=3" type="text/css">
+                    <style type="text/css">
+                        .changeAddressBtn{margin-right: 2px;display: inline-block;font-size: 12px;height: 18px;line-height: 18px;padding: 3px 6px;text-align: center;color: #000;text-decoration: none;border-radius: 3px;border: 1px solid #e393bb;}
+                        .orderListHead span a:hover{color:#000;}
 
-                    <div class="TBB"> <a target="_blank" href="<?php echo U('Mia/goodsDetails');?>" title="细密喷雾 改善干燥肌肤">
-                        <div class="Commodity rel"> <img src="http://img03.miyabaobei.com/d1/p2/2015/11/20/f3/f2/f3f270f9e205498cdda059270b305dcc.jpg" width="228" height="228" alt="细密喷雾 改善干燥肌肤"/>
-                            <div class="Nicon NI_hot">热</div>
+                        .changeAddress{width:360px;height:425px;background-color:#fff;border:4px solid #a9a9a7;font-size:12px;overflow:auto;display: none;display: none;z-index: 111001;position: absolute;left: 50%;top: 50%;margin-left: -180px;margin-top: -212px;position: fixed!important;}
+                        .changeAddTit{height:31px;background-color:#f7f7f7;border-bottom:1px solid #eaeaea;color:#666666;line-height: 31px;font-weight: bold;position: relative;padding-left:14px;}
+                        .changeAddTit img{position:absolute;right:12px;top:6px;cursor:pointer;}
+                        .changeAddress .changeAddh3{color:#999999;line-height:31px;padding-left:14px;margin-top:11px;}
+                        .changeAddmake{width:330px;border:1px solid #eaeaea;background-color:#fcfcfc;margin:0 auto;margin-bottom:13px;position: relative;}
+                        .changeAddmake ul{padding-top:14px;padding-left:13px;padding-right:54px;}
+                        .changeAddmake ul li{color:#a9a9a7;list-style-type: none;line-height:20px;}
+                        .changeAddmake ul li.changeSecondLi{margin-bottom:8px;}
+                        .changeAddmake a{color:#f450a2;font-weight: bold;text-decoration:underline;position: absolute;top:36px;right:15px;}
+                        .changeSecondH3{margin-top:8px;}
+                        .changeSecondBox{background-color:#fff;cursor:pointer;position: relative;}
+                        .changeSecondBox ul{padding-right:54px;}
+                        .changeSecondBox img{position:absolute;right:0px;bottom: 0px;display: none;}    /* 选择增加的img */
+                        .changeSecondBox ul li{color:#666666;}
+                        .changeSecondBox ul li.changeFirstLi{color:#333333;}
+
+                        .changeAddressForm{width:598px;border:4px solid #a9a9a7;font-size:12px;background-color:#fff;display: none;z-index: 111001;position: absolute;left: 50%;top: 50%;margin-left: -299px;margin-top: -139px;position: fixed!important;}
+                        .changeAddUl{margin-top:21px;padding-left: 0px;color:#999999;line-height:31px;padding-left:26px;}
+                        .changeAddUl ul li{list-style-type: none;margin-bottom:12px;float: left;margin-right:21px;}
+                        .changeAddUl ul li input{margin-left:10px;border:1px solid #cccccc;color:#333333;padding-left: 4px;}
+                        .changeAddUl .goodsMan{padding-left:13px;width:517px;}
+                        #changeAddUl_but1{width:126px;height:24px;line-height: 24px;}
+                        #changeAddUl_but2 label{padding-right:5px;}
+                        #changeAddUl_but2 .select1{width:132px;height:17px;}
+                        #changeAddUl_but2 .select2{width:79px;height:17px;}
+                        #changeAddUl_but2 .select3{width:79px;height:17px;}
+                        #changeAddUl_but2 .select4{width:119px;height:17px;}
+                        #changeAddUl_but3{width:356px;height:24px;color:#333333;line-height: 24px;}
+                        #changeAddUl_but4{width:194px;height:24px;color:#333333;line-height: 24px;}
+                        #changeAddUl_but5{width:194px;height:24px;color:#333333;line-height: 24px;}
+                        .changeAddressForm .Operation{margin-left: 63px;}
+                        .Operation{margin:0 auto;clear: both;color:#fff;font-size: 14px;font-weight: bold;text-align: center;width:225px;line-height: 30px;}
+                        .Operation .Determine{width:104px;height:30px;background-color:#f450a2;float: left;margin-right:17px;cursor: pointer;margin-bottom: 15px;}  /* 确定 */
+                        .Operation .Cancel{width:104px;height:30px;background-color:#f450a2;float: left;cursor: pointer;margin-bottom: 15px;}  /* 取消*/
+
+                        .changeAddressCon{width:367px;border:4px solid #a9a9a7;font-size:12px;background-color:#fff;display: none;z-index: 111001;position: absolute;left: 50%;top: 50%;margin-left: -183px;margin-top: -98px;position: fixed!important;}
+                        .changeAddressCon .changeAddh3{color:#f450a2;font-weight: bold;line-height:31px;padding-left:20px;margin-top:8px;}
+                        .changeAddressCon p{color:#666666;line-height:24px;padding-left:20px;padding-right:20px;}
+                        .changeAddressCon .Operation{padding-top: 11px;}
+                        .Operation .Determine.change_sur{background-color:#ff69b3;font-weight:normal;}
+                        .Operation .Cancel.change_qx{background-color:#f9f9f9;color:#000000;font-weight:normal;border:1px solid #d5d5d5;width: 102px;height:28px;}
+
+
+                        .changeAddressSF{width:367px;height:196px;border:4px solid #a9a9a7;font-size:12px;background-color:#fff;display: none;z-index: 111001;position: absolute;left: 50%;top: 50%;margin-left: -183px;margin-top: -98px;position: fixed!important;}
+                        .changeAddZt{width:299px;height:60px;margin:0 auto;margin-top:14px;font-size:14px;}
+                        .changeAddZt img{vertical-align: middle;margin-right:9px;color:#333333;font-size: 14px;}
+                        .changeAddressSucD{width:100px;height:30px;background-color:#f450a2;cursor: pointer;line-height: 30px;color:#fff;font-size: 14px;font-weight: bold;text-align: center;margin:0 auto;margin-top:20px;}
+
+
+                        /*遮罩*/
+                        .popup_mask{display:none;width:100%;height: 100%;z-index: 111000;position: fixed;top:0;left:0;  background-color: #000;
+                            filter:alpha(opacity=50);/*IE*/opacity:0.5;/*FF*/position:fixed!important;/*FF IE7*/position:absolute;/*IE6*/}
+                        .popup_notice{display: none;z-index: 111001;height: 423px;position: absolute;left:50%;top:50%;margin-left: -260px;margin-top: -211px;position:fixed!important;/*FF IE7*/positiabsolute;/*IE6*/}
+                        .popup_notice a#close_mia_popup{display: block;position: absolute;width: 50px;height: 50px;top:14px;right:12px;background:url(about:blank)}
+
+                        /* 新增 */
+                        .add_messages {
+                            vertical-align: middle;
+                            color: #F67649;
+                            width:148px;
+                            height:22px;
+                            border: 1px solid #FEDBB1;
+                            background: #FFFDE7;
+                            margin: 15px 0 16px 0px;
+                            padding: 0px 4px;
+                            font-size: 12px;
+                            font-family: Verdana, Geneva, sans-serif;
+                            line-height: 22px;
+                            font-weight: normal;
+                        }
+                    </style>
+                    <div class="splist p20" id="orderList">
+                        您还没有订单        <!-- 修改地址显示弹框 -->
+                        <div class="changeAddress">
+                            <div class="changeAddTit">修改地址<img src="resources/images/close.jpg"></div>       <!-- header -->
+                            <div class="changeAddh3">修改订单收货地址</div>
+                            <div class="changeAddmake addr1">
+                                <ul>
+                                    <li></li>
+                                    <li class="changeSecondLi"></li>
+                                </ul>
+                                <a href="#" class="changeAddress_xg xgnew">修改</a>
+                            </div>
+
+                            <div class="changeAddh3 changeSecondH3">选择已有收货地址</div>
+                            <!-- address list -->
+                            <!-- end address list -->
                         </div>
-                        <div class="price1">
-                            <div class="r">
-                                16029人喜欢
-                            </div>
-                            <span class="p1">￥</span><span class="p2">59.00</span><span class="originalPrice">￥125.00</span> </div>
-                        <div class="intro"><p>雅漾活泉水喷雾150ml</p><p class="gray3">细密喷雾 改善干燥肌肤</p></div>
-                    </a> </div>
+                        <!-- 修改需要修改的弹框 -->
+                        <div class="changeAddressForm">
+                            <div class="changeAddTit">修改地址<img src="resources/images/close.jpg"></div>       <!-- header -->
+                            <div class="changeAddUl">
+                                <ul>
+                                    <li class="goodsMan">收货人:<input type="text" value="" id='changeAddUl_but1' class="name"/></li>
+                                    <li id='changeAddUl_but2'>
+                                        <!--  <form action="" method="get">
+                                          <label>所在地区:</label>
+                                          <select name="" class="select1 province" onchange="change_province($(this),'province')">
+                                              <option value="0">请选择</option>
+                                          </select>
+                                          <select name="" class="select2 city" onchange="change_province($(this),'city')">
+                                              <option value="0">请选择</option>
+                                          </select>
+                                          <select name="" class="select3 area" onchange="change_province($(this),'area')">
+                                                  <option value="0">请选择</option>
+                                          </select>
+                                          <select name="" class="select4 street">
+                                              <option value="0">请选择</option>
+                                          </select>
+                                          </form> -->
 
-                    <div class="TBB"> <a target="_blank" href="<?php echo U('Mia/goodsDetails');?>" title="适合饮食不规律人群">
-                        <div class="Commodity rel"> <img src="http://img04.miyabaobei.com/item/10/1070/1070633_normal_4.jpg" width="228" height="228" alt="适合饮食不规律人群"/>
-                            <div class="Nicon NI_hot">热</div>
+                                        <tbody>
+                                        <tr>
+                                            <td align="right"><span class="pink"></span> 所在地区：</td>
+                                            <td id="address_area">
+                        <span id="span_province">
+                        	<select id="ship_province" name="ship_province" class="province" onchange="change_province($(this),'province')">
+                                <option value="0">请选择</option>
+                            </select>
+                        </span>
+                        <span id="span_city">
+	                        <select id="ship_city" name="ship_city" class="city" onchange="change_province($(this),'city')">
+                                <option value="0">请选择</option>
+                            </select>
+                        </span>
+                        <span id="span_area">
+                        	<select id="ship_area" name="ship_area" class="area" onchange="change_province($(this),'area')">
+                                <option value="0">请选择</option>
+                            </select>
+                        </span>
+                        <span id="span_town">
+                        <select id="ship_town" name="ship_town" class="street">
+                            <option value="0">请选择</option>
+                        </select></span>
+                                                <span id="new_area_error"></span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+
+                                    </li>
+                                    <li>详细地址:<input type="text" value=""  id='changeAddUl_but3' class="address"/></li>
+                                    <li>手机号码:<input type="text" value=""  id='changeAddUl_but4' class="cell"/></li>
+                                    <li>固定电话:<input type="text" value=""  id='changeAddUl_but5' class="phone"/></li>
+                                </ul>
+
+                                <div class="Operation">
+                                    <div class="add_messages" style="display: none"></div>
+                                    <div class="Determine">确定</div>
+                                    <div class="Cancel">取消</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="price1">
-                            <div class="r">
-                                11388人喜欢
+                        <!-- 修改地址确认弹框 -->
+                        <div class="changeAddressCon">
+                            <div class="changeAddTit">修改地址确认<img src="resources/images/close.jpg"></div>       <!-- header -->
+                            <div class="changeAddh3">修改后地址如下</div>
+                            <p id='newAddress'></p>
+                            <div class="Operation">
+                                <div class="Determine change_sur">确定</div>
+                                <div class="Cancel change_qx">取消</div>
                             </div>
-                            <span class="p1">￥</span><span class="p2">238.00</span><span class="originalPrice">￥498.00</span> </div>
-                        <div class="intro"><p>日本新谷瘦身酵素</p><p class="gray3">适合饮食不规律人群</p></div>
-                    </a> </div>
-
-                    <div class="TBB"> <a target="_blank" href="<?php echo U('Mia/goodsDetails');?>" title="体积轻巧 节省空间方便携带">
-                        <div class="Commodity rel"> <img src="http://img01.miyabaobei.com/d1/p2/2015/11/20/78/ae/78aee8a5710f1b0a4d29a2fdca2f1942.jpg" width="228" height="228" alt="体积轻巧 节省空间方便携带"/>
-                            <div class="Nicon NI_hot">热</div>
                         </div>
-                        <div class="price1">
-                            <div class="r">
-                                2440人喜欢
-                            </div>
-                            <span class="p1">￥</span><span class="p2">232.00</span><span class="originalPrice">￥368.00</span> </div>
-                        <div class="intro"><p>多利科迷你体重秤</p><p class="gray3">体积轻巧 节省空间方便携带</p></div>
-                    </a> </div>
+                        <!-- 修改地址成功弹框 -->
+                        <div class="changeAddressSF changeAddressCG">
+                            <div class="changeAddTit">修改地址成功<img src="resources/images/close.jpg"></div>       <!-- header -->
+                            <div class="changeAddZt"><img src="resources/images/cg.jpg" />您的地址已经修改成功！</div>
+                            <div class="changeAddressSucD">确定</div>
+                        </div>
+                        <!-- 修改地址失败弹框 -->
+                        <div class="changeAddressSF changeAddressSB">
+                            <div class="changeAddTit">修改地址失败<img src="resources/images/close.jpg"></div>       <!-- header -->
+                            <div class="changeAddZt"><img src="resources/images/shb.jpg" /><span class="msg"></span></div>
+                            <div class="changeAddressSucD">确定</div>
+                        </div>
+                        <!-- 遮罩 -->
+                        <div id="mia_popup_mask" class="popup_mask" style="display: none;"></div>
+                        <script>
+                            var provinceJsonList = {};
+                            var orderAddrInfo = {};
 
-                </li>
-            </ul>
+                            function change_province(obj,name){
 
+                                var selectId = obj.val();
+                                var ele = $('.changeAddressForm');
+
+                                switch(name){
+                                    case 'province':
+                                        ele.find('.city option[value!="0"]').remove();
+                                        ele.find('.area option[value!="0"]').remove();
+                                        ele.find('.street option[value!="0"]').remove();
+
+                                        getAddrJsonList({act:'get_cities_json',
+                                            data:{province_id:selectId},
+                                            'assign_ele' : ele.find('.city'),
+                                        });
+
+                                        break;
+                                    case 'city':
+                                        ele.find('.area option[value!="0"]').remove();
+                                        ele.find('.street option[value!="0"]').remove();
+                                        getAddrJsonList({act:'get_areas_json',
+                                            data:{city_id:selectId},
+                                            'assign_ele' : ele.find('.area'),
+                                        });
+
+                                        break;
+                                    case 'area':
+                                        ele.find('.street option[value!="0"]').remove();
+                                        getAddrJsonList({act:'get_towns_json',
+                                            data:{area_id:selectId},
+                                            'assign_ele' : ele.find('.street'),
+                                        });
+                                        break;
+                                }
+                            }
+
+                            function getAddrJsonList(argData){
+                                //argData.act = get_cities_json
+                                var selectId = false;
+
+                                $.ajax({
+                                    url:'/instant/order/' + argData.act,
+                                    type:'post',
+                                    data:argData.data,
+                                    //async:false,
+                                    dataType:'json',
+                                    success:function(res){
+                                        var plen = res.length;
+                                        var pstr = '';
+                                        for(var i = 0; i< plen; i++){
+                                            var select = '';
+                                            if(selectId === false){
+                                                select = res[i].name == argData.selectName ? ' selected="selected"' : '';
+                                                if(select != '')selectId = res[i].id;
+                                            }
+                                            pstr += '<option value="'+res[i].id+'" '+ ( select ) +'>'+res[i].name+'</option>';
+                                        }
+                                        argData.assign_ele.find('option[value!="0"]').remove();
+                                        argData.assign_ele.append(pstr);
+                                        if(selectId){
+                                            if(argData.act == 'get_cities_json'){
+                                                assign_addr_list(selectId,'city');
+                                            }else if(argData.act == 'get_areas_json'){
+                                                assign_addr_list(selectId,'area');
+                                            }
+                                        }
+                                    }
+                                });
+
+                                return selectId;
+
+                            }
+
+                            function getAddrList(obj){
+                                var par_code = obj.attr('data-oc');
+                                $.ajax({
+                                    url:'/instant/order/getEditOrderAddressList',
+                                    type:'post',
+                                    data:{'par_code':par_code},
+                                    dataType:'json',
+                                    success:function(res){
+                                        $('#mia_popup_mask').show();
+
+                                        var ele = $('.changeAddress');
+                                        ele.find('.changeSecondBox').remove();
+                                        ele.find('.changeSecondH3').hide();
+                                        if(!res.code){
+                                            tip_fail(res.msg);
+                                            obj.parent().remove();
+                                            return false;
+                                        }
+                                        ele.show();
+                                        ele.find('.changeSecondH3').show();
+                                        provinceJsonList = res.province_json;
+                                        orderAddrInfo = res.orderAddrInfo;
+
+                                        ele.find('.addr1 li').eq(0).html(res.orderAddrInfo.name +' '+ res.orderAddrInfo.cell);
+                                        ele.find('.addr1 .changeSecondLi').html(res.orderAddrInfo.province + res.orderAddrInfo.city + res.orderAddrInfo.area + res.orderAddrInfo.street + res.orderAddrInfo.address);
+                                        ele.find('.xgnew').attr('data-oc', par_code);
+                                        var str = '';
+                                        var len = res.addressList.length;
+                                        if(len){
+                                            for(var i = 0; i < len; i++){
+                                                str += '<div class="changeAddmake changeSecondBox">';
+                                                str += '<ul>';
+                                                str += '<li class="changeFirstLi">'+res.addressList[i].name+'  '+res.addressList[i].cell+'</li>';
+                                                str += '<li class="changeSecondLi">'+ (res.addressList[i].is_default == 1 ? '[默认]' : '')+ res.addressList[i].provname + res.addressList[i].cityname+ res.addressList[i].areaname+ res.addressList[i].townname+ res.addressList[i].address + '</li>';
+                                                str += '<a href="#" class="changeAddress_xg xgodd" order_code="'+par_code+'" data-addrId="'+res.addressList[i].id+'">选择</a>';
+                                                str += '</ul>';
+                                                str += '</div>';
+
+                                            }
+                                            if(str){
+                                                $('.changeAddress .changeSecondBox').remove();
+                                                $(str).insertAfter($('.changeAddress .changeSecondH3'));
+                                            }
+
+                                        }
+
+
+
+                                    }
+                                });
+
+                            }
+
+                            function check_form(){
+                                var prev_ele = $('.changeAddressForm');
+                                var data = {};
+                                var ret = {msg:'',pass:true, 'data': {}};
+                                data.name = prev_ele.find('.name').val();
+                                data.province = prev_ele.find('.province option:selected').text();
+                                data.province_id = prev_ele.find('.province option:selected').val();
+                                data.city = prev_ele.find('.city option:selected').text();
+                                data.city_id = prev_ele.find('.city option:selected').val();
+                                data.area = prev_ele.find('.area option:selected').text();
+                                data.area_id = prev_ele.find('.area option:selected').val();
+                                data.street = prev_ele.find('.street option:selected').text();
+                                data.street_id = prev_ele.find('.street option:selected').val();
+                                data.address = prev_ele.find('#changeAddUl_but3').val();
+
+                                data.cell = prev_ele.find('.cell').val();
+                                data.phone = prev_ele.find('.phone').val();
+
+                                for(var f in data){
+                                    if(!ret.pass)break;
+                                    var v = data[f];
+                                    switch(f){
+                                        case 'name':
+                                            if(isEmpty(v)){
+                                                ret.msg = '收货人不能为空';
+                                                ret.pass = false;
+                                            }else if(!is_forbid(v)){
+                                                ret.msg = '收货人中含有非法字符';
+                                                ret.pass = false;
+                                            }else if(v.length > 25){
+                                                ret.msg = '收货人姓名不能大于25位';
+                                                ret.pass = false;
+                                            }
+                                            break;
+                                        case 'province':
+                                            if(!data.province_id || parseInt(data.province_id) <= 0 || isEmpty(v)){
+                                                ret.msg = '请选择所在省';
+                                                ret.pass = false;
+                                            }
+                                            break;
+                                        case 'city':
+                                            if(!data.city_id || parseInt(data.city_id) <= 0 || isEmpty(v)){
+                                                ret.msg = '请选择所在市';
+                                                ret.pass = false;
+                                            }
+                                            break;
+                                        case 'area':
+                                            if(!data.area_id || parseInt(data.area_id) <= 0 || isEmpty(v)){
+                                                ret.msg = '请选择所在区';
+                                                ret.pass = false;
+                                            }
+                                            break;
+                                        case 'street':
+                                            if(!data.street_id || parseInt(data.street_id) <= 0 || isEmpty(v)){
+                                                ret.msg = '请完善所在地区';
+                                                ret.pass = false;
+                                            }
+                                            break;
+
+                                        case 'address':
+                                            if(isEmpty(v)){
+                                                ret.msg = '详细地址不能为空';
+                                                ret.pass = false;
+                                            }else if(!is_forbid(v)){
+                                                ret.msg = '详细地址中含有非法字符';
+                                                ret.pass = false;
+                                            }else if(v.length>50){
+                                                ret.msg = '详细地址中过长';
+                                                ret.pass = false;
+                                            }
+                                            break;
+
+                                        case 'cell':
+                                            if(isEmpty(v)){
+                                                ret.msg = '手机号码不能为空';
+                                                ret.pass = false;
+                                            }else if(!check_mobile(v)){
+                                                ret.msg = '手机号码格式不正确';
+                                                ret.pass = false;
+                                            }
+                                            break;
+
+                                        case 'phone':
+                                            if(!isEmpty(v)){
+                                                if(!is_forbid(v)){
+                                                    ret.msg = '固定电话中含有非法字符';
+                                                    ret.pass = false;
+                                                }
+                                                else if(!checkPhone(v)){
+                                                    ret.msg = '"固定电话号码格式不正确';
+                                                    ret.pass = false;
+                                                }
+                                            }
+                                            break;
+
+                                    }
+                                }
+                                ret.data = data;
+                                return ret;
+                            }
+
+                            function submitAddr(){
+
+                                var prev_ele = $('.changeAddressForm');
+                                var con = $('.changeAddressCon');
+                                var data = {};
+                                if(con.attr('from') == 'edit'){
+                                    var ck = check_form();
+                                    if(!ck.pass){
+                                        alert(ck.msg);
+                                        return false;
+                                    }
+
+                                    /*data.province = prev_ele.find('.province option:selected').text();
+                                     data.city = prev_ele.find('.city option:selected').text();
+                                     data.area = prev_ele.find('.area option:selected').text();
+                                     data.street = prev_ele.find('.street option:selected').text();
+                                     data.address = prev_ele.find('#changeAddUl_but3').val();
+                                     data.name = prev_ele.find('.name').val();
+                                     data.cell = prev_ele.find('.cell').val();
+                                     data.phone = prev_ele.find('.phone').val();
+                                     */
+                                    data.province = ck.data.province;
+                                    data.city = ck.data.city;
+                                    data.area = ck.data.area;
+                                    data.street = ck.data.street;
+                                    data.address = ck.data.address;
+                                    data.name = ck.data.name;
+                                    data.cell = ck.data.cell;
+                                    data.phone = ck.data.phone;
+
+                                    data.order_code = prev_ele.attr('order_code');
+                                }else{
+                                    data.address_id = con.attr('addrid');
+                                    data.order_code = con.attr('order_code');
+                                }
+
+
+                                $.ajax({
+                                    url:'/instant/order/change_order_addr',
+                                    type:'post',
+                                    data:data,
+                                    //data:{'newAddrInfo':data,'order_code' : order_code},
+                                    dataType:'json',
+                                    success:function(res){
+                                        if(res.status){                         //成功
+                                            $('.changeAddressCon').hide();
+                                            $('.changeAddressCG').show();
+                                        }else{                             //失败
+                                            $('.changeAddressCon').hide();
+                                            tip_fail(res.msg);
+                                        }
+
+                                    }
+                                });
+
+
+                            }
+
+                            function tip_fail(msg){
+                                $('.changeAddressSB .msg').text(msg);
+                                $('.changeAddressSB').show();
+                            }
+
+
+                            function showEdit(order_code){
+                                var ele = $('.changeAddressForm');
+                                ele.attr('order_code',order_code);
+                                ele.find('.name').val(orderAddrInfo.name);
+                                ele.find('.address').val(orderAddrInfo.address);
+                                ele.find('.cell').val(orderAddrInfo.cell);
+                                ele.find('.phone').val(orderAddrInfo.phone);
+                                ele.find('.province option[value!="0"]').remove();
+                                var plen = provinceJsonList.length;
+                                var pstr = '';
+                                var selectPro = false;
+                                var	selectCity = false;
+                                var selectArea = false;
+                                for(var i = 0; i< plen; i++){
+                                    var select = '';
+                                    if(selectPro === false){
+                                        select = provinceJsonList[i].name == orderAddrInfo.province ? ' selected="selected"' : '';
+                                        if(select != ''){
+                                            selectPro = provinceJsonList[i].id;
+                                        }
+                                    }
+                                    pstr += '<option value="'+provinceJsonList[i].id+'"'+ ( select ) +'>'+provinceJsonList[i].name+'</option>';
+                                }
+
+                                ele.find('.province').append(pstr);
+                                return selectPro;
+                                if(selectPro){
+                                    /*var cityId = getAddrJsonList({act:'get_cities_json',
+                                     data:{province_id:selectPro},
+                                     'assign_ele' : ele.find('.city'),
+                                     'selectName' : orderAddrInfo.city
+                                     });
+
+                                     var areaId = getAddrJsonList({act:'get_areas_json',
+                                     data:{city_id:cityId},
+                                     'assign_ele' : ele.find('.area'),
+                                     'selectName' : orderAddrInfo.area
+                                     });
+
+                                     getAddrJsonList({act:'get_towns_json',
+                                     data:{area_id:areaId},
+                                     'assign_ele' : ele.find('.street'),
+                                     'selectName' : orderAddrInfo.street
+                                     }); */
+
+                                }
+                            }
+
+                            function assign_addr_list(id,from){
+
+                                var ele = $('.changeAddressForm');
+                                var select_id = 0;
+                                switch(from){
+                                    case 'province':
+                                        select_id = getAddrJsonList({act:'get_cities_json',
+                                            data:{province_id:id},
+                                            'assign_ele' : ele.find('.city'),
+                                            'selectName' : orderAddrInfo.city
+                                        });
+                                        //assign_addr_list(select_id,'city');
+                                        break;
+
+                                    case 'city':
+                                        select_id = getAddrJsonList({act:'get_areas_json',
+                                            data:{city_id:id},
+                                            'assign_ele' : ele.find('.area'),
+                                            'selectName' : orderAddrInfo.area
+                                        });
+                                        //assign_addr_list(select_id,'area');
+                                        break;
+
+                                    case 'area':
+                                        getAddrJsonList({act:'get_towns_json',
+                                            data:{area_id:id},
+                                            'assign_ele' : ele.find('.street'),
+                                            'selectName' : orderAddrInfo.street
+                                        });
+
+                                        break;
+                                }
+                                return select_id;
+                            }
+
+
+                            (function(){
+
+                                function changeAddress(){
+                                    this.changeAddressBtn='.changeAddressBtn';  //弹出层1
+                                    this.closes='.changeAddTit img,.Operation .Cancel';
+                                    this.xgnew='.xgnew'; //修改
+                                    this.xgodd='.xgodd'; //选择
+                                    this.Determine='.changeAddressForm .Determine';  //修改地址下的确定
+                                    this.changeAddressCon='.changeAddressCon .Determine';    //点修改地址确认的确定
+                                    this.changeAddressSF='.changeAddressSF .changeAddressSucD';   //最后取消
+                                }
+                                changeAddress.prototype={
+                                    AddressBtn:function(){
+                                        $(this.changeAddressBtn).click(function(){ //弹出层1
+                                            $('.changeAddress .changeSecondBox').remove();
+                                            getAddrList($(this));
+                                            // $('#mia_popup_mask').show();
+                                            // $('.changeAddress').show();
+
+                                        })
+                                        $(this.closes).click(function(){    //弹出层1关闭  //弹出层所有的取消按钮
+                                            $('#mia_popup_mask').hide();
+                                            $('.changeAddress').hide();
+                                            $('.changeAddressForm').hide();
+                                            $('.changeAddressCon').hide();
+                                            $('.changeAddressCG').hide();
+                                            $('.changeAddressSB').hide();
+                                        })
+                                        $(this.xgnew).click(function(){   //点修改
+
+                                            $('.changeAddress').hide();
+                                            $('.changeAddressForm').show();
+                                            var select_id = showEdit($(this).attr('data-oc')); //edit
+                                            assign_addr_list(select_id,'province');
+                                        })
+                                        $('.changeAddress').delegate('.xgodd','click',function(){   //点选择
+                                            $('.changeAddress').hide();
+                                            $('.changeAddressCon').show();
+                                            $('.changeAddressCon').attr('from','select');
+                                            $('.changeAddressCon').attr('order_code',  $(this).attr('order_code'));
+                                            $('.changeAddressCon').attr('addrId', $(this).attr('data-addrId'));
+                                            $('#newAddress').text($(this).siblings('.changeSecondLi').text()+' '+$(this).siblings('.changeFirstLi').text());
+                                        })
+                                        $(this.Determine).click(function(){   //点修改地址下的确定
+
+                                            var result = check_form();
+                                            if(!result.pass){
+                                                var tipEle = $(this).prev('.add_messages');
+                                                tipEle.text(result.msg).fadeIn();
+                                                setTimeout(function(){
+                                                    $('.changeAddressForm .add_messages').text('').fadeOut();
+                                                },2000);
+                                                return false;
+                                            }
+
+                                            $('.changeAddressForm').hide();
+                                            $('.changeAddressCon').show();
+                                            $('.changeAddressCon').attr('order_code', $('.changeAddressForm').attr('order_code'));
+                                            $('.changeAddressCon').attr('from','edit');
+                                            //修改html
+                                            var str ='';
+                                            var prev_ele = $('.changeAddressForm');
+                                            str += prev_ele.find('.province option:selected').text();
+                                            str += prev_ele.find('.city option:selected').text();
+                                            str += prev_ele.find('.area option:selected').text();
+                                            str += prev_ele.find('.street option:selected').text();
+                                            str += prev_ele.find('#changeAddUl_but3').val();
+                                            str += ' ' + prev_ele.find('.name').val();
+                                            str += ' ' + prev_ele.find('.cell').val();
+                                            str += ' ' + prev_ele.find('.phone').val();
+                                            $('#newAddress').text(str);
+                                        })
+                                        //点修改地址确认的确定   可能显示成功也可能显示失败
+                                        $(this.changeAddressCon).click(function(){
+
+                                            //提交修改后的地址
+                                            submitAddr();
+
+                                            /*   if(true){                         //成功
+                                             $('.changeAddressCon').hide();
+                                             $('.changeAddressCG').show();
+                                             }else{                             //失败
+                                             $('.changeAddressCon').hide();
+                                             $('.changeAddressSB').show();
+                                             } */
+                                        })
+                                        //最后的点击取消
+                                        $(this.changeAddressSF).click(function(){
+                                            $('#mia_popup_mask').hide();
+                                            $('.changeAddressSF').hide();
+                                        })
+                                    }
+                                }
+                                new changeAddress().AddressBtn()
+                            })()
+
+
+                        </script>                    <div class="more tr">
+                        <a href="/order_lists.html" class="pink">查看更多&gt;&gt;</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<!--今日精选-结束-->
 
-        <div class="Extension w1000 clearfix HBSBlock">
-        <div  >
-            <a target="_blank" href="http://www.miyabaobei.com/formulas.html">
-                <img src="/Public/images/buy_everyday_1.jpg" data-src="http://img02.miyabaobei.com/d1/p2/2015/10/20/40/78/407868cd7990cbc293c79e6334d778f5.jpg" alt="" width="492" height="160" class="lazyload"/>
-            </a>
-        </div>
-        <div  class="mr0" >
-            <a target="_blank" href="http://www.miyabaobei.com/diapers.html">
-                <img src="/Public/images/buy_everyday_2.jpg" data-src="http://img03.miyabaobei.com/d1/p2/2015/10/20/c4/50/c4509f325a8b9cb2878126ba60eab2c6.jpg" alt="" width="492" height="160" class="lazyload"/>
-            </a>
-        </div>
-    </div>
-    <!--天天特卖-结束-->
+<div class="rfrim">
+    <div class="rightFunction dn">
+        <div class="OnlineCS NFBpub service_mia_0">
+            <div class="hide_button" style="position:absolute;top:0; left:0; width: 65px; height: 46px; z-index: 9;"></div>
+            <a href="javascript:void(0)" class="cur NFBpub">在线咨询</a>
+            <!-- online chat 开始-->
+            <div style='display:none;'>
+                <a href='http://www.live800.com'>在线聊天</a>
+                <script type="text/JavaScript" language="javascript">
+                    var live_c = getcookie('live_info');
+                    if(live_c) {
+                        document.write("<scr"+"ipt language=\"javascript\" src=\"http://chat800.mia.com/live800/chatClient/staticButton.js?companyID=424726&configID=7&codeType=custom&info=" + getcookie('live_info') + "\" charset=\"UTF-8\"></scr"+"ipt>");
+                    } else {
+                        document.write("<scr"+"ipt language=\"javascript\" src=\"http://chat800.mia.com/live800/chatClient/staticButton.js?companyID=424726&configID=7&codeType=custom\" charset=\"UTF-8\"></scr"+"ipt>");
+                    }
+                </script>
+                <div style='display:none;'>
+                    <a href='http://en.live800.com'>live chat</a>
+                </div>
 
-    <div class="topRanking w1000">
-    <ul class="tabMenu">
-        <li class="selected"><span>全球必Buy</span><!--<span class="line1 left"></span><span class="line1 right"></span>--></li>
-        <!--<li class="line"></li>-->
-        <li ><span>当季爆款</span><!--<span class="line1 left"></span><span class="line1 right"></span>--></li>
-        <!--<li class="line"></li>-->
-        <li ><span>新品推荐</span><!--<span class="line1 left"></span><span class="line1 right"></span>--></li>
-        <!--<li class="line"></li>-->
-        <li ><span>超值好物</span><!--<span class="line1 left"></span><span class="line1 right"></span>--></li>
-        <!--<li class="line"></li>-->
-    </ul>
-    <div class="tabContent">
-        <div class="parent HBSBlock clearfix" style="display:block;" >
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1105208.html">
-                <div class="l">
-                    <img src="http://img01.miyabaobei.com/d1/p2/2015/11/20/7f/dd/7fddbef412e0f6ac79d8a201a578ebe6.jpg" class="lazyload" alt="sk2神仙水精华露" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t1">top1</div>
-                    <div class="title">sk2神仙水精华露</div>
-                    <div class="SellingPoint">调理肌肤水油平衡<br/>促进肌肤新陈代谢</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">738.00</span><span class="originalPrice">￥1270.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1000978.html">
-                <div class="l"><img src="http://img01.miyabaobei.com/d1/p2/2015/11/20/7f/dd/7fddbef412e0f6ac79d8a201a578ebe6.jpg" class="lazyload" alt="妙思乐洗发沐浴露" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t2">top2</div>
-                    <div class="title">妙思乐洗发沐浴露</div>
-                    <div class="SellingPoint">功效二合一<br/>无泪配方无刺激</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">99.00</span><span class="originalPrice">￥178.00</span></div>
-                    <div class="Sales">
-                        3353人已购买
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1109462.html">
-                <div class="l"><img src="http://img02.miyabaobei.com/d1/p2/2015/11/20/62/d5/62d56e95e6bcf3c8a76534e16af37160.jpg" class="lazyload" alt="果蔬乐康膏250g*2盒" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t3">top3</div>
-                    <div class="title">果蔬乐康膏250g*2盒</div>
-                    <div class="SellingPoint">通便排毒<br/>净肠美肌补充能量</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">99.00</span><span class="originalPrice">￥196.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1027801.html">
-                <div class="l"><img src="http://img03.miyabaobei.com/d1/p2/2015/11/20/db/76/db76281456d90c25bd1e0587a4dacc1c.jpg" class="lazyload" alt="JELLYCAT邦尼兔" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t4">top4</div>
-                    <div class="title">JELLYCAT邦尼兔</div>
-                    <div class="SellingPoint">可爱萌萌哒<br/>手感柔软</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">195.00</span><span class="originalPrice">￥269.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1019621.html">
-                <div class="l"><img src="http://img04.miyabaobei.com/d1/p2/2015/11/20/7b/48/7b485014429b12279bb18724ccd0d4ff.jpg" class="lazyload" alt="多利科计量勺" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t5">top5</div>
-                    <div class="title">多利科计量勺</div>
-                    <div class="SellingPoint">制作辅食<br/>烹饪佐料称量</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">158.00</span><span class="originalPrice">￥248.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1070589.html">
-                <div class="l"><img src="http://img01.miyabaobei.com/d1/p2/2015/11/20/29/87/29870a5ec8c9d42f52d9c41d58a18577.jpg" class="lazyload" alt="Schick乳木果刮毛刀" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t6">top6</div>
-                    <div class="title">Schick乳木果刮毛刀</div>
-                    <div class="SellingPoint">刀头自带润肤皂<br/>使用方便超级润滑</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">85.00</span><span class="originalPrice">￥150.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-
+                <!--online chat 结束-->
+                <!-- online chat 默认跟踪代码: 开始-->
+                <script language="javascript" src="http://chat800.mia.com/live800/chatClient/monitor.js?companyID=424726&configID=3&codeType=custom"></script>
+                <!-- online chat 默认跟踪代码: 结束-->
+            </div>
         </div>
-        <div class="parent HBSBlock clearfix"  >
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1070102.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/20/ab/8d/ab8d3db8690c034c5830f3a5d23dad97.jpg" class="clicklazyload" alt="NENET新生儿5件套" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t1">top1</div>
-                    <div class="title">NENET新生儿5件套</div>
-                    <div class="SellingPoint">柔软低敏感安全材质<br/>自用送礼两相宜</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">228.00</span><span class="originalPrice">￥320.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1000341.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/20/c6/01/c60144e31dfeb359a44b6dea69b76858.jpg" class="clicklazyload" alt="智高彩虹夜灯" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t2">top2</div>
-                    <div class="title">智高彩虹夜灯</div>
-                    <div class="SellingPoint">发展宝宝视觉<br/>培养音乐乐感</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">220.00</span><span class="originalPrice">￥349.00</span></div>
-                    <div class="Sales">
-                        335人已购买
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1070106.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/20/b9/42/b9421c2900478f30e8a35b2df7206d22.jpg" class="clicklazyload" alt="薇婷沐浴用脱毛膏" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t3">top3</div>
-                    <div class="title">薇婷沐浴用脱毛膏</div>
-                    <div class="SellingPoint">坚果保湿精华<br/>光滑滋润效果持久</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">68.00</span><span class="originalPrice">￥158.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1070684.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/ce/20/ce20298307e2a215dde51831e528dd95.jpg" class="clicklazyload" alt="VEGE FRU酵素代餐粉" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t4">top4</div>
-                    <div class="title">VEGE FRU酵素代餐粉</div>
-                    <div class="SellingPoint">天然果蔬提取<br/>减少吸收多余糖分</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">228.00</span><span class="originalPrice">￥385.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1000459.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/20/7d/e7/7de71ac69a16d18f315d048bca7f979c.jpg" class="clicklazyload" alt="小林退热贴12+4枚" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t5">top5</div>
-                    <div class="title">小林退热贴12+4枚</div>
-                    <div class="SellingPoint">8小时清凉感<br/>2岁以上适用</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">36.00</span><span class="originalPrice">￥97.00</span></div>
-                    <div class="Sales">
-                        5962人已购买
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1116300.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/20/7b/5e/7b5eaa57c9ea6b460e676afd583399f6.jpg" class="clicklazyload" alt="洛斯小丁内衣套装" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t6">top6</div>
-                    <div class="title">洛斯小丁内衣套装</div>
-                    <div class="SellingPoint">罗纹收口防风钻入<br/>护肚设计防止受凉</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">119.00</span><span class="originalPrice">￥259.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-
+        <div class="CustomerPhone NFBpub"> <a href="javascript:void(0);" class="cur NFBpub">客服电话</a>
+            <div class="phone400 NFBpub pop">400-789-2000</div>
         </div>
-        <div class="parent HBSBlock clearfix"  >
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1070552.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/20/60/3c/603c092bd56df72af9b2536e2767f876.jpg" class="clicklazyload" alt="GOLDMASK活肤面膜" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t1">top1</div>
-                    <div class="title">GOLDMASK活肤面膜</div>
-                    <div class="SellingPoint">补水效果好<br/>无酒精无矿物油</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">75.00</span><span class="originalPrice">￥158.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1106020.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/b0/34/b03429ddeeb311aa002ccdabb39b189e.jpg" class="clicklazyload" alt="Boii创意马克杯" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t2">top2</div>
-                    <div class="title">Boii创意马克杯</div>
-                    <div class="SellingPoint">DIY跟着创意走<br/>拼出名字或图案</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">78.00</span><span class="originalPrice">￥98.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1121812.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/20/e3/ac/e3ace1cb91336b3cf9b5148cad17c44e.jpg" class="clicklazyload" alt="Dior魅惑润唇膏" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t3">top3</div>
-                    <div class="title">Dior魅惑润唇膏</div>
-                    <div class="SellingPoint">感应嘴唇含水量<br/>渐变效果改善唇色</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">198.00</span><span class="originalPrice">￥232.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1121780.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/20/5b/bc/5bbc35ce1d0046d7453b3c44d0a5a07f.jpg" class="clicklazyload" alt="IPSA流金岁月化妆水" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t4">top4</div>
-                    <div class="title">IPSA流金岁月化妆水</div>
-                    <div class="SellingPoint">强化角质保湿补水<br/>水油平衡控油抗痘</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">275.00</span><span class="originalPrice">￥350.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1099946.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/20/79/38/79380492e505cc3a5f74153abb7ed7d7.jpg" class="clicklazyload" alt="WubbaNub安抚奶嘴" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t5">top5</div>
-                    <div class="title">WubbaNub安抚奶嘴</div>
-                    <div class="SellingPoint">触感柔软有安全感<br/>防止奶嘴丢失</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">89.00</span><span class="originalPrice">￥159.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1108393.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/bc/bb/bcbbe7c5793453bdcc8322e4830d7ae3.jpg" class="clicklazyload" alt="健美生葡萄籽浓缩" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t6">top6</div>
-                    <div class="title">健美生葡萄籽浓缩</div>
-                    <div class="SellingPoint">抵抗自由基<br/>抗老化防辐射</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">95.00</span><span class="originalPrice">￥115.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-
+        <div class="Mobilephone NFBpub"> <a href="javascript:void(0);" class="cur NFBpub">手机逛蜜芽</a>
+            <div class="phoneewm NFBpub pop">400-789-2000</div>
         </div>
-        <div class="parent HBSBlock clearfix"  >
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1047943.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/20/1b/60/1b60f297a92076aa7334930a70d64c69.jpg" class="clicklazyload" alt="贺寿利牛奶饼干" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t1">top1</div>
-                    <div class="title">贺寿利牛奶饼干</div>
-                    <div class="SellingPoint">淡淡奶香味道<br/>日常钙质补充</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">62.00</span><span class="originalPrice">￥98.00</span></div>
-                    <div class="Sales">
-                        3576人已购买
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow"> <a target="_blank" href="http://www.miyabaobei.com/item-1075779.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/20/ec/12/ec12230abf72228d89ddd748e3d9fc3e.jpg" class="clicklazyload" alt="Hellokitty零食盒" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t2">top2</div>
-                    <div class="title">Hellokitty零食盒</div>
-                    <div class="SellingPoint">原装进口外观时尚<br/>密封盖携带方便</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">58.00</span><span class="originalPrice">￥75.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1047946.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img04.miyabaobei.com/d1/p2/2015/11/20/b2/4c/b24c68d7e171bda8fcf83d016947db01.jpg" class="clicklazyload" alt="TOM成人无氟牙膏" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t3">top3</div>
-                    <div class="title">TOM成人无氟牙膏</div>
-                    <div class="SellingPoint">去除牙斑牙垢<br/>不伤害牙釉质</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">89.00</span><span class="originalPrice">￥100.00</span></div>
-                    <div class="Sales">
-                        481人已购买
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1064662.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img01.miyabaobei.com/d1/p2/2015/11/20/a1/58/a15828f7361dc22aca551c361e07166a.jpg" class="clicklazyload" alt="Nuby便携吸盘碗" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t4">top4</div>
-                    <div class="title">Nuby便携吸盘碗</div>
-                    <div class="SellingPoint">材质安全自带勺子<br/>底部吸盘稳稳吸住</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">35.00</span><span class="originalPrice">￥48.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1108177.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/20/e6/7b/e67b04994d97079bfdc1a911ca667bb1.jpg" class="clicklazyload" alt="菲拉思德椰子水" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t5">top5</div>
-                    <div class="title">菲拉思德椰子水</div>
-                    <div class="SellingPoint">排毒瘦身<br/>促进新陈代谢</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">229.00</span><span class="originalPrice">￥398.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-            <div class="HBShadow bottomnone rightnone"> <a target="_blank" href="http://www.miyabaobei.com/item-1073589.html">
-                <div class="l"><img src="http://file04.miyabaobei.com/resources/images/loading_166X194.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/20/d0/a9/d0a9342f27962b7c04d28924ce5a46f0.jpg" class="clicklazyload" alt="Nikken大折刀" width="166" height="194"/></div>
-                <div class="l">
-                    <div class="top t6">top6</div>
-                    <div class="title">Nikken大折刀</div>
-                    <div class="SellingPoint">决不会刮伤眉毛<br/>刀片快不留黑茬</div>
-                    <div class="price1"><span class="p1">￥</span><span class="p2">29.00</span><span class="originalPrice">￥45.00</span></div>
-                    <div class="Sales">
-                        新品上线
-                    </div>
-                </div>
-            </a> </div>
-
+        <div class="ShoppingCart NFBpub"> <a href="/cart" class="cur NFBpub">购物车</a>
+            <div class="Nnum" id="rightFunctionCartNum" style="display:none;">0</div>
+            <!--        <div class="Nnum" id="rightFunctionCartNum">0</div>-->
         </div>
+        <div class="Ngotop NFBpub"> <a href="javascript:void(0)" class="cur NFBpub">返回顶部</a> </div>
     </div>
 </div>
-<!--全球必Buy-结束-->
-
-    <div class="NContent w1000 clearfix">
-    <div class="l left clearfix">
-        <div class="Aresale">
-            <div class="r">纸尿裤及拉拉裤满 <span class="pink">2包</span> 包邮，奶粉包邮，其他品类全场满<span class="pink">88</span>包邮哦~</div>
-            <div class="l yahei">正在特卖</div>
-        </div>
-        <div class="HBSBlock">
-            <div class="ntblock" id="outlets_box_22039">
-                <div class="img"><a target="_blank" href="/list-22039.html">
-                    <img src="http://img04.miyabaobei.com/d1/p1/2015/10/08/d4/12/d412ef78fc3d72697c2fc9abb05bb1d4.jpg" data-src="" alt="百亿欧涂鸦粉笔特卖" width="670" height="292" class="lazyload"/></a>
-                    <div class="SoldOut dn">抢光了</div></div>
-                <div class="text">
-                    <div class="djs"><span id="counter_22039" style="display:none;"> </span></div>
-                    <span class="price"><span class="pink">6.5</span>折起</span><a target="_blank" href="/list-22039.html">百亿欧涂鸦粉笔特卖</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="l right">
-
-        <div class="NHotA block">
-            <div class="title yahei">蜜芽免税店</div>
-            <div class="content"> <a target="_blank" href="http://www.miyabaobei.hk/dutyfree.html" title="蜜芽免税店"><img src="http://img01.miyabaobei.com/d1/p1/2015/10/12/b2/2f/b22f47f7e37786af84fcf8fb7c0310f8.jpg" alt="蜜芽免税店" width="290" height="220"/></a> </div>
-        </div>
-        <div class="moduleFixed idmod">
-            <div class="moFixed">
-                <ul>
-                    <li  class="current pink" >
-                        <div class="data">明天</div>
-                        <div class="time">11/24</div>
-                    </li>
-                    <li  >
-                        <div class="data">后天</div>
-                        <div class="time">11/25</div>
-                    </li>
-                    <li   class="brn">
-                        <div class="data">周四</div>
-                        <div class="time">11/26</div>
-                    </li>
-                </ul>
-                <div class="brandCon dn clearfix" style="display: block;">
-                    <p class="spline"><b>品牌特卖</b></p>
-                    <div class="bc rel">
-                        <div class="rcn"> <a style="cursor:pointer;" target="_blank" href="/list-21719.html"> <img width="80" height="29" alt="全棉时代婴幼儿用品特卖" src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img02.miyabaobei.com/d1/p2/2015/11/17/bb/fb/bbfb8614afa2745e136a97b811758b77.png" class="lazyload"> </a> </div>
-                        <div class="yd pos dn"> <a style="cursor:pointer;" target="_blank" href="/list-21719.html"> <img width="310" height="135" src="http://file04.miyabaobei.com/resources/images/loading_492X160.gif?v=1" data-src="http://img03.miyabaobei.com/d1/p2/2015/11/17/07/f9/07f9e7919535b98f0e49d11b36a5ce8c.jpg" data-pinit="registered" class="mouselazyload">
-                            <p class="p1">全棉时代婴幼儿用品特卖</p>
-                            <div class="zk">58元起</div>
-                        </a> </div>
-                    </div>
-                    <div class="SelectedTopics">
-                        <p class="spline"><b>精选专题</b></p>
-                        <a href="/list-22124.html" target="_blank" title="感恩节特辑"><img src="http://img04.miyabaobei.com/d1/p2/2015/11/23/d7/82/d7827a59a51e9e43c81d733d5b0a9e71.jpg" alt="感恩节特辑" width="288" class="lazyload"/></a>
-                        <a href="/list-21959.html" target="_blank" title="柔顺剂专场"><img src="http://img01.miyabaobei.com/d1/p2/2015/11/19/8f/55/8f55b09bd6f4b2664ed3e05d3473c95c.jpg" alt="柔顺剂专场" width="288" class="lazyload"/></a>
-                        <a href="/list-21930.html" target="_blank" title="鱼肠海苔专场"><img src="http://img02.miyabaobei.com/d1/p2/2015/11/19/11/30/1130681e95591eeb2d4fc52b145889e8.jpg" alt="鱼肠海苔专场" width="288" class="lazyload"/></a>
-                        <a href="/list-21892.html" target="_blank" title="韩国妈妈育儿经"><img src="http://img03.miyabaobei.com/d1/p1/2015/05/29/1c/aa/1caa439cf05f989daaae459cd1e8916b.jpg" alt="韩国妈妈育儿经" width="288" class="lazyload"/></a>
-                        <a href="/list-20588.html" target="_blank" title="外出美包专场"><img src="http://img04.miyabaobei.com/d1/p2/2015/11/18/80/e1/80e19aa54bbac988267ea2d84a292d15.jpg" alt="外出美包专场" width="288" class="lazyload"/></a>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-
-
-        <div class="NHotA block NRecommend clearfix">
-            <div class="title yahei">大家都在买</div>
-            <div class="content noneline">
-                <a target="_blank" href="/koubei-138788.html" title="首先得承认B家的这款围兜是妈妈们海淘的一款热门单品，我在孩子三个月左右就一直关注这款围兜，之所以迟迟没有入手…" class="NRblock"> <img src="http://img04.miyabaobei.com/item/10/1093/1093254_normal_2.jpg" class="lazyload" alt="首先得承认B家的这款围兜是妈妈们海淘的一款热门单品，我在孩子三个月左右就一直关注这款围兜，之所以迟迟没有入手…" width="72" height="72"/> <span class="pink ver">ddilx：</span>首先得承认B家的这款围兜是妈妈们海淘的一款热门单品，我在孩子三个月左右就一直关注这款围兜，之所以迟迟没有入手… </a>
-                <a target="_blank" href="/koubei-138542.html" title="第一次没有买到，第二次一气抢了四个颜色，因为觉得每个颜色都好看，除了粉色不太适合男孩戴，这个围嘴真是太好用…" class="NRblock"> <img src="http://img01.miyabaobei.com/item/10/1093/1093255_normal_2.jpg" class="lazyload" alt="第一次没有买到，第二次一气抢了四个颜色，因为觉得每个颜色都好看，除了粉色不太适合男孩戴，这个围嘴真是太好用…" width="72" height="72"/> <span class="pink ver">Bonnie：</span>第一次没有买到，第二次一气抢了四个颜色，因为觉得每个颜色都好看，除了粉色不太适合男孩戴，这个围嘴真是太好用… </a>
-                <a target="_blank" href="/koubei-138453.html" title="大爱啊~之前买了粉色的~特别喜欢自己留下了~这次给儿子备一套~太好看了这颜色~质量也和您…" class="NRblock"> <img src="http://img02.miyabaobei.com/item/10/1099/1099402_normal_2.jpg" class="lazyload" alt="大爱啊~之前买了粉色的~特别喜欢自己留下了~这次给儿子备一套~太好看了这颜色~质量也和您…" width="72" height="72"/> <span class="pink ver">miya135****1908：</span>大爱啊~之前买了粉色的~特别喜欢自己留下了~这次给儿子备一套~太好看了这颜色~质量也和您… </a>
-                <a target="_blank" href="/koubei-138322.html" title="不锈钢的材质，不会因为温度高而产生什么有害的物质，宝宝的东西，最重要的就是放心，一套四样东西，都有自己…" class="NRblock"> <img src="http://img03.miyabaobei.com/item/10/1099/1099401_normal_2.jpg" class="lazyload" alt="不锈钢的材质，不会因为温度高而产生什么有害的物质，宝宝的东西，最重要的就是放心，一套四样东西，都有自己…" width="72" height="72"/> <span class="pink ver">小妖晶Jutta：</span>不锈钢的材质，不会因为温度高而产生什么有害的物质，宝宝的东西，最重要的就是放心，一套四样东西，都有自己… </a>
-                <a target="_blank" href="/koubei-138111.html" title="颜色很靓丽，橙色的超炫哦！质量很好！不锈钢的材质，不会因为温度高而产生有毒有害物质，不锈钢的部分可以拆下来，放到…" class="NRblock"> <img src="http://img04.miyabaobei.com/item/10/1099/1099404_normal_2.jpg" class="lazyload" alt="颜色很靓丽，橙色的超炫哦！质量很好！不锈钢的材质，不会因为温度高而产生有毒有害物质，不锈钢的部分可以拆下来，放到…" width="72" height="72"/> <span class="pink ver">小粽子：</span>颜色很靓丽，橙色的超炫哦！质量很好！不锈钢的材质，不会因为温度高而产生有毒有害物质，不锈钢的部分可以拆下来，放到… </a>
-            </div>
-        </div>
-    </div>
+<!--last change by ou,lzj @ 20151014-->
+<div class="leftExtension dn" >
+    <!--
+    <a href="/event/send_coupon" target="_blank" class="topImage xxx" style="display:none;"><img src="http://file01.miyabaobei.com/resources/images/index_left_wx3Dc.png?v=20150710" /></a>
+    -->
+    <div class="LEwx"></div>
 </div>
-<!--正在特买-结束-->
-
-
-    <div class="LastBuy w1000 clearfix">
-    <div class="title yahei">
-        <div class="l left">最后机会</div>
-        <div class="l"></div>
-    </div>
-    <div class="clearfix LBCon HBSBlock">
-        <div class="block" id="outlets_box_19906"> <a target="_blank" href="/list-19906.html">
-            <div class="indexPubTop"><img src="http://img01.miyabaobei.com/d1/p2/2015/10/15/16/fe/16fe95545dc3130943b6c0573b1f67f9.jpg" alt="孕妇装专场" width="323" height="141" class="lazyload"/><div class="SoldOut dn">抢光了</div></div>
-            <div class="text">
-                <div class="r"><span class="price"><span class="pink">39</span>元起</span></div>
-                <div class="l" style="background:none;"><span>孕妇装专场</span>
-                    <br/>
-                    <span class="djs" style="background:none;padding:0;">剩余时间：<span id="counter_19906" style="display:none;"> </span></span></div>
-            </div>
-        </a> </div>
-        <div class="block" id="outlets_box_20512"> <a target="_blank" href="/list-20512.html">
-            <div class="indexPubTop"><img src="http://img02.miyabaobei.com/d1/p2/2015/11/10/f6/f3/f6f3200baf061843d547395fe9050bfa.jpg" alt="美国潮牌宝宝用品专场" width="323" height="141" class="lazyload"/><div class="SoldOut dn">抢光了</div></div>
-            <div class="text">
-                <div class="r"><span class="price"><span class="pink">44</span>元起</span></div>
-                <div class="l" style="background:none;"><span>美国潮牌宝宝用品专场</span>
-                    <br/>
-                    <span class="djs" style="background:none;padding:0;">剩余时间：<span id="counter_20512" style="display:none;"> </span></span></div>
-            </div>
-        </a> </div>
-        <div class="block mr0" id="outlets_box_19639"> <a target="_blank" href="/list-19639.html">
-            <div class="indexPubTop"><img src="http://img03.miyabaobei.com/d1/p2/2015/11/11/42/a7/42a7ff52e9148d54177763979249d6c8.jpg" alt="冬季补水专场" width="323" height="141" class="lazyload"/><div class="SoldOut dn">抢光了</div></div>
-            <div class="text">
-                <div class="r"><span class="price"><span class="pink">34</span>元起</span></div>
-                <div class="l" style="background:none;"><span>冬季补水专场</span>
-                    <br/>
-                    <span class="djs" style="background:none;padding:0;">剩余时间：<span id="counter_19639" style="display:none;"> </span></span></div>
-            </div>
-        </a> </div>
-        <div class="block" id="outlets_box_19611"> <a target="_blank" href="/list-19611.html">
-            <div class="indexPubTop">
-                <img src="http://img04.miyabaobei.com/d1/p2/2015/11/06/5c/77/5c77b5a6941512d7beb9e12059bba1f0.jpg" alt="美国辅食专场" width="323" height="141" class="lazyload"/>
-                <div class="SoldOut dn">抢光了</div>
-            </div>
-            <div class="text">
-                <div class="r"><span class="price"><span class="pink">23</span>元起</span>
-                </div>
-                <div class="l" style="background:none;"><span>美国辅食专场</span>
-                    <br/>
-                    <span class="djs" style="background:none;padding:0;">剩余时间：<span id="counter_19611" style="display:none;"> </span></span>
-                </div>
-            </div>
-        </a> </div>
-    </div>
-</div>
-<!--最后机会-结束-->
-
+<style>
+    .leftExtension { bottom:443px; /*bottom:290px;*/}
+</style>
 
 
         <div class="Nfooter">

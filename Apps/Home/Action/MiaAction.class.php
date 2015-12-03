@@ -19,4 +19,12 @@ class MiaAction extends BaseAction{
 //        $this->show(var_dump($WST_USER));
     }
 
+    public function userIndex(){
+        $this->display('mia/user/mia_user_index');
+    }
+
+    public function goodsDetails(){
+        $this->display('mia/mia_goods_details');
+    }
+
 }
