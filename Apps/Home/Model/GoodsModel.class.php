@@ -9,6 +9,17 @@ namespace Home\Model;
  * 商品服务类
  */
 class GoodsModel extends BaseModel {
+
+
+	/** 今日精选商品 */
+	public function getTodaySelected(){
+		//选择表
+		$m = M('goods');
+		//CURL语句
+		$res = $m->where("isTodaySelected=1")->limit(4)->select();
+		//返回数据
+		return $res;
+	}
 	
 	/**
 	 * 商品列表

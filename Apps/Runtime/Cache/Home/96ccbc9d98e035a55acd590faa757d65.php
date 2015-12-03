@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?><h1 style='text-align: center;margin-top: 300px;'>网站正在建设</h1>
