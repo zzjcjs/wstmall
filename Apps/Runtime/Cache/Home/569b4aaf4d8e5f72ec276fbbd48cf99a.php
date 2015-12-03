@@ -625,21 +625,22 @@
         
     <link rel="stylesheet" href="http://file01.miyabaobei.com/resources/styles/jqwin.css">
     <link rel="stylesheet" href="http://file01.miyabaobei.com/resources/styles/item/iteminfo.css?v=20150602">
+    <input id="shopId" type="hidden" value="<?php echo ($goodsDetails['shopId']); ?>"/>
+    <input id="goodsId" type="hidden" value="<?php echo ($goodsDetails['goodsId']); ?>"/>
 
     <div class="warp">
         <div class="breadCrumbs">
     <div class="w1004 songti">
-        <a href="/">蜜芽首页</a> &gt;
-        <a href="/list-22326.html" title="瘦身代餐专场 ">
-            瘦身代餐专场                         </a> &gt;
-        Nu-Lax 乐康膏 果蔬乐康膏250g*2盒        </div>
+        <a href="/">宝宝帝首页</a> &gt;
+        <a href="<?php echo U('Home/Goods/getGoodsList/',array('c1Id'=>$goodsNav[0]['catId']));?>"><?php echo ($goodsNav[0]["catName"]); ?></a> &gt;
+        <a href="<?php echo U('Home/Goods/getGoodsList/',array('c1Id'=>$goodsNav[0]['catId'],'c2Id'=>$goodsNav[1]['catId']));?>"><?php echo ($goodsNav[1]["catName"]); ?></a> &gt;
+        <a href="<?php echo U('Home/Goods/getGoodsList/',array('c1Id'=>$goodsNav[0]['catId'],'c2Id'=>$goodsNav[1]['catId'],'c3Id'=>$goodsNav[2]['catId']));?>"><?php echo ($goodsNav[2]["catName"]); ?></a>
+    </div>
 </div>
         <div class="content detail">
     <div class="w1004">
         <div class="titlecon clearfix">
             <div class="left yahei l">
-                <input type="hidden" name="item_id" id="item_id" value="1109462" readonly="readonly" />
-                <!-- 20150423 -->
 
                 <a href="/list-22326.html" class="pink">瘦身代餐专场 </a>
 
@@ -647,7 +648,6 @@
 
                 （本品不能代替药物）由澳洲hujun原产的多种水果和天然植物赛纳叶混合而成，不含人工添加剂。净肠美肌补能量，通便排毒，改善便秘、腹胀、口臭、青春痘等问题。睡前服用效果更好~！
 
-                <!-- /20150423 -->
             </div>
             <div class="right l">
                 <div id="detailOutletInfo" class="countdown" style="display:none">
@@ -669,23 +669,21 @@
 
         <div class="show clearfix">
             <div class="left l rel">
-                <!--3月纸尿裤节logo lastChang 20150303 by ke-->
-                <!--3月纸尿裤节logo end -->
-
                 <div class="mark_wrap_x60">
                     <span class="mark_item mark_dutyfree"></span>
                 </div>
                 <div class="big rel">
-                    <img src="http://img01.miyabaobei.com/d1/p2/item/11/1109/1109462_topic_1.jpg" width="447" height="447" alt="果蔬乐康膏250g*2盒"/><!--<a href="#" class="magnifier pos"></a>-->
+                    <img src="/<?php echo ($goodsDetails['goodsImg']); ?>" width="447" height="447" alt="<?php echo ($goodsDetails['goodsName']); ?>"/>
                 </div>
             </div>
+
             <div class="right l">
                 <div class="M_productInfo">
                     <div class="pi_price_box">
-                        <span class="pbox_price"><i class="pbox_yen">&yen;</i><em id="item_price">99.00</em></span>
+                        <span class="pbox_price"><i class="pbox_yen">&yen;</i><em id="item_price"><?php echo ($goodsDetails['shopPrice']); ?></em></span>
                         <span class="pbox_off">5.1折</span>
 
-                        <span class="pbox_market">&yen;<del>196.00</del></span>
+                        <span class="pbox_market">&yen;<del><?php echo ($goodsDetails['marketPrice']); ?></del></span>
 
                     </div>
 
@@ -699,12 +697,10 @@
                         <dl id="i_youhui" class="i_youhui clearfix" style="display: none">
                             <dt class="num_name">优惠：</dt>
                             <dt>
-                                <!--                                    <div class="iyh_tuan"><i>团</i>下载蜜芽APP立享团购优惠，3人成团可低至 ¥69 元 </div>
-                                                                    <div class="iyh_quan"><i>券</i>满100减5元优惠券 立即领取</div>-->
+                                <div class="iyh_tuan"><i>团</i>下载蜜芽APP立享团购优惠，3人成团可低至 ¥69 元 </div>
+                                <div class="iyh_quan"><i>券</i>满100减5元优惠券 立即领取</div>
                             </dt>
                         </dl>
-                        <!-- 20150814 -->
-                        <!-- 20150427 -->
                         <dl class="color new_gg">
                             <dt class="color_name">套装：</dt>
                             <dd class="color_list">
@@ -718,16 +714,14 @@
                                 </ul>
                             </dd>
                         </dl>
-                        <!-- /20150427 -->
-
 
                         <dl class="color">
                             <dt class="color_name">可选：</dt>
                             <dd class="color_list">
                                 <ul>
                                     <li class="color_list_item">
-                                        <a class="selected" title="果蔬乐康膏250g*2盒" href="javascript:void(0)">
-                                            <img width="42" height="43" alt="果蔬乐康膏250g*2盒" src="http://img01.miyabaobei.com/d1/p2/item/11/1109/1109462_normal_1.jpg" class="fl">
+                                        <a class="selected" title="<?php echo ($goodsDetails['goodsName']); ?>" href="javascript:void(0)">
+                                            <img width="42" height="43" alt="<?php echo ($goodsDetails['goodsName']); ?>" src="/<?php echo ($vo['goodsThumb']); ?>" class="fl">
                                             <span class="i_select"></span>
                                         </a>
                                     </li>
@@ -735,7 +729,6 @@
                             </dd>
                         </dl>
                         <dl id="detail_size" style="display:none;"></dl>
-                        <input type="hidden" value="" id="item_size" name="size" readonly="readonly" />
                         <dl id="J_num_select" class="i_num clearfix">
                             <dt class="num_name">数量：</dt>
                             <dd class="i_notice_msg J_num_tips"></dd>
@@ -759,22 +752,14 @@
                             <dd class="other_box" style="text-align:left;height:auto">本商品重庆综合保税仓税率10%，订单关税≤50免征</dd>
                         </dl>
 
-                        <!--                            --><!--                                <dl class="other">-->
-                        <!--                                    <dt class="other_name" style="width: 61px;">购买须知：</dt>-->
-                        <!--                                    <dd class="other_box" style="text-align:left;height:auto">以商品实际销售价格作为完税价格(征税基数)参照行邮税税率征收税款。<br/>应征税额在50元(含50元)以下的,海关予以免征。<strong id="kjghelp-button">&nbsp;?&nbsp;</strong></dd>-->
-                        <!--                                </dl>-->
-                        <!--                                <i id="kjghelp">以商品实际销售价格作为完税价格（征税基数），参照行邮税税率征收税款。应征税额在50元（含50元）以下的，海关予以免征。消费者购买跨境贸易电子商务进口商品，以“个人自用、合理数量”为原则，参照《海关总署公告2010年第43号（关于调整进出境个人邮递物品管理措施有关事宜）》要求，每次限值为1000元人民币，超出规定限值的，应按照货物规定办理通关手续。但单次购买仅有一件商品且不可分割的，虽超出规定限值，经海关审核确属个人自用的，可以参照个人物品规定办理通关手续。对于违反规定，超出个人自用合理数量购买的，系统将予以退单，情节严重的，将追究个人法律责任。</i>-->
-                        <!--                            -->
-                        <!--//Mother's special blend,Primo 特卖商品提示-->
-                        <!--  -->
-
                         <div class="clearfix">
                             <div class="service_mia" style="position: relative;">
                                 <div class="hide_button" style="position:absolute;top:0; left:0; width: 60px; height: 36px; z-index: 9;"></div>
                                 <!-- Live800在线客服图标:勿删[固定型] 开始-->
                                 <div id='live7'>
                                 </div>
-                            </div>                                </div>
+                            </div>
+                        </div>
 
 
                         <div class="clearfix">
@@ -811,10 +796,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
 
 
 

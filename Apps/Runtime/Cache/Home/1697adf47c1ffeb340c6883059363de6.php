@@ -681,53 +681,25 @@
         <div class="fmRim TodayBoutique">
             <ul class="fmCon">
                 <li class="HBSBlock">
-                    <div class="TBB"> <a target="_blank" href="<?php echo U('Mia/goodsDetails');?>" title="大杯口大容量 超长保温保冷">
-                        <div class="Commodity rel"> <img src="http://img02.miyabaobei.com/d1/p2/2015/11/20/1e/37/1e379a49d11fc27536f95ac25084a9b4.jpg" width="228" height="228" alt="大杯口大容量 超长保温保冷"/>
-                            <div class="Nicon NI_hot">热</div>
-                        </div>
-                        <div class="price1">
-                            <div class="r">
-                                8070人喜欢
-                            </div>
-                            <span class="p1">￥</span><span class="p2">488.00</span><span class="originalPrice">￥698.00</span> </div>
-                        <div class="intro"><p>象印原装进口儿童保温杯</p><p class="gray3">大杯口大容量 超长保温保冷</p></div>
-                    </a> </div>
 
-                    <div class="TBB"> <a target="_blank" href="<?php echo U('Mia/goodsDetails');?>" title="细密喷雾 改善干燥肌肤">
-                        <div class="Commodity rel"> <img src="http://img03.miyabaobei.com/d1/p2/2015/11/20/f3/f2/f3f270f9e205498cdda059270b305dcc.jpg" width="228" height="228" alt="细密喷雾 改善干燥肌肤"/>
-                            <div class="Nicon NI_hot">热</div>
-                        </div>
-                        <div class="price1">
-                            <div class="r">
-                                16029人喜欢
-                            </div>
-                            <span class="p1">￥</span><span class="p2">59.00</span><span class="originalPrice">￥125.00</span> </div>
-                        <div class="intro"><p>雅漾活泉水喷雾150ml</p><p class="gray3">细密喷雾 改善干燥肌肤</p></div>
-                    </a> </div>
 
-                    <div class="TBB"> <a target="_blank" href="<?php echo U('Mia/goodsDetails');?>" title="适合饮食不规律人群">
-                        <div class="Commodity rel"> <img src="http://img04.miyabaobei.com/item/10/1070/1070633_normal_4.jpg" width="228" height="228" alt="适合饮食不规律人群"/>
-                            <div class="Nicon NI_hot">热</div>
-                        </div>
-                        <div class="price1">
-                            <div class="r">
-                                11388人喜欢
-                            </div>
-                            <span class="p1">￥</span><span class="p2">238.00</span><span class="originalPrice">￥498.00</span> </div>
-                        <div class="intro"><p>日本新谷瘦身酵素</p><p class="gray3">适合饮食不规律人群</p></div>
-                    </a> </div>
-
-                    <div class="TBB"> <a target="_blank" href="<?php echo U('Mia/goodsDetails');?>" title="体积轻巧 节省空间方便携带">
-                        <div class="Commodity rel"> <img src="http://img01.miyabaobei.com/d1/p2/2015/11/20/78/ae/78aee8a5710f1b0a4d29a2fdca2f1942.jpg" width="228" height="228" alt="体积轻巧 节省空间方便携带"/>
+                    <?php if(is_array($todaySelected)): $i = 0; $__LIST__ = $todaySelected;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="TBB">
+                        <a target="_blank" href="<?php echo U('Mia/goodsDetails/',array('goodsId'=>$vo['goodsId']));?>" title="<?php echo ($vo['goodsName']); ?>">
+                        <div class="Commodity rel">
+                            <img src="<?php echo ($vo['goodsImg']); ?>" width="228" height="228" alt="<?php echo ($vo['goodsName']); ?>"/>
                             <div class="Nicon NI_hot">热</div>
                         </div>
                         <div class="price1">
                             <div class="r">
                                 2440人喜欢
                             </div>
-                            <span class="p1">￥</span><span class="p2">232.00</span><span class="originalPrice">￥368.00</span> </div>
-                        <div class="intro"><p>多利科迷你体重秤</p><p class="gray3">体积轻巧 节省空间方便携带</p></div>
-                    </a> </div>
+                            <span class="p1">￥</span><span class="p2"><?php echo ($vo['shopPrice']); ?></span><span class="originalPrice">￥<?php echo ($vo['marketPrice']); ?></span> </div>
+                        <div class="intro"><p><?php echo ($vo['goodsName']); ?></p>
+                            <p class="gray3"><?php echo ($vo['goodsBrief']); ?></p>
+                        </div>
+                        </a>
+                    </div><?php endforeach; endif; else: echo "" ;endif; ?>
+
 
                 </li>
             </ul>
