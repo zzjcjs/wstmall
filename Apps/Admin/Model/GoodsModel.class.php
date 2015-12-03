@@ -9,7 +9,269 @@
  * 商品服务类
  */
 class GoodsModel extends BaseModel {
-    
+
+    /**
+     * 新增商品
+     */
+    public function insert(){
+        $rd = array('status'=>-1);
+
+        $data = array();
+        $data["goodsSn"] = I("goodsSn");
+        $data["goodsName"] = I("goodsName");
+        $data["goodsImg"] = I("goodsImg");
+        $data["goodsThums"] = I("goodsThumbs");
+        $data["shopId"] = session('WST_USER.shopId');
+        $data["marketPrice"] = (float)I("marketPrice");
+        $data["shopPrice"] = (float)I("shopPrice");
+        $data["goodsStock"] = (int)I("goodsStock");
+        $data["isBook"] = (int)I("isBook");
+        $data["bookQuantity"] = (int)I("bookQuantity");
+        $data["warnStock"] = (int)I("warnStock");
+        $data["goodsUnit"] = I("goodsUnit");
+        $data["isBest"] = (int)I("isBest");
+        $data["isRecomm"] = (int)I("isRecomm");
+        $data["isNew"] = (int)I("isNew");
+        $data["isHot"] = (int)I("isHot");
+        //如果商家状态不是已审核则所有商品只能在仓库中
+        if($shopStatus[0]['shopStatus']==1){
+            $data["isSale"] = (int)I("isSale");
+        }else{
+            $data["isSale"] = 0;
+        }
+        $data["goodsCatId1"] = (int)I("goodsCatId1");
+        $data["goodsCatId2"] = (int)I("goodsCatId2");
+        $data["goodsCatId3"] = (int)I("goodsCatId3");
+        $data["shopCatId1"] = (int)I("shopCatId1");
+        $data["shopCatId2"] = (int)I("shopCatId2");
+        $data["goodsDesc"] = I("goodsDesc");
+        $data["attrCatId"] = (int)I("attrCatId");
+        $data["isShopRecomm"] = 0;
+        $data["isIndexRecomm"] = 0;
+        $data["isActivityRecomm"] = 0;
+        $data["isInnerRecomm"] = 0;
+        $data["goodsStatus"] = ($GLOBALS['CONFIG']['isGoodsVerify']==1)?0:1;
+        $data["goodsFlag"] = 1;
+        $data["createTime"] = date('Y-m-d H:i:s');
+        if($this->checkEmpty($data,true)){
+            $data["brandId"] = (int)I("brandId");
+            $data["goodsSpec"] = I("goodsSpec");
+            $data["goodsKeywords"] = I("goodsKeywords");
+            $m = M('goods');
+            $goodsId = $m->add($data);
+            if(false !== $goodsId){
+                if($shopStatus[0]['shopStatus']==1){
+                    $rd['status']= 1;
+                }else{
+                    $rd['status'] = -3;
+                }
+                //规格属性
+                if($data["attrCatId"]>0){
+                    $m = M('goods_attributes');
+                    //获取商品类型属性
+                    $sql = "select attrId,attrName,isPriceAttr from __PREFIX__attributes where attrFlag=1
+					       and catId=".$data["attrCatId"]." and shopId=".session('WST_USER.shopId');
+                    $attrRs = $m->query($sql);
+                    if(!empty($attrRs)){
+                        $priceAttrId = 0;
+                        foreach ($attrRs as $key =>$v){
+                            if($v['isPriceAttr']==1){
+                                $priceAttrId = $v['attrId'];
+                                continue;
+                            }else{
+                                $attr = array();
+                                $attr['shopId'] = session('WST_USER.shopId');
+                                $attr['goodsId'] = $goodsId;
+                                $attr['attrId'] = $v['attrId'];
+                                $attr['attrVal'] = I('attr_name_'.$v['attrId']);
+                                $m->add($attr);
+                            }
+                        }
+                        if($priceAttrId>0){
+                            $no = (int)I('goodsPriceNo');
+                            $no = $no>50?50:$no;
+                            $totalStock = 0;
+                            for ($i=0;$i<=$no;$i++){
+                                $name = trim(I('price_name_'.$priceAttrId."_".$i));
+                                if($name=='')continue;
+                                $attr = array();
+                                $attr['shopId'] = session('WST_USER.shopId');
+                                $attr['goodsId'] = $goodsId;
+                                $attr['attrId'] = $priceAttrId;
+                                $attr['attrVal'] = $name;
+                                $attr['attrPrice'] = (float)I('price_price_'.$priceAttrId."_".$i);
+                                $attr['isRecomm'] = (int)I('price_isRecomm_'.$priceAttrId."_".$i);
+                                $attr['attrStock'] = (int)I('price_stock_'.$priceAttrId."_".$i);
+                                $totalStock = $totalStock + (int)$attr['attrStock'];
+                                $m->add($attr);
+                            }
+                            //更新商品总库存
+                            $sql = "update __PREFIX__goods set goodsStock=".$totalStock." where goodsId=".$goodsId;
+                            $m->execute($sql);
+                        }
+                    }
+                }
+                //保存相册
+                $gallery = I("gallery");
+                if($gallery!=''){
+                    $str = explode(',',$gallery);
+                    foreach ($str as $k => $v){
+                        if($v=='')continue;
+                        $str1 = explode('@',$v);
+                        $data = array();
+                        $data['shopId'] = session('WST_USER.shopId');
+                        $data['goodsId'] = $goodsId;
+                        $data['goodsImg'] = $str1[0];
+                        $data['goodsThumbs'] = $str1[1];
+                        $m = M('goods_gallerys');
+                        $m->add($data);
+                    }
+                }
+            }
+        }
+        return $rd;
+    }
+
+
+    /**
+	 * 编辑商品信息
+	 */
+	public function edit(){
+		$rd = array('status'=>-1);
+		$goodsId = (int)I("id",0);
+		//加载商品信息
+		$m = M('goods');
+		$goods = $m->where('goodsId='.$goodsId." and shopId=".$shopId)->find();
+		if(empty($goods))return array();
+		$data = array();
+
+		$data["goodsSn"] = I("goodsSn");
+		$data["goodsName"] = I("goodsName");
+		$data["goodsImg"] = I("goodsImg");
+		$data["goodsThums"] = I("goodsThumbs");
+		$data["marketPrice"] = (float)I("marketPrice");
+		$data["shopPrice"] = (float)I("shopPrice");
+		$data["goodsStock"] = (int)I("goodsStock");
+		$data["isBook"] = (int)I("isBook");
+		$data["bookQuantity"] = (int)I("bookQuantity");
+		$data["warnStock"] = (int)I("warnStock");
+		$data["goodsUnit"] = I("goodsUnit");
+		$data["isBest"] = (int)I("isBest");
+		$data["isRecomm"] = (int)I("isRecomm");
+		$data["isNew"] = (int)I("isNew");
+		$data["isHot"] = (int)I("isHot");
+
+		//如果商家状态不是已审核则所有商品只能在仓库中
+		if($shopStatus[0]['shopStatus']==1){
+			$data["isSale"] = (int)I("isSale");
+		}else{
+			$data["isSale"] = 0;
+		}
+		$data["goodsCatId1"] = (int)I("goodsCatId1");
+		$data["goodsCatId2"] = (int)I("goodsCatId2");
+		$data["goodsCatId3"] = (int)I("goodsCatId3");
+		$data["shopCatId1"] = (int)I("shopCatId1");
+		$data["shopCatId2"] = (int)I("shopCatId2");
+		$data["goodsDesc"] = I("goodsDesc");
+		$data["goodsStatus"] = ($GLOBALS['CONFIG']['isGoodsVerify']['fieldValue']==1)?0:1;
+		$data["attrCatId"] = (int)I("attrCatId");
+		if($this->checkEmpty($data,true)){
+			$data["goodsKeywords"] =  I("goodsKeywords");
+			$data["brandId"] = (int)I("brandId");
+			$data["goodsSpec"] = I("goodsSpec");
+
+
+			$rs = $m->where('goodsId='.$goods['goodsId'])->save($data);
+			if(false !== $rs){
+				if($shopStatus[0]['shopStatus']==1){
+					$rd['status']= 1;
+				}else{
+					$rd['status']= -3;
+				}
+				//规格属性
+				if($data["attrCatId"]>0){
+					$m = M('goods_attributes');
+					//删除属性记录
+					$m->query("delete from __PREFIX__goods_attributes where goodsId=".$goodsId);
+					//获取商品类型属性列表
+					$sql = "select attrId,attrName,isPriceAttr from __PREFIX__attributes where attrFlag=1
+					       and catId=".$data["attrCatId"]." and shopId=".session('WST_USER.shopId');
+					$attrRs = $m->query($sql);
+					if(!empty($attrRs)){
+						$priceAttrId = 0;
+						$recommPrice = 0;
+						foreach ($attrRs as $key =>$v){
+							if($v['isPriceAttr']==1){
+								$priceAttrId = $v['attrId'];
+								continue;
+							}else{
+								//新增
+								$attr = array();
+								$attr['attrVal'] =  trim(I('attr_name_'.$v['attrId']));
+								$attr['attrPrice'] = 0;
+								$attr['attrStock'] = 0;
+								$attr['shopId'] = session('WST_USER.shopId');
+								$attr['goodsId'] = $goodsId;
+								$attr['attrId'] = $v['attrId'];
+								$m->add($attr);
+							}
+						}
+						if($priceAttrId>0){
+							$no = (int)I('goodsPriceNo');
+							$no = $no>50?50:$no;
+							$totalStock = 0;
+
+							for ($i=0;$i<=$no;$i++){
+								$name = trim(I('price_name_'.$priceAttrId."_".$i));
+								if($name=='')continue;
+								$attr = array();
+								$attr['shopId'] = session('WST_USER.shopId');
+								$attr['goodsId'] = $goodsId;
+								$attr['attrId'] = $priceAttrId;
+								$attr['attrVal'] = $name;
+								$attr['attrPrice'] = (float)I('price_price_'.$priceAttrId."_".$i);
+								$attr['isRecomm'] = (int)I('price_isRecomm_'.$priceAttrId."_".$i);
+								if($attr['isRecomm']==1){
+									$recommPrice = $attr['attrPrice'];
+								}
+								$attr['attrStock'] = (int)I('price_stock_'.$priceAttrId."_".$i);
+								$totalStock = $totalStock + (int)$attr['attrStock'];
+								$m->add($attr);
+							}
+							//更新商品总库存
+							$sql = "update __PREFIX__goods set goodsStock=".$totalStock;
+							if($recommPrice>0){
+								$sql .= ",shopPrice=".$recommPrice;
+							}
+							$sql .= " where goodsId=".$goodsId;
+							$m->execute($sql);
+						}
+					}
+				}
+
+				//保存相册
+				$gallery = I("gallery");
+				if($gallery!=''){
+					$str = explode(',',$gallery);
+					$m = M('goods_gallerys');
+					//删除相册信息
+					$m->where('goodsId='.$goods['goodsId'])->delete();
+					//保存相册信息
+					foreach ($str as $k => $v){
+						if($v=='')continue;
+						$str1 = explode('@',$v);
+						$data = array();
+						$data['shopId'] = $goods['shopId'];
+						$data['goodsId'] = $goods['goodsId'];
+						$data['goodsImg'] = $str1[0];
+						$data['goodsThumbs'] = $str1[1];
+						$m->add($data);
+					}
+				}
+			}
+		}
+		return $rd;
+	}
 	/**
 	 * 获取商品信息
 	 */

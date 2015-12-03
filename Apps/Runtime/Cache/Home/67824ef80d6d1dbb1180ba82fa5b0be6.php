@@ -227,6 +227,7 @@ var ThinkPHP = window.Think = {
 				<a href="<?php echo U('Home/Goods/getGoodsList/',array('c1Id'=>$goodsNav[0]['catId'],'c2Id'=>$goodsNav[1]['catId']));?>"><?php echo ($goodsNav[1]["catName"]); ?></a>&nbsp;>&nbsp;
 				<a href="<?php echo U('Home/Goods/getGoodsList/',array('c1Id'=>$goodsNav[0]['catId'],'c2Id'=>$goodsNav[1]['catId'],'c3Id'=>$goodsNav[2]['catId']));?>"><?php echo ($goodsNav[2]["catName"]); ?></a>
 			</div>
+
 			<div class="wst-goods-details">
 				<div class="details-left">
 					<div class="goods-img-box">
@@ -237,6 +238,7 @@ var ThinkPHP = window.Think = {
 							    	<img jqimg="/<?php echo ($goodsDetails['goodsImg']); ?>" src="/<?php echo ($goodsDetails['goodsImg']); ?>" height="350" width="350"/>
 							    </span> 
 						    </div>
+
 						    <!--缩图开始-->
 						    <div class="spec-scroll"> <a class="prev">&lt;</a> <a class="next">&gt;</a>
 						      <div class="items">
@@ -247,6 +249,7 @@ var ThinkPHP = window.Think = {
 						      </div>
 						    </div>
 						    <!--缩图结束-->
+
 						  </div>
 						  <!--产品参数结束-->
 						  <div class='wst-short-tool'>

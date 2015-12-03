@@ -172,6 +172,41 @@ class GoodsAction extends BaseAction{
 		$rs = $m->changeRecomStatus();
 		$this->ajaxReturn($rs);
 	}
-	
-};
-?>
+
+    /**
+     * 跳到新增/编辑商品
+     */
+    public function toEdit(){
+        $this->isAjaxLogin();
+        //获取商品分类信息
+        $m = D('Admin/GoodsCats');
+        $this->assign('goodsCatsList',$m->queryByList());
+        //获取商品类型
+        $m = D('Admin/AttributeCats');
+        $this->assign('attributeCatsCatsList',$m->queryByList());
+        $m = D('Admin/Goods');
+        $object = array();
+        if(I('id',0)>0){
+            $object = $m->get();
+        }else{
+            $object = $m->getModel();
+        }
+        $this->assign('object',$object);
+        $this->assign("umark",I('umark'));
+        $this->display("/goods/edit");
+    }
+    /**
+     * 新增商品
+     */
+    public function edit(){
+        $this->isAjaxLogin();
+        $m = D('Admin/Goods');
+        $rs = array();
+        if((int)I('id',0)>0){
+            $rs = $m->edit();
+        }else{
+            $rs = $m->insert();
+        }
+        $this->ajaxReturn($rs);
+    }
+}

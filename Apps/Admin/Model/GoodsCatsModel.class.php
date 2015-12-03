@@ -9,6 +9,8 @@ namespace Admin\Model;
  * 商品分类服务类
  */
 class GoodsCatsModel extends BaseModel {
+
+
     /**
 	  * 新增
 	  */
@@ -204,5 +206,4 @@ class GoodsCatsModel extends BaseModel {
 		}
 	 	return $rd;
 	 }
-};
-?>
+}
