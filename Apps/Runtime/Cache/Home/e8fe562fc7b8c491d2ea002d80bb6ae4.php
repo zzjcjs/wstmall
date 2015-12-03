@@ -1,101 +1,130 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
-<html>
+<html lang="zh-cn">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-    <title>注册 - 蜜芽，中国最领先的进口母婴限时特卖商城</title>
-    <meta name="Keywords" content="进口母婴,限时特卖,日本进口,正品行货,花王,纸尿裤,拉拉裤,moony,大王,保宁,贝亲,britax湿巾,蜜芽,MIA,miababy" >
-    <meta name="Description" content="100%正品保障！蜜芽为您精选全世界范围内质量最好、口碑最优的母婴产品，以远低于市场价的折扣，在72 小时内限量出售。每天上午10点准时开抢！">
+    <title>注册 - 宝宝帝，中国最领先的进口母婴限时特卖商城</title>
+    <meta name="Keywords" content="<?php echo ($CONF['mallKeywords']); ?>" >
+    <meta name="Description" content="<?php echo ($CONF['mallDesc']); ?>">
     <link rel="stylesheet" href="http://file02.miyabaobei.com/resources/styles/main.css?v=20151117" type="text/css">
     <link rel="stylesheet" href="http://file02.miyabaobei.com/resources/styles/add.css?v=151124" type="text/css">
-    <script type="text/javascript" src="http://file01.miyabaobei.com/resources/scripts/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="http://file01.miyabaobei.com/resources/scripts/header.js?v=20150706"></script>
-    <script type="text/javascript">
-        var _adwq = _adwq || [];
-        _adwq.push(['_setAccount', 'v3akn']);
-        _adwq.push(['_setDomainName', '.miyabaobei.com']);
-        _adwq.push(['_trackPageview']);
+    <script>
+        var ThinkPHP = window.Think = {
+            "ROOT"   : "",
+            "APP"    : "/index.php",
+            "PUBLIC" : "/Public",
+            "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>",
+            "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
+            "VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
+        }
+        var domainURL = "<?php echo WSTDomain();?>";
+        var publicurl = "/Public";
+        var currCityId = "<?php echo ($currArea['areaId']); ?>";
+        var currCityName = "<?php echo ($currArea['areaName']); ?>";
+        var currDefaultImg = "<?php echo WSTDomain();?>/<?php echo ($CONF['goodsImg']); ?>";
+        var wstMallName = "<?php echo ($CONF['mallName']); ?>";
+        $(function() {
+            $('.lazyImg').lazyload({ effect: "fadeIn",failurelimit : 10,threshold: 200,placeholder:currDefaultImg});
+        });
     </script>
-    <script type="text/javascript" src="http://file01.miyabaobei.com/resources/scripts/lwt.js?v=20151113"></script>
 </head>
 <body class="bknone">
-﻿<div class="loginWrap w965 rel h582">
-    <a href="https://itunes.apple.com/cn/app/mi-ya-bao-bei-zhong-guo-zui/id973366293?mt=8" title="iPhone系列手机及ipad适用" target="_blank" style="display:block;left:385px;top:306px;width:136px;height:36px;position:absolute"></a>
-    <a href="http://download.miyabaobei.com/Miababy_localhost_V3.3.0.apk" target="_blank" title="三星小米索尼华为等android手机适用" style="display:block;left:385px;top:357px;width:136px;height:36px;position:absolute"></a>
-    <div class="logo"><a href="/" class="logolink">蜜芽</a></div>
+﻿<div class="loginWrap w965 rel h582" id="regist">
+    <div class="logo">
+        <a href="/" class="logolink">宝宝帝</a>
+    </div>
     <div class="loginBord">
         <div class="loginTit">
-            <span class="l yahei pink">注册蜜芽</span>
-            <span class="r"> <i class="pink">已有蜜芽账号？ </i> <a href="/login">登录</a></span>
+            <span class="l yahei pink">注册宝宝帝</span>
+            <span class="r">
+                <i class="pink">已有宝宝帝账号？ </i>
+                <a href="<?php echo U('Users/login');?>">登录</a>
+            </span>
         </div>
-        <!-- <p style=" text-align:right; padding:0 0 15px 0;"><img src="http://file02.miyabaobei.com/resources/images/register/titbg.png"></p>-->
+        <form method="post" id="register" autocomplete="off">
+            <input name="regType" id="regType" value="person" type="hidden"/>
+            <input name="nameType" id="nameType" value="2"  type="hidden" />
 
-        <form method="post" id="register_form" onsubmit="return false">
-            <input type="hidden" id="url" name="url" value="/account/register/success/?url=http%3A%2F%2Fwww.mia.com%2F">
             <div class="inputGroup ok">
                 <div class="inputWrap">
                     <div class="user-icon"></div>
-                    <input type="text" placeholder="手机号码" id="login_username" name="username" class="input" validate="required|username">
+                    <input type="text" placeholder="手机号码" id="loginName" name="loginName" class="input" validate="required|username">
                     <span class="tooltip-inner" id="inputEmail_msg" style="display:none;"></span>
                 </div>
                 <p class="registerNotice1 nameuser" style="display:none;">
                     <span  class="tipcon">用户名提示内容手机号</span>
-                    <span class="rownotice" ><img src="http://file02.miyabaobei.com/resources/images/tipnamebg.png"></span>
+                    <span class="rownotice" >
+                        <img src="http://file02.miyabaobei.com/resources/images/tipnamebg.png">
+                    </span>
                 </p>
-
             </div>
 
-            <div id="verityGroup" class="inputGroup ok" style="height:56px">
+            <div id="authcodeDiv" class="inputGroup ok" style="height:56px">
                 <div class="verityWrap clearfix" style="width:300px;">
                     <div class="inputWrap l">
                         <input type="text" placeholder="输入验证码" id="authcode" name="authcode" class="input">
                     </div>
-                    <img id="register_verified_code" src="/account/login/authcode/" />
-                    <a id="register_verified_refresh" href="javascript:void(0)">看不清</a>
+                    <img class="verifyImg" style='vertical-align:middle;cursor:pointer;height:39px;width:116px' src="/Apps/Home/View/default/images/clickForVerify.png" title='刷新验证码' onclick='javascript:getVerify()'/>
+                    <a href="javascript:getVerify();">看不清</a>
                 </div>
                 <p class="registerNotice1  authcode tipauthcode" style="display:none;">
                     <span  class="tipcon"></span>
-                    <span class="rownotice" ><img   src="http://file02.miyabaobei.com/resources/images/tipmessagebg.png"></span>
+                    <span class="rownotice" >
+                        <img   src="http://file02.miyabaobei.com/resources/images/tipmessagebg.png">
+                    </span>
                 </p>
                 <p class="vcNotice"></p>
             </div>
 
-            <div class="inputGroup">
+            <div class="inputGroup" id="mobileCodeDiv">
                 <div class="phonecodeWrap clearfix">
                     <div class="inputWrap l">
-                        <input type="text" placeholder="短信验证码" id="phonecode" name="phonecode" class="input">
+                        <input type="text" placeholder="短信验证码" id="mobileCode" name="phonecode" class="input">
                     </div>
-                    <a class="phonecode" id="sendVerifyCode" href="javascript:void(0)">获取短信验证码</a>
+                    <a class="phonecode" href="javascript:void(0);" onclick="getVerifyCode();" id="sendMobileCode">
+                        <span id="timeTips">获取短信验证码</span>
+                    </a>
                 </div>
                 <p class="registerNotice1  tipphonecode" style="display:none">
                     <span  class="tipcon">短信验证码</span>
-                    <span class="rownotice" ><img   src="http://file02.miyabaobei.com/resources/images/tipmessagebg.png"></span>
+                    <span class="rownotice" >
+                        <img   src="http://file02.miyabaobei.com/resources/images/tipmessagebg.png">
+                    </span>
                 </p>
             </div>
-            <div class="inputGroup">
+
+            <div class="inputGroup" id="o-password">
                 <div class="inputWrap">
                     <div class="pass-icon"></div>
-                    <input type="password" placeholder="密码" id="login_password" name="password" class="input" validate="required">
+                    <input type="password" placeholder="密码" id="loginPwd" name="loginPwd" class="input" validate="required">
                 </div>
                 <p class="registerNotice1 password" style="display: none">
                     <span  class="tipcon">密码提示内容</span>
-                    <span class="rownotice" ><img src="http://file02.miyabaobei.com/resources/images/tipnamebg.png"></span>
+                    <span class="rownotice" >
+                        <img src="http://file02.miyabaobei.com/resources/images/tipnamebg.png">
+                    </span>
                 </p>
             </div>
             <div class="inputGroup">
                 <div class="inputWrap">
                     <div class="pass-icon"></div>
-                    <input type="password" placeholder="确认密码" id="confirm_password" name="confirm_password" class="input" validate="required">
+                    <input type="password" placeholder="确认密码" id="reUserPwd" name="reUserPwd" class="input" validate="required">
                 </div>
                 <p class="registerNotice1 registerErrorNotice" style="display: none">
                     <span  class="tipcon">确认提示内容</span>
-                    <span class="rownotice" ><img src="http://file02.miyabaobei.com/resources/images/tipnamebg.png"></span>
+                    <span class="rownotice" >
+                        <img src="http://file02.miyabaobei.com/resources/images/tipnamebg.png">
+                    </span>
                 </p>
             </div>
             <div class="inputGroup otherInputGroup" style="height:35px;">
-                宝宝关系：<input type="radio" checked name="relation" value="1" id="relation_mother" /><label for="relation_mother">妈妈</label>
-                <input type="radio" name="relation" value="2" id="relation_father" /><label for="relation_father">爸爸</label>
-                <input type="radio" name="relation" value="3" id="relation_other" /><label for="relation_other">其他</label>
+                宝宝关系：
+                <input type="radio" checked name="relation" value="1" id="relation_mother" />
+                <label for="relation_mother">妈妈</label>
+                <input type="radio" name="relation" value="2" id="relation_father" />
+                <label for="relation_father">爸爸</label>
+                <input type="radio" name="relation" value="3" id="relation_other" />
+                <label for="relation_other">其他</label>
             </div>
             <div class="inputGroup otherInputGroup h42">
                 <div class="inputWrap">
@@ -104,22 +133,23 @@
                 </div>
                 <input type="hidden" name="birth_day" id="realBirthday">
             </div>
-            <!-- orig verify place -->
-
-            <!-- /orig verify place -->
-
 
             <div class="inputGroup"   style="height:30px;">
                 <div class="ceckboxmy">
-                    <input type="checkbox" id="isagree" checked name="isagree"/> <label for="isagree">我已阅读并接受</label><a href="/help/?aid=35" target="_blank" class="pink" title="蜜芽服务条款" >《蜜芽服务条款》</a>
+                    <input class="checkbox" id="protocol" name="protocol" type="checkbox"/>
+                    <label for="isagree">我已阅读并接受</label>
+                    <a href="/help/?aid=35" target="_blank" class="pink" title="蜜芽服务条款" >《宝宝帝服务条款》</a>
                     <p class="registerNotice1 agree" style="display:none;">
                         <span  class="tipcon">您未阅读并接受蜜芽服务条款</span>
-                        <span class="rownotice" ><img src="http://file02.miyabaobei.com/resources/images/tipnamebg.png"></span>
+                        <span class="rownotice" >
+                            <img src="http://file02.miyabaobei.com/resources/images/tipnamebg.png">
+                        </span>
                     </p>
                 </div>
             </div>
             <p class="registerButton" >
-                <a  id="register_submit" class="loginbtn shake-constant"  style="width:85%">注册</a>
+                <!--<a  id="registsubmit" class="loginbtn shake-constant"  style="width:85%">注册</a>-->
+                <input class="loginbtn shake-constant" style="width:100%" id="registsubmit" value="注册"  type="submit"/>
             </p>
 
         </form>
@@ -127,10 +157,6 @@
     </div>
 </div>
 <link rel="stylesheet" href="http://file02.miyabaobei.com/resources/styles/jquery-ui.css" type="text/css">
-<script type="text/javascript" src="http://file01.miyabaobei.com/resources/scripts/jquery-ui.js"></script>
-<script type="text/javascript" src="http://file01.miyabaobei.com/resources/scripts/validate.js"></script>
-<script type="text/javascript" src="http://file01.miyabaobei.com/resources/scripts/validate.en.js?v=1"></script>
-<script type="text/javascript" src="http://file01.miyabaobei.com/resources/scripts/account/register.js?v=2015070618431"></script>
 <script>
     var login = {
         'qq' : '/oauth/member/qq',
@@ -207,58 +233,17 @@
             }
         });
     });
-</script><div class="simpleVersionFooter  gray2">
+</script>
+<script type="text/javascript" src="/Public/js/jquery.min.js"></script>
+<script src="/Public/plugins/layer/layer.min.js"></script>
+<script src="/Public/js/think.js"></script>
+<script src="/Public/js/common.js"></script>
+<script src="/Apps/Home/View/default/js/common.js"></script>
+<script src="/Apps/Home/View/default/js/regist.js"></script>
+<script src="/Public/plugins/formValidator/formValidator-4.1.3.js"></script>
+<!--<script type="text/javascript" src="/Public/js/mymiajs.js"></script>-->
+<div class="simpleVersionFooter  gray2">
     Copyright &copy;2015 北京花旺在线商贸有限公司 Miyabaobei.com 保留一切权利。客服热线： 400-789-2000。京ICP证140430号 京ICP备14006215号
 </div>
-<script type="text/javascript" src="http://file01.miyabaobei.com/resources/scripts/footer.js?v=2015113001"></script>
-<!--<script type="text/javascript" src="resources/scripts/seo.js?v=201506301215"></script>
---><!--<script type="text/javascript" src="--><!--resources/scripts/s/o_code.js"></script>-->
-<!--<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-48167462-1', 'miyabaobei.com');
-ga('send', 'pageview');
-</script>-->
-<div style="display:none">
-    <script type="text/javascript">
-        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3be40858b0c48ceaa09f8d7db4e1dae1' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-</div>
-
-
-<script type="text/javascript">
-    //默认百分点参数
-    if(typeof(google_tag_params) == "undefined"){
-        var google_tag_params = {
-            bfd_sid : getcookie('sid'),
-            p_type :'d',
-            cell : ''    }
-    };
-</script>
-<script type="text/JavaScript" language="javascript">
-    (function() {
-        var ia = document.createElement('script');ia.type = 'text/javascript';ia.async = true;
-        ia.charset = 'utf-8';
-        ia.src = 'http://file01.miyabaobei.com/resources/scripts/miytj.js?v=20150917';
-        var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ia,s);
-    })();
-</script>
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KRX7GN"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KRX7GN');</script>
-<!-- End Google Tag Manager -->
-
-
-<script type="text/javascript" src="http://s.emarbox.com/js/adw_miya.js"></script>
-
-
 </body>
 </html>

@@ -2,117 +2,122 @@ $(function(){
     $('[data-toggle="popover"]').popover();
 })
 
-//$(document).ready(function(){
-//    //    logininfo();//大数据 不调用ajax 用下面的注释程序,这个函数是解密用的
-//    //    var usernames = decodeURIComponent(getcookie('loginName'));
-//    var usernames = getcookie('loginName');
-//    alert(usernames);
-//    if (usernames.length>8) {
-//        usernames = usernames.substr(0,15)+"..";
-//    }
-//    if (usernames != '') {
-//        $('#logined_username').text(usernames);
-//        $("#loginedBox").show();
-//        $('#unloginBox').hide();
-//    } else {
-//        $("#loginedBox").hide();
-//        $('#unloginBox').show();
-//    }
-//})
-
-
 function addToFavorite(){
     var a=domainURL, b="???"+bbdMallName;
     document.all?window.external.AddFavorite(a,b):window.sidebar&&window.sidebar.addPanel?window.sidebar.addPanel(b,a,""):alert("\u5bf9\u4e0d\u8d77\uff0c\u60a8\u7684\u6d4f\u89c8\u5668\u4e0d\u652f\u6301\u6b64\u64cd\u4f5c!\n\u8bf7\u60a8\u4f7f\u7528\u83dc\u5355\u680f\u6216Ctrl+D\u6536\u85cf\u672c\u7ad9\u3002"),createCookie("_fv","1",30,"/;domain="+domainURL)
 }
 
+//刷新验证码
+function getVerify() {
+    $('.verifyImg').attr('src',Think.U('Users/getVerify','rnd='+Math.random()));
+}
 
-/* ========================================================================
- * Bootstrap: popover.js v3.3.5
- * http://getbootstrap.com/javascript/#popovers
- * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+var time = 0;
+var isSend = false;
+var isUse = false;
+function getVerifyCode(){
 
+    if($.trim($("#loginName").val())==''){
+        WST.msg('请输入手机号码!', {icon: 5});
+        return;
+    }
+    if(isSend )return;
+    isSend = true;
 
-+function ($) {
-    'use strict';
-    var Popover = function (element, options) {
-        this.init('popover', element, options)
+    var params = {};
+    params.userPhone = $.trim($("#loginName").val());
+    $.post(Think.U('Users/getPhoneVerifyCode'),params,function(data,textStatus){
+        var json = WST.toJson(data);
+        if(json.status==-4){
+            WST.msg('手机号码格式错误!', {icon: 5});
+            time = 0;
+            isSend = false;
+        }else if(json.status==-3){
+            WST.msg('该手机号码已注册!', {icon: 5});
+            time = 0;
+            isSend = false;
+        }else if(json.status==-2){
+            WST.msg('您的手机已超过每日最大短信验证数!', {icon: 5});
+            time = 0;
+            isSend = false;
+        }else if(json.status==-1){
+            WST.msg('短信發送失敗!', {icon: 5});
+            time = 0;
+            isSend = false;
+        }else if(json.status==1){
+            time = 120;
+            $('#timeTips').css('width','100px');
+            $('#timeTips').html('获取验证码(120)');
+            var task = setInterval(function(){
+                time--;
+                $('#timeTips').html('获取验证码('+time+")");
+                if(time==0){
+                    isSend = false;
+                    clearInterval(task);
+                    $('#timeTips').html("重新获取验证码");
+                }
+            },1000);
+        }
+    });
+}
+
+function regist(){
+
+    if($("#nameType").val()==3){
+        if($.trim($("#mobileCode").val())==""){
+            WST.msg('请输入验证码!', {icon: 5});
+            $("#mobileCode").focus();
+            return;
+        }
+    }else{
+
+        if($.trim($("#authcode").val())==""){
+            WST.msg('请输入验证码!', {icon: 5});
+            $("#mobileCode").focus();
+            return;
+        }
     }
 
-    Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
-        placement: 'right',
-        trigger: 'click',
-        content: '',
-        template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
-    })
-
-    Popover.prototype = $.extend({}, $.fn.tooltip.Constructor.prototype)
-
-    Popover.prototype.constructor = Popover
-
-    Popover.prototype.getDefaults = function () {
-        return Popover.DEFAULTS
+    if(!document.getElementById("protocol").checked){
+        WST.msg('必须同意使用协议才允许注册!', {icon: 5});
+        return;
     }
+    var params = {};
+    params.loginName = $.trim($('#loginName').val());
+    params.loginPwd = $.trim($('#loginPwd').val());
+    params.reUserPwd = $.trim($('#reUserPwd').val());
+    params.userEmail = $.trim($('#userEmail').val());
 
-    Popover.prototype.setContent = function () {
-        var $tip    = this.tip()
-        var title   = this.getTitle()
-        var content = this.getContent()
+    params.userTaste = $('#userTaste').val();
+    //params.userQQ = $.trim($('#userQQ').val());
+    params.userPhone = $.trim($('#userPhone').val());
+    params.mobileCode = $.trim($('#mobileCode').val());
 
-        $tip.find('.popover-title')[this.options.html ? 'html' : 'text'](title)
-        $tip.find('.popover-content').children().detach().end()[ // we use append for html objects to maintain js events
-            this.options.html ? (typeof content == 'string' ? 'html' : 'append') : 'text'
-            ](content)
+    params.verify = $.trim($('#authcode').val());
+    params.nameType = $("#nameType").val();
+    params.protocol = document.getElementById("protocol").checked?1:0;
 
-        $tip.removeClass('fade top bottom left right in')
-
-        // IE8 doesn't accept hiding via the `:empty` pseudo selector, we have to do
-        // this manually by checking the contents.
-        if (!$tip.find('.popover-title').html()) $tip.find('.popover-title').hide()
-    }
-
-    Popover.prototype.hasContent = function () {
-        return this.getTitle() || this.getContent()
-    }
-
-    Popover.prototype.getContent = function () {
-        var $e = this.$element
-        var o  = this.options
-
-        return $e.attr('data-content')
-            || (typeof o.content == 'function' ?
-                o.content.call($e[0]) :
-                o.content)
-    }
-
-    Popover.prototype.arrow = function () {
-        return (this.$arrow = this.$arrow || this.tip().find('.arrow'))
-    }
-
-
-    function Plugin(option) {
-        return this.each(function () {
-            var $this   = $(this)
-            var data    = $this.data('bs.popover')
-            var options = typeof option == 'object' && option
-
-            if (!data && /destroy|hide/.test(option)) return
-            if (!data) $this.data('bs.popover', (data = new Popover(this, options)))
-            if (typeof option == 'string') data[option]()
-        })
-    }
-
-    var old = $.fn.popover
-
-    $.fn.popover             = Plugin
-    $.fn.popover.Constructor = Popover
-
-    $.fn.popover.noConflict = function () {
-        $.fn.popover = old
-        return this
-    }
-
-}(jQuery);
+    $.post(Think.U('Home/Users/toRegist'),params,function(data,textStatus){
+        var json = WST.toJson(data);
+        if(json.status>0){
+            WST.msg('注册成功，正在跳转登录!', {icon: 6}, function(){
+                location.href=domainURL +'/index.php';
+            });
+        }else if(json.status==-2){
+            WST.msg('用户名已存在!', {icon: 5});
+        }else if(json.status==-3){
+            WST.msg('两次输入密码不一致!', {icon: 5});
+        }else if(json.status==-4){
+            WST.msg('验证码错误!', {icon: 5});
+        }else if(json.status==-6){
+            WST.msg('必须同意使用协议才允许注册!', {icon: 5});
+        }else if(json.status==-5){
+            WST.msg('验证码已超过有效期!', {icon: 5});
+        }else if(json.status==-7){
+            WST.msg('注册信息不完整!', {icon: 5});
+        }else{
+            WST.msg('注册失败!', {icon: 5});
+        }
+        getVerify();
+    });
+}

@@ -137,6 +137,7 @@ class UsersAction extends BaseAction {
 			session('VerifyCode_userPhone_Time',time());
 			//$rs["phoneVerifyCode"] = $phoneVerify;
 		}
+		$re['status'] = 1;
 		echo json_encode($rs);
 	}
    /**
@@ -281,6 +282,7 @@ class UsersAction extends BaseAction {
 		$rv = D('Home/LogSms')->sendSMS(0,session('findPass.userPhone'),$msg,'getPhoneVerify',$phoneVerify);
 		$rs['status']=$rv['status'];
 		$rs['time']=30*60;
+		$re['status'] = 1;
 		$this->ajaxReturn($rs);
 	}
 

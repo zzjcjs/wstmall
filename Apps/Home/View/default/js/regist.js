@@ -137,7 +137,7 @@ function changeName(){
 			params.loginName = $.trim($('#loginName').val());
 			
 			if(params.loginName!="" && params.loginName!="邮箱/用户名/手机号"){
-				jQuery.post(Think.U('Home/Users/checkLoginName') ,params,function(rsp) {
+				jQuery.post(Think.U('Users/checkLoginName') ,params,function(rsp) {
 					var json = WST.toJson(rsp);
 					if( json.status == "1" ) {
 						jQuery("#loginNameTip").removeClass();
@@ -206,7 +206,7 @@ function getVerifyCode(){
 		
 		var params = {};
 		params.userPhone = $.trim($("#userPhone").val());
-		$.post(Think.U('Home/Users/getPhoneVerifyCode'),params,function(data,textStatus){
+		$.post(Think.U('Users/getPhoneVerifyCode'),params,function(data,textStatus){
 			var json = WST.toJson(data);
 			if(json.status==-4){
 				WST.msg('手机号码格式错误!', {icon: 5});
@@ -278,7 +278,7 @@ function regist(){
 	params.nameType = $("#nameType").val();
 	params.protocol = document.getElementById("protocol").checked?1:0;	
 	
-	$.post(Think.U('Home/Users/toRegist'),params,function(data,textStatus){
+	$.post(Think.U('Users/toRegist'),params,function(data,textStatus){
 		var json = WST.toJson(data);
 		if(json.status>0){
 			WST.msg('注册成功，正在跳转登录!', {icon: 6}, function(){
@@ -311,7 +311,7 @@ function showXiey(id){
 	    shadeClose: true,
 	    shade: 0.8,
 	    area: ['1000px', ($(window).height() - 50) +'px'],
-	    content: [Think.U('Home/Index/toUserProtocol')],
+	    content: [Think.U('Index/toUserProtocol')],
 	    btn: ['同意并注册'],
 	    yes: function(index, layero){
 	    	layer.close(index);
