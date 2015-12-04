@@ -1,9 +1,118 @@
-<extend name="mia_base_order"/>
-<block name="body">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>蜜芽-母婴限时特卖商城-进口奶粉,纸尿裤,辅食,童装-100%正品、安全放心!</title>
+<meta name="keywords" content="蜜芽,母婴商城,进口母婴,纸尿裤,奶粉,辅食,母婴用品,儿童玩具,童装,童鞋,母婴特卖" />
+<meta name="description" content="蜜芽专业进口母婴特卖商城，为亿万中国妈妈提供进口奶粉、纸尿裤、儿童玩具、服饰等品牌母婴用品。100%正品，安全放心，让您享受轻松愉悦的 网上购物体验！">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="hujun2wwn">
+<link href="/Public/css/bootstrap.min.css" rel="stylesheet">
+<link href="/Public/images/favicon.ico" rel="icon" type="image/x-icon" />
+
+<link href="/Public/css/newHeaderFooter.css" rel="stylesheet">
+<link href="/Public/css/newPub.css" rel="stylesheet">
+<link href="/Public/css/bannerState.css" rel="stylesheet">
+<link href="/Public/css/mia_skin.css" rel="stylesheet">
+<link href="/Public/css/newIndexMain.css" rel="stylesheet">
+<link href="/Public/css/mymiacss.css" rel="stylesheet">
+<link rel="stylesheet" href="http://file01.miyabaobei.com/resources/styles/main.css?v=20151117" type="text/css">
+
+<script type="text/javascript" src="/Public/js/jquery.1.11.3.min.js"></script>
+<script type="text/javascript" src="/Public/js/cui.js"></script>
+<script type="text/javascript" src="/Public/js/newMiYaPub.js"></script>
+<script type="text/javascript" src="/Public/js/newIndex.js"></script>
+<script type="text/javascript" src="/Public/js/init.js"></script>
+<script type="text/javascript" src="/Public/js/topslide.js"></script>
+<script type="text/javascript">
+    var ThinkPHP = window.Think = {
+        "ROOT"   : "",
+        "APP"    : "/index.php",
+        "PUBLIC" : "/Public",
+        "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>",
+        "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
+        "VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
+    }
+    var domainURL = "<?php echo WSTDomain();?>";
+    var publicurl = "/Public";
+    var currCityId = "<?php echo ($currArea['areaId']); ?>";
+    var currCityName = "<?php echo ($currArea['areaName']); ?>";
+    var currDefaultImg = "<?php echo WSTDomain();?>/<?php echo ($CONF['goodsImg']); ?>";
+    var bbdMallName = "<?php echo ($CONF['mallName']); ?>";
+    $(function() {
+        $('.lazyImg').lazyload({ effect: "fadeIn",failurelimit : 10,threshold: 200,placeholder:currDefaultImg});
+    });
+</script>
+<script type="text/javascript" src="/Public/js/mymiajs.js"></script>
+
+
+
+</head>
+<body>
+<div class="newTN clearfix">
+    <div class="w1000">
+        <div class="r">
+            <?php if(session('WST_USER.userId')>0){ ?>
+            <ul >
+                <li><a href="<?php echo U('Users/logout');?>">退出</a></li>
+                <li class="line">|</li>
+                <li><a href="/help.html" rel="nofollow">帮助中心</a></li>
+                <li class="line">|</li>
+                <li class="mymia mymiaBtn PubBtnHover">
+                    <span class="indexPubTop">
+                    <a href="<?php echo U('Users/index');?>" target="_blank" rel="nofollow">我的蜜芽</a>
+                    </span>
+                    <div class="mymiaCon PubConHover">
+                        <a href="/order_lists" rel="nofollow">我的订单</a>
+                        <a href="/my_getredbag" rel="nofollow">我的红包</a>
+                        <a href="/my_coupon" rel="nofollow">我的代金券</a>
+                        <a href="/my_brand" rel="nofollow">我收藏的品牌</a>
+                        <a href="/my_collect" rel="nofollow">我收藏的商品</a>
+                    </div>
+                </li>
+                <li class="line">|</li>
+                <li>你好，<span ><?php echo ($WST_USER['loginName']); ?></span></li>
+            </ul>
+            <?php }else{ ?>
+            <ul >
+                <li><a href="/help.html">帮助中心</a></li>
+                <li class="line">|</li>
+                <li><a href="<?php echo U('Users/regist');?>" title="点击注册" rel="nofollow">免费注册</a></li>
+                <li class="line">|</li>
+                <li><a href="<?php echo U('Users/login');?>" title="点击登录" rel="nofollow">登录</a></li>
+                <li class="line">|</li>
+                <li>您好，欢迎来到宝宝帝母婴商城 </li>
+            </ul>
+            <?php } ?>
+        </div>
+
+        <div class="l">
+            <ul>
+                <li class="cur"><a href="/">宝宝帝首页</a></li>
+                <li ><a href="javascript:addToFavorite()">收藏宝宝帝</a></li>
+                <li class="phone">
+                    <a href="#" data-html="true" tabindex="0" role="button" data-toggle="popover" data-trigger="hover" data-placement="bottom"
+                       data-template='<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="padding:0px;width:200px;"></div></div>'
+                       title="微信扫一扫" data-html="true" data-content="<img class='img-responsive' src='/Public/images/weixin.jpg'>">
+                        宝宝帝微商城
+                    </a>
+                </li>
+                <li style="background:url('/Public/images/phone.gif') no-repeat center center;width:120px;border-right:1px solid #e5e5e5;overflow:hidden;text-indent:-999px;">400-789-2000</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+
+
 
     <!--需要引入的文件-->
-<link rel="stylesheet" href="__PUBLIC__/css/mia_cart_new.css" type="text/css">
-<link rel="stylesheet" href="__PUBLIC__/css/mia_cart.css" type="text/css">
+<link rel="stylesheet" href="/Public/css/mia_cart_new.css" type="text/css">
+<link rel="stylesheet" href="/Public/css/mia_cart.css" type="text/css">
 <link rel="stylesheet" href="http://file01.miyabaobei.com/resources/styles/jqwin.css?v=151124">
 <style>
     #confirmDiv .ok { display:inline-block; zoom:1; *display:inline; border:1px #ff69b3 solid; margin:0 5px;
@@ -174,7 +283,7 @@
             <div class="totals0">已选择商品<em id="total_quantity_all">1</em>件&nbsp;&nbsp;合计（不含运费）：</div>
             <div class="clearfix" style="clear:both;height:0;font-size:0;"></div>
             <div class="newCart_jies">
-                <a href="{:U('Mia/checkOrderInfo')}" id="btnJieSuan" class="btnorder btnJieSuan" data-warehouse="40"></a>
+                <a href="<?php echo U('Mia/checkOrderInfo');?>" id="btnJieSuan" class="btnorder btnJieSuan" data-warehouse="40"></a>
             </div>
             <!-- 增加商品总额和活动优惠 20151021 lz end -->
         </div>
@@ -329,7 +438,7 @@
 <!-- 实名认证 end -->
 <!-- 温馨提示弹层 end -->
 <script type="text/javascript" src="http://file03.miyabaobei.com/resources/scripts/jquery-dialog-min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/cart.js"></script>
+<script type="text/javascript" src="/Public/js/cart.js"></script>
 <script type="text/javascript" src="http://file03.miyabaobei.com/resources/scripts/cart/cart.js?v=151125"></script>
 <!--展示大图-->
 <script type="text/javascript" src="http://file03.miyabaobei.com/resources/scripts/cart/viewpic.js"></script>
@@ -370,4 +479,117 @@
 <style>
     .leftExtension { bottom:443px; /*bottom:290px;*/}
 </style>
-</block>
+
+
+<div class="Nfooter">
+    <div class="Genuine">
+        <div class="w1000">
+            <a href="/guarantee" rel="nofollow"  target="_blank">
+                <img src=http://file01.miyabaobei.com/resources/images/index_footer_gen01.jpg?v=20151014" class="lazyload" alt=""/></a>
+            <a href="/guarantee#area3" rel="nofollow"  target="_blank">
+                <img src=http://file01.miyabaobei.com/resources/images/index_footer_gen02.gif?v=20151014" class="lazyload" alt=""/></a>
+            <a href="/guarantee#area7" rel="nofollow"  target="_blank">
+                <img src="http://file01.miyabaobei.com/resources/images/index_footer_gen03.gif" class="lazyload" alt=""/></a>
+            <a href="/guarantee#area6" rel="nofollow"  target="_blank">
+                <img src="http://file01.miyabaobei.com/resources/images/index_footer_gen04.jpg?v=20151014" class="lazyload" alt=""/></a>
+            <a href="/guarantee#area5" rel="nofollow" target="_blank">
+                <img src="http://file01.miyabaobei.com/resources/images/index_footer_gen05.jpg" class="lazyload" alt=""/></a>
+            <a href="/guarantee#area8" rel="nofollow" target="_blank">
+                <img src="http://file01.miyabaobei.com/resources/images/index_footer_gen06.jpg?v=2" class="lazyload" alt=""/></a>
+        </div>
+    </div>
+    <div class="Nhelp">
+        <div class="w1000 clearfix">
+            <div class="r" style="margin-right: 90px;">
+                <ul class="EWM">
+                    <li class="strong">关注宝宝帝</li>
+                    <li>
+                        <img src="http://file01.miyabaobei.com/resources/images/index_fd_sj.gif?v=1" alt="宝宝帝微商城"/>
+                        <div class="right">
+                            <a href="http://weibo.com/miyabaobei2014" target="_blank"><img src="http://file01.miyabaobei.com/resources/images/index_fd_wb.gif" alt="官方微博"/></a>
+                            <div class="PubBtnHover">
+                                <img src="http://file01.miyabaobei.com/resources/images/index_fd_wx.gif" alt="官方微信"/>
+                                <img src="http://file01.miyabaobei.com/resources/images/index_fd_wx_more.gif?v=2" class="wxmore" alt=""/>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="l">
+                <ul>
+                    <li class="strong">使用帮助</li>
+                    <li><a href="/help-9.html" rel="nofollow">会员等级</a></li>
+                    <li><a href="/help-10.html" rel="nofollow">会员积分</a></li>
+                    <li><a href="/help-147.html" rel="nofollow">常见问题</a></li>
+                    <li><a href="/help.html" rel="nofollow">帮助中心</a></li>
+                </ul>
+                <ul>
+                    <li class="strong">支付方式</li>
+                    <li><a href="/help-11.html" rel="nofollow">在线支付</a></li>
+                    <li><a href="/help-13.html" rel="nofollow">代金券支付</a></li>
+                </ul>
+                <ul>
+                    <li class="strong">配送方式</li>
+                    <li><a href="/help-15.html" rel="nofollow">包邮政策</a></li>
+                    <li><a href="/help-16.html" rel="nofollow">配送说明</a></li>
+                    <li><a href="/help-17.html" rel="nofollow">发货时间</a></li>
+                    <li><a href="/help-20.html" rel="nofollow">验货签收</a></li>
+                </ul>
+                <ul>
+                    <li class="strong">售后服务</li>
+                    <li><a href="/help-21.html" rel="nofollow">正品承诺</a></li>
+                    <li><a href="/help-22.html" rel="nofollow">售后咨询</a></li>
+                    <li><a href="/help-22.html" rel="nofollow">退货政策</a></li>
+                    <li><a href="/help-23.html" rel="nofollow">退货流程</a></li>
+                    <li><a href="/help-24.html" rel="nofollow">退款方式</a></li>
+                </ul>
+                <ul class="NContact" style="width:196px;">
+                    <li class="strong">联系方式</li>
+                    <li>总裁邮箱 ceo@mia.com</li>
+                    <li>商务合作 bd@mia.com</li>
+                    <li>媒体合作 pr@mia.com</li>
+                    <li>采购中心 cx@mia.com</li>
+                    <li>企业采购 qiye@mia.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="Nfriend w1000">
+            <dl>
+                <dt>友情链接</dt>
+                <dd>
+                    <a href="http://www.mia.com/diapers.html" target="_blank" title="">纸尿裤</a>
+                    <a href="http://www.youjiao.com/" target="_blank" title="">幼教网</a>
+                    <a href="http://www.mia.com/formulas.html" target="_blank" title="">奶粉</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="Nlink">
+        <div class="w1000">
+            <p><a href="/help-34.html" rel="nofollow">关于宝宝帝</a> |
+                <a href="/help-43.html" rel="nofollow" >加入宝宝帝</a> |
+                <a href="/help-42.html" rel="nofollow">商务合作</a> |
+                <a href="/help.html" rel="nofollow">帮助中心</a> |
+                <a href="/help-44.html" rel="nofollow">联系我们</a> |
+                <a href="/links.html" target="_blank">友情链接</a> |
+                <a href="javascript:void(0)" id="backToMobile" target="_blank" rel="nofollow" data-domain="mia.com">触屏版</a> |
+                <a href="/media.html" target="_blank" rel="nofollow">媒体报道</a> |
+                <a href="http://www.mmjihua.com" rel="nofollow" >妈米计划</a></p>
+            京公网安备：11010502027270 | 营业执照：110105014191741 | 食品流通许可证：SP1101051410296669 | 京ICP证140430号 | 京ICP备14006215号<br/>
+            Copyright &copy; 2015 北京花旺在线商贸有限公司 Miyabaobei.com 保留一切权利。 客服热线： 400-789-2000<br/>
+            地址：北京市朝阳区朝外大街10号（A1区）7层704单元 &emsp;&emsp;&emsp;电话：010-56733456
+            <p class="cert">
+                <a target="_blank" href="http://www.ectrustprc.org.cn/certificate.id/certificateb.php?id=20035358">
+                    <img width="105" border="0" src="http://www.ectrustprc.org.cn/logo/bluelogo.gif"></a>
+                <span style="display:inline-block;position:relative;width:auto;">
+                    <a style="display:inline-block;" kx_type="图标式" target="_blank" tabindex="-1" id="kx_verify" href="https://ss.knet.cn/verifyseal.dll?sn=e1410211101055522320bq000000&amp;ct=df&amp;a=1&amp;pa=0.9654322788119316">
+                        <img width="80" alt="可信网站" oncontextmenu="return false;" style="border:none;" src="http://rr.knet.cn/static/images/logo/cnnic.png"></a></span>
+                <a target="_blank" href="https://search.szfw.org/cert/l/CX20141201005712006003" id="___szfw_logo___">
+                    <img src="http://file01.miyabaobei.com/resources/images/res/chengxin.jpg"></a>
+                <script type="text/javascript">(function(){document.getElementById('___szfw_logo___').oncontextmenu = function(){return false;}})();</script>
+                <img width="105" src="http://file01.miyabaobei.com/resources/images/res/alipay.jpg"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

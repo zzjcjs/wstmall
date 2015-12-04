@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -477,7 +477,10 @@
         <!--地结束-->
         <div class="clearfix tjdd" id="lastPart">
             <span id="loading"  style="display: none;">载入中，请稍等...</span>
-            <a href="/cart " class="ContinueToBuy">返回修改购物车</a>            <a href="javascript:void(0)" class="gotoSettlement yahei r" id="placeOrder" data-w="40">结算</a><span class="pink yahei">&yen;<span>98.00</span></span><span class="payTotol">应付总额：</span>
+            <a href="/cart " class="ContinueToBuy">返回修改购物车</a>
+            <a href="<?php echo U('Mia/submitOrder');?>" class="gotoSettlement yahei r" id="placeOrder" data-w="40">结算</a>
+            <span class="pink yahei">&yen;<span>98.00</span></span>
+            <span class="payTotol">应付总额：</span>
             <!-- 海关提醒 -->
             <div class="custWarning" style="display: none;">
                 <i></i>
@@ -493,7 +496,7 @@
 <script type="text/javascript" src="http://file01.miyabaobei.com/resources/scripts/jquery-confirm.js"></script>
 
 <script type="text/javascript" src="http://file01.miyabaobei.com/resources/scripts/order/orderxg.js?v=151124"></script>
-<script type="text/javascript" src="http://file01.miyabaobei.com/resources/scripts/order/order_coupon.js?v=1511260955"></script>
+<script type="text/javascript" src="/Public/js/order_coupon.js"></script>
 <script type="text/javascript" src="http://file01.miyabaobei.com/resources/scripts/order/jcarousellite.js?v=201508271622"></script>
 
 <script type="text/javascript">// <![CDATA[

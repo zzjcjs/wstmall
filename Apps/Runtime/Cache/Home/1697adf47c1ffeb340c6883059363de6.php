@@ -112,7 +112,7 @@
         <div class="r rel">
             <div class="sCartBtn">
                 <div class="sCB" id="cart_num_box">
-                    <a href="<?php echo U('Cart/cart');?>">
+                    <a href="<?php echo U('Mia/getCartInfo');?>">
                         <div class="l car indexPubTop"></div>
                         <div class="l line"></div>
                         <div class="l text">购物车
