@@ -45,7 +45,7 @@ class PaymentsAction extends BaseAction{
 		if($data["status"]==1){
 			$m = D('Home/Payments');
 			$pkey = $obj["userId"]."@".$obj["orderIds"];
-			$data["url"] = U('Home/WxNative2/createQrcode',array("pkey"=>base64_encode($pkey)));
+			$data["url"] = U('WxNative2/createQrcode',array("pkey"=>base64_encode($pkey)));
 		}
 	
 		$this->ajaxReturn($data);

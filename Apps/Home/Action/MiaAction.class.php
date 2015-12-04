@@ -97,6 +97,33 @@ class MiaAction extends BaseAction{
         }
     }
 
+    public function getCartInfo(){
+        $this->display('mia/mia_get_cart_info');
+    }
+    public function checkOrderInfo(){
+        $this->display('mia/mia_check_order_info');
+    }
+    public function submitOrder(){
+        $orderIds = 1;
+        if($orderIds){
+            $this->redirect("Mia/toPay",array("orderIds"=>implode(",",$orderIds))); //直接跳转，不带计时后跳转
+        }else{
+            $this->display('mia/mia_check_order_info');
+        }
+    }
+    public function toPay(){
+        $this->display('mia/mia_order_pay');
+    }
+    public function getAlipayURL(){
+
+    }
+    public function getWeixinURL(){
+
+    }
+    /** 支付成功后跳转到待发货页面*/
+    public function queryDelivery(){
+        $this->display('mia/mia_order_delivery');
+    }
     public function orderList(){
         $this->show("<h1 style='text-align: center;margin-top: 300px;'>网站正在建设</h1>");
     }
