@@ -17,36 +17,36 @@ function queryUnSaleByPage(){
 	var shopCatId1 = $('#shopCatId1').val();
 	var shopCatId2 = $('#shopCatId2').val();
 	var goodsName = $('#goodsName').val();
-	location.href= Think.U('Home/Goods/queryUnSaleByPage','goodsName='+goodsName+"&shopCatId1="+shopCatId1+"&shopCatId2="+shopCatId2); 
+	location.href= Think.U('Goods/queryUnSaleByPage','goodsName='+goodsName+"&shopCatId1="+shopCatId1+"&shopCatId2="+shopCatId2);
 }
 function queryOnSale(){
 	var shopCatId1 = $('#shopCatId1').val();
 	var shopCatId2 = $('#shopCatId2').val();
 	var goodsName = $('#goodsName').val();
-	location.href= Think.U('Home/Goods/queryOnSaleByPage','goodsName='+goodsName+"&shopCatId1="+shopCatId1+"&shopCatId2="+shopCatId2); 
+	location.href= Think.U('Goods/queryOnSaleByPage','goodsName='+goodsName+"&shopCatId1="+shopCatId1+"&shopCatId2="+shopCatId2);
 }
 function queryPendding(){
 	var shopCatId1 = $('#shopCatId1').val();
 	var shopCatId2 = $('#shopCatId2').val();
 	var goodsName = $('#goodsName').val();
-	location.href= Think.U('Home/Goods/queryPenddingByPage','goodsName='+goodsName+"&shopCatId1="+shopCatId1+"&shopCatId2="+shopCatId2); 
+	location.href= Think.U('Goods/queryPenddingByPage','goodsName='+goodsName+"&shopCatId1="+shopCatId1+"&shopCatId2="+shopCatId2);
 }
 function toEditGoods(id,menuId){
-	location.href= Think.U('Home/Goods/toEdit','umark='+menuId+"&id="+id); 
+	location.href= Think.U('Goods/toEdit','umark='+menuId+"&id="+id);
 }
 function toViewGoods(id){
-	$.post(Think.U('Home/Goods/getGoodsVerify'),{id:id},function(data,textStatus){
+	$.post(Think.U('Goods/getGoodsVerify'),{id:id},function(data,textStatus){
 		var json = WST.toJson(data);
 		if(json.status=='1'){
 			var verifyCode = json.verifyCode;
-			window.open(Think.U('Home/Goods/getGoodsDetails','goodsId='+id+"&kcode="+verifyCode));
+			window.open(Think.U('Goods/getGoodsDetails','goodsId='+id+"&kcode="+verifyCode));
 		}
 	});
 	
 }
 function delGoods(id){
 	layer.confirm("您确定要删除该商品？",{icon: 3, title:'系统提示'},function(tips){
-		$.post(Think.U('Home/Goods/del'),{id:id},function(data,textStatus){
+		$.post(Think.U('Goods/del'),{id:id},function(data,textStatus){
 			layer.close(tips);
     		var json = WST.toJson(data);
     		if(json.status=='1'){
@@ -65,7 +65,7 @@ function batchDel(){
 	      var loading = layer.load('正在处理，请稍后...', 3);
 	      var params = {};
 	      params.ids = ids;
-	      $.post(Think.U('Home/Goods/batchDel'),params,function(data,textStatus){
+	      $.post(Think.U('Goods/batchDel'),params,function(data,textStatus){
 	    		var json = WST.toJson(data);
 	    		if(json.status=='1'){
 	    			WST.msg('操作成功！', {icon: 1},function(){
@@ -90,7 +90,7 @@ function sale(v){
 	    var params = {};
 	    params.ids = ids;
 	    params.isSale= v;
-	    $.post(Think.U('Home/Goods/sale'),params,function(data,textStatus){
+	    $.post(Think.U('Goods/sale'),params,function(data,textStatus){
 	    	layer.close(loading);
 	    	var json = WST.toJson(data);
 	    	if(json.status=='1'){
@@ -122,7 +122,7 @@ function goodsSet(type,umark){
 	var params = {};
 	params.ids = ids;
 	params.code= type;
-	$.post(Think.U('Home/Goods/goodsSet'),params,function(data,textStatus){
+	$.post(Think.U('Goods/goodsSet'),params,function(data,textStatus){
 	    var json = WST.toJson(data);
 	    if(json.status=='1'){
 	    	WST.msg('操作成功！', {icon: 1},function(){
@@ -139,7 +139,7 @@ function getShopCatListForGoods(v,id){
 	   params.id = v;
 	   $('#shopCatId2').empty();
 	   var html = [];
-	   $.post(Think.U('Home/ShopsCats/queryByList'),params,function(data,textStatus){
+	   $.post(Think.U('ShopsCats/queryByList'),params,function(data,textStatus){
 		    html.push('<option value="">请选择</option>');
 			var json = WST.toJson(data);
 			if(json.status=='1' && json.list){
@@ -179,7 +179,7 @@ function getShopCatListForEdit(v,id){
 		   return;
 	   }
 	   var html = [];
-	   $.post(Think.U('Home/ShopsCats/queryByList'),params,function(data,textStatus){
+	   $.post(Think.U('ShopsCats/queryByList'),params,function(data,textStatus){
 		    html.push('<option value="">请选择</option>');
 			var json = WST.toJson(data);
 			if(json.status=='1' && json.list){
@@ -199,7 +199,7 @@ function getBrands(catId){
 	$('#brandId').empty();
 	var html = [];
 	$('#brandId').append('<option value="0">请选择</option>');
-	$.post(Think.U('Home/Brands/queryBrandsByCat'),params,function(data,textStatus){
+	$.post(Think.U('Brands/queryBrandsByCat'),params,function(data,textStatus){
 		var json = WST.toJson(data);
 		if(json.status=='1' && json.list){
 			for(var i=0;i<json.list.length;i++){
@@ -219,7 +219,7 @@ function getCatListForEdit(objId,parentId,t,id){
 		   getBrands(parentId);
 	   }
 	   var html = [];
-	   $.post(Think.U('Home/GoodsCats/queryByList'),params,function(data,textStatus){
+	   $.post(Think.U('GoodsCats/queryByList'),params,function(data,textStatus){
 		    html.push('<option value="">请选择</option>');
 			var json = WST.toJson(data);
 			if(json.status=='1' && json.list){
@@ -317,32 +317,32 @@ function editGoods(menuId){
 	   }
 	   params.gallery = gallery.join(',');
 	   var loading = layer.load('正在提交商品信息，请稍后...', 3);
-	   $.post(Think.U('Home/Goods/edit'),params,function(data,textStatus){
+	   $.post(Think.U('Goods/edit'),params,function(data,textStatus){
 		   layer.close(loading);
 			var json = WST.toJson(data);
 			if(json.status=='1'){
 				WST.msg('操作成功!', {icon: 1}, function(){
 					if((menuId=='toEditGoods')){
-						location.href= Think.U('Home/Goods/toEdit','umark=toEditGoods');
+						location.href= Think.U('Goods/toEdit','umark=toEditGoods');
 					}else{
-						location.href=Think.U('Home/Goods/'+menuId);
+						location.href=Think.U('Goods/'+menuId);
 					}
 				});
 			}else if(json.status=='-2'){
 				if(params.isSale==1){
 				    WST.msg('您的店铺已被封，如有疑问请与商城管理员联系!', {icon: 5,time:4000},function(){
 				    	if((menuId=='toEditGoods')){
-							location.href= Think.U('Home/Goods/toEdit','umark=toEditGoods');
+							location.href= Think.U('Goods/toEdit','umark=toEditGoods');
 						}else{
-							location.href=Think.U('Home/Goods/'+menuId);
+							location.href=Think.U('Goods/'+menuId);
 						}
 				    });
 				}else{
 					WST.msg('操作成功!', {icon: 1}, function(){
 						if((menuId=='toEditGoods')){
-							location.href= Think.U('Home/Goods/toEdit','umark=toEditGoods');
+							location.href= Think.U('Goods/toEdit','umark=toEditGoods');
 						}else{
-							location.href=Think.U('Home/Goods/'+menuId);
+							location.href=Think.U('Goods/'+menuId);
 						}
 					});
 				}
@@ -350,17 +350,17 @@ function editGoods(menuId){
 				if(params.isSale==1){
 					WST.msg('您的店铺权限不能上架商品，所编辑商品已被存放在仓库中，如有疑问请与商城管理员联系!', {icon: 5,time:4000},function(){
 						if((menuId=='toEditGoods')){
-							location.href= Think.U('Home/Goods/toEdit','umark=toEditGoods');
+							location.href= Think.U('Goods/toEdit','umark=toEditGoods');
 						}else{
-							location.href=Think.U('Home/Goods/'+menuId);
+							location.href=Think.U('Goods/'+menuId);
 						}
 					});
 				}else{
 					WST.msg('操作成功!', {icon: 1}, function(){
 						if((menuId=='toEditGoods')){
-							location.href= Think.U('Home/Goods/toEdit','umark=toEditGoods');
+							location.href= Think.U('Goods/toEdit','umark=toEditGoods');
 						}else{
-							location.href=Think.U('Home/Goods/'+menuId);
+							location.href=Think.U('Goods/'+menuId);
 						}
 					});
 				}
@@ -380,7 +380,7 @@ function getAttrList(catId){
 		$('.hiddenPriceAttr').val('');
 		$('#goodsStock').attr('disabled',false);
 	}
-	$.post(Think.U('Home/Attributes/getAttributes'),{catId:catId},function(data,textStatus){
+	$.post(Think.U('Attributes/getAttributes'),{catId:catId},function(data,textStatus){
 		 var json = WST.toJson(data);
 		 var priceAttr = null;
 		 if(json.status=='1' && json.list){
@@ -493,12 +493,12 @@ function editGoodsCat(){
 	   params.isShow = $('input[name="isShow"]:checked').val();;
 	   params.catSort = $('#catSort').val();
 	   var loading = layer.load('正在提交商品分类信息，请稍后...', 3);
-	   $.post(Think.U('Home/ShopsCats/edit'),params,function(data,textStatus){
+	   $.post(Think.U('ShopsCats/edit'),params,function(data,textStatus){
 		   layer.close(loading);
 			var json = WST.toJson(data);
 			if(json.status=='1'){
 				WST.msg('操作成功!', {icon: 1}, function(){
-				   location.href= Think.U('Home/ShopsCats/index');
+				   location.href= Think.U('ShopsCats/index');
 				});
 			}else{
 				layer.msg('操作失败!', {icon: 5});
@@ -509,7 +509,7 @@ function delGoodsCat(id){
 	layer.confirm("您确定要删除该商品分类吗？",{icon: 3, title:'系统提示'},function(tips){
 		layer.load('正在处理，请稍后...', 3);
 		layer.close(tips);
-		$.post(Think.U('Home/ShopsCats/del'),{id:id},function(data,textStatus){
+		$.post(Think.U('ShopsCats/del'),{id:id},function(data,textStatus){
 			var json = WST.toJson(data);
 			if(json.status=='1'){
 				WST.msg('操作成功!', {icon: 1}, function(){
@@ -523,7 +523,7 @@ function delGoodsCat(id){
 }
 function editGoodsCatName(obj){
 	var name = $('#');
-	$.post(Think.U('Home/ShopsCats/editName'),{id:$(obj).attr('dataId'),catName:obj.value},function(data,textStatus){
+	$.post(Think.U('ShopsCats/editName'),{id:$(obj).attr('dataId'),catName:obj.value},function(data,textStatus){
 		var json = WST.toJson(data);
 		if(json.status=='1'){
 			WST.msg('操作成功!',{icon: 1,time:500});
@@ -534,7 +534,7 @@ function editGoodsCatName(obj){
 }
 function editGoodsCatSort(obj){
 	var name = $('#');
-	$.post(Think.U('Home/ShopsCats/editSort'),{id:$(obj).attr('dataId'),catSort:obj.value},function(data,textStatus){
+	$.post(Think.U('ShopsCats/editSort'),{id:$(obj).attr('dataId'),catSort:obj.value},function(data,textStatus){
 		var json = WST.toJson(data);
 		if(json.status=='1'){
 			WST.msg('操作成功!',{icon: 1,time:500});
@@ -561,14 +561,14 @@ function queryAppraises(){
 	var shopCatId1 = $('#shopCatId1').val();
 	var shopCatId2 = $('#shopCatId2').val();
 	var goodsName = $('#goodsName').val();
-	location.href= Think.U('Home/GoodsAppraises/index','umark=GoodsAppraises&goodsName='+goodsName+"&shopCatId1="+shopCatId1+"&shopCatId2="+shopCatId2);
+	location.href= Think.U('GoodsAppraises/index','umark=GoodsAppraises&goodsName='+goodsName+"&shopCatId1="+shopCatId1+"&shopCatId2="+shopCatId2);
 }
 function getShopCatListForAppraises(v,id){
 	   var params = {};
 	   params.id = v;
 	   $('#shopCatId2').empty();
 	   var html = [];
-	   $.post(Think.U('Home/ShopsCats/queryByList'),params,function(data,textStatus){
+	   $.post(Think.U('ShopsCats/queryByList'),params,function(data,textStatus){
 		    html.push('<option value="">请选择</option>');
 			var json = WST.toJson(data);
 			if(json.status=='1' && json.list){
@@ -589,7 +589,7 @@ function showOrder(id){
 	    title:"订单详情",
 	    shade: [0.6, '#000'],
 	    border: [0],
-	    content: [Think.U('Home/Orders/getOrderDetails','orderId='+id)],
+	    content: [Think.U('Orders/getOrderDetails','orderId='+id)],
 	    area: ['1020px', ($(window).height() - 50) +'px']
 	});
 }
@@ -597,7 +597,7 @@ function showOrder(id){
 function shopOrderAccept(id){
 	layer.confirm('您确定受理该订单吗？', {icon: 3, title:'系统提示'}, function(tips){
 	    var ll = layer.load('数据处理中，请稍候...');
-	    $.post(Think.U('Home/Orders/shopOrderAccept'),{orderId:id},function(data){
+	    $.post(Think.U('Orders/shopOrderAccept'),{orderId:id},function(data){
 	    	layer.close(ll);
 	    	layer.close(tips);
 	    	var json = WST.toJson(data);
@@ -621,7 +621,7 @@ function batchShopOrderAccept(){
 	}
 	layer.confirm('您确定受理这些订单吗？', {icon: 3, title:'系统提示'}, function(tips){
 	    var ll = layer.load('数据处理中，请稍候...');
-	    $.post(Think.U('Home/Orders/batchShopOrderAccept'),{orderIds:ids},function(data){
+	    $.post(Think.U('Orders/batchShopOrderAccept'),{orderIds:ids},function(data){
 	    	layer.close(ll);
 	    	layer.close(tips);
 	    	var json = WST.toJson(data);
@@ -643,7 +643,7 @@ function batchShopOrderAccept(){
 function shopOrderProduce(id){
 	layer.confirm('您确定打包该商品吗？',{icon: 3, title:'系统提示'}, function(tips){
 	    var ll = layer.load('数据处理中，请稍候...');
-	    $.post(Think.U('Home/Orders/shopOrderProduce'),{orderId:id},function(data){
+	    $.post(Think.U('Orders/shopOrderProduce'),{orderId:id},function(data){
 	    	layer.close(ll);
 	    	layer.close(tips);
 	    	var json = WST.toJson(data);
@@ -667,7 +667,7 @@ function batchShopOrderProduce(){
 	}
 	layer.confirm('您确定打包这些商品吗？',{icon: 3, title:'系统提示'}, function(tips){
 	    var ll = layer.load('数据处理中，请稍候...');
-	    $.post(Think.U('Home/Orders/batchShopOrderProduce'),{orderIds:ids},function(data){
+	    $.post(Think.U('Orders/batchShopOrderProduce'),{orderIds:ids},function(data){
 	    	layer.close(ll);
 	    	layer.close(tips);
 	    	var json = WST.toJson(data);
@@ -689,7 +689,7 @@ function batchShopOrderProduce(){
 function shopOrderDelivery(id){
 	layer.confirm('确定正在发货吗？',{icon: 3, title:'系统提示'}, function(tips){
 	    var ll = layer.load('数据处理中，请稍候...');
-	    $.post(Think.U('Home/Orders/shopOrderDelivery'),{orderId:id},function(data){
+	    $.post(Think.U('Orders/shopOrderDelivery'),{orderId:id},function(data){
 	    	layer.close(ll);
 	    	layer.close(tips);
 	    	var json = WST.toJson(data);
@@ -713,7 +713,7 @@ function batchShopOrderDelivery(id){
 	}
 	layer.confirm('您确定这些订单正在发货吗？',{icon: 3, title:'系统提示'}, function(tips){
 	    var ll = layer.load('数据处理中，请稍候...');
-	    $.post(Think.U('Home/Orders/batchShopOrderDelivery'),{orderIds:ids},function(data){
+	    $.post(Think.U('Orders/batchShopOrderDelivery'),{orderIds:ids},function(data){
 	    	layer.close(ll);
 	    	layer.close(tips);
 	    	var json = WST.toJson(data);
@@ -735,7 +735,7 @@ function batchShopOrderDelivery(id){
 function shopOrderReceipt(id){
 	layer.confirm('确定已收货吗？',{icon: 3, title:'系统提示'}, function(tips){
 	    var ll = layer.load('数据处理中，请稍候...');
-	    $.post(Think.U('Home/Orders/shopOrderReceipt'),{orderId:id},function(data){
+	    $.post(Think.U('Orders/shopOrderReceipt'),{orderId:id},function(data){
 	    	layer.close(ll);
 	    	layer.close(tips);
 	    	var json = WST.toJson(data);
@@ -755,7 +755,7 @@ function shopOrderRefund(id,type){
 	if(type==1){
 		layer.confirm('您同意拒收该订单吗？',{icon: 3, title:'系统提示'}, function(tips){
 		    var ll = layer.load('数据处理中，请稍候...');
-		    $.post(Think.U('Home/Orders/shopOrderRefund'),{orderId:id,type:type},function(data){
+		    $.post(Think.U('Orders/shopOrderRefund'),{orderId:id,type:type},function(data){
 		    	layer.close(ll);
 		    	layer.close(tips);
 		    	var json = WST.toJson(data);
@@ -784,7 +784,7 @@ function shopOrderRefund(id,type){
 	        		return;
 	        	}
 	        	var ll = layer.load('数据处理中，请稍候...');
-			    $.post(Think.U('Home/Orders/shopOrderRefund'),{orderId:id,type:type,rejectionRemarks:rejectionRemarks},function(data){
+			    $.post(Think.U('Orders/shopOrderRefund'),{orderId:id,type:type,rejectionRemarks:rejectionRemarks},function(data){
 			    	layer.close(w);
 			    	layer.close(ll);
 			    	var json = WST.toJson(data);
@@ -808,7 +808,7 @@ function queryOrderPager(statusMark,pcurr){
 	param.statusMark = statusMark;
 	param.pcurr = pcurr;
 	var ll = layer.load('数据加载中，请稍候...');
-	$.post(Think.U('Home/Orders/queryShopOrders'),param,function(data,textStatus){
+	$.post(Think.U('Orders/queryShopOrders'),param,function(data,textStatus){
 			var json = WST.toJson(data);
 			var html = new Array();
 			$("#otbody"+statusMark).empty();
@@ -872,7 +872,7 @@ function editPass(){
 	   params.oldPass = $('#oldPass').val();
 	   params.newPass = $('#newPass').val();
 	   params.reNewPass = $('#reNewPass').val();
-	   $.post(Think.U('Home/Users/editPass'),params,function(data,textStatus){
+	   $.post(Think.U('Users/editPass'),params,function(data,textStatus){
 			var json = WST.toJson(data);
 			if(json.status=='1'){
 				WST.msg('密码修改成功!', {icon: 1}, function(){
@@ -886,7 +886,7 @@ function editPass(){
 /***************编辑店铺资料******************/
 function getCommunitysForShopEdit(){
 
-	  $.post(Think.U('Home/Areas/getAreaAndCommunitysByList'),{areaId:areaId},function(data,textStatus){
+	  $.post(Think.U('Areas/getAreaAndCommunitysByList'),{areaId:areaId},function(data,textStatus){
 			var json = data;
 			if(json.list){
 				
@@ -999,7 +999,7 @@ function editShop(){
 	   params.relateAreaId=relateArea.join(',');
 	   params.relateCommunityId=relateCommunity.join(',');
 	   var layerIdx = layer.load('正在处理，请稍后...', 3);
-	   $.post(Think.U('Home/Shops/edit'),params,function(data,textStatus){
+	   $.post(Think.U('Shops/edit'),params,function(data,textStatus){
 			var json = WST.toJson(data);
 			layer.close(layerIdx);
 			if(json.status=='1'){
@@ -1030,7 +1030,7 @@ function setShop(){
 	   params.shopDesc = $('#shopDesc').val();
 	   layer.load('正在处理，请稍后...', 3);
 	   
-	   $.post(Think.U('Home/Shops/editShopCfg'),params,function(data,textStatus){
+	   $.post(Think.U('Shops/editShopCfg'),params,function(data,textStatus){
 			var json = WST.toJson(data);
 			if(json.status=='1'){
 				WST.msg('操作成功!', {icon: 1}, function(){
@@ -1042,12 +1042,12 @@ function setShop(){
 		});
 }
 function logout(){
-	jQuery.post(Think.U('Home/Shops/logout'),{},function(rsp) {
+	jQuery.post(Think.U('Shops/logout'),{},function(rsp) {
 		location.reload();
 	});
 }
 function checkLogin(){
-	jQuery.post(Think.U('Home/Shops/checkLoginStatus'),{},function(rsp) {
+	jQuery.post(Think.U('Shops/checkLoginStatus'),{},function(rsp) {
 		var json = WST.toJson(rsp);
 		if(json.status && json.status==-999)location.reload();
 	});
@@ -1060,7 +1060,7 @@ function editAttrCats(type,src){
 		return;
 	}
 	var loading = layer.load('正在处理，请稍后...', 3);
-	$.post(Think.U('Home/AttributeCats/edit'),{umark:src,catName:catName,id:$('#id').val()},function(data,textStatus){
+	$.post(Think.U('AttributeCats/edit'),{umark:src,catName:catName,id:$('#id').val()},function(data,textStatus){
 		layer.close(loading);
 		var json = WST.toJson(data);
 		if(json.status=='1'){
@@ -1068,7 +1068,7 @@ function editAttrCats(type,src){
 				if(type==1){
 					$('#myform')[0].reset();
 				}else{
-				    location.href=Think.U('Home/AttributeCats/index');
+				    location.href=Think.U('AttributeCats/index');
 				}
 			});
 		}else{
@@ -1081,7 +1081,7 @@ function delAttrCat(id){
 	    var loading = layer.load('正在处理，请稍后...', 3);
 	    layer.close(tips);
 	    var params = {};
-	    $.post(Think.U('Home/AttributeCats/del'),{id:id},function(data,textStatus){
+	    $.post(Think.U('AttributeCats/del'),{id:id},function(data,textStatus){
 	    	layer.close(loading);
 	    	var json = WST.toJson(data);
 	    	if(json.status=='1'){
@@ -1165,12 +1165,12 @@ function editAttrs(){
 		params['attrSort_'+i] = $.trim($('#attrSort_'+i).val());
 	}
 	var loading = layer.load('正在处理，请稍后...', 3);
-	$.post(Think.U('Home/attributes/edit'),params,function(data,textStatus){
+	$.post(Think.U('attributes/edit'),params,function(data,textStatus){
 		layer.close(loading);
 		var json = WST.toJson(data);
 		if(json.status=='1'){
 			WST.msg('操作成功!', {icon: 1}, function(){
-				location.href=Think.U('Home/Attributes/index','catId='+$('#catId').val());
+				location.href=Think.U('Attributes/index','catId='+$('#catId').val());
 			});
 		}else{
 			WST.msg('操作失败!', {icon: 5});
@@ -1183,7 +1183,7 @@ function delAttrs(no,id){
 		    var loading = layer.load('正在处理，请稍后...', 3);
 		    layer.close(tips);
 		    var params = {};
-		    $.post(Think.U('Home/Attributes/del'),{id:id},function(data,textStatus){
+		    $.post(Think.U('Attributes/del'),{id:id},function(data,textStatus){
 		    	layer.close(loading);
 		    	var json = WST.toJson(data);
 		    	if(json.status=='1'){
@@ -1205,7 +1205,7 @@ function batchMessageDel(){
 	        layer.load('正在处理，请稍后...', 3);
 	        var params = {};
 	        params.ids = ids;
-	        $.post(Think.U('Home/Messages/batchDel'),params,function(data,textStatus){
+	        $.post(Think.U('Messages/batchDel'),params,function(data,textStatus){
 	          var json = WST.toJson(data);
 	          if(json.status=='1'){
 	        	  WST.msg('操作成功！', {icon: 1},function(){
@@ -1250,7 +1250,7 @@ function editGoodsBase(fv,goodsId){
 		}		
         return;
 	}
-	jQuery.post(Think.U('Home/Goods/editGoodsBase'),{vfield:fv,goodsId:goodsId,vtext:vtext},function(data,textStatus){
+	jQuery.post(Think.U('Goods/editGoodsBase'),{vfield:fv,goodsId:goodsId,vtext:vtext},function(data,textStatus){
 		var json = WST.toJson(data);
 		if(json.status>0){
 			$('#img_'+fv+'_'+goodsId).fadeTo("fast",100);
@@ -1267,7 +1267,7 @@ function changeCatStatus(isShow,id,pid){
 	params.id = id;
 	params.isShow = isShow;
 	params.pid = pid;
-	$.post(Think.U('Home/ShopsCats/changeCatStatus'),params,function(data,textStatus){
+	$.post(Think.U('ShopsCats/changeCatStatus'),params,function(data,textStatus){
 		location.reload();  
 	});
 	
@@ -1289,7 +1289,7 @@ function changSaleStatus(goodsId,flag){
 		tak = "isSale";
 	}
 	var tamk = $("#"+tak+"_"+goodsId).val();
-	jQuery.post(Think.U('Home/Goods/changSaleStatus'),{goodsId:goodsId,tamk:tamk,flag:flag},function(data,textStatus){
+	jQuery.post(Think.U('Goods/changSaleStatus'),{goodsId:goodsId,tamk:tamk,flag:flag},function(data,textStatus){
 		var json = WST.toJson(data);
 		if(json.status>0){
 			if(tamk == 0){
@@ -1382,7 +1382,7 @@ function batchSaveShopCats(){
 		params['catShow_o_'+otherNo] = $(this).find(".catshow").prop("checked")?1:0;
 		params['otherNo'] = ++otherNo;
 	});
-	$.post(Think.U('Home/ShopsCats/batchSaveShopCats'),params,function(data,textStatus){
+	$.post(Think.U('ShopsCats/batchSaveShopCats'),params,function(data,textStatus){
 		var json = WST.toJson(data);
 		if(json.status==1){
 			WST.msg('新增成功!', {icon: 1,time:500},function(){
@@ -1404,7 +1404,7 @@ function delGoodsCatObj(obj,vk){
 }
 
 function getShopMsgTips(){
-	$.post(Think.U('Home/Orders/getShopMsgTips'),{},function(data,textStatus){
+	$.post(Think.U('Orders/getShopMsgTips'),{},function(data,textStatus){
 		var json = WST.toJson(data);
 		for(var i in json){
 			if(json[i]>0){

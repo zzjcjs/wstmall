@@ -13,7 +13,7 @@ $(function () {
   		}).ajaxValidator({
   			dataType : "json",
   			async : true,
-  			url : Think.U('Home/Users/checkLoginKey'),
+  			url : Think.U('Users/checkLoginKey'),
   			success : function(data){
   				var json = WST.toJson(data);
   	            if( json.status == "1" ) {
@@ -38,7 +38,7 @@ $(function () {
   		}).ajaxValidator({
   			dataType : "json",
   			async : true,
-  			url : Think.U('Home/Users/checkLoginKey'),
+  			url : Think.U('Users/checkLoginKey'),
   			success : function(data){
   				var json = WST.toJson(data);
   	            if( json.status == "1" ) {
@@ -91,7 +91,7 @@ function getAreaListForOpen(objId,parentId,t,id){
 		   }
 	   }
 	   var html = [];
-	   $.post(Think.U('Home/Areas/queryByList'),params,function(data,textStatus){
+	   $.post(Think.U('Areas/queryByList'),params,function(data,textStatus){
 		    html.push('<option value="">请选择</option>');
 			var json = WST.toJson(data);
 			if(json.status=='1' && json.list){
@@ -110,7 +110,7 @@ function getAreaListForOpen(objId,parentId,t,id){
 function getCommunitysForOpen(){
 	  $('#areaTree').empty();
 	  var areaId = $('#areaId2').val();
-	  $.post(Think.U('Home/Areas/getAreaAndCommunitysByList'),{areaId:areaId},function(data,textStatus){
+	  $.post(Think.U('Areas/getAreaAndCommunitysByList'),{areaId:areaId},function(data,textStatus){
 			var json = data;
 			if(json.list){
 					var html = [];
@@ -158,7 +158,7 @@ function selectArea(v){
  		   $('#goodsCatId3').html('<option value="">请选择</option>');
  	   }
  	   var html = [];
- 	   $.post(Think.U('Home/goodsCats/queryByList'),params,function(data,textStatus){
+ 	   $.post(Think.U('goodsCats/queryByList'),params,function(data,textStatus){
  		    html.push('<option value="">请选择</option>');
  			var json = WST.toJson(data);
  			if(json.status=='1' && json.list){
@@ -178,7 +178,7 @@ function selectArea(v){
 		    shadeClose: true,
 		    shade: 0.8,
 		    area: ['1000px', ($(window).height() - 50) +'px'],
-		    content: [Think.U('Home/Index/toUserProtocol')],
+		    content: [Think.U('Index/toUserProtocol')],
 		    btn: ['同意并注册'],
 		    yes: function(index, layero){
 		    	layer.close(index);
@@ -199,7 +199,7 @@ function selectArea(v){
    		isSend = true;
    		var params = {};
    		params.userPhone = $.trim($("#userPhone").val());
-   		$.post(Think.U('Home/Users/getPhoneVerifyCode'),params,function(data,textStatus){
+   		$.post(Think.U('Users/getPhoneVerifyCode'),params,function(data,textStatus){
    			var json = WST.toJson(data);
    			if(json.status==-1){
    				WST.msg('手机号码格式错误!', {icon: 5});
@@ -315,7 +315,7 @@ function selectArea(v){
 	   	params.mobileCode = $.trim($('#mobileCode').val());
 	   	params.verify = $.trim($('#authcode').val());
 	   	params.protocol = document.getElementById("protocol").checked?1:0;	
-	   	$.post(Think.U('Home/Shops/openShop'),params,function(data,textStatus){
+	   	$.post(Think.U('Shops/openShop'),params,function(data,textStatus){
 	   		var json = WST.toJson(data);
 	   		if(json.status>0){
 	   			WST.msg('您的开店申请已提交，请等候商城管理员审核!', {icon: 1}, function(){

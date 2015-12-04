@@ -30,7 +30,7 @@ function changeCatGoodsnum(flag,shopId,goodsId,isBook){
 
 
 function checkCartPay(shopId,goodsId,num,ischk,isBook,goodsAttrId){
-	jQuery.post( Think.U('Home/Goods/getGoodsStock') ,{goodsId:goodsId,isBook:isBook,goodsAttrId:goodsAttrId},function(data) {		
+	jQuery.post( Think.U('Goods/getGoodsStock') ,{goodsId:goodsId,isBook:isBook,goodsAttrId:goodsAttrId},function(data) {
 		var json = WST.toJson(data);
 		if(json.goodsStock==0){
 			$("#stock_"+goods.goodsId).html("<span style='color:red;'>无货</span>");
@@ -45,7 +45,7 @@ function checkCartPay(shopId,goodsId,num,ischk,isBook,goodsAttrId){
 			$("#stock_"+json.goodsId).html("<span style='color:red;'>仅剩最后"+json.goodsStock+"份</span>");
 			$("#selgoods_"+json.goodsId).css({"border":"0"});
 		}
-		jQuery.post( Think.U('Home/Cart/changeCartGoodsNum') ,{goodsId:goodsId,num:num,ischk:ischk,goodsAttrId:goodsAttrId},function(rsp) {		
+		jQuery.post( Think.U('Cart/changeCartGoodsNum') ,{goodsId:goodsId,num:num,ischk:ischk,goodsAttrId:goodsAttrId},function(rsp) {
 			if(rsp){
 				var totalMoney = 0;	
 				$("#buy-num_"+goodsId).val(num);
@@ -101,7 +101,7 @@ function goToPay(){
 	if(!cflag){
 		return false;
 	}
-	jQuery.post( Think.U('Home/Cart/checkCartGoodsStock') ,{},function(data) {
+	jQuery.post( Think.U('Cart/checkCartGoodsStock') ,{},function(data) {
 		var goodsInfo = WST.toJson(data);		
 		for(var i=0;i<goodsInfo.length;i++){
 			var goods = goodsInfo[i];
@@ -126,7 +126,7 @@ function goToPay(){
 			return false;
 		}
 		if(flag){
-			location.href = Think.U('Home/Orders/checkOrderInfo','rnd='+new Date().getTime());
+			location.href = Think.U('Orders/checkOrderInfo','rnd='+new Date().getTime());
 		}else{
 			$("#showwarnmsg").show();
 		}
@@ -144,7 +144,7 @@ function delCatGoods(shopId,goodsId){
 		var shop_totalMoney = parseFloat($("#shop_totalMoney_"+shopId).html(),10);
 		var price = parseFloat($("#price_"+goodsId).val(),10);
 		
-		jQuery.post(Think.U('Home/Cart/delCartGoods') ,{goodsId:goodsId},function(data) {
+		jQuery.post(Think.U('Cart/delCartGoods') ,{goodsId:goodsId},function(data) {
 			layer.close(ll);
 	    	layer.close(tips);
 			var vd = WST.toJson(data);

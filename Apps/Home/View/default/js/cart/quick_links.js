@@ -54,7 +54,7 @@ jQuery(function($){
 				$(".quick_links_panel").animate({"right":"280px"},100);
 				fn.content = "<div class='ibar_plugin_content' style='height:100%;padding-top:100%;padding-left:80px;'><img src='"+domainURL +"/Apps/Home/View/default/images/loading.gif' width='20'/>数据加载中...</div>";
 				quickPop.html(ds.tmpl(popTmpl, fn));
-				jQuery.post(Think.U('Home/Cart/getCartInfo') ,{"axm":1},function(data) {
+				jQuery.post(Think.U('/Cart/getCartInfo') ,{"axm":1},function(data) {
 					var cart = WST.toJson(data);	
 					var html = new Array();
 					var totalmoney = 0, goodsnum = 0;
@@ -201,7 +201,7 @@ jQuery(function($){
 	scrollHandler();
 });
 function removeCartGoods(obj,goodsId){
-	jQuery.post(Think.U('Home/Cart/delCartGoods') ,{goodsId:goodsId},function(data) {
+	jQuery.post(Think.U('/Cart/delCartGoods') ,{goodsId:goodsId},function(data) {
 		
 		var vd = WST.toJson(data);
 		$(obj).parent().parent().parent().remove();

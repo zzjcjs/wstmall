@@ -16,9 +16,9 @@ $(function () {
     $("#btnsch").click(function () {
     	var searchType = $("#wst-search-type").val();
     	if(searchType==2){
-    		window.location = Think.U('Home/Shops/toShopStreet','searchType='+searchType+"&keyWords="+$.trim($("#keyword").val()));
+    		window.location = Think.U('Shops/toShopStreet','searchType='+searchType+"&keyWords="+$.trim($("#keyword").val()));
     	}else{
-    		window.location = Think.U('Home/goods/getGoodsList','searchType='+searchType+"&keyWords="+$.trim($("#keyword").val()));;
+    		window.location = Think.U('goods/getGoodsList','searchType='+searchType+"&keyWords="+$.trim($("#keyword").val()));;
     	}
         
     });

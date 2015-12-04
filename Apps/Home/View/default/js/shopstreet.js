@@ -17,7 +17,7 @@ function getShopByCommunitys(obj){
 		keyWords = $.trim($("#keyword").val());
 	}
 	$("#wst-page-items").hide();
-	$.post(Think.U('Home/Shops/getShopByCommunitys') ,{"curr": 1,"communityId":communityId,"shopName":shopName,"deliveryStartMoney":deliveryStartMoney,"deliveryMoney":deliveryMoney,"shopAtive":shopAtive,"keyWords":keyWords},function(data) {		
+	$.post(Think.U('Shops/getShopByCommunitys') ,{"curr": 1,"communityId":communityId,"shopName":shopName,"deliveryStartMoney":deliveryStartMoney,"deliveryMoney":deliveryMoney,"shopAtive":shopAtive,"keyWords":keyWords},function(data) {
 		var json = WST.toJson(data);
 		
 		laypage({
@@ -27,7 +27,7 @@ function getShopByCommunitys(obj){
 	        skin: '#e23e3d',
 	        groups: 3, 
 	        jump: function(e){ 
-	        	$.post(Think.U('Home/Shops/getShopByCommunitys') ,{"curr": e.curr,"communityId":communityId,"shopName":shopName,"deliveryStartMoney":deliveryStartMoney,"deliveryMoney":deliveryMoney,"shopAtive":shopAtive,"keyWords":keyWords},function(data) {
+	        	$.post(Think.U('Shops/getShopByCommunitys') ,{"curr": e.curr,"communityId":communityId,"shopName":shopName,"deliveryStartMoney":deliveryStartMoney,"deliveryMoney":deliveryMoney,"shopAtive":shopAtive,"keyWords":keyWords},function(data) {
 	        		var json = WST.toJson(data);
 	                e.pages = e.last = json.totalPage;
 	                $(".wst-shop-list").empty();
@@ -36,7 +36,7 @@ function getShopByCommunitys(obj){
 	        		var shop = '';
 	        		for(var i=0;i<json.root.length;i++){
 	        			shop = json.root[i];
-	        			url = Think.U('Home/Shops/toShopHome','shopId='+shop.shopId);
+	        			url = Think.U('Shops/toShopHome','shopId='+shop.shopId);
 	        			html.push('<div class="wst-shop-box">');
 	        				html.push('<div style="width:80px;height:80px; float:left;"><a href="'+url+'"><img data-original="'+domainURL +"/"+shop.shopImg+'" width="80" height="80" title="'+shop.shopName+'"/></a></div>');
 	        				html.push('<div class="wst-shop-streets-items">');
@@ -72,7 +72,7 @@ function getDistrictsShops(){
 	if(searchType==2){
 		keyWords = $.trim($("#keyword").val());
 	}
-	$.post(Think.U('Home/Shops/getDistrictsShops') ,{"areaId3":areaId3,"shopName":shopName,"deliveryStartMoney":deliveryStartMoney,"deliveryMoney":deliveryMoney,"shopAtive":shopAtive,"keyWords":keyWords},function(data) {		
+	$.post(Think.U('Shops/getDistrictsShops') ,{"areaId3":areaId3,"shopName":shopName,"deliveryStartMoney":deliveryStartMoney,"deliveryMoney":deliveryMoney,"shopAtive":shopAtive,"keyWords":keyWords},function(data) {
 		var json = WST.toJson(data);
 		$(".wst-shop-list").empty();
 		var html = new Array();

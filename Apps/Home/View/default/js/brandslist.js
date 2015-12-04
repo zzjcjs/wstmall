@@ -19,13 +19,13 @@ function getBrands(){
 	var areaId3 = $("#areaId").val();
 	var brandName = $.trim($("#brandName").val());
 
-	$.post( Think.U('Home/Brands/getBrands') ,{"pcurr":currPage,"areaId3":areaId3,"brandName":brandName},function(data) {		
+	$.post( Think.U('Brands/getBrands') ,{"pcurr":currPage,"areaId3":areaId3,"brandName":brandName},function(data) {
 		var json = WST.toJson(data);
 		var html = new Array();
 		var cnt = 0;
 		for(var i=0;i<json.root.length;i++){
 			var brand = json.root[i];
-			var url = Think.U('Home/goods/getGoodsList','brandId='+brand.brandId);
+			var url = Think.U('goods/getGoodsList','brandId='+brand.brandId);
 			html.push('<a href="'+url+'"><li onmouseover="brandsover(this)" onmouseout="brandout(this)" class="wst-brands" data="'+brand.brandId+'">');
 				html.push('<div style="wst-brands-items">');
 				html.push('<img data-original="'+domainURL +"/"+brand.brandIco+'" width="188" title="'+brand.brandName+'"/>');

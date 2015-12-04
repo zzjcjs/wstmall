@@ -41,7 +41,7 @@ function loadCommunitys(obj){
 		return;
 	}
 	
-	jQuery.post(Think.U('Home/Communitys/getByDistrict') ,{areaId3:districtId},function(rsp){
+	jQuery.post(Think.U('Communitys/getByDistrict') ,{areaId3:districtId},function(rsp){
 		var json = WST.toJson(rsp);
 		var html = new Array();
 		$("#consignee_add_CommunityId").empty();
@@ -57,7 +57,7 @@ function loadCommunitys(obj){
 
 function loadAddress(addressId){
 	$("#address_form").show();	
-	jQuery.post(Think.U('Home/UserAddress/getUserAddress') ,{addressId:addressId},function(rsp) {
+	jQuery.post(Think.U('UserAddress/getUserAddress') ,{addressId:addressId},function(rsp) {
 		var rs = WST.toJson(rsp);
 		if(rs.status>0){
 			var addressInfo = rs.address;
@@ -158,7 +158,7 @@ function saveAddress(){
 		return ;		
 	}	
 
-	jQuery.post(Think.U('Home/UserAddress/edit') ,params,function(data,textStatus){	
+	jQuery.post(Think.U('UserAddress/edit') ,params,function(data,textStatus){
 		var json = WST.toJson(data);
 		
 		if(json.status>0){
@@ -237,7 +237,7 @@ function addHour(hour){
 function delAddress(addressId){
 	layer.confirm('您确定删除该地址吗？',{icon: 3, title:'系统提示'}, function(tips){
 		var ll = layer.msg('数据处理中，请稍候...', {icon: 16,shade: [0.5, '#B3B3B3']});
-		jQuery.post(Think.U('Home/UserAddress/del') ,{id:addressId},function(rsp) {
+		jQuery.post(Think.U('UserAddress/del') ,{id:addressId},function(rsp) {
 			layer.close(ll);
 	    	layer.close(tips);
 			if(rsp){
@@ -263,7 +263,7 @@ function submitOrder(){
 		return;
 	}
 	var ll = layer.msg('正在保存数据，请稍候...', {icon: 16,shade: [0.5, '#B3B3B3']});
-	jQuery.post(Think.U('Home/Goods/checkGoodsStock') ,{},function(data) {
+	jQuery.post(Think.U('Goods/checkGoodsStock') ,{},function(data) {
 		var goodsInfo = WST.toJson(data);	
 		layer.close(ll);
 		var flag = true;
@@ -313,7 +313,7 @@ function submitOrder(){
 			
 			
 			var orderunique = new Date().getTime();
-			location.href= Think.U('Home/Orders/submitOrder','consigneeId='+consigneeId+"&payway="+payway+"&isself="+isself+"&invoiceClient="+invoiceClient+"&needreceipt="+needreceipt+"&remarks="+remarks+"&requireTime="+requireTime+"&orderunique="+orderunique);
+			location.href= Think.U('Orders/submitOrder','consigneeId='+consigneeId+"&payway="+payway+"&isself="+isself+"&invoiceClient="+invoiceClient+"&needreceipt="+needreceipt+"&remarks="+remarks+"&requireTime="+requireTime+"&orderunique="+orderunique);
 		}else{
 			if(goods.isSale<1){
 				WST.msg('商品'+goods.goodsName+'已下架，请返回重新选购!', {icon: 5});
@@ -329,7 +329,7 @@ function submitOrder(){
 
 
 function getOrderInfo(orderId){
-	window.location = Think.U('Home/orders/getOrderInfo','orderId='+orderId);
+	window.location = Think.U('orders/getOrderInfo','orderId='+orderId);
 }
 
 function getPayUrl(){
@@ -342,7 +342,7 @@ function getPayUrl(){
 		WST.msg('请先选择支付方式', {icon: 5});
 		return;
 	}
-	jQuery.post(Think.U('Home/Payments/get'+params.payCode+"URL") ,params,function(data) {
+	jQuery.post(Think.U('Payments/get'+params.payCode+"URL") ,params,function(data) {
 		var json = WST.toJson(data);
 		if(json.status==1){
 			if(params.payCode=="Weixin"){
@@ -362,7 +362,7 @@ function getPayUrl(){
 		}else{
 			WST.msg('您的订单已支付!', {icon: 5});
 			setTimeout(function(){				
-				window.location = Think.U('Home/orders/queryDeliveryByPage');
+				window.location = Think.U('orders/queryDeliveryByPage');
 			},1500);
 		}
 	});

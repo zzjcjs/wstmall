@@ -6,7 +6,7 @@ function getCommunitys(obj){
 	var params = {};
 	params.areaId = vid;
 	var html = [];
-	$.post(Think.U('Home/Communitys/queryByList'),params,function(data,textStatus){
+	$.post(Think.U('/Communitys/queryByList'),params,function(data,textStatus){
 	    html.push('<li class="searched">全部</li>');
 		var json = WST.toJson(data);
 		if(json.status=='1' && json.list.length>0){
@@ -130,7 +130,7 @@ function queryGoods(obj,mark){
 	params.wstControl = "Goods";
 	params.wstAction = "getGoodsList";
 
-	jQuery.post(Think.U('Home/Base/getURL') ,params,function(data) {
+	jQuery.post(Think.U('/Base/getURL') ,params,function(data) {
 		var json = WST.toJson(data);
 		window.location = json.url;
 	});
@@ -147,9 +147,9 @@ function addCart(goodsId,type,goodsThums){
 	params.rnd = Math.random();
 	params.goodsAttrId = $('#shopGoodsPrice_'+goodsId).attr('dataId');
 	$("#flyItem img").attr("src",domainURL  +"/"+ goodsThums)
-	jQuery.post(Think.U('Home/Cart/addToCartAjax') ,params,function(data) {
+	jQuery.post(Think.U('Cart/addToCartAjax') ,params,function(data) {
 		if(type==1){
-			location.href= Think.U('Home/Cart/toCart');
+			location.href= Think.U('Cart/toCart');
 		}else{
 			//layer.msg("添加成功!",1,1);
 		}
@@ -172,7 +172,7 @@ function changebuynum(flag){
 //获取属性价格
 function getPriceAttrInfo(id){
 	var goodsId = $("#goodsId").val();
-	jQuery.post( Think.U('Home/Goods/getPriceAttrInfo') ,{goodsId:goodsId,id:id},function(data) {
+	jQuery.post( Think.U('Goods/getPriceAttrInfo') ,{goodsId:goodsId,id:id},function(data) {
 		var json = WST.toJson(data);
 		if(json.id){
 			$('#shopGoodsPrice_'+goodsId).html("￥"+json.attrPrice);
@@ -196,7 +196,7 @@ function getGoodsappraises(goodsId,p){
 	params.goodsId = goodsId;
 	params.p = p;
 	//加载商品评价
-	jQuery.post(Think.U("Home/GoodsAppraises/getGoodsappraises") ,params,function(data) {
+	jQuery.post(Think.U("GoodsAppraises/getGoodsappraises") ,params,function(data) {
 		var json = WST.toJson(data);
 		if(json.root && json.root.length){
 			var html = new Array();		    	
@@ -249,7 +249,7 @@ function getGoodsappraises(goodsId,p){
 
 function favoriteGoods(id){
 	if($('#f0_txt').attr('f')=='0'){
-		jQuery.post(Think.U("Home/Favorites/favoriteGoods") ,{id:id},function(data) {
+		jQuery.post(Think.U("Favorites/favoriteGoods") ,{id:id},function(data) {
 			var json = WST.toJson(data,1);
 			if(json.status==1){
 				$('#f0_txt').html('已关注');
@@ -267,7 +267,7 @@ function favoriteGoods(id){
 }
 function favoriteShops(id){
 	if($('#f1_txt').attr('f')=='0'){
-		jQuery.post(Think.U("Home/Favorites/favoriteShops") ,{id:id},function(data) {
+		jQuery.post(Think.U("Favorites/favoriteShops") ,{id:id},function(data) {
 			var json = WST.toJson(data,1);
 			if(json.status==1){
 				$('#f1_txt').html('已关注');
@@ -284,7 +284,7 @@ function favoriteShops(id){
 	}
 }
 function cancelFavorites(id,type){
-	jQuery.post(Think.U("Home/Favorites/cancelFavorite") ,{id:id,type:type},function(data) {
+	jQuery.post(Think.U("Favorites/cancelFavorite") ,{id:id,type:type},function(data) {
 		var json = WST.toJson(data,1);
 		if(json.status==1){
 			$('#f'+type+'_txt').html('关注'+((type==1)?'店铺':'商品'));

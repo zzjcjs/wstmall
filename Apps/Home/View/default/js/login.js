@@ -49,10 +49,10 @@ function login(){
 			$("#errmsg").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;验证码不能为空");
 			return false;
 	   }
-	   $.post(Think.U('Home/Shops/checkLogin'),params,function(data,textStatus){
+	   $.post(Think.U('Shops/checkLogin'),params,function(data,textStatus){
 			var json = WST.toJson(data);
 			if(json.status=='1'){
-				location.href= Think.U('Home/Shops/index');
+				location.href= Think.U('Shops/index');
 			}else if(json.status==-2){
 				$("#errmsg").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;验证码错误");
 				getVerify();

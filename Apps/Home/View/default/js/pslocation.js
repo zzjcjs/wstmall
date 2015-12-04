@@ -178,7 +178,7 @@ function chooseCity(cityId,cityName){
 	areaTabContainer.eq(1).addClass("curr").show().find("em").html("请选择");
 	areaContainer.show().html("<div class='iloading'>正在加载中，请稍候...</div>");
 	townaContainer.hide();
-	$.post(Think.U('Home/UserAddress/getShopDistricts'),{areaId2:cityId,shopId:shopId},function(data,textStatus){
+	$.post(Think.U('UserAddress/getShopDistricts'),{areaId2:cityId,shopId:shopId},function(data,textStatus){
 		var json = WST.toJson(data);
 		getAreaListcallback(json,2);
 	});
@@ -206,7 +206,7 @@ function chooseArea(areaId,areaName){
 	areaTabContainer.eq(1).addClass("curr").show().find("em").html("请选择");
 	areaContainer.hide();
 	townaContainer.show().html("<div class='iloading'>正在加载中，请稍候...</div>");
-	$.post(Think.U('Home/UserAddress/getShopCommunitys'),{districtId:areaId,shopId:shopId},function(data,textStatus){
+	$.post(Think.U('UserAddress/getShopCommunitys'),{districtId:areaId,shopId:shopId},function(data,textStatus){
 		var json = WST.toJson(data);
 		getAreaListcallback(json,3);
 	});

@@ -38,11 +38,11 @@ function searchShopsGoods(obj){
 	params.push("ct1=" + $("#ct1").val());
 	params.push("ct2=" + $("#ct2").val());
 	params.push("goodsName=" + $("#goodsName").val());
-	document.location.href = Think.U('Home/Shops/toShopHome',params.join('&'));
+	document.location.href = Think.U('Shops/toShopHome',params.join('&'));
 
 }
 
 function searchwst(){
 	var goodsName = $.trim($("#goodsName").val());
-	window.location = Think.U('Home/goods/getGoodsList','searchType=2&keyWords='+encodeURIComponent(goodsName));
+	window.location = Think.U('goods/getGoodsList','searchType=2&keyWords='+encodeURIComponent(goodsName));
 }
