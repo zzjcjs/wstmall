@@ -18,7 +18,7 @@
 <link href="/Public/css/mia_skin.css" rel="stylesheet">
 <link href="/Public/css/newIndexMain.css" rel="stylesheet">
 <link href="/Public/css/mymiacss.css" rel="stylesheet">
-<link rel="stylesheet" href="http://file01.miyabaobei.com/resources/styles/main.css?v=20151117" type="text/css">
+<link href="/Public/css/mia_main.css" rel="stylesheet">
 
 <script type="text/javascript" src="/Public/js/jquery.1.11.3.min.js"></script>
 <script type="text/javascript" src="/Public/js/cui.js"></script>
@@ -623,6 +623,7 @@
 
 
         
+
     <div class="mainSlide" id="mainSlide">
     <div id="topslide">
         <div class="cell">
@@ -673,7 +674,8 @@
             <a style="display: none;" href="#" class="rightAr"></a>
         </div>
     </div>
-</div>>
+</div>
+
     <div class="today_title w1000"> 今日精选 </div>
 
     <div class="TodaySelected">
@@ -686,15 +688,19 @@
                     <?php if(is_array($todaySelected)): $i = 0; $__LIST__ = $todaySelected;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="TBB">
                         <a target="_blank" href="<?php echo U('Mia/goodsDetails/',array('goodsId'=>$vo['goodsId']));?>" title="<?php echo ($vo['goodsName']); ?>">
                         <div class="Commodity rel">
-                            <img src="<?php echo ($vo['goodsImg']); ?>" width="228" height="228" alt="<?php echo ($vo['goodsName']); ?>"/>
+                            <img src="/Public/images/goodsImg.jpg" width="228" height="228" alt="<?php echo ($vo['goodsName']); ?>"/>
                             <div class="Nicon NI_hot">热</div>
                         </div>
                         <div class="price1">
                             <div class="r">
                                 2440人喜欢
                             </div>
-                            <span class="p1">￥</span><span class="p2"><?php echo ($vo['shopPrice']); ?></span><span class="originalPrice">￥<?php echo ($vo['marketPrice']); ?></span> </div>
-                        <div class="intro"><p><?php echo ($vo['goodsName']); ?></p>
+                            <span class="p1">￥</span>
+                            <span class="p2"><?php echo ($vo['shopPrice']); ?></span>
+                            <span class="originalPrice">￥<?php echo ($vo['marketPrice']); ?></span>
+                        </div>
+                        <div class="intro">
+                            <p><?php echo ($vo['goodsName']); ?></p>
                             <p class="gray3"><?php echo ($vo['goodsBrief']); ?></p>
                         </div>
                         </a>

@@ -3,11 +3,11 @@
     padding-bottom:387px
 }
 .HolidayBackgroundTop{background:#f9f9f9}
-.w1004{margin:0 auto;width:1000px}
-.mainSlide{height:350px;position:relative;background:#fff url(../images/loading.gif?v=20150203) no-repeat center center}
+.w1004{margin:0 auto;width:1000px;}
+.mainSlide{height:350px;position:relative;background:#fff  no-repeat center center}
 .mainSlide .cell{position:absolute;top:0;left:0;width:100%;z-index:24;display:none;height:350px}
 .mainSlide .cell .w1004{height:350px;position:relative;top:-350px;z-index:25}
-.mainSlide .cur{display:block;z-index:26}
+.mainSlide .cur{display:block;z-index:26;}
 .mainSlide .cell .prom{background-position:center top;background-repeat:no-repeat;height:350px;width:100%;text-align:center;position:relative}
 .mainSlide .cell .promLink{width:1000px;height:350px;display:block}
 .mainSlide .pgWidth{position:relative;z-index:26;width:1000px;margin:0 auto}
