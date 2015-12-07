@@ -87,8 +87,7 @@ class UsersAction extends BaseAction {
 		
 		$m = D('Home/Users');
 		$res = array();
-		$nameType = (int)I("nameType");
-		if($nameType!=3 && !$this->checkVerify("3")){			
+		if(!$this->checkVerify("3")){
 			$res['status'] = -4;
 		}else{			
 			$res = $m->regist();

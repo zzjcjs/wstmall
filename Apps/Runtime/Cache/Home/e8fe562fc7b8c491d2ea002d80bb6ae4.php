@@ -6,8 +6,9 @@
     <title>注册 - 宝宝帝，中国最领先的进口母婴限时特卖商城</title>
     <meta name="Keywords" content="<?php echo ($CONF['mallKeywords']); ?>" >
     <meta name="Description" content="<?php echo ($CONF['mallDesc']); ?>">
-    <link rel="stylesheet" href="http://file02.miyabaobei.com/resources/styles/main.css?v=20151117" type="text/css">
-    <link rel="stylesheet" href="http://file02.miyabaobei.com/resources/styles/add.css?v=151124" type="text/css">
+    <link rel="stylesheet" href="/Public/css/mia_main.css" type="text/css">
+    <link rel="stylesheet" href="/Public/css/mia_add.css" type="text/css">
+    <script type="text/javascript" src="http://file02.miyabaobei.com/resources/scripts/jquery-1.8.2.min.js"></script>
     <script>
         var ThinkPHP = window.Think = {
             "ROOT"   : "",
@@ -19,13 +20,6 @@
         }
         var domainURL = "<?php echo WSTDomain();?>";
         var publicurl = "/Public";
-        var currCityId = "<?php echo ($currArea['areaId']); ?>";
-        var currCityName = "<?php echo ($currArea['areaName']); ?>";
-        var currDefaultImg = "<?php echo WSTDomain();?>/<?php echo ($CONF['goodsImg']); ?>";
-        var wstMallName = "<?php echo ($CONF['mallName']); ?>";
-        $(function() {
-            $('.lazyImg').lazyload({ effect: "fadeIn",failurelimit : 10,threshold: 200,placeholder:currDefaultImg});
-        });
     </script>
 </head>
 <body class="bknone">
@@ -43,12 +37,12 @@
         </div>
         <form method="post" id="register" autocomplete="off">
             <input name="regType" id="regType" value="person" type="hidden"/>
-            <input name="nameType" id="nameType" value="2"  type="hidden" />
+            <input name="nameType" id="nameType" value="3"  type="hidden" />
 
             <div class="inputGroup ok">
                 <div class="inputWrap">
                     <div class="user-icon"></div>
-                    <input type="text" placeholder="手机号码" id="loginName" name="loginName" class="input" validate="required|username">
+                    <input id="userPhone" name="userPhone" class="input" placeholder="手机号码" tabindex="3" autocomplete="off" type="text" maxlength="11" validate="required|username"/>
                     <span class="tooltip-inner" id="inputEmail_msg" style="display:none;"></span>
                 </div>
                 <p class="registerNotice1 nameuser" style="display:none;">
@@ -79,7 +73,7 @@
             <div class="inputGroup" id="mobileCodeDiv">
                 <div class="phonecodeWrap clearfix">
                     <div class="inputWrap l">
-                        <input type="text" placeholder="短信验证码" id="mobileCode" name="phonecode" class="input">
+                        <input maxlength="6" autocomplete="off" placeholder="短信验证码" tabindex="6" class="input" name="mobileCode" style="ime-mode:disabled" id="mobileCode" type="text"/>
                     </div>
                     <a class="phonecode" href="javascript:void(0);" onclick="getVerifyCode();" id="sendMobileCode">
                         <span id="timeTips">获取短信验证码</span>
@@ -96,7 +90,7 @@
             <div class="inputGroup" id="o-password">
                 <div class="inputWrap">
                     <div class="pass-icon"></div>
-                    <input type="password" placeholder="密码" id="loginPwd" name="loginPwd" class="input" validate="required">
+                    <input id="loginPwd" name="loginPwd" placeholder="密码" class="input" tabindex="2" style="ime-mode:disabled;" autocomplete="off" validate="required" type="password"/>
                 </div>
                 <p class="registerNotice1 password" style="display: none">
                     <span  class="tipcon">密码提示内容</span>
@@ -108,7 +102,7 @@
             <div class="inputGroup">
                 <div class="inputWrap">
                     <div class="pass-icon"></div>
-                    <input type="password" placeholder="确认密码" id="reUserPwd" name="reUserPwd" class="input" validate="required">
+                    <input id="reUserPwd" name="reUserPwd"  placeholder="确认密码" class="input" tabindex="3" autocomplete="off"  validate="required" type="password"/>
                 </div>
                 <p class="registerNotice1 registerErrorNotice" style="display: none">
                     <span  class="tipcon">确认提示内容</span>
@@ -148,30 +142,19 @@
                 </div>
             </div>
             <p class="registerButton" >
-                <!--<a  id="registsubmit" class="loginbtn shake-constant"  style="width:85%">注册</a>-->
-                <input class="loginbtn shake-constant" style="width:100%" id="registsubmit" value="注册"  type="submit"/>
+                <input class="loginbtn shake-constant"  style="width:100%" id="registsubmit" value="注册" tabindex="8"  type="submit"/>
             </p>
 
         </form>
 
     </div>
 </div>
-<link rel="stylesheet" href="http://file02.miyabaobei.com/resources/styles/jquery-ui.css" type="text/css">
+<link rel="stylesheet" href="http://file03.miyabaobei.com/resources/styles/jquery-ui.css" type="text/css">
+<script type="text/javascript" src="http://file02.miyabaobei.com/resources/scripts/jquery-ui.js"></script>
+<script type="text/javascript" src="http://file02.miyabaobei.com/resources/scripts/validate.js"></script>
+<script type="text/javascript" src="http://file02.miyabaobei.com/resources/scripts/validate.en.js?v=1"></script>
+<script type="text/javascript" src="http://file02.miyabaobei.com/resources/scripts/account/register.js?v=2015070618431"></script>
 <script>
-    var login = {
-        'qq' : '/oauth/member/qq',
-        'weibo' : '/oauth/member/weibo',
-        'weixin' : '/oauth/member/weixin'
-    };
-    $(document).ready(function(){
-        $('.third_login a').bind('click',function(e){
-            e.preventDefault();
-            window.location.href = login[$(this).attr('data-tag')];
-        });
-
-    });
-
-
     $(function() {
         $((function($){
             $.datepicker.regional['zh-CN'] = {
@@ -234,11 +217,10 @@
         });
     });
 </script>
-<script type="text/javascript" src="/Public/js/jquery.min.js"></script>
 <script src="/Public/plugins/layer/layer.min.js"></script>
 <script src="/Public/js/think.js"></script>
 <script src="/Public/js/common.js"></script>
-<script src="/Apps/Home/View/default/js/common.js"></script>
+<script src="/Apps/Home/View/default/js/common.js"></script/>
 <script src="/Apps/Home/View/default/js/regist.js"></script>
 <script src="/Public/plugins/formValidator/formValidator-4.1.3.js"></script>
 <!--<script type="text/javascript" src="/Public/js/mymiajs.js"></script>-->

@@ -152,12 +152,12 @@ function changeName(){
 					}
 				});	
 			}
-	}
+}
 $(function(){
 	getVerify();
 	 $.formValidator.initConfig({
 		   theme:'Default',mode:'AutoTip',formID:"register",debug:true,submitOnce:true,onSuccess:function(){
-				if(jQuery("#loginNameTip").attr("class")=="onCorrect"){
+				if(jQuery("#userPhone").attr("class")=="onCorrect"){
 				
 					regist();
 				}
@@ -171,18 +171,18 @@ $(function(){
 			}
 		}});
 	
-	$("#loginPwd").formValidator({
-		onShow:"",onFocus:"6-20位之间"
-		}).inputValidator({
-			min:6,max:20,onError:"6-20位之间"
-		});
-	$("#reUserPwd").formValidator({
-		onShow:"",onFocus:"密码不一致。",onCorrect:"密码一致"
-		}).inputValidator({
-			min:6,max:20,onError:"6-20位之间"
-		}).compareValidator({
-			desID:"loginPwd",operateor:"=",onError:"两次密码不同。"
-		});
+	//$("#loginPwd").formValidator({
+	//	onShow:"",onFocus:"6-20位之间"
+	//	}).inputValidator({
+	//		min:6,max:20,onError:"6-20位之间"
+	//	});
+	//$("#reUserPwd").formValidator({
+	//	onShow:"",onFocus:"密码不一致。",onCorrect:"密码一致"
+	//	}).inputValidator({
+	//		min:6,max:20,onError:"6-20位之间"
+	//	}).compareValidator({
+	//		desID:"loginPwd",operateor:"=",onError:"两次密码不同。"
+	//	});
 	
 	loadSearchList("loginName","namelist");
 
@@ -228,7 +228,6 @@ function getVerifyCode(){
 				time = 120;
 				$('#timeTips').css('width','100px');
 				$('#timeTips').html('获取验证码(120)');
-				//$('#mobileCode').val(json.phoneVerifyCode);
 				var task = setInterval(function(){
 					time--;
 					$('#timeTips').html('获取验证码('+time+")");
@@ -264,18 +263,13 @@ function regist(){
 		return;
 	}
   	var params = {};
-	params.loginName = $.trim($('#loginName').val());
 	params.loginPwd = $.trim($('#loginPwd').val());
 	params.reUserPwd = $.trim($('#reUserPwd').val());
-	params.userEmail = $.trim($('#userEmail').val());
-	
-	params.userTaste = $('#userTaste').val();
-	//params.userQQ = $.trim($('#userQQ').val());
+
 	params.userPhone = $.trim($('#userPhone').val());
 	params.mobileCode = $.trim($('#mobileCode').val());
 	
 	params.verify = $.trim($('#authcode').val());
-	params.nameType = $("#nameType").val();
 	params.protocol = document.getElementById("protocol").checked?1:0;	
 	
 	$.post(Think.U('Users/toRegist'),params,function(data,textStatus){

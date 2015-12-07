@@ -128,11 +128,10 @@ class UsersModel extends BaseModel {
     	$rd = array('status'=>-1);	   
     	
     	$data = array();
-    	$data['loginName'] = I('loginName','');
     	$data['loginPwd'] = I("loginPwd");
     	$data['reUserPwd'] = I("reUserPwd");
     	$data['protocol'] = I("protocol");
-    	$loginName = $data['loginName'];
+        $data['userPhone'] = I("userPhone");
     	if($data['loginPwd']!=$data['reUserPwd']){
     		$rd['status'] = -3;
     		return $rd;
@@ -147,32 +146,22 @@ class UsersModel extends BaseModel {
     			return $rd;
     		}
     	}
-        //检测账号是否存在
-        $crs = $this->checkLoginKey($loginName);
-        if($crs['status']!=1){
-	    	$rd['status'] = -2;
-	    	return $rd;
-	    }
-	    $nameType = I("nameType");
+
 	    $mobileCode = I("mobileCode");
-		if($nameType==3){//手机号码
-			$verify = session('VerifyCode_userPhone');
-			$startTime = (int)session('VerifyCode_userPhone_Time');
-			if((time()-$startTime)>120){
-				$rd['status'] = -5;
-				return $rd;
-			}
-			if($mobileCode=="" || $verify != $mobileCode){
-				$rd['status'] = -4;
-				return $rd;
-			}
-			$loginName = $this->randomLoginName($loginName);
-		}else if($nameType==1){//邮箱注册
-			$unames = explode("@",$loginName);
-			$loginName = $this->randomLoginName($unames[0]);
-		}
-		if($loginName=='')return $rd;//分派不了登录名
+        //必须是手机注册
+        $verify = session('VerifyCode_userPhone');
+        $startTime = (int)session('VerifyCode_userPhone_Time');
+        if((time()-$startTime)>120){
+            $rd['status'] = -5;
+            return $rd;
+        }
+        if($mobileCode=="" || $verify != $mobileCode){
+            $rd['status'] = -4;
+            return $rd;
+        }
+        $loginName = 'baobaodi'.$data['userPhone'];
 		$data['loginName'] = $loginName;
+
 	    unset($data['reUserPwd']);
 	    unset($data['protocol']);
 	    //检测账号，邮箱，手机是否存在
@@ -186,8 +175,9 @@ class UsersModel extends BaseModel {
 		$data['userEmail'] = I("userEmail");
 	    $data['createTime'] = date('Y-m-d H:i:s');
 	    $data['userFlag'] = 1;
-	    
-	   
+
+        $data['babyRelation'] = I('relation');
+	    $data['babyBirthday'] = I('birth_day_show');
 		$rs = $m->add($data);
 		if(false !== $rs){
 			$rd['status']= 1;
